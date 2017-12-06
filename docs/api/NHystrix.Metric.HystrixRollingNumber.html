@@ -1,0 +1,634 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HystrixRollingNumber
+   | NHystrix </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HystrixRollingNumber
+   | NHystrix ">
+    <meta name="generator" content="docfx 2.27.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NHystrix.Metric.HystrixRollingNumber">
+  
+  
+  <h1 id="NHystrix_Metric_HystrixRollingNumber" data-uid="NHystrix.Metric.HystrixRollingNumber" class="text-break">Class HystrixRollingNumber
+  </h1>
+  <div class="markdown level0 summary"><p>A number which can be used to track counters (increment) or set values over time.
+<p>
+It is &quot;rolling&quot; in the sense that a &apos;timeInMilliseconds&apos; is given that you want to track (such as 10 seconds) and then that is broken into buckets (defaults to 10) so that the 10 second window
+doesn&apos;t empty out and restart every 10 seconds, but instead every 1 second you have a new bucket added and one dropped so that 9 of the buckets remain and only the newest starts from scratch.
+</p>
+<p>
+This is done so that the statistics are gathered over a rolling 10 second window with data being added/dropped in 1 second intervals(or whatever granularity is defined by the arguments) rather
+than each 10 second window starting at 0 again.
+</p>
+<p>
+Performance-wise this class is optimized for writes, not reads. This is done because it expects far higher write volume (thousands/second) than reads (a few per second).
+</p>
+<p>
+For example, on each read to getSum/getCount it will iterate buckets to sum the data so that on writes we don&apos;t need to maintain the overall sum and pay the synchronization cost at each write to
+ensure the sum is up-to-date when the read can easily iterate each bucket to get the sum when it needs it.
+</p>
+<p>
+See UnitTest for usage and expected behavior examples.
+</p></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">HystrixRollingNumber</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NHystrix.Metric.html">NHystrix.Metric</a></h6>
+  <h6><strong>Assembly</strong>: NHystrix.dll</h6>
+  <h5 id="NHystrix_Metric_HystrixRollingNumber_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class HystrixRollingNumber</code></pre>
+  </div>
+  <h5 id="NHystrix_Metric_HystrixRollingNumber_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><h1 id="thread-safety">Thread Safety</h1>
+<p>This class is thread-safe.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L48">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber__ctor_" data-uid="NHystrix.Metric.HystrixRollingNumber.#ctor*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber__ctor_System_Int32_System_Int32_" data-uid="NHystrix.Metric.HystrixRollingNumber.#ctor(System.Int32,System.Int32)">HystrixRollingNumber(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NHystrix.Metric.HystrixRollingNumber.html">HystrixRollingNumber</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HystrixRollingNumber(int timeInMilliseconds, int numberOfBuckets)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">timeInMilliseconds</span></td>
+        <td><p>Length of time in milliseconds to report metrics over.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numberOfBuckets</span></td>
+        <td><p>The number of buckets.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_Add_NHystrix_HystrixEventType_System_Int64_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.Add(NHystrix.HystrixEventType%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L76">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_Add_" data-uid="NHystrix.Metric.HystrixRollingNumber.Add*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_Add_NHystrix_HystrixEventType_System_Int64_" data-uid="NHystrix.Metric.HystrixRollingNumber.Add(NHystrix.HystrixEventType,System.Int64)">Add(HystrixEventType, Int64)</h4>
+  <div class="markdown level1 summary"><p>Adds to the counter for the specified <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(HystrixEventType eventType, long value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_GetCumulativeSum_NHystrix_HystrixEventType_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum(NHystrix.HystrixEventType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L117">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_GetCumulativeSum_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_GetCumulativeSum_NHystrix_HystrixEventType_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum(NHystrix.HystrixEventType)">GetCumulativeSum(HystrixEventType)</h4>
+  <div class="markdown level1 summary"><p>Get the cumulative sum of all buckets ever since the JVM started without rolling for the given <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetCumulativeSum(HystrixEventType eventType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>System.Int64.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_GetRollingMaxValue_NHystrix_HystrixEventType_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue(NHystrix.HystrixEventType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L195">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_GetRollingMaxValue_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_GetRollingMaxValue_NHystrix_HystrixEventType_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue(NHystrix.HystrixEventType)">GetRollingMaxValue(HystrixEventType)</h4>
+  <div class="markdown level1 summary"><p>Get the max value of values in all buckets for the given <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetRollingMaxValue(HystrixEventType eventType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>System.Int64.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotImplementedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_GetRollingSum_NHystrix_HystrixEventType_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.GetRollingSum(NHystrix.HystrixEventType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L130">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_GetRollingSum_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetRollingSum*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_GetRollingSum_NHystrix_HystrixEventType_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetRollingSum(NHystrix.HystrixEventType)">GetRollingSum(HystrixEventType)</h4>
+  <div class="markdown level1 summary"><p>Get the sum of all buckets in the rolling counter for the given <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetRollingSum(HystrixEventType eventType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>System.Int64.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_GetValueOfLatestBucket_NHystrix_HystrixEventType_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket(NHystrix.HystrixEventType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L149">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_GetValueOfLatestBucket_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_GetValueOfLatestBucket_NHystrix_HystrixEventType_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket(NHystrix.HystrixEventType)">GetValueOfLatestBucket(HystrixEventType)</h4>
+  <div class="markdown level1 summary"><p>Get the value of the latest (current) bucket in the rolling counter for the given <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetValueOfLatestBucket(HystrixEventType eventType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>System.Int64.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_GetValues_NHystrix_HystrixEventType_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.GetValues(NHystrix.HystrixEventType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L163">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_GetValues_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetValues*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_GetValues_NHystrix_HystrixEventType_" data-uid="NHystrix.Metric.HystrixRollingNumber.GetValues(NHystrix.HystrixEventType)">GetValues(HystrixEventType)</h4>
+  <div class="markdown level1 summary"><p>Get an array of values for all buckets in the rolling counter for the given <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long[] GetValues(HystrixEventType eventType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span>[]</td>
+        <td><p>System.Int64[].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_Increment_NHystrix_HystrixEventType_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.Increment(NHystrix.HystrixEventType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L66">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_Increment_" data-uid="NHystrix.Metric.HystrixRollingNumber.Increment*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_Increment_NHystrix_HystrixEventType_" data-uid="NHystrix.Metric.HystrixRollingNumber.Increment(NHystrix.HystrixEventType)">Increment(HystrixEventType)</h4>
+  <div class="markdown level1 summary"><p>Increments the counter for the specified <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Increment(HystrixEventType eventType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_Reset.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L99">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_Reset_" data-uid="NHystrix.Metric.HystrixRollingNumber.Reset*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_Reset" data-uid="NHystrix.Metric.HystrixRollingNumber.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Force a reset of all rolling counters (clear all buckets) so that statistics start being gathered from scratch.
+<p>
+This does NOT reset the CumulativeSum values.
+</p></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber_UpdateRollingMax_NHystrix_HystrixEventType_System_Int64_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax(NHystrix.HystrixEventType%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L87">View Source</a>
+  </span>
+  <a id="NHystrix_Metric_HystrixRollingNumber_UpdateRollingMax_" data-uid="NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax*"></a>
+  <h4 id="NHystrix_Metric_HystrixRollingNumber_UpdateRollingMax_NHystrix_HystrixEventType_System_Int64_" data-uid="NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax(NHystrix.HystrixEventType,System.Int64)">UpdateRollingMax(HystrixEventType, Int64)</h4>
+  <div class="markdown level1 summary"><p>Update a value and retain the max value for the specified <a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateRollingMax(HystrixEventType eventType, long value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td><p>Type of the event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NotImplementedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixRollingNumber.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixRollingNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixRollingNumber.cs/#L34" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

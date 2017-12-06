@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>NHystrix | NHystrix </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="NHystrix | NHystrix ">
+    <meta name="generator" content="docfx 2.27.0.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="nhystrix">NHystrix</h1>
+
+<h2 id="what-is-nhystrix">What is NHystrix</h2>
+<p>NHystrix is inspired by the <a href="https://github.com/Netflix/Hystrix">Netflix/Hystrix project</a> to provide the same level 
+of functionality to C#/.Net based services. Their <a href="https://github.com/Netflix/Hystrix/wiki">wiki is worth a read</a> to 
+understand what challenges N/Hystrix aims to solve.</p>
+<h2 id="what-it-is-not">What it is NOT</h2>
+<p>Due to language differences and feature differences between Java and C#/.Net, this is NOT a direct port. If you are
+familiar with Hystrix, you&#39;ll recognize similarities in API ans structure, but also see that NHystrix arrives at the
+end goal a bit differently.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="install-the-nuget-package-to-your-project">Install the Nuget package to your project:</h3>
+<div class="tabGroup" id="tabgroup_D+Ap1HJHja">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_D+Ap1HJHja_tabid-1" role="tab" aria-controls="tabpanel_D+Ap1HJHja_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Powershell</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_D+Ap1HJHja_tabid-2" role="tab" aria-controls="tabpanel_D+Ap1HJHja_tabid-2" data-tab="tabid-2" tabindex="-1">CLI</a>
+</li>
+</ul>
+<section id="tabpanel_D+Ap1HJHja_tabid-1" role="tabpanel" data-tab="tabid-1">
+<pre><code>Install-Package NHystrix
+</code></pre></section>
+<section id="tabpanel_D+Ap1HJHja_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<pre><code>dotnet install NHystrix
+</code></pre></section>
+</div>
+<h3 id="create-a-command-class">Create a command class:</h3>
+<pre><code class="lang-cs">public class GreeterCommand : HystrixCommand&lt;string&gt;
+{
+    string greeter;
+
+    public GreeterCommand(string greeter, HystrixCommandProperties properties)
+        : base(new HystrixCommandKey(&quot;Test&quot;, new HystrixCommandGroup(&quot;TestGroup&quot;)), properties)
+    {
+        this.greeter = greeter;
+    }
+
+    protected override Task&lt;string&gt; RunAsync()
+    {
+        return Task.FromResult($&quot;Hello, {greeter}!&quot;);
+    }
+
+    protected override string OnHandleFallback()
+    {
+        return &quot;Hello World!&quot;;
+    }
+}
+</code></pre><h3 id="execute-your-command">Execute your command:</h3>
+<pre><code class="lang-cs">var properties = new HystrixCommandProperties()
+{
+    FallbackEnabled = true
+};
+
+var cmd = new GreeterCommand(&quot;Bob&quot;, properties);
+
+string s = await cmd.ExecuteAsync()
+</code></pre><p>Output:</p>
+<pre><code>Hello, Bob!
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/milestonetg/NHystrix/blob/master/docs-src/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>
