@@ -11,7 +11,6 @@
     <PackageProjectUrl>https://github.com/milestonetg/NHystrix</PackageProjectUrl>
     <RepositoryUrl>https://github.com/milestonetg/NHystrix</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
-    <AssemblyVersion>0.1.0.*</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
