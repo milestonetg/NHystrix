@@ -14,7 +14,11 @@ end goal a bit differently.
 
 ## Quick Start
 
-### Install the Nuget package to your project:
+### Install the NuGet package to your project
+
+Packages can be found at:
+
+https://www.nuget.org/packages/NHystrix/
 
 # [Powershell](#tab/tabid-1)
 
@@ -25,12 +29,12 @@ Install-Package NHystrix
 # [CLI](#tab/tabid-2)
 
 ```
-dotnet install NHystrix
+dotnet add package NHystrix
 ```
 
 ***
 
-### Create a command class:
+### Create a command class
 
 ``` cs
 public class GreeterCommand : HystrixCommand<string>
@@ -55,7 +59,7 @@ public class GreeterCommand : HystrixCommand<string>
 }
 ```
 
-### Execute your command:
+### Execute your command
 
 ``` cs
 var properties = new HystrixCommandProperties()

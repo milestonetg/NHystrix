@@ -79,7 +79,9 @@ is worth a read to understand what challenges N/Hystrix aims to solve.</p>
 familiar with Hystrix, you&#39;ll recognize similarities in API and structure, but also see that NHystrix arrives at the
 end goal a bit differently.</p>
 <h2 id="quick-start">Quick Start</h2>
-<h3 id="install-the-nuget-package-to-your-project">Install the Nuget package to your project:</h3>
+<h3 id="install-the-nuget-package-to-your-project">Install the NuGet package to your project</h3>
+<p>Packages can be found at:</p>
+<p><a href="https://www.nuget.org/packages/NHystrix/">https://www.nuget.org/packages/NHystrix/</a></p>
 <div class="tabGroup" id="tabgroup_D+Ap1HJHja">
 <ul role="tablist">
 <li role="presentation">
@@ -93,10 +95,10 @@ end goal a bit differently.</p>
 <pre><code>Install-Package NHystrix
 </code></pre></section>
 <section id="tabpanel_D+Ap1HJHja_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
-<pre><code>dotnet install NHystrix
+<pre><code>dotnet add package NHystrix
 </code></pre></section>
 </div>
-<h3 id="create-a-command-class">Create a command class:</h3>
+<h3 id="create-a-command-class">Create a command class</h3>
 <pre><code class="lang-cs">public class GreeterCommand : HystrixCommand&lt;string&gt;
 {
     string greeter;
@@ -117,7 +119,7 @@ end goal a bit differently.</p>
         return &quot;Hello World!&quot;;
     }
 }
-</code></pre><h3 id="execute-your-command">Execute your command:</h3>
+</code></pre><h3 id="execute-your-command">Execute your command</h3>
 <pre><code class="lang-cs">var properties = new HystrixCommandProperties()
 {
     FallbackEnabled = true
