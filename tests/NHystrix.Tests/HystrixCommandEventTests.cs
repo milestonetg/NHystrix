@@ -2,6 +2,7 @@
 using NHystrix.Metric;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace NHystrix.Tests
@@ -23,7 +24,8 @@ namespace NHystrix.Tests
                 Assert.AreEqual(commandEvent, onNext);
             });
 
-            foo.Write(commandEvent);
+            MethodInfo method = foo.GetType().GetMethod("Write", BindingFlags.Instance | BindingFlags.NonPublic);
+            method.Invoke(foo, new[] { commandEvent });
         }
     }
 }

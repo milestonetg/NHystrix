@@ -35,6 +35,22 @@ namespace NHystrix
         {
             this.properties = properties;
             this.metrics = metrics;
+
+            metrics.HealthStream.Subscribe(
+                onNext => 
+                {
+                    if (onNext.FailurePercentage >= properties.CircuitBreakerErrorThresholdPercentage)
+                    {
+                        Interlocked.CompareExchange(ref status, Status.OPEN, Status.HALF_OPEN);
+                        Interlocked.CompareExchange(ref status, Status.OPEN, Status.CLOSED);
+
+                        if (status == Status.OPEN)
+                        {
+                            //This thread wins the race to re-open the circuit - it resets the start time for the sleep window
+                            Interlocked.Exchange(ref circuitOpened, DateTime.UtcNow.Ticks);
+                        }
+                    }
+                });
         }
 
         /// <summary>
@@ -190,7 +206,6 @@ namespace NHystrix
         public void MarkNonSuccess()
         {
             Interlocked.CompareExchange(ref status, Status.OPEN, Status.HALF_OPEN);
-            Interlocked.CompareExchange(ref status, Status.OPEN, Status.CLOSED);
 
             if (status == Status.OPEN)
             {

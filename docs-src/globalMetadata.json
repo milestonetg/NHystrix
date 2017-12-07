@@ -1,4 +1,8 @@
 {
     "_appTitle": "NHystrix",
-    "_appLogoPath": "images/logo.png"
+    "_appLogoPath": "images/logo.png",
+    "_appFaviconPath": "images/favicon.png",
+    "_enableSearch": true,
+    "_enableNewTab": true,
+    "_appFooter" : "Icon derived fromPorcupine icon by Anton from the Noun Project"
 }

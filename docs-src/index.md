@@ -2,14 +2,14 @@
 
 ## What is NHystrix
 
-NHystrix is inspired by the [Netflix/Hystrix project](https://github.com/Netflix/Hystrix) to provide the same level 
-of functionality to C#/.Net based services. Their [wiki is worth a read](https://github.com/Netflix/Hystrix/wiki) to 
-understand what challenges N/Hystrix aims to solve.
+NHystrix is inspired by the [Netflix/Hystrix project](https://github.com/Netflix/Hystrix) to provide similar
+functionality and resilience to C#/.Net based services and clients. The [Hystrix Wiki](https://github.com/Netflix/Hystrix/wiki) 
+is worth a read to understand what challenges N/Hystrix aims to solve.
 
 ## What it is NOT
 
 Due to language differences and feature differences between Java and C#/.Net, this is NOT a direct port. If you are
-familiar with Hystrix, you'll recognize similarities in API ans structure, but also see that NHystrix arrives at the
+familiar with Hystrix, you'll recognize similarities in API and structure, but also see that NHystrix arrives at the
 end goal a bit differently.
 
 ## Quick Start

@@ -4,6 +4,7 @@ using System.Text;
 using NHystrix.Metric;
 using System.Collections.Concurrent;
 using System.Reactive.Linq;
+using System.Reactive.Subjects;
 
 namespace NHystrix
 {
@@ -13,16 +14,29 @@ namespace NHystrix
 
         HystrixCommandEventStream commandEventStream;
 
+        ISubject<HealthCounts> healthStream;
+
         private HystrixCommandMetrics(HystrixRollingNumber counter, HystrixCommandKey commandKey, HystrixCommandProperties properties) : base(counter)
         {
             CommandKey = commandKey;
             CommandGroup = commandKey.Group;
 
+            healthStream = new Subject<HealthCounts>();
             commandEventStream = HystrixCommandEventStream.GetInstance(commandKey);
             commandEventStream.Observe().Subscribe(
                 onNext =>
                 {
                     counter.Add(onNext.EventType, 1);
+
+                    HealthCounts health = new HealthCounts
+                    {
+                        RequestCount = counter.GetRollingSum(HystrixEventType.EMIT),
+                        FailedRequestCount =
+                            counter.GetRollingSum(HystrixEventType.FAILURE)
+                                + counter.GetRollingSum(HystrixEventType.TIMEOUT)
+                    };
+
+                    healthStream.OnNext(health);
                 });
         }
 
@@ -60,5 +74,7 @@ namespace NHystrix
         public HystrixCommandKey CommandKey { get; private set; }
 
         public HystrixCommandGroup CommandGroup { get; private set; }
+
+        public IObservable<HealthCounts> HealthStream { get => healthStream; }
     }
 }

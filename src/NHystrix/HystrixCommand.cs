@@ -37,7 +37,7 @@ namespace NHystrix
             this.properties = properties ?? throw new ArgumentNullException(nameof(properties));
 
             if (properties.CircuitBreakerEnabled)
-                circuitBreaker = HystrixCircuitBreaker.GetInstance(commandKey, properties, null);
+                circuitBreaker = HystrixCircuitBreaker.GetInstance(commandKey, properties, HystrixCommandMetrics.GetInstance(commandKey, properties));
 
             if (properties.BulkheadingEnabled)
                 bulkhead = new Semaphore(properties.MaxConcurrentRequests, properties.MaxConcurrentRequests);

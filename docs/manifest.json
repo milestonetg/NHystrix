@@ -4,12 +4,21 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/NHystrix.HystrixCircuitBreaker.yml",
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCircuitBreaker.html",
-          "hash": "ujwaukhzBJ4ox1vaK1NtiQ=="
+          "hash": "XVMMSgM2snVvgUvZAMH+ug=="
         }
       },
       "is_incremental": false,
@@ -21,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommand-1.html",
-          "hash": "wPM1F53XPnpZiKxWdm1dEQ=="
+          "hash": "ySKPgUeqT8BliKB7T+Ju3Q=="
         }
       },
       "is_incremental": false,
@@ -33,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandGroup.html",
-          "hash": "1MmXwhYUyI/wXth5kMnOgw=="
+          "hash": "OH7ExmRbybKB0TCtDO5atQ=="
         }
       },
       "is_incremental": false,
@@ -45,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandKey.html",
-          "hash": "v8vV9VwuEylbiUWAmt/YfQ=="
+          "hash": "oR/9fNXt9O6dGR0tYjzxjw=="
         }
       },
       "is_incremental": false,
@@ -57,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandMetrics.html",
-          "hash": "tQjRgznAk6uOhqNbmSqMZw=="
+          "hash": "PX0TNSnGjluCOyIy6bvKog=="
         }
       },
       "is_incremental": false,
@@ -69,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandProperties.html",
-          "hash": "/24jXaFtSBUvcLWJLOlR3A=="
+          "hash": "b2YdySZ74yMEdhVUn6Q/bQ=="
         }
       },
       "is_incremental": false,
@@ -81,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixDelegatingHandler.html",
-          "hash": "KlsGuMQfhaH2c9U2bsxtZA=="
+          "hash": "aXnhkku10PxpkFbhGXwV8A=="
         }
       },
       "is_incremental": false,
@@ -93,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixEventType.html",
-          "hash": "GPepPuvZcDVtyB2JQ0Qo2Q=="
+          "hash": "QJZotsnUjvT0wLLyDky9MA=="
         }
       },
       "is_incremental": false,
@@ -105,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixMetrics.html",
-          "hash": "cHhd0M8KVwuW0OJXzFTq0A=="
+          "hash": "L9E2JacxjX48pmG8WiDfEQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.IHystrixCircuitBreaker.html",
-          "hash": "D3LzfnMhCRMZXCjXU0CrFw=="
+          "hash": "WS8/2zI6+/AGccxJvEIE1Q=="
         }
       },
       "is_incremental": false,
@@ -129,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.IHystrixCommand-1.html",
-          "hash": "Rcv3Nh5o4JGcjcTiNl3g8w=="
+          "hash": "pcQlNB6/JjKPMwCHPvusfQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.HystrixCommandEvent.html",
-          "hash": "m7KWbwu9ryfYYFataNqG/A=="
+          "hash": "I738nU0C9xJk2aTYNOhbcA=="
         }
       },
       "is_incremental": false,
@@ -153,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.HystrixCommandEventStream.html",
-          "hash": "51ffcvuQl/reyhEUPLNTYQ=="
+          "hash": "29qhzwR1in279fE+Ndz8WQ=="
         }
       },
       "is_incremental": false,
@@ -165,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.HystrixRollingNumber.html",
-          "hash": "V66c2MnY7gKbeukepjXjog=="
+          "hash": "Mjn3HiXEZhyK4tTcK565GA=="
         }
       },
       "is_incremental": false,
@@ -177,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.IHystrixEvent.html",
-          "hash": "G0UIns5I0Np2C2Cy20v38w=="
+          "hash": "LtAjtnq09Oxpda+knmFkYw=="
         }
       },
       "is_incremental": false,
@@ -189,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.IHystrixEventStream-1.html",
-          "hash": "r6/olZcVIIPc9ab5QaC/zw=="
+          "hash": "vVzsrfv5Kv5as0zjQmSYgg=="
         }
       },
       "is_incremental": false,
@@ -201,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.html",
-          "hash": "fqwHrcZ1yBQgszw+5UUd/g=="
+          "hash": "6c0nXQg839pHOaTwfirROw=="
         }
       },
       "is_incremental": false,
@@ -213,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.TaskExtensions.html",
-          "hash": "IKXqsNFZYepr2JfHT+JUAQ=="
+          "hash": "ry/dAqhumiSLAD8Fl2yr2Q=="
         }
       },
       "is_incremental": false,
@@ -225,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.html",
-          "hash": "npHuu7cktuNw7ZP9qvOCFw=="
+          "hash": "bKIRSClyN70eFnYble6hsA=="
         }
       },
       "is_incremental": false,
@@ -237,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "RuLTiXjZ+YyT+KNWKadVew=="
+          "hash": "1IhQzPpAFQbwhhSVSlp/6Q=="
         }
       },
       "is_incremental": false,
@@ -261,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "neyriEUtOIpbW/ibPGszRw=="
+          "hash": "3Hvn0CFj0wrep8JnzLxIBw=="
         }
       },
       "is_incremental": false,
@@ -280,12 +289,34 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "U806+ve71IXFCqXMasGeGA=="
+          "hash": "xJcjH9rcl7RoX25W3P8mMA=="
         }
       },
       "is_incremental": false,
@@ -297,7 +328,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "ob7LqWp4kTNLz+9W4omdTw=="
+          "hash": "u72PJhdaPEsP7TkR7MncDA=="
         }
       },
       "is_incremental": false,
@@ -308,10 +339,20 @@
     {
       "status": {
         "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "details": "Cannot build incrementally because config changed.",
         "incrementalPhase": "build"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
@@ -319,18 +360,13 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
         }
       }
     },
     {
       "status": {
         "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}
