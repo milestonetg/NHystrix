@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.1.0</Version>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
     <Company>Milestone Technology Group, LLC</Company>
-    <Authors>Jason M Penniman</Authors>
-    <Description>NHystrix is inspired by Netflix/Hystrix (https://github.com/Netflix/Hystrix): a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.</Description>
+    <Authors>Milestone Technology Group, LLC</Authors>
+    <Description>A latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.</Description>
     <PackageLicenseUrl>https://github.com/milestonetg/NHystrix/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/milestonetg/NHystrix</PackageProjectUrl>
     <RepositoryUrl>https://github.com/milestonetg/NHystrix</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>0.1.0.0</FileVersion>
+    <AssemblyVersion>0.1.0.*</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
