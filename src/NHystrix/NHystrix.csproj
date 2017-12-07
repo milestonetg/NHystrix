@@ -10,9 +10,19 @@
     <PackageLicenseUrl>https://github.com/milestonetg/NHystrix/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/milestonetg/NHystrix</PackageProjectUrl>
     <RepositoryUrl>https://github.com/milestonetg/NHystrix</RepositoryUrl>
-    <IconUrl>https://milestonetg.github.io/NHystrix/images/nhystrix_purple2.png</IconUrl>
+    <PackageIconUrl>https://milestonetg.github.io/NHystrix/images/nhystrix_nuget_icon.png</PackageIconUrl>
+    <PackageTags>CircuitBreaker;Bulkhead;Timeout</PackageTags>
     <RepositoryType>github</RepositoryType>
     <DebugType>Full</DebugType>
+    <PackageReleaseNotes>Implements:
+
+- CircuitBreaker
+- Bulkheading
+- Timeout</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\NHystrix.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
