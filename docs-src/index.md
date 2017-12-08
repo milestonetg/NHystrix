@@ -6,9 +6,16 @@ NHystrix is inspired by the [Netflix/Hystrix project](https://github.com/Netflix
 functionality and resilience to C#/.Net based services and clients. The [Hystrix Wiki](https://github.com/Netflix/Hystrix/wiki) 
 is worth a read to understand what challenges N/Hystrix aims to solve.
 
+The current release provides...
+- CircuitBreaker
+- Bulkheading
+- Timeout
+
+...functionality.
+
 ## What it is NOT
 
-Due to language differences and feature differences between Java and C#/.Net, this is NOT a direct port. If you are
+Due to language and feature differences between Java and C#/.Net, this is NOT a direct port. If you are
 familiar with Hystrix, you'll recognize similarities in API and structure, but also see that NHystrix arrives at the
 end goal a bit differently.
 

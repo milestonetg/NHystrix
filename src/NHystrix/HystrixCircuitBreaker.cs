@@ -39,9 +39,12 @@ namespace NHystrix
             metrics.HealthStream.Subscribe(
                 onNext => 
                 {
-                    if (onNext.FailurePercentage >= properties.CircuitBreakerErrorThresholdPercentage)
+                    // If we're not already open, evaluate the error rate...
+                    if (Interlocked.Read(ref circuitOpened) == -1 &&
+                        onNext.RequestCount >= properties.CircuitBreakerRequestVolumeThreshold &&
+                        onNext.FailurePercentage >= properties.CircuitBreakerErrorThresholdPercentage)
                     {
-                        Interlocked.CompareExchange(ref status, Status.OPEN, Status.HALF_OPEN);
+                        // The circuit is closed and we've reached the error rate threshold, so trip the circuit breaker...
                         Interlocked.CompareExchange(ref status, Status.OPEN, Status.CLOSED);
 
                         if (status == Status.OPEN)

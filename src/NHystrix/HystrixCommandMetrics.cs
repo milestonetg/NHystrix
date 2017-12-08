@@ -8,6 +8,10 @@ using System.Reactive.Subjects;
 
 namespace NHystrix
 {
+    /// <summary>
+    /// Tracks metrics for a <see cref="HystrixCommand{TResult}"/> for a <see cref="HystrixCommandKey"/>.
+    /// </summary>
+    /// <seealso cref="NHystrix.HystrixMetrics" />
     public class HystrixCommandMetrics : HystrixMetrics
     {
         static ConcurrentDictionary<HystrixCommandKey, HystrixCommandMetrics> intern = new ConcurrentDictionary<HystrixCommandKey, HystrixCommandMetrics>();
@@ -40,6 +44,12 @@ namespace NHystrix
                 });
         }
 
+        /// <summary>
+        /// Gets a singleton instance.
+        /// </summary>
+        /// <param name="commandKey">The command key.</param>
+        /// <param name="properties">The properties.</param>
+        /// <returns>HystrixCommandMetrics.</returns>
         public static HystrixCommandMetrics GetInstance(HystrixCommandKey commandKey, HystrixCommandProperties properties)
         {
             HystrixCommandMetrics metrics = null;
@@ -71,10 +81,22 @@ namespace NHystrix
             }
         }
 
+        /// <summary>
+        /// Gets the command key.
+        /// </summary>
+        /// <value>The command key.</value>
         public HystrixCommandKey CommandKey { get; private set; }
 
+        /// <summary>
+        /// Gets the command group.
+        /// </summary>
+        /// <value>The command group.</value>
         public HystrixCommandGroup CommandGroup { get; private set; }
 
+        /// <summary>
+        /// Gets the health stream.
+        /// </summary>
+        /// <value>The health stream.</value>
         public IObservable<HealthCounts> HealthStream { get => healthStream; }
     }
 }

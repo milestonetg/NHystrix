@@ -55,28 +55,41 @@ namespace NHystrix.Tests
         }
 
         [TestMethod]
-        public async Task CircuitBreakerShouldTripAfterFailureThreshhold()
+        public async Task CircuitBreakerShouldTripAfterFailureThreshold()
         {
             var properties = new HystrixCommandProperties()
             {
                 FallbackEnabled = true,
                 TimeoutEnabled = true,
-                ExecutionTimeoutInMilliseconds = 2000,
-                CircuitBreakerSleepWindowInMilliseconds = 60000
+                ExecutionTimeoutInMilliseconds = 20000,
+                CircuitBreakerSleepWindowInMilliseconds = 60000,
+                CircuitBreakerRequestVolumeThreshold = 100,
+                CircuitBreakerErrorThresholdPercentage = 50,
             };
 
-            var cmd = new FailureCommand(properties);
+            int trippedAttempt = 0;
+            bool tripped = false;
 
             //execute failures to trigger trip
-            for(int i=0; i<=10; i++)
+            for(int i=0; i < 1000; i++)
             {
+                // test command fails every other request.
+                var cmd = new FailureCommand(i, properties);
                 string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+
+                //Check the circuit breaker
+                FieldInfo info = cmd.GetType().BaseType.GetField("circuitBreaker", BindingFlags.NonPublic | BindingFlags.Instance);
+                HystrixCircuitBreaker circuitBreaker = info.GetValue(cmd) as HystrixCircuitBreaker;
+                if (circuitBreaker.IsOpen)
+                {
+                    trippedAttempt = i;
+                    tripped = true;
+                    break;
+                }
             }
 
-            FieldInfo info = cmd.GetType().BaseType.GetField("circuitBreaker", BindingFlags.NonPublic | BindingFlags.Instance);
-
-            HystrixCircuitBreaker circuitBreaker = info.GetValue(cmd) as HystrixCircuitBreaker;
-            Assert.IsTrue(circuitBreaker.IsOpen);
+            Assert.IsTrue(tripped, "Circuit breaker never tripped.");
+            Assert.IsTrue(trippedAttempt >= 50 && trippedAttempt <= 100, $"Circuit breaker tripped, but not when expected. Tripped at requrest {trippedAttempt}");
         }
     }
 
@@ -117,18 +130,23 @@ namespace NHystrix.Tests
 
     class FailureCommand : HystrixCommand<string>
     {
-        public const string RETURN_VALUE = "Hello World";
+        public const string RETURN_VALUE = "Success attempt";
         public const string FALLBACK_VALUE = "Fallback";
 
-        public FailureCommand(HystrixCommandProperties properties)
-            : base(new HystrixCommandKey("Test", new HystrixCommandGroup("TestGroup")), properties)
-        {
+        int attempt;
 
+        public FailureCommand(int attempt, HystrixCommandProperties properties)
+            : base(new HystrixCommandKey("FailureTest", new HystrixCommandGroup("CircuitBreakerTests")), properties)
+        {
+            this.attempt = attempt;
         }
 
         protected override Task<string> RunAsync()
         {
-            throw new Exception("test");
+            if (attempt % 2 == 0)
+                throw new Exception("Failed attempt");
+            else
+                return Task.FromResult(RETURN_VALUE);
         }
 
         protected override string OnHandleFallback()

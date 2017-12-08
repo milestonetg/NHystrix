@@ -7,6 +7,18 @@ namespace NHystrix.Tests
     public class CircuitBreakerTests
     {
         [TestMethod]
+        public void FailurePercentageShouldReturnWholeNumber()
+        {
+            HealthCounts healthCounts = new HealthCounts
+            {
+                RequestCount = 100,
+                FailedRequestCount = 10
+            };
+
+            Assert.AreEqual(10, healthCounts.FailurePercentage);
+        }
+
+        [TestMethod]
         public void MarkNonSuccess_should_open_circuitbreaker()
         {
             //var group = new HystrixCommandGroup("TestGroup");

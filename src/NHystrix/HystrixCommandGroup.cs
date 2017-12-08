@@ -7,7 +7,7 @@ namespace NHystrix
     /// <summary>
     /// A HystrixCommandGroup is used to group commands together.  For example, by service or resource.
     /// </summary>
-    public struct HystrixCommandGroup 
+    public struct HystrixCommandGroup : IEquatable<HystrixCommandGroup>
     {
         ConcurrentBag<HystrixCommandKey> keys;
 
@@ -58,9 +58,42 @@ namespace NHystrix
                 keys.Add(commandKey);
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return Name;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current instance.</param>
+        /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+        public override bool Equals(object obj)
+        {
+            return obj is HystrixCommandGroup && Equals((HystrixCommandGroup)obj);
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.</returns>
+        public bool Equals(HystrixCommandGroup other)
+        {
+            return Name == other.Name;
+        }
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
         }
     }
 }
