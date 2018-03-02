@@ -194,8 +194,7 @@ namespace NHystrix
         /// </summary>
         public void MarkSuccess()
         {
-            Interlocked.CompareExchange(ref status, Status.CLOSED, Status.HALF_OPEN);
-            Interlocked.CompareExchange(ref status, Status.CLOSED, Status.OPEN);
+            Interlocked.Exchange(ref status, Status.CLOSED);
 
             if (status == Status.CLOSED)
             {
@@ -208,7 +207,7 @@ namespace NHystrix
         /// </summary>
         public void MarkNonSuccess()
         {
-            Interlocked.CompareExchange(ref status, Status.OPEN, Status.HALF_OPEN);
+            Interlocked.Exchange(ref status, Status.OPEN);
 
             if (status == Status.OPEN)
             {
