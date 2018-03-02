@@ -9,6 +9,12 @@ namespace NHystrix
     public interface IHystrixCommand<TResult>
     {
         /// <summary>
+        /// Executes this instance.
+        /// </summary>
+        /// <returns>TResult.</returns>
+        TResult Execute();
+
+        /// <summary>
         /// Executes the command.
         /// </summary>
         /// <returns>Task&lt;TResult&gt;.</returns>

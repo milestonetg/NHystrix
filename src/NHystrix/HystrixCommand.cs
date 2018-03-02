@@ -50,6 +50,18 @@ namespace NHystrix
         public HystrixCommandKey CommandKey { get; private set; }
 
         /// <summary>
+        /// Executes this instance.
+        /// </summary>
+        /// <returns>TResult.</returns>
+        public TResult Execute()
+        {
+            return Task.Run(() => ExecuteAsync())
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
         /// Executes the command.
         /// </summary>
         /// <returns>Task&lt;TResult&gt;.</returns>
