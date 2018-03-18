@@ -1,0 +1,770 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Exceptions.HystrixBadRequestException
+  commentId: T:NHystrix.Exceptions.HystrixBadRequestException
+  id: HystrixBadRequestException
+  parent: NHystrix.Exceptions
+  children:
+  - NHystrix.Exceptions.HystrixBadRequestException.#ctor
+  - NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String)
+  - NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String,System.Exception)
+  langs:
+  - csharp
+  - vb
+  name: HystrixBadRequestException
+  nameWithType: HystrixBadRequestException
+  fullName: NHystrix.Exceptions.HystrixBadRequestException
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/HystrixBadRequestException.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixBadRequestException
+    path: ../src/NHystrix/Exceptions/HystrixBadRequestException.cs
+    startLine: 19
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nAn exception representing an error with provided arguments or state rather than an execution failure.\n<p>\nUnlike all other exceptions thrown by a <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> this will not trigger fallback, \nnot count against failure metrics and thus not trigger the circuit breaker.\n</p>\n\n> [!IMPORTANT]\n> NOTE: This should **only** be used when an error is due to user input such as <xref href=\"System.ArgumentException\" data-throw-if-not-resolved=\"false\"></xref> \n> otherwise it defeats the purpose of fault-tolerance and fallback behavior.\n"
+  example: []
+  syntax:
+    content: 'public class HystrixBadRequestException : Exception, ISerializable'
+    content.vb: >-
+      Public Class HystrixBadRequestException
+          Inherits Exception
+          Implements ISerializable
+  seealso:
+  - linkId: System.Exception
+    commentId: T:System.Exception
+  inheritance:
+  - System.Object
+  - System.Exception
+  implements:
+  - System.Runtime.Serialization.ISerializable
+  inheritedMembers:
+  - System.Exception.GetBaseException
+  - System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - System.Exception.GetType
+  - System.Exception.ToString
+  - System.Exception.Data
+  - System.Exception.HelpLink
+  - System.Exception.HResult
+  - System.Exception.InnerException
+  - System.Exception.Message
+  - System.Exception.Source
+  - System.Exception.StackTrace
+  - System.Exception.TargetSite
+  - System.Exception.SerializeObjectState
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor
+  id: '#ctor'
+  parent: NHystrix.Exceptions.HystrixBadRequestException
+  langs:
+  - csharp
+  - vb
+  name: HystrixBadRequestException()
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException()
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException()
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/HystrixBadRequestException.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/Exceptions/HystrixBadRequestException.cs
+    startLine: 24
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.Exceptions.HystrixBadRequestException\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public HystrixBadRequestException()
+    content.vb: Public Sub New
+  overload: NHystrix.Exceptions.HystrixBadRequestException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String)
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: NHystrix.Exceptions.HystrixBadRequestException
+  langs:
+  - csharp
+  - vb
+  name: HystrixBadRequestException(String)
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException(String)
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/HystrixBadRequestException.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/Exceptions/HystrixBadRequestException.cs
+    startLine: 32
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.Exceptions.HystrixBadRequestException\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public HystrixBadRequestException(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message that describes the error.
+    content.vb: Public Sub New(message As String)
+  overload: NHystrix.Exceptions.HystrixBadRequestException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String,System.Exception)
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String,System.Exception)
+  id: '#ctor(System.String,System.Exception)'
+  parent: NHystrix.Exceptions.HystrixBadRequestException
+  langs:
+  - csharp
+  - vb
+  name: HystrixBadRequestException(String, Exception)
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException(String, Exception)
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException(System.String, System.Exception)
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/HystrixBadRequestException.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/Exceptions/HystrixBadRequestException.cs
+    startLine: 41
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.Exceptions.HystrixBadRequestException\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public HystrixBadRequestException(string message, Exception innerException)
+    parameters:
+    - id: message
+      type: System.String
+      description: The error message that explains the reason for the exception.
+    - id: innerException
+      type: System.Exception
+      description: The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.
+    content.vb: Public Sub New(message As String, innerException As Exception)
+  overload: NHystrix.Exceptions.HystrixBadRequestException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  id: '#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)'
+  parent: NHystrix.Exceptions.HystrixBadRequestException
+  langs:
+  - csharp
+  - vb
+  name: HystrixBadRequestException(SerializationInfo, StreamingContext)
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException(SerializationInfo, StreamingContext)
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/HystrixBadRequestException.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/Exceptions/HystrixBadRequestException.cs
+    startLine: 50
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.Exceptions.HystrixBadRequestException\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: protected HystrixBadRequestException(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: System.Runtime.Serialization.SerializationInfo
+      description: The <xref href="System.Runtime.Serialization.SerializationInfo" data-throw-if-not-resolved="false"></xref> that holds the serialized object data about the exception being thrown.
+    - id: context
+      type: System.Runtime.Serialization.StreamingContext
+      description: The <xref href="System.Runtime.Serialization.StreamingContext" data-throw-if-not-resolved="false"></xref> that contains contextual information about the source or destination.
+    content.vb: Protected Sub New(info As SerializationInfo, context As StreamingContext)
+  overload: NHystrix.Exceptions.HystrixBadRequestException.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: NHystrix.Exceptions
+  commentId: N:NHystrix.Exceptions
+  isExternal: false
+  name: NHystrix.Exceptions
+  nameWithType: NHystrix.Exceptions
+  fullName: NHystrix.Exceptions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Runtime.Serialization.ISerializable
+  commentId: T:System.Runtime.Serialization.ISerializable
+  parent: System.Runtime.Serialization
+  isExternal: true
+  name: ISerializable
+  nameWithType: ISerializable
+  fullName: System.Runtime.Serialization.ISerializable
+- uid: System.Exception.GetBaseException
+  commentId: M:System.Exception.GetBaseException
+  parent: System.Exception
+  isExternal: true
+  name: GetBaseException()
+  nameWithType: Exception.GetBaseException()
+  fullName: System.Exception.GetBaseException()
+  spec.csharp:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    nameWithType: Exception.GetBaseException
+    fullName: System.Exception.GetBaseException
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    nameWithType: Exception.GetBaseException
+    fullName: System.Exception.GetBaseException
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  parent: System.Exception
+  isExternal: true
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: Exception.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  spec.csharp:
+  - uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: Exception.GetObjectData
+    fullName: System.Exception.GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: Exception.GetObjectData
+    fullName: System.Exception.GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.GetType
+  commentId: M:System.Exception.GetType
+  parent: System.Exception
+  isExternal: true
+  name: GetType()
+  nameWithType: Exception.GetType()
+  fullName: System.Exception.GetType()
+  spec.csharp:
+  - uid: System.Exception.GetType
+    name: GetType
+    nameWithType: Exception.GetType
+    fullName: System.Exception.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.GetType
+    name: GetType
+    nameWithType: Exception.GetType
+    fullName: System.Exception.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.ToString
+  commentId: M:System.Exception.ToString
+  parent: System.Exception
+  isExternal: true
+  name: ToString()
+  nameWithType: Exception.ToString()
+  fullName: System.Exception.ToString()
+  spec.csharp:
+  - uid: System.Exception.ToString
+    name: ToString
+    nameWithType: Exception.ToString
+    fullName: System.Exception.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Exception.ToString
+    name: ToString
+    nameWithType: Exception.ToString
+    fullName: System.Exception.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception.Data
+  commentId: P:System.Exception.Data
+  parent: System.Exception
+  isExternal: true
+  name: Data
+  nameWithType: Exception.Data
+  fullName: System.Exception.Data
+- uid: System.Exception.HelpLink
+  commentId: P:System.Exception.HelpLink
+  parent: System.Exception
+  isExternal: true
+  name: HelpLink
+  nameWithType: Exception.HelpLink
+  fullName: System.Exception.HelpLink
+- uid: System.Exception.HResult
+  commentId: P:System.Exception.HResult
+  parent: System.Exception
+  isExternal: true
+  name: HResult
+  nameWithType: Exception.HResult
+  fullName: System.Exception.HResult
+- uid: System.Exception.InnerException
+  commentId: P:System.Exception.InnerException
+  parent: System.Exception
+  isExternal: true
+  name: InnerException
+  nameWithType: Exception.InnerException
+  fullName: System.Exception.InnerException
+- uid: System.Exception.Message
+  commentId: P:System.Exception.Message
+  parent: System.Exception
+  isExternal: true
+  name: Message
+  nameWithType: Exception.Message
+  fullName: System.Exception.Message
+- uid: System.Exception.Source
+  commentId: P:System.Exception.Source
+  parent: System.Exception
+  isExternal: true
+  name: Source
+  nameWithType: Exception.Source
+  fullName: System.Exception.Source
+- uid: System.Exception.StackTrace
+  commentId: P:System.Exception.StackTrace
+  parent: System.Exception
+  isExternal: true
+  name: StackTrace
+  nameWithType: Exception.StackTrace
+  fullName: System.Exception.StackTrace
+- uid: System.Exception.TargetSite
+  commentId: P:System.Exception.TargetSite
+  parent: System.Exception
+  isExternal: true
+  name: TargetSite
+  nameWithType: Exception.TargetSite
+  fullName: System.Exception.TargetSite
+- uid: System.Exception.SerializeObjectState
+  commentId: E:System.Exception.SerializeObjectState
+  parent: System.Exception
+  isExternal: true
+  name: SerializeObjectState
+  nameWithType: Exception.SerializeObjectState
+  fullName: System.Exception.SerializeObjectState
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Runtime.Serialization
+  commentId: N:System.Runtime.Serialization
+  isExternal: false
+  name: System.Runtime.Serialization
+  nameWithType: System.Runtime.Serialization
+  fullName: System.Runtime.Serialization
+- uid: NHystrix.Exceptions.HystrixBadRequestException
+  commentId: T:NHystrix.Exceptions.HystrixBadRequestException
+  isExternal: false
+  name: HystrixBadRequestException
+  nameWithType: HystrixBadRequestException
+  fullName: NHystrix.Exceptions.HystrixBadRequestException
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor*
+  commentId: Overload:NHystrix.Exceptions.HystrixBadRequestException.#ctor
+  isExternal: false
+  name: HystrixBadRequestException
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Runtime.Serialization.SerializationInfo
+  commentId: T:System.Runtime.Serialization.SerializationInfo
+  parent: System.Runtime.Serialization
+  isExternal: true
+  name: SerializationInfo
+  nameWithType: SerializationInfo
+  fullName: System.Runtime.Serialization.SerializationInfo
+- uid: System.Runtime.Serialization.StreamingContext
+  commentId: T:System.Runtime.Serialization.StreamingContext
+  parent: System.Runtime.Serialization
+  isExternal: true
+  name: StreamingContext
+  nameWithType: StreamingContext
+  fullName: System.Runtime.Serialization.StreamingContext

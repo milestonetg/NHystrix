@@ -16,14 +16,14 @@ namespace ConsoleApp
             string s = cmd.ExecuteAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
 
-            long count = metrics.getRollingCount(HystrixEventType.TIMEOUT);
+            long count = metrics.GetRollingCount(HystrixEventType.TIMEOUT);
 
             Console.WriteLine("{0} : {1}", s, count);
             Console.ReadLine();
         }
     }
 
-    class TestCommand : HystrixCommand<string>
+    class TestCommand : HystrixCommand<string, string>
     {
         public TestCommand(HystrixCommandProperties properties)
             : base(new HystrixCommandKey("Test", new HystrixCommandGroup("TestGroup")), properties)
@@ -31,15 +31,15 @@ namespace ConsoleApp
 
         }
 
-        protected override async Task<string> RunAsync()
+        protected override async Task<string> RunAsync(string s)
         {
             await Task.Delay(10000);
             return "Hello World";
         }
 
-        protected override string OnHandleFallback()
+        protected override Task<string> GetFallback()
         {
-            return "Fallback";
+            return Task.FromResult("Fallback");
         }
     }
 }

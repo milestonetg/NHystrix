@@ -1,0 +1,297 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.IHystrixCommand`2
+  commentId: T:NHystrix.IHystrixCommand`2
+  id: IHystrixCommand`2
+  parent: NHystrix
+  children:
+  - NHystrix.IHystrixCommand`2.Execute(`0)
+  - NHystrix.IHystrixCommand`2.ExecuteAsync(`0)
+  langs:
+  - csharp
+  - vb
+  name: IHystrixCommand<TRequest, TResult>
+  nameWithType: IHystrixCommand<TRequest, TResult>
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>
+  type: Interface
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCommand.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IHystrixCommand
+    path: ../src/NHystrix/IHystrixCommand.cs
+    startLine: 9
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInterface implemented by <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref>s.\n"
+  example: []
+  syntax:
+    content: public interface IHystrixCommand<TRequest, TResult>
+    typeParameters:
+    - id: TRequest
+      description: The type of the request.
+    - id: TResult
+      description: The type of the result.
+    content.vb: Public Interface IHystrixCommand(Of TRequest, TResult)
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult)
+  name.vb: IHystrixCommand(Of TRequest, TResult)
+- uid: NHystrix.IHystrixCommand`2.Execute(`0)
+  commentId: M:NHystrix.IHystrixCommand`2.Execute(`0)
+  id: Execute(`0)
+  parent: NHystrix.IHystrixCommand`2
+  langs:
+  - csharp
+  - vb
+  name: Execute(TRequest)
+  nameWithType: IHystrixCommand<TRequest, TResult>.Execute(TRequest)
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.Execute(TRequest)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCommand.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Execute
+    path: ../src/NHystrix/IHystrixCommand.cs
+    startLine: 15
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nExecutes the command.\n"
+  example: []
+  syntax:
+    content: TResult Execute(TRequest request = null)
+    parameters:
+    - id: request
+      type: '{TRequest}'
+    return:
+      type: '{TResult}'
+      description: TResult.
+    content.vb: Function Execute(request As TRequest = Nothing) As TResult
+  overload: NHystrix.IHystrixCommand`2.Execute*
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).Execute(TRequest)
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).Execute(TRequest)
+- uid: NHystrix.IHystrixCommand`2.ExecuteAsync(`0)
+  commentId: M:NHystrix.IHystrixCommand`2.ExecuteAsync(`0)
+  id: ExecuteAsync(`0)
+  parent: NHystrix.IHystrixCommand`2
+  langs:
+  - csharp
+  - vb
+  name: ExecuteAsync(TRequest)
+  nameWithType: IHystrixCommand<TRequest, TResult>.ExecuteAsync(TRequest)
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.ExecuteAsync(TRequest)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCommand.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ExecuteAsync
+    path: ../src/NHystrix/IHystrixCommand.cs
+    startLine: 21
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nExecutes the command.\n"
+  example: []
+  syntax:
+    content: Task<TResult> ExecuteAsync(TRequest request = null)
+    parameters:
+    - id: request
+      type: '{TRequest}'
+    return:
+      type: System.Threading.Tasks.Task{{TResult}}
+      description: Task&lt;TResult>.
+    content.vb: Function ExecuteAsync(request As TRequest = Nothing) As Task(Of TResult)
+  overload: NHystrix.IHystrixCommand`2.ExecuteAsync*
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).ExecuteAsync(TRequest)
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).ExecuteAsync(TRequest)
+references:
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: NHystrix.IHystrixCommand`2.Execute*
+  commentId: Overload:NHystrix.IHystrixCommand`2.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: IHystrixCommand<TRequest, TResult>.Execute
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.Execute
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).Execute
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).Execute
+- uid: '{TRequest}'
+  commentId: '!:TRequest'
+  definition: TRequest
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: '{TResult}'
+  commentId: '!:TResult'
+  definition: TResult
+  name: TResult
+  nameWithType: TResult
+  fullName: TResult
+- uid: TRequest
+  isExternal: false
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: TResult
+  isExternal: false
+  name: TResult
+  nameWithType: TResult
+  fullName: TResult
+- uid: NHystrix.IHystrixCommand`2.ExecuteAsync*
+  commentId: Overload:NHystrix.IHystrixCommand`2.ExecuteAsync
+  isExternal: false
+  name: ExecuteAsync
+  nameWithType: IHystrixCommand<TRequest, TResult>.ExecuteAsync
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.ExecuteAsync
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).ExecuteAsync
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).ExecuteAsync
+- uid: System.Threading.Tasks.Task{{TResult}}
+  commentId: T:System.Threading.Tasks.Task{`1}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

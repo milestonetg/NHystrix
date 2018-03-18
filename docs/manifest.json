@@ -14,11 +14,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/NHystrix.HystrixCircuitBreaker.yml",
+      "source_relative_path": "api/NHystrix.CircuitBreakerOptions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/NHystrix.HystrixCircuitBreaker.html",
-          "hash": "XVMMSgM2snVvgUvZAMH+ug=="
+          "relative_path": "api/NHystrix.CircuitBreakerOptions.html",
+          "hash": "7+dFzWnBpDJt/QqnYSU/KA=="
         }
       },
       "is_incremental": false,
@@ -26,11 +26,131 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/NHystrix.HystrixCommand-1.yml",
+      "source_relative_path": "api/NHystrix.Exceptions.FailureType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/NHystrix.HystrixCommand-1.html",
-          "hash": "ySKPgUeqT8BliKB7T+Ju3Q=="
+          "relative_path": "api/NHystrix.Exceptions.FailureType.html",
+          "hash": "G02rzRraA9dPR+x7/sPntA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.Exceptions.HystrixBadRequestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.Exceptions.HystrixBadRequestException.html",
+          "hash": "4T7n3ZxS+djfVO0zHNjNqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.Exceptions.HystrixFailureException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.Exceptions.HystrixFailureException.html",
+          "hash": "Fv/eVlj3T4XMaZTsbPGwqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.Exceptions.HystrixFallbackException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.Exceptions.HystrixFallbackException.html",
+          "hash": "HDZb0FsmAu6Hji4az1EpYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.Exceptions.HystrixRuntimeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.Exceptions.HystrixRuntimeException.html",
+          "hash": "kRlaEeA7ijgXRQw2aNi5Zg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.Exceptions.HystrixTimeoutException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.Exceptions.HystrixTimeoutException.html",
+          "hash": "KN/ns0e1AZ2PK+l+nbluow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.Exceptions.html",
+          "hash": "QPo+kd+VpXUmVsg8jY5brA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.HealthCounts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.HealthCounts.html",
+          "hash": "bRHo5ehPNYaqG+anXvLIDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.HystrixBulkhead.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.HystrixBulkhead.html",
+          "hash": "BdPeof6B7ztOEDol6c8hnA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.HystrixCircuitBreaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.HystrixCircuitBreaker.html",
+          "hash": "0Vwl7J/jhPJHuEp/TsGBNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NHystrix.HystrixCommand-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NHystrix.HystrixCommand-2.html",
+          "hash": "iU19CjRQG8dJ3LIkBc16Rg=="
         }
       },
       "is_incremental": false,
@@ -42,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandGroup.html",
-          "hash": "OH7ExmRbybKB0TCtDO5atQ=="
+          "hash": "Y9T0MI4cRVpm2pVgWTtBRg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandKey.html",
-          "hash": "oR/9fNXt9O6dGR0tYjzxjw=="
+          "hash": "KFOTWZZ8HfN5/zC3fnUoNg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandMetrics.html",
-          "hash": "PX0TNSnGjluCOyIy6bvKog=="
+          "hash": "mq31hWgf3sFeLo2ry/E4SQ=="
         }
       },
       "is_incremental": false,
@@ -78,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixCommandProperties.html",
-          "hash": "b2YdySZ74yMEdhVUn6Q/bQ=="
+          "hash": "Lxl5q29ul3IK2BUrXLpOvQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixDelegatingHandler.html",
-          "hash": "aXnhkku10PxpkFbhGXwV8A=="
+          "hash": "+g1ziKx4IY5GAlGuGWahMQ=="
         }
       },
       "is_incremental": false,
@@ -102,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixEventType.html",
-          "hash": "QJZotsnUjvT0wLLyDky9MA=="
+          "hash": "WPQjc4fIBVglS64PLiYU3A=="
         }
       },
       "is_incremental": false,
@@ -114,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.HystrixMetrics.html",
-          "hash": "L9E2JacxjX48pmG8WiDfEQ=="
+          "hash": "btJVDVGuKtDqjflvIziWIw=="
         }
       },
       "is_incremental": false,
@@ -126,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.IHystrixCircuitBreaker.html",
-          "hash": "WS8/2zI6+/AGccxJvEIE1Q=="
+          "hash": "HQMJM5LL9iLke6vFx9hf2A=="
         }
       },
       "is_incremental": false,
@@ -134,11 +254,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/NHystrix.IHystrixCommand-1.yml",
+      "source_relative_path": "api/NHystrix.IHystrixCommand-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/NHystrix.IHystrixCommand-1.html",
-          "hash": "pcQlNB6/JjKPMwCHPvusfQ=="
+          "relative_path": "api/NHystrix.IHystrixCommand-2.html",
+          "hash": "pwYJHv+TQnOwE+4bZeNYbQ=="
         }
       },
       "is_incremental": false,
@@ -150,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.HystrixCommandEvent.html",
-          "hash": "I738nU0C9xJk2aTYNOhbcA=="
+          "hash": "eFwSW7leyV5T4P37zP1Bcg=="
         }
       },
       "is_incremental": false,
@@ -162,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.HystrixCommandEventStream.html",
-          "hash": "29qhzwR1in279fE+Ndz8WQ=="
+          "hash": "0Ljc1UZt96Jevy32PiAVig=="
         }
       },
       "is_incremental": false,
@@ -174,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.HystrixRollingNumber.html",
-          "hash": "Mjn3HiXEZhyK4tTcK565GA=="
+          "hash": "s/5x+U7gWX6CpCR3LoNQ9Q=="
         }
       },
       "is_incremental": false,
@@ -186,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.IHystrixEvent.html",
-          "hash": "LtAjtnq09Oxpda+knmFkYw=="
+          "hash": "S7EGHxjPrhr1+ezXoXfNHA=="
         }
       },
       "is_incremental": false,
@@ -198,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.IHystrixEventStream-1.html",
-          "hash": "vVzsrfv5Kv5as0zjQmSYgg=="
+          "hash": "30SFsZo5tLPZpTeaxwjDeg=="
         }
       },
       "is_incremental": false,
@@ -210,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.Metric.html",
-          "hash": "6c0nXQg839pHOaTwfirROw=="
+          "hash": "ZkPUQ6gz2YIuE0825HIjow=="
         }
       },
       "is_incremental": false,
@@ -222,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.TaskExtensions.html",
-          "hash": "ry/dAqhumiSLAD8Fl2yr2Q=="
+          "hash": "dmwbFri7WKkks7Cje+BfRw=="
         }
       },
       "is_incremental": false,
@@ -234,19 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NHystrix.html",
-          "hash": "bKIRSClyN70eFnYble6hsA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "api/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "api/index.html",
-          "hash": "azkPEQEtd3+z22SIAlt6qQ=="
+          "hash": "DhXwVYbyUJe6fvpauwjmMw=="
         }
       },
       "is_incremental": false,
@@ -258,19 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Y9yaphqhl9wFQ8caPgIQqg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/intro.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/intro.html",
-          "hash": "3Hvn0CFj0wrep8JnzLxIBw=="
+          "hash": "cMi3Z9QOIUaSZv21Rj3U5g=="
         }
       },
       "is_incremental": false,
@@ -282,7 +378,19 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "xVlQaX7Tk85omoiWv3O+Ag=="
+          "hash": "1Q4NmLnPmD5ISQxUePVELQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/using-the-hystrixdelegatinghander.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/using-the-hystrixdelegatinghander.html",
+          "hash": "jfF867Yn4piizvnmMdRxLw=="
         }
       },
       "is_incremental": false,
@@ -338,7 +446,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Xwv7rmoZHBfYSqJx8KzeIQ=="
+          "hash": "YZyr6NrFBZyPV+8sS4DJfQ=="
         }
       },
       "is_incremental": false,
@@ -350,7 +458,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "7nIDlp5VXlmeijm0bBPiOw=="
+          "hash": "B8lBH4QLrtY1OfGf/fZjig=="
         }
       },
       "is_incremental": false,
@@ -360,7 +468,8 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build"
       },
       "processors": {
@@ -369,17 +478,17 @@
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

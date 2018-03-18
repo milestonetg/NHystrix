@@ -5,7 +5,7 @@ using System.Text;
 namespace NHystrix.Metric
 {
     /// <summary>
-    /// Encapsulates and event that occurred as a result of executing a <see cref="HystrixCommand{TResult}"/>.
+    /// Encapsulates and event that occurred as a result of executing a <see cref="HystrixCommand{TRequest, TResult}"/>.
     /// </summary>
     /// <seealso cref="NHystrix.Metric.IHystrixEvent" />
     public class HystrixCommandEvent : IHystrixEvent

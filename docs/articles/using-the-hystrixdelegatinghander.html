@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the HystrixDelegatingHandler | NHystrix </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the HystrixDelegatingHandler | NHystrix ">
+    <meta name="generator" content="docfx 2.32.2.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-the-hystrixdelegatinghandler">Using the HystrixDelegatingHandler</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The <code>HystrixDelegatingHandler</code> provides circuit breaker, bulkhead, and metrics support to HttpClient.</p>
+<p>This handler would typically be the first in the pipeline:</p>
+<pre><code class="lang-cs">RetryDelegatingHandler retryHandler = new RetryDelegatingHandler
+{
+    InnerHandler = new HttpClientHandler()
+};
+
+HystrixDelegatingHandler hystrixHandler = new HystrixDelegatingHandler(commandKey, properties, retryHandler); 
+
+HttpClient httpClient = new HttpClient(hystrixHandler);
+</code></pre><h2 id="timeouts">Timeouts</h2>
+<p>The <code>HystrixDelegatingHandler</code> does not manage timeouts directly. Instead, use the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.timeout">HttpClient.Timeout</a> property. When
+the defined timeout expires, <code>HystrixDelegatingHandler</code> will intercept the timeout and handle it appropriately.</p>
+<pre><code class="lang-cs">httpClient.Timeout = TimeSpan.FromMilliseconds(properties.ExecutionTimeoutInMilliseconds);
+</code></pre><h2 id="http-status-codes">HTTP Status Codes</h2>
+<p>Failures are counted and emitted for:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Reason</th>
+<th>HystrixEvent</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>408</td>
+<td>Request Timeout</td>
+<td>HystrixEventType.TIMEOUT</td>
+<td></td>
+</tr>
+<tr>
+<td>504</td>
+<td>Gateway Timeout</td>
+<td>HystrixEventType.TIMEOUT</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>HystrixEventType.FAILURE</td>
+<td>Some APIs, such as GitHub, return a 403 when a rate limit is reached</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+<td>HystrixEventType.FAILURE</td>
+<td>Proposed rate-limit status code. <a href="https://tools.ietf.org/html/rfc6585">See RFC 6585</a></td>
+</tr>
+<tr>
+<td>&gt;=500</td>
+<td>Server Errors</td>
+<td>HystrixEventType.FAILURE</td>
+<td>All server side errors</td>
+</tr>
+</tbody>
+</table>
+<p>Http 400 Bad Requests are not counted against failures but do emit a <code>HystrixEventType.BAD_REQUEST</code>.</p>
+<p>All other Http Status codes are ignored by NHystrix.</p>
+<h2 id="exceptions-and-fallback">Exceptions and Fallback</h2>
+<p>Like the <code>HystrixCommand</code>, the <code>HystrixDelegatingHandler</code> does not
+throw an exception on error nor does is allow exceptions to propagate up the stack. Rather, it relies
+on the fallback implementation to handle error situations.</p>
+<p>By default, when fallback is enabled, an HttpResponseMessage with a status code of [204 No Content] 
+will be returned and <code>HystrixEventType.FALLBACK_MISSING</code> emitted if no fallback function is provided.</p>
+<p>If fallback is disabled, exceptions will be bubbled up as in a typical message handler. Short-circuits and Semaphore-Rejections will return a [204 No Content].</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/milestonetg/NHystrix/blob/master/docs-src/articles/using-the-hystrixdelegatinghander.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Icon derived fromPorcupine icon by Anton from the Noun Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

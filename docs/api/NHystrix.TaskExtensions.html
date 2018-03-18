@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TaskExtensions
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -81,7 +81,8 @@
   
   <h1 id="NHystrix_TaskExtensions" data-uid="NHystrix.TaskExtensions" class="text-break">Class TaskExtensions
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Extension methods for <span class="xref">System.Threading.Tasks.Task</span></p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -125,11 +126,12 @@
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_TaskExtensions_WithTimeout__1_System_Threading_Tasks_Task___0__System_Int32_.md&amp;value=---%0Auid%3A%20NHystrix.TaskExtensions.WithTimeout%60%601(System.Threading.Tasks.Task%7B%60%600%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/TaskExtensions.cs/#L10">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/TaskExtensions.cs/#L21">View Source</a>
   </span>
   <a id="NHystrix_TaskExtensions_WithTimeout_" data-uid="NHystrix.TaskExtensions.WithTimeout*"></a>
   <h4 id="NHystrix_TaskExtensions_WithTimeout__1_System_Threading_Tasks_Task___0__System_Int32_" data-uid="NHystrix.TaskExtensions.WithTimeout``1(System.Threading.Tasks.Task{``0},System.Int32)">WithTimeout&lt;TResult&gt;(Task&lt;TResult&gt;, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Execute the task with the specified timeout.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -148,12 +150,14 @@
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
         <td><span class="parametername">task</span></td>
-        <td></td>
+        <td><p>The task.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">timeoutInMilliseconds</span></td>
-        <td></td>
+        <td><p>The timeout in milliseconds.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -168,7 +172,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
-        <td></td>
+        <td><p>Task&lt;TResult&gt;.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -183,6 +188,22 @@
     <tbody>
       <tr>
         <td><span class="parametername">TResult</span></td>
+        <td><p>The type of the t result.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeoutException</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -198,7 +219,7 @@
                     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_TaskExtensions.md&amp;value=---%0Auid%3A%20NHystrix.TaskExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/TaskExtensions.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/TaskExtensions.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

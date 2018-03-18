@@ -1,0 +1,865 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixCommandProperties
+  commentId: T:NHystrix.HystrixCommandProperties
+  id: HystrixCommandProperties
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixCommandProperties.BulkheadingEnabled
+  - NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  - NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
+  - NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  - NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+  - NHystrix.HystrixCommandProperties.FallbackEnabled
+  - NHystrix.HystrixCommandProperties.MaxConcurrentRequests
+  - NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets
+  - NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+  - NHystrix.HystrixCommandProperties.TimeoutEnabled
+  langs:
+  - csharp
+  - vb
+  name: HystrixCommandProperties
+  nameWithType: HystrixCommandProperties
+  fullName: NHystrix.HystrixCommandProperties
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixCommandProperties
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 5
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nConfiguration properties for <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> and related components.\n"
+  example: []
+  syntax:
+    content: public class HystrixCommandProperties
+    content.vb: Public Class HystrixCommandProperties
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  id: CircuitBreakerOptions
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: CircuitBreakerOptions
+  nameWithType: HystrixCommandProperties.CircuitBreakerOptions
+  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CircuitBreakerOptions
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 11
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets the circuit breaker options.\n"
+  example: []
+  syntax:
+    content: public CircuitBreakerOptions CircuitBreakerOptions { get; set; }
+    parameters: []
+    return:
+      type: NHystrix.CircuitBreakerOptions
+      description: The circuit breaker options.
+    content.vb: Public Property CircuitBreakerOptions As CircuitBreakerOptions
+  overload: NHystrix.HystrixCommandProperties.CircuitBreakerOptions*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+  commentId: P:NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+  id: ExecutionTimeoutInMilliseconds
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: ExecutionTimeoutInMilliseconds
+  nameWithType: HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+  fullName: NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ExecutionTimeoutInMilliseconds
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 17
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets the execution timeout in milliseconds. Default is 1000.\n"
+  example: []
+  syntax:
+    content: public int ExecutionTimeoutInMilliseconds { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The execution timeout in milliseconds. Default is 1000.
+    content.vb: Public Property ExecutionTimeoutInMilliseconds As Integer
+  overload: NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.MaxConcurrentRequests
+  commentId: P:NHystrix.HystrixCommandProperties.MaxConcurrentRequests
+  id: MaxConcurrentRequests
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: MaxConcurrentRequests
+  nameWithType: HystrixCommandProperties.MaxConcurrentRequests
+  fullName: NHystrix.HystrixCommandProperties.MaxConcurrentRequests
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: MaxConcurrentRequests
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 23
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets the maximum concurrent requests. Default is 10.\n"
+  example: []
+  syntax:
+    content: public int MaxConcurrentRequests { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum concurrent requests. Default is 10.
+    content.vb: Public Property MaxConcurrentRequests As Integer
+  overload: NHystrix.HystrixCommandProperties.MaxConcurrentRequests*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.FallbackEnabled
+  commentId: P:NHystrix.HystrixCommandProperties.FallbackEnabled
+  id: FallbackEnabled
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: FallbackEnabled
+  nameWithType: HystrixCommandProperties.FallbackEnabled
+  fullName: NHystrix.HystrixCommandProperties.FallbackEnabled
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FallbackEnabled
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 29
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets a value indicating whether [fallback enabled]. Default is false.\n"
+  example: []
+  syntax:
+    content: public bool FallbackEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if [fallback enabled]; otherwise, <code>false</code>. Default is false.
+    content.vb: Public Property FallbackEnabled As Boolean
+  overload: NHystrix.HystrixCommandProperties.FallbackEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
+  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
+  id: CircuitBreakerEnabled
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: CircuitBreakerEnabled
+  nameWithType: HystrixCommandProperties.CircuitBreakerEnabled
+  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CircuitBreakerEnabled
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 35
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets a value indicating whether [circuit breaker enabled]. Default is true.\n"
+  example: []
+  syntax:
+    content: public bool CircuitBreakerEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if [circuit breaker enabled]; otherwise, <code>false</code>. Default is true.
+    content.vb: Public Property CircuitBreakerEnabled As Boolean
+  overload: NHystrix.HystrixCommandProperties.CircuitBreakerEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.TimeoutEnabled
+  commentId: P:NHystrix.HystrixCommandProperties.TimeoutEnabled
+  id: TimeoutEnabled
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: TimeoutEnabled
+  nameWithType: HystrixCommandProperties.TimeoutEnabled
+  fullName: NHystrix.HystrixCommandProperties.TimeoutEnabled
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: TimeoutEnabled
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 41
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nWhether timeout should be triggered. Default is true.\n"
+  example: []
+  syntax:
+    content: public bool TimeoutEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if [timeout enabled]; otherwise, <code>false</code>. Default is true.
+    content.vb: Public Property TimeoutEnabled As Boolean
+  overload: NHystrix.HystrixCommandProperties.TimeoutEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.BulkheadingEnabled
+  commentId: P:NHystrix.HystrixCommandProperties.BulkheadingEnabled
+  id: BulkheadingEnabled
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: BulkheadingEnabled
+  nameWithType: HystrixCommandProperties.BulkheadingEnabled
+  fullName: NHystrix.HystrixCommandProperties.BulkheadingEnabled
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: BulkheadingEnabled
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 47
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets a value indicating whether [bulkheading enabled]. Default is true.\n"
+  example: []
+  syntax:
+    content: public bool BulkheadingEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if [bulkheading enabled]; otherwise, <code>false</code>. Default is true.
+    content.vb: Public Property BulkheadingEnabled As Boolean
+  overload: NHystrix.HystrixCommandProperties.BulkheadingEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  commentId: P:NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  id: BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  nameWithType: HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  fullName: NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: BulkheadSemaphoreAcquireTimeoutInMilliseconds
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 54
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nThe amount of time bulkheading should wait to acquire a semaphore, in milliseconds, before\nreturning any fallback responses. Default is 1.\n"
+  example: []
+  syntax:
+    content: public int BulkheadSemaphoreAcquireTimeoutInMilliseconds { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The bulkhead semaphore acquire timeout in milliseconds. Default is 1.
+    content.vb: Public Property BulkheadSemaphoreAcquireTimeoutInMilliseconds As Integer
+  overload: NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+  commentId: P:NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+  id: MetricsRollingStatisticalWindowInMilliseconds
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: MetricsRollingStatisticalWindowInMilliseconds
+  nameWithType: HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+  fullName: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: MetricsRollingStatisticalWindowInMilliseconds
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 60
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets the metrics rolling statistical window in milliseconds. Default is 1000.\n"
+  example: []
+  syntax:
+    content: public int MetricsRollingStatisticalWindowInMilliseconds { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The metrics rolling statistical window in milliseconds. Default is 1000.
+    content.vb: Public Property MetricsRollingStatisticalWindowInMilliseconds As Integer
+  overload: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets
+  commentId: P:NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets
+  id: MetricsRollingStatisticalWindowBuckets
+  parent: NHystrix.HystrixCommandProperties
+  langs:
+  - csharp
+  - vb
+  name: MetricsRollingStatisticalWindowBuckets
+  nameWithType: HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets
+  fullName: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandProperties.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: MetricsRollingStatisticalWindowBuckets
+    path: ../src/NHystrix/HystrixCommandProperties.cs
+    startLine: 66
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets or sets the metrics rolling statistical window buckets. Default is 10.\n"
+  example: []
+  syntax:
+    content: public int MetricsRollingStatisticalWindowBuckets { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The metrics rolling statistical window buckets. Default is 10.
+    content.vb: Public Property MetricsRollingStatisticalWindowBuckets As Integer
+  overload: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.HystrixCommandProperties.CircuitBreakerOptions*
+  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  isExternal: false
+  name: CircuitBreakerOptions
+  nameWithType: HystrixCommandProperties.CircuitBreakerOptions
+  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+- uid: NHystrix.CircuitBreakerOptions
+  commentId: T:NHystrix.CircuitBreakerOptions
+  parent: NHystrix
+  isExternal: false
+  name: CircuitBreakerOptions
+  nameWithType: CircuitBreakerOptions
+  fullName: NHystrix.CircuitBreakerOptions
+- uid: NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds*
+  commentId: Overload:NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+  isExternal: false
+  name: ExecutionTimeoutInMilliseconds
+  nameWithType: HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+  fullName: NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: NHystrix.HystrixCommandProperties.MaxConcurrentRequests*
+  commentId: Overload:NHystrix.HystrixCommandProperties.MaxConcurrentRequests
+  isExternal: false
+  name: MaxConcurrentRequests
+  nameWithType: HystrixCommandProperties.MaxConcurrentRequests
+  fullName: NHystrix.HystrixCommandProperties.MaxConcurrentRequests
+- uid: NHystrix.HystrixCommandProperties.FallbackEnabled*
+  commentId: Overload:NHystrix.HystrixCommandProperties.FallbackEnabled
+  isExternal: false
+  name: FallbackEnabled
+  nameWithType: HystrixCommandProperties.FallbackEnabled
+  fullName: NHystrix.HystrixCommandProperties.FallbackEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NHystrix.HystrixCommandProperties.CircuitBreakerEnabled*
+  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
+  isExternal: false
+  name: CircuitBreakerEnabled
+  nameWithType: HystrixCommandProperties.CircuitBreakerEnabled
+  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
+- uid: NHystrix.HystrixCommandProperties.TimeoutEnabled*
+  commentId: Overload:NHystrix.HystrixCommandProperties.TimeoutEnabled
+  isExternal: false
+  name: TimeoutEnabled
+  nameWithType: HystrixCommandProperties.TimeoutEnabled
+  fullName: NHystrix.HystrixCommandProperties.TimeoutEnabled
+- uid: NHystrix.HystrixCommandProperties.BulkheadingEnabled*
+  commentId: Overload:NHystrix.HystrixCommandProperties.BulkheadingEnabled
+  isExternal: false
+  name: BulkheadingEnabled
+  nameWithType: HystrixCommandProperties.BulkheadingEnabled
+  fullName: NHystrix.HystrixCommandProperties.BulkheadingEnabled
+- uid: NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds*
+  commentId: Overload:NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  isExternal: false
+  name: BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  nameWithType: HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  fullName: NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+- uid: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds*
+  commentId: Overload:NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+  isExternal: false
+  name: MetricsRollingStatisticalWindowInMilliseconds
+  nameWithType: HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+  fullName: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowInMilliseconds
+- uid: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets*
+  commentId: Overload:NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets
+  isExternal: false
+  name: MetricsRollingStatisticalWindowBuckets
+  nameWithType: HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets
+  fullName: NHystrix.HystrixCommandProperties.MetricsRollingStatisticalWindowBuckets

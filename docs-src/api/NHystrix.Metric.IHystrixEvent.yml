@@ -1,0 +1,43 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Metric.IHystrixEvent
+  commentId: T:NHystrix.Metric.IHystrixEvent
+  id: IHystrixEvent
+  parent: NHystrix.Metric
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IHystrixEvent
+  nameWithType: IHystrixEvent
+  fullName: NHystrix.Metric.IHystrixEvent
+  type: Interface
+  source:
+    remote:
+      path: src/NHystrix/Metric/IHystrixEvent.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IHystrixEvent
+    path: ../src/NHystrix/Metric/IHystrixEvent.cs
+    startLine: 5
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nMarker interface for events which may appear in an event stream\n"
+  example: []
+  syntax:
+    content: public interface IHystrixEvent
+    content.vb: Public Interface IHystrixEvent
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+references:
+- uid: NHystrix.Metric
+  commentId: N:NHystrix.Metric
+  isExternal: false
+  name: NHystrix.Metric
+  nameWithType: NHystrix.Metric
+  fullName: NHystrix.Metric

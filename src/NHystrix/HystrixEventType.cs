@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace NHystrix
 {
     /// <summary>
-    /// Class HystrixEventType. This class cannot be inherited.
+    /// The type of an event emitted by a <see cref="HystrixCommand{TRequest, TResult}"/> to <see cref="HystrixMetrics"/>. 
+    /// This class cannot be inherited.
     /// </summary>
     /// <seealso cref="System.IEquatable{T}" />
     public sealed class HystrixEventType : IEquatable<HystrixEventType>

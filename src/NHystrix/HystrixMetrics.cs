@@ -5,10 +5,17 @@ using System.Text;
 
 namespace NHystrix
 {
+    /// <summary>
+    /// Base class for implementing a metric within NHystrix.
+    /// </summary>
     public abstract class HystrixMetrics
     {
-        protected readonly HystrixRollingNumber counter;
+        private readonly HystrixRollingNumber counter;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HystrixMetrics"/> class.
+        /// </summary>
+        /// <param name="counter">The counter.</param>
         protected HystrixMetrics(HystrixRollingNumber counter)
         {
             this.counter = counter;
@@ -28,8 +35,16 @@ namespace NHystrix
         /// </summary>
         /// <param name="eventType">Type of the event.</param>
         /// <returns>long rolling count</returns>
-        public long getRollingCount(HystrixEventType eventType) {
+        public long GetRollingCount(HystrixEventType eventType) {
             return counter.GetRollingSum(eventType);
+        }
+
+        /// <summary>
+        /// Resets this instance.
+        /// </summary>
+        public void Reset()
+        {
+            counter.Reset();
         }
     }
 }

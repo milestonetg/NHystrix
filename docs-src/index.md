@@ -7,9 +7,9 @@ functionality and resilience to C#/.Net based services and clients. The [Hystrix
 is worth a read to understand what challenges N/Hystrix aims to solve.
 
 The current release provides...
-- CircuitBreaker
-- Bulkheading
-- Timeout
+- Circuit Breaker Pattern (https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
+- Bulkhead Pattern (https://docs.microsoft.com/en-us/azure/architecture/patterns/bulkhead)
+- Timeouts
 
 ...functionality.
 
@@ -17,7 +17,8 @@ The current release provides...
 
 Due to language and feature differences between Java and C#/.Net, this is NOT a direct port. If you are
 familiar with Hystrix, you'll recognize similarities in API and structure, but also see that NHystrix arrives at the
-end goal a bit differently.
+end goal a bit differently. For example, rather than the interfaces working with Reactive Extensions futures and promises, 
+they support C# async/await.
 
 ## Quick Start
 
@@ -27,13 +28,13 @@ Packages can be found at:
 
 https://www.nuget.org/packages/NHystrix/
 
-# [Powershell](#tab/tabid-1)
+# [Powershell](#tab/powershell)
 
 ```
 Install-Package NHystrix
 ```
 
-# [CLI](#tab/tabid-2)
+# [CLI](#tab/dotnet-cli)
 
 ```
 dotnet add package NHystrix

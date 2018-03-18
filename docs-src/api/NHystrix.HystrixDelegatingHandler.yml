@@ -1,0 +1,1109 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixDelegatingHandler
+  commentId: T:NHystrix.HystrixDelegatingHandler
+  id: HystrixDelegatingHandler
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler,System.Func{System.Net.Http.HttpResponseMessage})
+  - NHystrix.HystrixDelegatingHandler.CommandKey
+  - NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)
+  - NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  - NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  - NHystrix.HystrixDelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: HystrixDelegatingHandler
+  nameWithType: HystrixDelegatingHandler
+  fullName: NHystrix.HystrixDelegatingHandler
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/HystrixDelegatingHandler.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixDelegatingHandler
+    path: ../src/NHystrix/HystrixDelegatingHandler.cs
+    startLine: 63
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nA <xref href=\"System.Net.Http.DelegatingHandler\" data-throw-if-not-resolved=\"false\"></xref> that wraps the request in the Circuit Breaker Pattern and Bulkhead Pattern.\nSimilar functionality to the <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref>, but timeouts are handled by <xref href=\"System.Net.Http.HttpClient\" data-throw-if-not-resolved=\"false\"></xref> directly.\n"
+  remarks: "\nShould be used before the RetryDelegatingHandler in the pipeline.\n\n``` cs\nvar hystrix = new HystrixDelegatingHandler(commandKey, properties, new RetryDelegatingHandler());\n```\n\n#### HTTP Status Codes\n\nFailures are counted and emitted for:\n\nStatus | Reason            | HystrixEvent             | Comments\n-------|-------------------|--------------------------|----------\n408    | Request Timeout   | HystrixEventType.TIMEOUT |\n504    | Gateway Timeout   | HystrixEventType.TIMEOUT |\n403    | Forbidden         | HystrixEventType.FAILURE | Some APIs, such as GitHub, return a 403 when a rate limit is reached\n429    | Too Many Requests | HystrixEventType.FAILURE | Proposed rate-limit status code. [See RFC 6585](https://tools.ietf.org/html/rfc6585)\n>=500  | Server Errors     | HystrixEventType.FAILURE | All server side errors\n\nHttp 400 Bad Requests are not counted against failures but do emit a `HystrixEventType.BAD_REQUEST`.\n\nAll other Http Status codes are ignored by NHystrix.\n\n#### Exceptions and Fallback\n\nLike the <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref>, the <xref href=\"NHystrix.HystrixDelegatingHandler\" data-throw-if-not-resolved=\"false\"></xref> does not\nthrow an exception on error nor does is allow exceptions to propagate up the stack. Rather, it relies\non the fallback implementation to handle error situations.\n\nBy default, when fallback is enabled, an HttpResponseMessage with a status code of [204 No Content] \nwill be returned and <xref href=\"NHystrix.HystrixEventType.FALLBACK_MISSING\" data-throw-if-not-resolved=\"false\"></xref> emitted if no fallback function is provided.\n\n#### Metrics\n\nThe handler emits:\n- Request Counts (<xref href=\"NHystrix.HystrixEventType.EMIT\" data-throw-if-not-resolved=\"false\"></xref>) for all requests, short-circuited or not.\n- Bad Request (<xref href=\"NHystrix.HystrixEventType.BAD_REQUEST\" data-throw-if-not-resolved=\"false\"></xref>) for HTTP 400.\n- Timeout (<xref href=\"NHystrix.HystrixEventType.TIMEOUT\" data-throw-if-not-resolved=\"false\"></xref>)\n- Failure (<xref href=\"NHystrix.HystrixEventType.FAILURE\" data-throw-if-not-resolved=\"false\"></xref>)\n- Exception Thrown (<xref href=\"NHystrix.HystrixEventType.EXCEPTION_THROWN\" data-throw-if-not-resolved=\"false\"></xref>)\n- Fallback Called (<xref href=\"NHystrix.HystrixEventType.FALLBACK_EMIT\" data-throw-if-not-resolved=\"false\"></xref>)\n- Fallback Success (<xref href=\"NHystrix.HystrixEventType.FALLBACK_SUCCESS\" data-throw-if-not-resolved=\"false\"></xref>)\n- Fallback Failure (<xref href=\"NHystrix.HystrixEventType.FALLBACK_FAILURE\" data-throw-if-not-resolved=\"false\"></xref>)\n- Fallback Disabled (<xref href=\"NHystrix.HystrixEventType.FALLBACK_DISABLED\" data-throw-if-not-resolved=\"false\"></xref>)\n- Fallback Missing (<xref href=\"NHystrix.HystrixEventType.FALLBACK_MISSING\" data-throw-if-not-resolved=\"false\"></xref>)\n- Short Circuited because the circuit breaker is open (<xref href=\"NHystrix.HystrixEventType.SHORT_CIRCUITED\" data-throw-if-not-resolved=\"false\"></xref>)\n- Semaphore rejected if a bulkhead semaphore could not be obtained before the <xref href=\"NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds\" data-throw-if-not-resolved=\"false\"></xref> expires. (<xref href=\"NHystrix.HystrixEventType.SHORT_CIRCUITED\" data-throw-if-not-resolved=\"false\"></xref>)\n"
+  example: []
+  syntax:
+    content: 'public class HystrixDelegatingHandler : DelegatingHandler, IDisposable'
+    content.vb: >-
+      Public Class HystrixDelegatingHandler
+          Inherits DelegatingHandler
+          Implements IDisposable
+  seealso:
+  - linkId: System.Net.Http.DelegatingHandler
+    commentId: T:System.Net.Http.DelegatingHandler
+  inheritance:
+  - System.Object
+  - System.Net.Http.HttpMessageHandler
+  - System.Net.Http.DelegatingHandler
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Net.Http.DelegatingHandler.InnerHandler
+  - System.Net.Http.HttpMessageHandler.Dispose
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler,System.Func{System.Net.Http.HttpResponseMessage})
+  commentId: M:NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler,System.Func{System.Net.Http.HttpResponseMessage})
+  id: '#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler,System.Func{System.Net.Http.HttpResponseMessage})'
+  parent: NHystrix.HystrixDelegatingHandler
+  langs:
+  - csharp
+  - vb
+  name: HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func<HttpResponseMessage>)
+  nameWithType: HystrixDelegatingHandler.HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func<HttpResponseMessage>)
+  fullName: NHystrix.HystrixDelegatingHandler.HystrixDelegatingHandler(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties, System.Net.Http.HttpMessageHandler, System.Func<System.Net.Http.HttpResponseMessage>)
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/HystrixDelegatingHandler.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/HystrixDelegatingHandler.cs
+    startLine: 83
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.HystrixDelegatingHandler\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public HystrixDelegatingHandler(HystrixCommandKey commandKey, HystrixCommandProperties properties, HttpMessageHandler innerHandler, Func<HttpResponseMessage> fallback = null)
+    parameters:
+    - id: commandKey
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    - id: properties
+      type: NHystrix.HystrixCommandProperties
+      description: The properties.
+    - id: innerHandler
+      type: System.Net.Http.HttpMessageHandler
+      description: The inner handler.
+    - id: fallback
+      type: System.Func{System.Net.Http.HttpResponseMessage}
+      description: "\nOptional. The function to execute as the fallback if the circuit-breaker is open.\nIf no fallback function is provided, an HttpResponseMessage with a status code \nof [204 No Content] will be returned.\n"
+    content.vb: Public Sub New(commandKey As HystrixCommandKey, properties As HystrixCommandProperties, innerHandler As HttpMessageHandler, fallback As Func(Of HttpResponseMessage) = Nothing)
+  overload: NHystrix.HystrixDelegatingHandler.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: properties
+  nameWithType.vb: HystrixDelegatingHandler.HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func(Of HttpResponseMessage))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: NHystrix.HystrixDelegatingHandler.HystrixDelegatingHandler(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties, System.Net.Http.HttpMessageHandler, System.Func(Of System.Net.Http.HttpResponseMessage))
+  name.vb: HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func(Of HttpResponseMessage))
+- uid: NHystrix.HystrixDelegatingHandler.CommandKey
+  commentId: P:NHystrix.HystrixDelegatingHandler.CommandKey
+  id: CommandKey
+  parent: NHystrix.HystrixDelegatingHandler
+  langs:
+  - csharp
+  - vb
+  name: CommandKey
+  nameWithType: HystrixDelegatingHandler.CommandKey
+  fullName: NHystrix.HystrixDelegatingHandler.CommandKey
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixDelegatingHandler.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CommandKey
+    path: ../src/NHystrix/HystrixDelegatingHandler.cs
+    startLine: 107
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the command key.\n"
+  example: []
+  syntax:
+    content: public HystrixCommandKey CommandKey { get; }
+    parameters: []
+    return:
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    content.vb: Public ReadOnly Property CommandKey As HystrixCommandKey
+  overload: NHystrix.HystrixDelegatingHandler.CommandKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  commentId: P:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  id: IsCircuitBreakerEnabled
+  parent: NHystrix.HystrixDelegatingHandler
+  langs:
+  - csharp
+  - vb
+  name: IsCircuitBreakerEnabled
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixDelegatingHandler.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IsCircuitBreakerEnabled
+    path: ../src/NHystrix/HystrixDelegatingHandler.cs
+    startLine: 113
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets a value indicating whether this instance is circuit breaker enabled.\n"
+  example: []
+  syntax:
+    content: public bool IsCircuitBreakerEnabled { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if this instance is circuit breaker enabled; otherwise, <code>false</code>.
+    content.vb: Public ReadOnly Property IsCircuitBreakerEnabled As Boolean
+  overload: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  commentId: P:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  id: IsCircuitBreakerOpen
+  parent: NHystrix.HystrixDelegatingHandler
+  langs:
+  - csharp
+  - vb
+  name: IsCircuitBreakerOpen
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerOpen
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixDelegatingHandler.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IsCircuitBreakerOpen
+    path: ../src/NHystrix/HystrixDelegatingHandler.cs
+    startLine: 119
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets a value indicating whether this instance is circuit breaker open.\n"
+  example: []
+  syntax:
+    content: public bool IsCircuitBreakerOpen { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if this instance is circuit breaker open; otherwise, <code>false</code>.
+    content.vb: Public ReadOnly Property IsCircuitBreakerOpen As Boolean
+  overload: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixDelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  commentId: M:NHystrix.HystrixDelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  id: SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  parent: NHystrix.HystrixDelegatingHandler
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(HttpRequestMessage, CancellationToken)
+  nameWithType: HystrixDelegatingHandler.SendAsync(HttpRequestMessage, CancellationToken)
+  fullName: NHystrix.HystrixDelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixDelegatingHandler.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: SendAsync
+    path: ../src/NHystrix/HystrixDelegatingHandler.cs
+    startLine: 127
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nSend an HTTP request message.\n"
+  example: []
+  syntax:
+    content: protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: System.Net.Http.HttpRequestMessage
+      description: The HTTP request message to send to the server.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to cancel operation.
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: The task object representing the asynchronous operation.
+    content.vb: Protected Overrides Function SendAsync(request As HttpRequestMessage, cancellationToken As CancellationToken) As Task(Of HttpResponseMessage)
+  overridden: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  overload: NHystrix.HystrixDelegatingHandler.SendAsync*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)
+  commentId: M:NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: NHystrix.HystrixDelegatingHandler
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: HystrixDelegatingHandler.Dispose(Boolean)
+  fullName: NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixDelegatingHandler.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Dispose
+    path: ../src/NHystrix/HystrixDelegatingHandler.cs
+    startLine: 246
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nReleases the unmanaged resources used by the <xref href=\"System.Net.Http.DelegatingHandler\" data-throw-if-not-resolved=\"false\"></xref>, and optionally disposes of the managed resources.\n"
+  example: []
+  syntax:
+    content: protected override void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+      description: true to release both managed and unmanaged resources; false to releases only unmanaged resources.
+    content.vb: Protected Overrides Sub Dispose(disposing As Boolean)
+  overridden: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
+  overload: NHystrix.HystrixDelegatingHandler.Dispose*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: System.Net.Http.DelegatingHandler
+  commentId: T:System.Net.Http.DelegatingHandler
+  parent: System.Net.Http
+  isExternal: true
+  name: DelegatingHandler
+  nameWithType: DelegatingHandler
+  fullName: System.Net.Http.DelegatingHandler
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+- uid: NHystrix.HystrixDelegatingHandler
+  commentId: T:NHystrix.HystrixDelegatingHandler
+  isExternal: false
+  name: HystrixDelegatingHandler
+  nameWithType: HystrixDelegatingHandler
+  fullName: NHystrix.HystrixDelegatingHandler
+- uid: NHystrix.HystrixEventType.FALLBACK_MISSING
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_MISSING
+- uid: NHystrix.HystrixEventType.EMIT
+  commentId: F:NHystrix.HystrixEventType.EMIT
+- uid: NHystrix.HystrixEventType.BAD_REQUEST
+  commentId: F:NHystrix.HystrixEventType.BAD_REQUEST
+- uid: NHystrix.HystrixEventType.TIMEOUT
+  commentId: F:NHystrix.HystrixEventType.TIMEOUT
+- uid: NHystrix.HystrixEventType.FAILURE
+  commentId: F:NHystrix.HystrixEventType.FAILURE
+- uid: NHystrix.HystrixEventType.EXCEPTION_THROWN
+  commentId: F:NHystrix.HystrixEventType.EXCEPTION_THROWN
+- uid: NHystrix.HystrixEventType.FALLBACK_EMIT
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_EMIT
+- uid: NHystrix.HystrixEventType.FALLBACK_SUCCESS
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_SUCCESS
+- uid: NHystrix.HystrixEventType.FALLBACK_FAILURE
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_FAILURE
+- uid: NHystrix.HystrixEventType.FALLBACK_DISABLED
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_DISABLED
+- uid: NHystrix.HystrixEventType.SHORT_CIRCUITED
+  commentId: F:NHystrix.HystrixEventType.SHORT_CIRCUITED
+- uid: NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  commentId: P:NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Net.Http.HttpMessageHandler
+  commentId: T:System.Net.Http.HttpMessageHandler
+  parent: System.Net.Http
+  isExternal: true
+  name: HttpMessageHandler
+  nameWithType: HttpMessageHandler
+  fullName: System.Net.Http.HttpMessageHandler
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Net.Http.DelegatingHandler.InnerHandler
+  commentId: P:System.Net.Http.DelegatingHandler.InnerHandler
+  parent: System.Net.Http.DelegatingHandler
+  isExternal: true
+  name: InnerHandler
+  nameWithType: DelegatingHandler.InnerHandler
+  fullName: System.Net.Http.DelegatingHandler.InnerHandler
+- uid: System.Net.Http.HttpMessageHandler.Dispose
+  commentId: M:System.Net.Http.HttpMessageHandler.Dispose
+  parent: System.Net.Http.HttpMessageHandler
+  isExternal: true
+  name: Dispose()
+  nameWithType: HttpMessageHandler.Dispose()
+  fullName: System.Net.Http.HttpMessageHandler.Dispose()
+  spec.csharp:
+  - uid: System.Net.Http.HttpMessageHandler.Dispose
+    name: Dispose
+    nameWithType: HttpMessageHandler.Dispose
+    fullName: System.Net.Http.HttpMessageHandler.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Net.Http.HttpMessageHandler.Dispose
+    name: Dispose
+    nameWithType: HttpMessageHandler.Dispose
+    fullName: System.Net.Http.HttpMessageHandler.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: false
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.HystrixDelegatingHandler.#ctor*
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.#ctor
+  isExternal: false
+  name: HystrixDelegatingHandler
+  nameWithType: HystrixDelegatingHandler.HystrixDelegatingHandler
+  fullName: NHystrix.HystrixDelegatingHandler.HystrixDelegatingHandler
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+- uid: NHystrix.HystrixCommandProperties
+  commentId: T:NHystrix.HystrixCommandProperties
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandProperties
+  nameWithType: HystrixCommandProperties
+  fullName: NHystrix.HystrixCommandProperties
+- uid: System.Func{System.Net.Http.HttpResponseMessage}
+  commentId: T:System.Func{System.Net.Http.HttpResponseMessage}
+  parent: System
+  definition: System.Func`1
+  name: Func<HttpResponseMessage>
+  nameWithType: Func<HttpResponseMessage>
+  fullName: System.Func<System.Net.Http.HttpResponseMessage>
+  nameWithType.vb: Func(Of HttpResponseMessage)
+  fullName.vb: System.Func(Of System.Net.Http.HttpResponseMessage)
+  name.vb: Func(Of HttpResponseMessage)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    nameWithType: HttpResponseMessage
+    fullName: System.Net.Http.HttpResponseMessage
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    nameWithType: HttpResponseMessage
+    fullName: System.Net.Http.HttpResponseMessage
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixDelegatingHandler.CommandKey*
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.CommandKey
+  isExternal: false
+  name: CommandKey
+  nameWithType: HystrixDelegatingHandler.CommandKey
+  fullName: NHystrix.HystrixDelegatingHandler.CommandKey
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled*
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  isExternal: false
+  name: IsCircuitBreakerEnabled
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen*
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  isExternal: false
+  name: IsCircuitBreakerOpen
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerOpen
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+- uid: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  commentId: M:System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  parent: System.Net.Http.DelegatingHandler
+  isExternal: true
+  name: SendAsync(HttpRequestMessage, CancellationToken)
+  nameWithType: DelegatingHandler.SendAsync(HttpRequestMessage, CancellationToken)
+  fullName: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+    name: SendAsync
+    nameWithType: DelegatingHandler.SendAsync
+    fullName: System.Net.Http.DelegatingHandler.SendAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Net.Http.HttpRequestMessage
+    name: HttpRequestMessage
+    nameWithType: HttpRequestMessage
+    fullName: System.Net.Http.HttpRequestMessage
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+    name: SendAsync
+    nameWithType: DelegatingHandler.SendAsync
+    fullName: System.Net.Http.DelegatingHandler.SendAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Net.Http.HttpRequestMessage
+    name: HttpRequestMessage
+    nameWithType: HttpRequestMessage
+    fullName: System.Net.Http.HttpRequestMessage
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixDelegatingHandler.SendAsync*
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.SendAsync
+  isExternal: false
+  name: SendAsync
+  nameWithType: HystrixDelegatingHandler.SendAsync
+  fullName: NHystrix.HystrixDelegatingHandler.SendAsync
+- uid: System.Net.Http.HttpRequestMessage
+  commentId: T:System.Net.Http.HttpRequestMessage
+  parent: System.Net.Http
+  isExternal: true
+  name: HttpRequestMessage
+  nameWithType: HttpRequestMessage
+  fullName: System.Net.Http.HttpRequestMessage
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  commentId: T:System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<HttpResponseMessage>
+  nameWithType: Task<HttpResponseMessage>
+  fullName: System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage>
+  nameWithType.vb: Task(Of HttpResponseMessage)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Net.Http.HttpResponseMessage)
+  name.vb: Task(Of HttpResponseMessage)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    nameWithType: HttpResponseMessage
+    fullName: System.Net.Http.HttpResponseMessage
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    nameWithType: HttpResponseMessage
+    fullName: System.Net.Http.HttpResponseMessage
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: false
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
+  commentId: M:System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
+  parent: System.Net.Http.DelegatingHandler
+  isExternal: true
+  name: Dispose(Boolean)
+  nameWithType: DelegatingHandler.Dispose(Boolean)
+  fullName: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
+  spec.csharp:
+  - uid: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
+    name: Dispose
+    nameWithType: DelegatingHandler.Dispose
+    fullName: System.Net.Http.DelegatingHandler.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
+    name: Dispose
+    nameWithType: DelegatingHandler.Dispose
+    fullName: System.Net.Http.DelegatingHandler.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixDelegatingHandler.Dispose*
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: HystrixDelegatingHandler.Dispose
+  fullName: NHystrix.HystrixDelegatingHandler.Dispose

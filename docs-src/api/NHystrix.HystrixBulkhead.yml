@@ -1,0 +1,724 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixBulkhead
+  commentId: T:NHystrix.HystrixBulkhead
+  id: HystrixBulkhead
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixBulkhead.CommandKey
+  - NHystrix.HystrixBulkhead.Dispose
+  - NHystrix.HystrixBulkhead.Dispose(System.Boolean)
+  - NHystrix.HystrixBulkhead.Finalize
+  - NHystrix.HystrixBulkhead.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  - NHystrix.HystrixBulkhead.Release
+  - NHystrix.HystrixBulkhead.Try
+  langs:
+  - csharp
+  - vb
+  name: HystrixBulkhead
+  nameWithType: HystrixBulkhead
+  fullName: NHystrix.HystrixBulkhead
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixBulkhead
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 10
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nEncapsulates the bulkhead semaphore for a HystrixCommand with the given HystrixCommandKey.\n"
+  example: []
+  syntax:
+    content: 'public class HystrixBulkhead : IDisposable'
+    content.vb: >-
+      Public Class HystrixBulkhead
+          Implements IDisposable
+  seealso:
+  - linkId: System.IDisposable
+    commentId: T:System.IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.HystrixBulkhead.CommandKey
+  commentId: P:NHystrix.HystrixBulkhead.CommandKey
+  id: CommandKey
+  parent: NHystrix.HystrixBulkhead
+  langs:
+  - csharp
+  - vb
+  name: CommandKey
+  nameWithType: HystrixBulkhead.CommandKey
+  fullName: NHystrix.HystrixBulkhead.CommandKey
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CommandKey
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 32
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the command key.\n"
+  example: []
+  syntax:
+    content: public HystrixCommandKey CommandKey { get; }
+    parameters: []
+    return:
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    content.vb: Public ReadOnly Property CommandKey As HystrixCommandKey
+  overload: NHystrix.HystrixBulkhead.CommandKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixBulkhead.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  commentId: M:NHystrix.HystrixBulkhead.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  id: GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  parent: NHystrix.HystrixBulkhead
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(HystrixCommandKey, HystrixCommandProperties)
+  nameWithType: HystrixBulkhead.GetInstance(HystrixCommandKey, HystrixCommandProperties)
+  fullName: NHystrix.HystrixBulkhead.GetInstance(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetInstance
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 40
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the instance.\n"
+  example: []
+  syntax:
+    content: public static HystrixBulkhead GetInstance(HystrixCommandKey commandKey, HystrixCommandProperties properties)
+    parameters:
+    - id: commandKey
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    - id: properties
+      type: NHystrix.HystrixCommandProperties
+      description: The properties.
+    return:
+      type: NHystrix.HystrixBulkhead
+      description: HystrixBulkhead.
+    content.vb: Public Shared Function GetInstance(commandKey As HystrixCommandKey, properties As HystrixCommandProperties) As HystrixBulkhead
+  overload: NHystrix.HystrixBulkhead.GetInstance*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NHystrix.HystrixBulkhead.Try
+  commentId: M:NHystrix.HystrixBulkhead.Try
+  id: Try
+  parent: NHystrix.HystrixBulkhead
+  langs:
+  - csharp
+  - vb
+  name: Try()
+  nameWithType: HystrixBulkhead.Try()
+  fullName: NHystrix.HystrixBulkhead.Try()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Try
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 71
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nTries to obtain a semaphore.\n"
+  example: []
+  syntax:
+    content: public bool Try()
+    return:
+      type: System.Boolean
+      description: <code>true</code> if successful or bulkheading is disabled, <code>false</code> otherwise.
+    content.vb: Public Function Try As Boolean
+  overload: NHystrix.HystrixBulkhead.Try*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixBulkhead.Release
+  commentId: M:NHystrix.HystrixBulkhead.Release
+  id: Release
+  parent: NHystrix.HystrixBulkhead
+  langs:
+  - csharp
+  - vb
+  name: Release()
+  nameWithType: HystrixBulkhead.Release()
+  fullName: NHystrix.HystrixBulkhead.Release()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Release
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 83
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nReleases the semaphore.\n"
+  example: []
+  syntax:
+    content: public int Release()
+    return:
+      type: System.Int32
+      description: The number of semaphores released. -1 if bulkheading is disabled.
+    content.vb: Public Function Release As Integer
+  overload: NHystrix.HystrixBulkhead.Release*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixBulkhead.Dispose(System.Boolean)
+  commentId: M:NHystrix.HystrixBulkhead.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: NHystrix.HystrixBulkhead
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: HystrixBulkhead.Dispose(Boolean)
+  fullName: NHystrix.HystrixBulkhead.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Dispose
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 98
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nReleases unmanaged and - optionally - managed resources.\n"
+  example: []
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+      description: <code>true</code> to release both managed and unmanaged resources; <code>false</code> to release only unmanaged resources.
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+  overload: NHystrix.HystrixBulkhead.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: NHystrix.HystrixBulkhead.Finalize
+  commentId: M:NHystrix.HystrixBulkhead.Finalize
+  id: Finalize
+  parent: NHystrix.HystrixBulkhead
+  langs:
+  - csharp
+  - vb
+  name: Finalize()
+  nameWithType: HystrixBulkhead.Finalize()
+  fullName: NHystrix.HystrixBulkhead.Finalize()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Finalize
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 119
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nFinalizes an instance of the <xref href=\"NHystrix.HystrixBulkhead\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: protected void Finalize()
+    content.vb: Protected Sub Finalize
+  overload: NHystrix.HystrixBulkhead.Finalize*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: NHystrix.HystrixBulkhead.Dispose
+  commentId: M:NHystrix.HystrixBulkhead.Dispose
+  id: Dispose
+  parent: NHystrix.HystrixBulkhead
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: HystrixBulkhead.Dispose()
+  fullName: NHystrix.HystrixBulkhead.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixBulkhead.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Dispose
+    path: ../src/NHystrix/HystrixBulkhead.cs
+    startLine: 129
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nPerforms application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: NHystrix.HystrixBulkhead.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.HystrixBulkhead.CommandKey*
+  commentId: Overload:NHystrix.HystrixBulkhead.CommandKey
+  isExternal: false
+  name: CommandKey
+  nameWithType: HystrixBulkhead.CommandKey
+  fullName: NHystrix.HystrixBulkhead.CommandKey
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+- uid: NHystrix.HystrixBulkhead.GetInstance*
+  commentId: Overload:NHystrix.HystrixBulkhead.GetInstance
+  isExternal: false
+  name: GetInstance
+  nameWithType: HystrixBulkhead.GetInstance
+  fullName: NHystrix.HystrixBulkhead.GetInstance
+- uid: NHystrix.HystrixCommandProperties
+  commentId: T:NHystrix.HystrixCommandProperties
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandProperties
+  nameWithType: HystrixCommandProperties
+  fullName: NHystrix.HystrixCommandProperties
+- uid: NHystrix.HystrixBulkhead
+  commentId: T:NHystrix.HystrixBulkhead
+  parent: NHystrix
+  isExternal: false
+  name: HystrixBulkhead
+  nameWithType: HystrixBulkhead
+  fullName: NHystrix.HystrixBulkhead
+- uid: NHystrix.HystrixBulkhead.Try*
+  commentId: Overload:NHystrix.HystrixBulkhead.Try
+  isExternal: false
+  name: Try
+  nameWithType: HystrixBulkhead.Try
+  fullName: NHystrix.HystrixBulkhead.Try
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NHystrix.HystrixBulkhead.Release*
+  commentId: Overload:NHystrix.HystrixBulkhead.Release
+  isExternal: false
+  name: Release
+  nameWithType: HystrixBulkhead.Release
+  fullName: NHystrix.HystrixBulkhead.Release
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: NHystrix.HystrixBulkhead.Dispose*
+  commentId: Overload:NHystrix.HystrixBulkhead.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: HystrixBulkhead.Dispose
+  fullName: NHystrix.HystrixBulkhead.Dispose
+- uid: NHystrix.HystrixBulkhead.Finalize*
+  commentId: Overload:NHystrix.HystrixBulkhead.Finalize
+  isExternal: false
+  name: Finalize
+  nameWithType: HystrixBulkhead.Finalize
+  fullName: NHystrix.HystrixBulkhead.Finalize
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

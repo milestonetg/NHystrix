@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Metric
+  commentId: N:NHystrix.Metric
+  id: NHystrix.Metric
+  children:
+  - NHystrix.Metric.HystrixCommandEvent
+  - NHystrix.Metric.HystrixCommandEventStream
+  - NHystrix.Metric.HystrixRollingNumber
+  - NHystrix.Metric.IHystrixEvent
+  - NHystrix.Metric.IHystrixEventStream`1
+  langs:
+  - csharp
+  - vb
+  name: NHystrix.Metric
+  nameWithType: NHystrix.Metric
+  fullName: NHystrix.Metric
+  type: Namespace
+  assemblies:
+  - NHystrix
+references:
+- uid: NHystrix.Metric.HystrixCommandEvent
+  commentId: T:NHystrix.Metric.HystrixCommandEvent
+  isExternal: false
+  name: HystrixCommandEvent
+  nameWithType: HystrixCommandEvent
+  fullName: NHystrix.Metric.HystrixCommandEvent
+- uid: NHystrix.Metric.HystrixCommandEventStream
+  commentId: T:NHystrix.Metric.HystrixCommandEventStream
+  parent: NHystrix.Metric
+  isExternal: false
+  name: HystrixCommandEventStream
+  nameWithType: HystrixCommandEventStream
+  fullName: NHystrix.Metric.HystrixCommandEventStream
+- uid: NHystrix.Metric.HystrixRollingNumber
+  commentId: T:NHystrix.Metric.HystrixRollingNumber
+  parent: NHystrix.Metric
+  isExternal: false
+  name: HystrixRollingNumber
+  nameWithType: HystrixRollingNumber
+  fullName: NHystrix.Metric.HystrixRollingNumber
+- uid: NHystrix.Metric.IHystrixEvent
+  commentId: T:NHystrix.Metric.IHystrixEvent
+  parent: NHystrix.Metric
+  isExternal: false
+  name: IHystrixEvent
+  nameWithType: IHystrixEvent
+  fullName: NHystrix.Metric.IHystrixEvent
+- uid: NHystrix.Metric.IHystrixEventStream`1
+  commentId: T:NHystrix.Metric.IHystrixEventStream`1
+  isExternal: false
+  name: IHystrixEventStream<E>
+  nameWithType: IHystrixEventStream<E>
+  fullName: NHystrix.Metric.IHystrixEventStream<E>
+  nameWithType.vb: IHystrixEventStream(Of E)
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of E)
+  name.vb: IHystrixEventStream(Of E)
+  spec.csharp:
+  - uid: NHystrix.Metric.IHystrixEventStream`1
+    name: IHystrixEventStream
+    nameWithType: IHystrixEventStream
+    fullName: NHystrix.Metric.IHystrixEventStream
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: E
+    nameWithType: E
+    fullName: E
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.Metric.IHystrixEventStream`1
+    name: IHystrixEventStream
+    nameWithType: IHystrixEventStream
+    fullName: NHystrix.Metric.IHystrixEventStream
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: E
+    nameWithType: E
+    fullName: E
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.Metric
+  commentId: N:NHystrix.Metric
+  isExternal: false
+  name: NHystrix.Metric
+  nameWithType: NHystrix.Metric
+  fullName: NHystrix.Metric

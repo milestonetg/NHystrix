@@ -1,0 +1,557 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixMetrics
+  commentId: T:NHystrix.HystrixMetrics
+  id: HystrixMetrics
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixMetrics.#ctor(NHystrix.Metric.HystrixRollingNumber)
+  - NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  - NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  - NHystrix.HystrixMetrics.Reset
+  langs:
+  - csharp
+  - vb
+  name: HystrixMetrics
+  nameWithType: HystrixMetrics
+  fullName: NHystrix.HystrixMetrics
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/HystrixMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixMetrics
+    path: ../src/NHystrix/HystrixMetrics.cs
+    startLine: 10
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nBase class for implementing a metric within NHystrix.\n"
+  example: []
+  syntax:
+    content: public abstract class HystrixMetrics
+    content.vb: Public MustInherit Class HystrixMetrics
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - NHystrix.HystrixCommandMetrics
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: NHystrix.HystrixMetrics.#ctor(NHystrix.Metric.HystrixRollingNumber)
+  commentId: M:NHystrix.HystrixMetrics.#ctor(NHystrix.Metric.HystrixRollingNumber)
+  id: '#ctor(NHystrix.Metric.HystrixRollingNumber)'
+  parent: NHystrix.HystrixMetrics
+  langs:
+  - csharp
+  - vb
+  name: HystrixMetrics(HystrixRollingNumber)
+  nameWithType: HystrixMetrics.HystrixMetrics(HystrixRollingNumber)
+  fullName: NHystrix.HystrixMetrics.HystrixMetrics(NHystrix.Metric.HystrixRollingNumber)
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/HystrixMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/HystrixMetrics.cs
+    startLine: 18
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.HystrixMetrics\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: protected HystrixMetrics(HystrixRollingNumber counter)
+    parameters:
+    - id: counter
+      type: NHystrix.Metric.HystrixRollingNumber
+      description: The counter.
+    content.vb: Protected Sub New(counter As HystrixRollingNumber)
+  overload: NHystrix.HystrixMetrics.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  id: GetCumulativeCount(NHystrix.HystrixEventType)
+  parent: NHystrix.HystrixMetrics
+  langs:
+  - csharp
+  - vb
+  name: GetCumulativeCount(HystrixEventType)
+  nameWithType: HystrixMetrics.GetCumulativeCount(HystrixEventType)
+  fullName: NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetCumulativeCount
+    path: ../src/NHystrix/HystrixMetrics.cs
+    startLine: 28
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGet the cumulative count since the start of the application for the given <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: public long GetCumulativeCount(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    return:
+      type: System.Int64
+      description: long cumulative count
+    content.vb: Public Function GetCumulativeCount(eventType As HystrixEventType) As Long
+  overload: NHystrix.HystrixMetrics.GetCumulativeCount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  id: GetRollingCount(NHystrix.HystrixEventType)
+  parent: NHystrix.HystrixMetrics
+  langs:
+  - csharp
+  - vb
+  name: GetRollingCount(HystrixEventType)
+  nameWithType: HystrixMetrics.GetRollingCount(HystrixEventType)
+  fullName: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetRollingCount
+    path: ../src/NHystrix/HystrixMetrics.cs
+    startLine: 37
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGet the rolling count for the given <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public long GetRollingCount(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    return:
+      type: System.Int64
+      description: long rolling count
+    content.vb: Public Function GetRollingCount(eventType As HystrixEventType) As Long
+  overload: NHystrix.HystrixMetrics.GetRollingCount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixMetrics.Reset
+  commentId: M:NHystrix.HystrixMetrics.Reset
+  id: Reset
+  parent: NHystrix.HystrixMetrics
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: HystrixMetrics.Reset()
+  fullName: NHystrix.HystrixMetrics.Reset()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Reset
+    path: ../src/NHystrix/HystrixMetrics.cs
+    startLine: 44
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nResets this instance.\n"
+  example: []
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset
+  overload: NHystrix.HystrixMetrics.Reset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.HystrixMetrics
+  commentId: T:NHystrix.HystrixMetrics
+  parent: NHystrix
+  isExternal: false
+  name: HystrixMetrics
+  nameWithType: HystrixMetrics
+  fullName: NHystrix.HystrixMetrics
+- uid: NHystrix.HystrixMetrics.#ctor*
+  commentId: Overload:NHystrix.HystrixMetrics.#ctor
+  isExternal: false
+  name: HystrixMetrics
+  nameWithType: HystrixMetrics.HystrixMetrics
+  fullName: NHystrix.HystrixMetrics.HystrixMetrics
+- uid: NHystrix.Metric.HystrixRollingNumber
+  commentId: T:NHystrix.Metric.HystrixRollingNumber
+  parent: NHystrix.Metric
+  isExternal: false
+  name: HystrixRollingNumber
+  nameWithType: HystrixRollingNumber
+  fullName: NHystrix.Metric.HystrixRollingNumber
+- uid: NHystrix.Metric
+  commentId: N:NHystrix.Metric
+  isExternal: false
+  name: NHystrix.Metric
+  nameWithType: NHystrix.Metric
+  fullName: NHystrix.Metric
+- uid: NHystrix.HystrixEventType
+  commentId: T:NHystrix.HystrixEventType
+  parent: NHystrix
+  isExternal: false
+  name: HystrixEventType
+  nameWithType: HystrixEventType
+  fullName: NHystrix.HystrixEventType
+- uid: NHystrix.HystrixMetrics.GetCumulativeCount*
+  commentId: Overload:NHystrix.HystrixMetrics.GetCumulativeCount
+  isExternal: false
+  name: GetCumulativeCount
+  nameWithType: HystrixMetrics.GetCumulativeCount
+  fullName: NHystrix.HystrixMetrics.GetCumulativeCount
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: NHystrix.HystrixMetrics.GetRollingCount*
+  commentId: Overload:NHystrix.HystrixMetrics.GetRollingCount
+  isExternal: false
+  name: GetRollingCount
+  nameWithType: HystrixMetrics.GetRollingCount
+  fullName: NHystrix.HystrixMetrics.GetRollingCount
+- uid: NHystrix.HystrixMetrics.Reset*
+  commentId: Overload:NHystrix.HystrixMetrics.Reset
+  isExternal: false
+  name: Reset
+  nameWithType: HystrixMetrics.Reset
+  fullName: NHystrix.HystrixMetrics.Reset

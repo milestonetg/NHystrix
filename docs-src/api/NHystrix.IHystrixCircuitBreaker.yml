@@ -1,0 +1,338 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.IHystrixCircuitBreaker
+  commentId: T:NHystrix.IHystrixCircuitBreaker
+  id: IHystrixCircuitBreaker
+  parent: NHystrix
+  children:
+  - NHystrix.IHystrixCircuitBreaker.IsOpen
+  - NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  - NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  - NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  - NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  - NHystrix.IHystrixCircuitBreaker.Trip
+  langs:
+  - csharp
+  - vb
+  name: IHystrixCircuitBreaker
+  nameWithType: IHystrixCircuitBreaker
+  fullName: NHystrix.IHystrixCircuitBreaker
+  type: Interface
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IHystrixCircuitBreaker
+    path: ../src/NHystrix/IHystrixCircuitBreaker.cs
+    startLine: 11
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nCircuit breaker logic that is hooked into <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> execution and will stop allowing executions if failures have gone past the defined threshold.\n<p>\nThe default (and only) implementation  will then allow a single retry after a defined sleepWindow until the execution\nsucceeds at which point it will again close the circuit and allow executions again.\n</p>\n"
+  example: []
+  syntax:
+    content: public interface IHystrixCircuitBreaker
+    content.vb: Public Interface IHystrixCircuitBreaker
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  commentId: P:NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  id: ShouldAllowRequest
+  parent: NHystrix.IHystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: ShouldAllowRequest
+  nameWithType: IHystrixCircuitBreaker.ShouldAllowRequest
+  fullName: NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ShouldAllowRequest
+    path: ../src/NHystrix/IHystrixCircuitBreaker.cs
+    startLine: 19
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nEvery <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> request asks this if it is allowed to proceed or not.  It is idempotent and does\nnot modify any internal state, and takes into account the half-open logic which allows some requests through\nafter the circuit has been opened\n"
+  example: []
+  syntax:
+    content: bool ShouldAllowRequest { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: boolean whether a request should be permitted
+    content.vb: ReadOnly Property ShouldAllowRequest As Boolean
+  overload: NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  commentId: P:NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  id: ShouldAttemptExecution
+  parent: NHystrix.IHystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: ShouldAttemptExecution
+  nameWithType: IHystrixCircuitBreaker.ShouldAttemptExecution
+  fullName: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ShouldAttemptExecution
+    path: ../src/NHystrix/IHystrixCircuitBreaker.cs
+    startLine: 25
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInvoked at start of command execution to attempt an execution.  This is non-idempotent - it may modify internal\nstate.\n"
+  example: []
+  syntax:
+    content: bool ShouldAttemptExecution { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property ShouldAttemptExecution As Boolean
+  overload: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: NHystrix.IHystrixCircuitBreaker.IsOpen
+  commentId: P:NHystrix.IHystrixCircuitBreaker.IsOpen
+  id: IsOpen
+  parent: NHystrix.IHystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: IsOpen
+  nameWithType: IHystrixCircuitBreaker.IsOpen
+  fullName: NHystrix.IHystrixCircuitBreaker.IsOpen
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IsOpen
+    path: ../src/NHystrix/IHystrixCircuitBreaker.cs
+    startLine: 31
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nWhether the circuit is currently open (tripped).\n"
+  example: []
+  syntax:
+    content: bool IsOpen { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: boolean state of circuit breaker
+    content.vb: ReadOnly Property IsOpen As Boolean
+  overload: NHystrix.IHystrixCircuitBreaker.IsOpen*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: NHystrix.IHystrixCircuitBreaker.Trip
+  commentId: M:NHystrix.IHystrixCircuitBreaker.Trip
+  id: Trip
+  parent: NHystrix.IHystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: Trip()
+  nameWithType: IHystrixCircuitBreaker.Trip()
+  fullName: NHystrix.IHystrixCircuitBreaker.Trip()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Trip
+    path: ../src/NHystrix/IHystrixCircuitBreaker.cs
+    startLine: 36
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nTrips the circuit breaker and begins the sleep window.\n"
+  example: []
+  syntax:
+    content: void Trip()
+    content.vb: Sub Trip
+  overload: NHystrix.IHystrixCircuitBreaker.Trip*
+- uid: NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  commentId: M:NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  id: MarkSuccess
+  parent: NHystrix.IHystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: MarkSuccess()
+  nameWithType: IHystrixCircuitBreaker.MarkSuccess()
+  fullName: NHystrix.IHystrixCircuitBreaker.MarkSuccess()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: MarkSuccess
+    path: ../src/NHystrix/IHystrixCircuitBreaker.cs
+    startLine: 41
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInvoked on successful executions from <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> as part of feedback mechanism when in a half-open state.\n"
+  example: []
+  syntax:
+    content: void MarkSuccess()
+    content.vb: Sub MarkSuccess
+  overload: NHystrix.IHystrixCircuitBreaker.MarkSuccess*
+- uid: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  commentId: M:NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  id: MarkNonSuccess
+  parent: NHystrix.IHystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: MarkNonSuccess()
+  nameWithType: IHystrixCircuitBreaker.MarkNonSuccess()
+  fullName: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/IHystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: MarkNonSuccess
+    path: ../src/NHystrix/IHystrixCircuitBreaker.cs
+    startLine: 46
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInvoked on unsuccessful executions from <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> as part of feedback mechanism when in a half-open state.\n"
+  example: []
+  syntax:
+    content: void MarkNonSuccess()
+    content.vb: Sub MarkNonSuccess
+  overload: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess*
+references:
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest*
+  commentId: Overload:NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  isExternal: false
+  name: ShouldAllowRequest
+  nameWithType: IHystrixCircuitBreaker.ShouldAllowRequest
+  fullName: NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution*
+  commentId: Overload:NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  isExternal: false
+  name: ShouldAttemptExecution
+  nameWithType: IHystrixCircuitBreaker.ShouldAttemptExecution
+  fullName: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+- uid: NHystrix.IHystrixCircuitBreaker.IsOpen*
+  commentId: Overload:NHystrix.IHystrixCircuitBreaker.IsOpen
+  isExternal: false
+  name: IsOpen
+  nameWithType: IHystrixCircuitBreaker.IsOpen
+  fullName: NHystrix.IHystrixCircuitBreaker.IsOpen
+- uid: NHystrix.IHystrixCircuitBreaker.Trip*
+  commentId: Overload:NHystrix.IHystrixCircuitBreaker.Trip
+  isExternal: false
+  name: Trip
+  nameWithType: IHystrixCircuitBreaker.Trip
+  fullName: NHystrix.IHystrixCircuitBreaker.Trip
+- uid: NHystrix.IHystrixCircuitBreaker.MarkSuccess*
+  commentId: Overload:NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  isExternal: false
+  name: MarkSuccess
+  nameWithType: IHystrixCircuitBreaker.MarkSuccess
+  fullName: NHystrix.IHystrixCircuitBreaker.MarkSuccess
+- uid: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess*
+  commentId: Overload:NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  isExternal: false
+  name: MarkNonSuccess
+  nameWithType: IHystrixCircuitBreaker.MarkNonSuccess
+  fullName: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess

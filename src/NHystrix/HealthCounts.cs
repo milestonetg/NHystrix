@@ -15,7 +15,7 @@ namespace NHystrix
         /// <value>The request count.</value>
         /// <remarks>
         /// In the <see cref="HystrixCircuitBreaker"/>, this is the value
-        /// compared to the <see cref="HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold"/>
+        /// compared to the <see cref="CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold"/>
         /// to ensure we've met the minimum number of requests before evaluating
         /// the failure percentage.
         /// </remarks>
@@ -33,7 +33,7 @@ namespace NHystrix
         /// <value>The failure percentage as a whole number.</value>
         /// <remarks>
         /// In the <see cref="HystrixCircuitBreaker"/>, this is the value
-        /// compared to the <see cref="HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage"/>
+        /// compared to the <see cref="CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage"/>
         /// to determine if the circuit breaker should be tripped.
         /// </remarks>
         public int FailurePercentage

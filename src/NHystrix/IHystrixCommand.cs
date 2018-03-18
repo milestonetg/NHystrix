@@ -3,21 +3,22 @@
 namespace NHystrix
 {
     /// <summary>
-    /// Interface implemented by <see cref="HystrixCommand{TResult}"/>s.
+    /// Interface implemented by <see cref="HystrixCommand{TRequest, TResult}" />s.
     /// </summary>
-    /// <typeparam name="TResult">The type of the t result.</typeparam>
-    public interface IHystrixCommand<TResult>
+    /// <typeparam name="TRequest">The type of the request.</typeparam>
+    /// <typeparam name="TResult">The type of the result.</typeparam>
+    public interface IHystrixCommand<TRequest, TResult>
     {
         /// <summary>
-        /// Executes this instance.
+        /// Executes the command.
         /// </summary>
         /// <returns>TResult.</returns>
-        TResult Execute();
+        TResult Execute(TRequest request = default(TRequest));
 
         /// <summary>
         /// Executes the command.
         /// </summary>
         /// <returns>Task&lt;TResult&gt;.</returns>
-        Task<TResult> ExecuteAsync();
+        Task<TResult> ExecuteAsync(TRequest request = default(TRequest));
     }
 }

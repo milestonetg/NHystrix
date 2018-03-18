@@ -5,10 +5,12 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Add your introductions here! | NHystrix </title>
+    <title>Namespace NHystrix.Exceptions
+   | NHystrix </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Add your introductions here! | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="title" content="Namespace NHystrix.Exceptions
+   | NHystrix ">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -74,9 +76,43 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="add-your-introductions-here">Add your introductions here!</h1>
-
+            <article class="content wrap" id="_content" data-uid="NHystrix.Exceptions">
+  
+  <h1 id="NHystrix_Exceptions" data-uid="NHystrix.Exceptions" class="text-break">Namespace NHystrix.Exceptions
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="NHystrix.Exceptions.HystrixBadRequestException.html">HystrixBadRequestException</a></h4>
+      <section><p>An exception representing an error with provided arguments or state rather than an execution failure.
+<p>
+Unlike all other exceptions thrown by a <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> this will not trigger fallback, 
+not count against failure metrics and thus not trigger the circuit breaker.
+</p></p>
+<div class="IMPORTANT"><h5>Important</h5><p>NOTE: This should <strong>only</strong> be used when an error is due to user input such as <span class="xref">System.ArgumentException</span> 
+otherwise it defeats the purpose of fault-tolerance and fallback behavior.</p>
+</div>
+</section>
+      <h4><a class="xref" href="NHystrix.Exceptions.HystrixFailureException.html">HystrixFailureException</a></h4>
+      <section><p>Class HystrixFailureException.</p>
+</section>
+      <h4><a class="xref" href="NHystrix.Exceptions.HystrixFallbackException.html">HystrixFallbackException</a></h4>
+      <section><p>Thrown when a fallback attempt fails.</p>
+</section>
+      <h4><a class="xref" href="NHystrix.Exceptions.HystrixRuntimeException.html">HystrixRuntimeException</a></h4>
+      <section><p>Base class for all NHystrix exceptions that occur as part of command execution.
+You can catch this exception to catch all exceptions thrown my Hystrix that are not bad requests.</p>
+</section>
+      <h4><a class="xref" href="NHystrix.Exceptions.HystrixTimeoutException.html">HystrixTimeoutException</a></h4>
+      <section><p>Thrown when a <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> or <a class="xref" href="NHystrix.HystrixDelegatingHandler.html">HystrixDelegatingHandler</a> times out.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="NHystrix.Exceptions.FailureType.html">FailureType</a></h4>
+      <section><p>Enum FailureType</p>
+</section>
 </article>
           </div>
           
@@ -84,9 +120,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/milestonetg/NHystrix/blob/master/docs-src/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Metric.IHystrixEventStream`1
+  commentId: T:NHystrix.Metric.IHystrixEventStream`1
+  id: IHystrixEventStream`1
+  parent: NHystrix.Metric
+  children:
+  - NHystrix.Metric.IHystrixEventStream`1.Observe
+  langs:
+  - csharp
+  - vb
+  name: IHystrixEventStream<E>
+  nameWithType: IHystrixEventStream<E>
+  fullName: NHystrix.Metric.IHystrixEventStream<E>
+  type: Interface
+  source:
+    remote:
+      path: src/NHystrix/Metric/IHystrixEventStream.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IHystrixEventStream
+    path: ../src/NHystrix/Metric/IHystrixEventStream.cs
+    startLine: 8
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nInterface implemented by all event streams\n"
+  example: []
+  syntax:
+    content: >-
+      public interface IHystrixEventStream<E>
+          where E : IHystrixEvent
+    typeParameters:
+    - id: E
+      description: ''
+    content.vb: Public Interface IHystrixEventStream(Of E As IHystrixEvent)
+  nameWithType.vb: IHystrixEventStream(Of E)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of E)
+  name.vb: IHystrixEventStream(Of E)
+- uid: NHystrix.Metric.IHystrixEventStream`1.Observe
+  commentId: M:NHystrix.Metric.IHystrixEventStream`1.Observe
+  id: Observe
+  parent: NHystrix.Metric.IHystrixEventStream`1
+  langs:
+  - csharp
+  - vb
+  name: Observe()
+  nameWithType: IHystrixEventStream<E>.Observe()
+  fullName: NHystrix.Metric.IHystrixEventStream<E>.Observe()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/IHystrixEventStream.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Observe
+    path: ../src/NHystrix/Metric/IHystrixEventStream.cs
+    startLine: 14
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nReturns an <xref href=\"System.IObservable%601\" data-throw-if-not-resolved=\"false\"></xref> for subscribing to the event stream.\n"
+  example: []
+  syntax:
+    content: IObservable<E> Observe()
+    return:
+      type: System.IObservable{{E}}
+      description: IObservable&lt;E>.
+    content.vb: Function Observe As IObservable(Of E)
+  overload: NHystrix.Metric.IHystrixEventStream`1.Observe*
+  nameWithType.vb: IHystrixEventStream(Of E).Observe()
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of E).Observe()
+references:
+- uid: NHystrix.Metric
+  commentId: N:NHystrix.Metric
+  isExternal: false
+  name: NHystrix.Metric
+  nameWithType: NHystrix.Metric
+  fullName: NHystrix.Metric
+- uid: System.IObservable`1
+  commentId: T:System.IObservable`1
+  isExternal: true
+  name: IObservable<T>
+  nameWithType: IObservable<T>
+  fullName: System.IObservable<T>
+  nameWithType.vb: IObservable(Of T)
+  fullName.vb: System.IObservable(Of T)
+  name.vb: IObservable(Of T)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.Metric.IHystrixEventStream`1.Observe*
+  commentId: Overload:NHystrix.Metric.IHystrixEventStream`1.Observe
+  isExternal: false
+  name: Observe
+  nameWithType: IHystrixEventStream<E>.Observe
+  fullName: NHystrix.Metric.IHystrixEventStream<E>.Observe
+  nameWithType.vb: IHystrixEventStream(Of E).Observe
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of E).Observe
+- uid: System.IObservable{{E}}
+  commentId: T:System.IObservable{`0}
+  parent: System
+  definition: System.IObservable`1
+  name: IObservable<E>
+  nameWithType: IObservable<E>
+  fullName: System.IObservable<E>
+  nameWithType.vb: IObservable(Of E)
+  fullName.vb: System.IObservable(Of E)
+  name.vb: IObservable(Of E)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: E
+    nameWithType: E
+    fullName: E
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: E
+    nameWithType: E
+    fullName: E
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System

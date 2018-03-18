@@ -1,0 +1,1510 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixEventType
+  commentId: T:NHystrix.HystrixEventType
+  id: HystrixEventType
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixEventType.BAD_REQUEST
+  - NHystrix.HystrixEventType.CANCELLED
+  - NHystrix.HystrixEventType.COLLAPSED
+  - NHystrix.HystrixEventType.COMMAND_MAX_ACTIVE
+  - NHystrix.HystrixEventType.EMIT
+  - NHystrix.HystrixEventType.Equals(NHystrix.HystrixEventType)
+  - NHystrix.HystrixEventType.Equals(System.Object)
+  - NHystrix.HystrixEventType.EXCEPTION_THROWN
+  - NHystrix.HystrixEventType.FAILURE
+  - NHystrix.HystrixEventType.FALLBACK_DISABLED
+  - NHystrix.HystrixEventType.FALLBACK_EMIT
+  - NHystrix.HystrixEventType.FALLBACK_FAILURE
+  - NHystrix.HystrixEventType.FALLBACK_MISSING
+  - NHystrix.HystrixEventType.FALLBACK_REJECTION
+  - NHystrix.HystrixEventType.FALLBACK_SUCCESS
+  - NHystrix.HystrixEventType.GetHashCode
+  - NHystrix.HystrixEventType.IsTerminal
+  - NHystrix.HystrixEventType.RESPONSE_FROM_CACHE
+  - NHystrix.HystrixEventType.SEMAPHORE_REJECTED
+  - NHystrix.HystrixEventType.SHORT_CIRCUITED
+  - NHystrix.HystrixEventType.SUCCESS
+  - NHystrix.HystrixEventType.THREAD_POOL_REJECTED
+  - NHystrix.HystrixEventType.TIMEOUT
+  - NHystrix.HystrixEventType.Value
+  langs:
+  - csharp
+  - vb
+  name: HystrixEventType
+  nameWithType: HystrixEventType
+  fullName: NHystrix.HystrixEventType
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixEventType
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 10
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nThe type of an event emitted by a <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> to <xref href=\"NHystrix.HystrixMetrics\" data-throw-if-not-resolved=\"false\"></xref>. \nThis class cannot be inherited.\n"
+  example: []
+  syntax:
+    content: 'public sealed class HystrixEventType : IEquatable<HystrixEventType>'
+    content.vb: >-
+      Public NotInheritable Class HystrixEventType
+          Implements IEquatable(Of HystrixEventType)
+  seealso:
+  - linkId: System.IEquatable`1
+    commentId: T:System.IEquatable`1
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NHystrix.HystrixEventType}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NHystrix.HystrixEventType.EMIT
+  commentId: F:NHystrix.HystrixEventType.EMIT
+  id: EMIT
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: EMIT
+  nameWithType: HystrixEventType.EMIT
+  fullName: NHystrix.HystrixEventType.EMIT
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: EMIT
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 13
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType EMIT
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly EMIT As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.SUCCESS
+  commentId: F:NHystrix.HystrixEventType.SUCCESS
+  id: SUCCESS
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: SUCCESS
+  nameWithType: HystrixEventType.SUCCESS
+  fullName: NHystrix.HystrixEventType.SUCCESS
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: SUCCESS
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 14
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType SUCCESS
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly SUCCESS As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.FAILURE
+  commentId: F:NHystrix.HystrixEventType.FAILURE
+  id: FAILURE
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: FAILURE
+  nameWithType: HystrixEventType.FAILURE
+  fullName: NHystrix.HystrixEventType.FAILURE
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FAILURE
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 15
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType FAILURE
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly FAILURE As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.TIMEOUT
+  commentId: F:NHystrix.HystrixEventType.TIMEOUT
+  id: TIMEOUT
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: TIMEOUT
+  nameWithType: HystrixEventType.TIMEOUT
+  fullName: NHystrix.HystrixEventType.TIMEOUT
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: TIMEOUT
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 16
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType TIMEOUT
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly TIMEOUT As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.BAD_REQUEST
+  commentId: F:NHystrix.HystrixEventType.BAD_REQUEST
+  id: BAD_REQUEST
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: BAD_REQUEST
+  nameWithType: HystrixEventType.BAD_REQUEST
+  fullName: NHystrix.HystrixEventType.BAD_REQUEST
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: BAD_REQUEST
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 17
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType BAD_REQUEST
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly BAD_REQUEST As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.SHORT_CIRCUITED
+  commentId: F:NHystrix.HystrixEventType.SHORT_CIRCUITED
+  id: SHORT_CIRCUITED
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: SHORT_CIRCUITED
+  nameWithType: HystrixEventType.SHORT_CIRCUITED
+  fullName: NHystrix.HystrixEventType.SHORT_CIRCUITED
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: SHORT_CIRCUITED
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 22
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nThe circuit breaker is open, so the command was short circuited.\n"
+  example: []
+  syntax:
+    content: public static readonly HystrixEventType SHORT_CIRCUITED
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly SHORT_CIRCUITED As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.SEMAPHORE_REJECTED
+  commentId: F:NHystrix.HystrixEventType.SEMAPHORE_REJECTED
+  id: SEMAPHORE_REJECTED
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: SEMAPHORE_REJECTED
+  nameWithType: HystrixEventType.SEMAPHORE_REJECTED
+  fullName: NHystrix.HystrixEventType.SEMAPHORE_REJECTED
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: SEMAPHORE_REJECTED
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 27
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nThe maximum number of bulkheading semaphores is reached and a semaphore could not be acquired.\n"
+  example: []
+  syntax:
+    content: public static readonly HystrixEventType SEMAPHORE_REJECTED
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly SEMAPHORE_REJECTED As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.THREAD_POOL_REJECTED
+  commentId: F:NHystrix.HystrixEventType.THREAD_POOL_REJECTED
+  id: THREAD_POOL_REJECTED
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: THREAD_POOL_REJECTED
+  nameWithType: HystrixEventType.THREAD_POOL_REJECTED
+  fullName: NHystrix.HystrixEventType.THREAD_POOL_REJECTED
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: THREAD_POOL_REJECTED
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 29
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType THREAD_POOL_REJECTED
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly THREAD_POOL_REJECTED As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.FALLBACK_EMIT
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_EMIT
+  id: FALLBACK_EMIT
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: FALLBACK_EMIT
+  nameWithType: HystrixEventType.FALLBACK_EMIT
+  fullName: NHystrix.HystrixEventType.FALLBACK_EMIT
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FALLBACK_EMIT
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 30
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType FALLBACK_EMIT
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly FALLBACK_EMIT As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.FALLBACK_SUCCESS
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_SUCCESS
+  id: FALLBACK_SUCCESS
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: FALLBACK_SUCCESS
+  nameWithType: HystrixEventType.FALLBACK_SUCCESS
+  fullName: NHystrix.HystrixEventType.FALLBACK_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FALLBACK_SUCCESS
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 31
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType FALLBACK_SUCCESS
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly FALLBACK_SUCCESS As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.FALLBACK_FAILURE
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_FAILURE
+  id: FALLBACK_FAILURE
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: FALLBACK_FAILURE
+  nameWithType: HystrixEventType.FALLBACK_FAILURE
+  fullName: NHystrix.HystrixEventType.FALLBACK_FAILURE
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FALLBACK_FAILURE
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 32
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType FALLBACK_FAILURE
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly FALLBACK_FAILURE As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.FALLBACK_REJECTION
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_REJECTION
+  id: FALLBACK_REJECTION
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: FALLBACK_REJECTION
+  nameWithType: HystrixEventType.FALLBACK_REJECTION
+  fullName: NHystrix.HystrixEventType.FALLBACK_REJECTION
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FALLBACK_REJECTION
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 33
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType FALLBACK_REJECTION
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly FALLBACK_REJECTION As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.FALLBACK_DISABLED
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_DISABLED
+  id: FALLBACK_DISABLED
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: FALLBACK_DISABLED
+  nameWithType: HystrixEventType.FALLBACK_DISABLED
+  fullName: NHystrix.HystrixEventType.FALLBACK_DISABLED
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FALLBACK_DISABLED
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 34
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType FALLBACK_DISABLED
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly FALLBACK_DISABLED As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.FALLBACK_MISSING
+  commentId: F:NHystrix.HystrixEventType.FALLBACK_MISSING
+  id: FALLBACK_MISSING
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: FALLBACK_MISSING
+  nameWithType: HystrixEventType.FALLBACK_MISSING
+  fullName: NHystrix.HystrixEventType.FALLBACK_MISSING
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FALLBACK_MISSING
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 35
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType FALLBACK_MISSING
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly FALLBACK_MISSING As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.EXCEPTION_THROWN
+  commentId: F:NHystrix.HystrixEventType.EXCEPTION_THROWN
+  id: EXCEPTION_THROWN
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: EXCEPTION_THROWN
+  nameWithType: HystrixEventType.EXCEPTION_THROWN
+  fullName: NHystrix.HystrixEventType.EXCEPTION_THROWN
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: EXCEPTION_THROWN
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 36
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType EXCEPTION_THROWN
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly EXCEPTION_THROWN As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.RESPONSE_FROM_CACHE
+  commentId: F:NHystrix.HystrixEventType.RESPONSE_FROM_CACHE
+  id: RESPONSE_FROM_CACHE
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: RESPONSE_FROM_CACHE
+  nameWithType: HystrixEventType.RESPONSE_FROM_CACHE
+  fullName: NHystrix.HystrixEventType.RESPONSE_FROM_CACHE
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: RESPONSE_FROM_CACHE
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 37
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType RESPONSE_FROM_CACHE
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly RESPONSE_FROM_CACHE As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.CANCELLED
+  commentId: F:NHystrix.HystrixEventType.CANCELLED
+  id: CANCELLED
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: CANCELLED
+  nameWithType: HystrixEventType.CANCELLED
+  fullName: NHystrix.HystrixEventType.CANCELLED
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CANCELLED
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 38
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType CANCELLED
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly CANCELLED As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.COLLAPSED
+  commentId: F:NHystrix.HystrixEventType.COLLAPSED
+  id: COLLAPSED
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: COLLAPSED
+  nameWithType: HystrixEventType.COLLAPSED
+  fullName: NHystrix.HystrixEventType.COLLAPSED
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: COLLAPSED
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 39
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType COLLAPSED
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly COLLAPSED As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.COMMAND_MAX_ACTIVE
+  commentId: F:NHystrix.HystrixEventType.COMMAND_MAX_ACTIVE
+  id: COMMAND_MAX_ACTIVE
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: COMMAND_MAX_ACTIVE
+  nameWithType: HystrixEventType.COMMAND_MAX_ACTIVE
+  fullName: NHystrix.HystrixEventType.COMMAND_MAX_ACTIVE
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: COMMAND_MAX_ACTIVE
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 40
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  syntax:
+    content: public static readonly HystrixEventType COMMAND_MAX_ACTIVE
+    return:
+      type: NHystrix.HystrixEventType
+    content.vb: Public Shared ReadOnly COMMAND_MAX_ACTIVE As HystrixEventType
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.Value
+  commentId: P:NHystrix.HystrixEventType.Value
+  id: Value
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: HystrixEventType.Value
+  fullName: NHystrix.HystrixEventType.Value
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Value
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 86
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the value.\n"
+  example: []
+  syntax:
+    content: public short Value { get; }
+    parameters: []
+    return:
+      type: System.Int16
+      description: The value.
+    content.vb: Public ReadOnly Property Value As Short
+  overload: NHystrix.HystrixEventType.Value*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.IsTerminal
+  commentId: P:NHystrix.HystrixEventType.IsTerminal
+  id: IsTerminal
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: IsTerminal
+  nameWithType: HystrixEventType.IsTerminal
+  fullName: NHystrix.HystrixEventType.IsTerminal
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IsTerminal
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 92
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets a value indicating whether this instance is terminal.\n"
+  example: []
+  syntax:
+    content: public bool IsTerminal { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if this instance is terminal; otherwise, <code>false</code>.
+    content.vb: Public ReadOnly Property IsTerminal As Boolean
+  overload: NHystrix.HystrixEventType.IsTerminal*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixEventType.Equals(System.Object)
+  commentId: M:NHystrix.HystrixEventType.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: HystrixEventType.Equals(Object)
+  fullName: NHystrix.HystrixEventType.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Equals
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 105
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nDetermines whether the specified <xref href=\"System.Object\" data-throw-if-not-resolved=\"false\"></xref> is equal to this instance.\n"
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current object.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the specified <xref href="System.Object" data-throw-if-not-resolved="false"></xref> is equal to this instance; otherwise, <code>false</code>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: NHystrix.HystrixEventType.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: NHystrix.HystrixEventType.Equals(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.HystrixEventType.Equals(NHystrix.HystrixEventType)
+  id: Equals(NHystrix.HystrixEventType)
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: Equals(HystrixEventType)
+  nameWithType: HystrixEventType.Equals(HystrixEventType)
+  fullName: NHystrix.HystrixEventType.Equals(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Equals
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 115
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nIndicates whether the current object is equal to another object of the same type.\n"
+  example: []
+  syntax:
+    content: public bool Equals(HystrixEventType other)
+    parameters:
+    - id: other
+      type: NHystrix.HystrixEventType
+      description: An object to compare with this object.
+    return:
+      type: System.Boolean
+      description: true if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter; otherwise, false.
+    content.vb: Public Function Equals(other As HystrixEventType) As Boolean
+  overload: NHystrix.HystrixEventType.Equals*
+  implements:
+  - System.IEquatable{NHystrix.HystrixEventType}.Equals(NHystrix.HystrixEventType)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixEventType.GetHashCode
+  commentId: M:NHystrix.HystrixEventType.GetHashCode
+  id: GetHashCode
+  parent: NHystrix.HystrixEventType
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: HystrixEventType.GetHashCode()
+  fullName: NHystrix.HystrixEventType.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixEventType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetHashCode
+    path: ../src/NHystrix/HystrixEventType.cs
+    startLine: 124
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nReturns a hash code for this instance.\n"
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: NHystrix.HystrixEventType.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixMetrics
+  commentId: T:NHystrix.HystrixMetrics
+  parent: NHystrix
+  isExternal: false
+  name: HystrixMetrics
+  nameWithType: HystrixMetrics
+  fullName: NHystrix.HystrixMetrics
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IEquatable{NHystrix.HystrixEventType}
+  commentId: T:System.IEquatable{NHystrix.HystrixEventType}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<HystrixEventType>
+  nameWithType: IEquatable<HystrixEventType>
+  fullName: System.IEquatable<NHystrix.HystrixEventType>
+  nameWithType.vb: IEquatable(Of HystrixEventType)
+  fullName.vb: System.IEquatable(Of NHystrix.HystrixEventType)
+  name.vb: IEquatable(Of HystrixEventType)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.HystrixEventType
+  commentId: T:NHystrix.HystrixEventType
+  parent: NHystrix
+  isExternal: false
+  name: HystrixEventType
+  nameWithType: HystrixEventType
+  fullName: NHystrix.HystrixEventType
+- uid: NHystrix.HystrixEventType.Value*
+  commentId: Overload:NHystrix.HystrixEventType.Value
+  isExternal: false
+  name: Value
+  nameWithType: HystrixEventType.Value
+  fullName: NHystrix.HystrixEventType.Value
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  name: Int16
+  nameWithType: Int16
+  fullName: System.Int16
+- uid: NHystrix.HystrixEventType.IsTerminal*
+  commentId: Overload:NHystrix.HystrixEventType.IsTerminal
+  isExternal: false
+  name: IsTerminal
+  nameWithType: HystrixEventType.IsTerminal
+  fullName: NHystrix.HystrixEventType.IsTerminal
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixEventType.Equals*
+  commentId: Overload:NHystrix.HystrixEventType.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: HystrixEventType.Equals
+  fullName: NHystrix.HystrixEventType.Equals
+- uid: System.IEquatable{NHystrix.HystrixEventType}.Equals(NHystrix.HystrixEventType)
+  commentId: M:System.IEquatable{NHystrix.HystrixEventType}.Equals(NHystrix.HystrixEventType)
+  parent: System.IEquatable{NHystrix.HystrixEventType}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(HystrixEventType)
+  nameWithType: IEquatable<HystrixEventType>.Equals(HystrixEventType)
+  fullName: System.IEquatable<NHystrix.HystrixEventType>.Equals(NHystrix.HystrixEventType)
+  nameWithType.vb: IEquatable(Of HystrixEventType).Equals(HystrixEventType)
+  fullName.vb: System.IEquatable(Of NHystrix.HystrixEventType).Equals(NHystrix.HystrixEventType)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<HystrixEventType>.Equals
+    fullName: System.IEquatable<NHystrix.HystrixEventType>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of HystrixEventType).Equals
+    fullName: System.IEquatable(Of NHystrix.HystrixEventType).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixEventType.GetHashCode*
+  commentId: Overload:NHystrix.HystrixEventType.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: HystrixEventType.GetHashCode
+  fullName: NHystrix.HystrixEventType.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

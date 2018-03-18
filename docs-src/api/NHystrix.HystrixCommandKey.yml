@@ -1,0 +1,837 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  id: HystrixCommandKey
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixCommandKey.#ctor(System.String,NHystrix.HystrixCommandGroup)
+  - NHystrix.HystrixCommandKey.Equals(NHystrix.HystrixCommandKey)
+  - NHystrix.HystrixCommandKey.Equals(System.Object)
+  - NHystrix.HystrixCommandKey.GetHashCode
+  - NHystrix.HystrixCommandKey.Group
+  - NHystrix.HystrixCommandKey.Name
+  - NHystrix.HystrixCommandKey.ToString
+  langs:
+  - csharp
+  - vb
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+  type: Struct
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixCommandKey
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 9
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nA HystrixCommandKey is used to identify a specific command within a group.\nThis key is used as the caching key for metrics, etc.\n"
+  example: []
+  syntax:
+    content: 'public struct HystrixCommandKey : IEquatable<HystrixCommandKey>'
+    content.vb: >-
+      Public Structure HystrixCommandKey
+          Implements IEquatable(Of HystrixCommandKey)
+  implements:
+  - System.IEquatable{NHystrix.HystrixCommandKey}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: NHystrix.HystrixCommandKey.#ctor(System.String,NHystrix.HystrixCommandGroup)
+  commentId: M:NHystrix.HystrixCommandKey.#ctor(System.String,NHystrix.HystrixCommandGroup)
+  id: '#ctor(System.String,NHystrix.HystrixCommandGroup)'
+  parent: NHystrix.HystrixCommandKey
+  langs:
+  - csharp
+  - vb
+  name: HystrixCommandKey(String, HystrixCommandGroup)
+  nameWithType: HystrixCommandKey.HystrixCommandKey(String, HystrixCommandGroup)
+  fullName: NHystrix.HystrixCommandKey.HystrixCommandKey(System.String, NHystrix.HystrixCommandGroup)
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 17
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.HystrixCommandKey\" data-throw-if-not-resolved=\"false\"></xref> struct.\n"
+  example: []
+  syntax:
+    content: public HystrixCommandKey(string name, HystrixCommandGroup group)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of this command.
+    - id: group
+      type: NHystrix.HystrixCommandGroup
+      description: The <xref href="NHystrix.HystrixCommandGroup" data-throw-if-not-resolved="false"></xref> to which this command belongs.
+    content.vb: Public Sub New(name As String, group As HystrixCommandGroup)
+  overload: NHystrix.HystrixCommandKey.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Invalid argument. name cannot be null or empty. - name
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandKey.Name
+  commentId: P:NHystrix.HystrixCommandKey.Name
+  id: Name
+  parent: NHystrix.HystrixCommandKey
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: HystrixCommandKey.Name
+  fullName: NHystrix.HystrixCommandKey.Name
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Name
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 32
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the name.\n"
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The name.
+    content.vb: Public ReadOnly Property Name As String
+  overload: NHystrix.HystrixCommandKey.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixCommandKey.Group
+  commentId: P:NHystrix.HystrixCommandKey.Group
+  id: Group
+  parent: NHystrix.HystrixCommandKey
+  langs:
+  - csharp
+  - vb
+  name: Group
+  nameWithType: HystrixCommandKey.Group
+  fullName: NHystrix.HystrixCommandKey.Group
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Group
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 38
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the group.\n"
+  example: []
+  syntax:
+    content: public HystrixCommandGroup Group { get; }
+    parameters: []
+    return:
+      type: NHystrix.HystrixCommandGroup
+      description: The group.
+    content.vb: Public ReadOnly Property Group As HystrixCommandGroup
+  overload: NHystrix.HystrixCommandKey.Group*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixCommandKey.Equals(System.Object)
+  commentId: M:NHystrix.HystrixCommandKey.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: NHystrix.HystrixCommandKey
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: HystrixCommandKey.Equals(Object)
+  fullName: NHystrix.HystrixCommandKey.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Equals
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 45
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nDetermines whether the specified <xref href=\"System.Object\" data-throw-if-not-resolved=\"false\"></xref> is equal to this instance.\n"
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the specified <xref href="System.Object" data-throw-if-not-resolved="false"></xref> is equal to this instance; otherwise, <code>false</code>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: NHystrix.HystrixCommandKey.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: NHystrix.HystrixCommandKey.Equals(NHystrix.HystrixCommandKey)
+  commentId: M:NHystrix.HystrixCommandKey.Equals(NHystrix.HystrixCommandKey)
+  id: Equals(NHystrix.HystrixCommandKey)
+  parent: NHystrix.HystrixCommandKey
+  langs:
+  - csharp
+  - vb
+  name: Equals(HystrixCommandKey)
+  nameWithType: HystrixCommandKey.Equals(HystrixCommandKey)
+  fullName: NHystrix.HystrixCommandKey.Equals(NHystrix.HystrixCommandKey)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Equals
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 55
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nIndicates whether the current object is equal to another object of the same type.\n"
+  example: []
+  syntax:
+    content: public bool Equals(HystrixCommandKey other)
+    parameters:
+    - id: other
+      type: NHystrix.HystrixCommandKey
+      description: An object to compare with this object.
+    return:
+      type: System.Boolean
+      description: true if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter; otherwise, false.
+    content.vb: Public Function Equals(other As HystrixCommandKey) As Boolean
+  overload: NHystrix.HystrixCommandKey.Equals*
+  implements:
+  - System.IEquatable{NHystrix.HystrixCommandKey}.Equals(NHystrix.HystrixCommandKey)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCommandKey.GetHashCode
+  commentId: M:NHystrix.HystrixCommandKey.GetHashCode
+  id: GetHashCode
+  parent: NHystrix.HystrixCommandKey
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: HystrixCommandKey.GetHashCode()
+  fullName: NHystrix.HystrixCommandKey.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetHashCode
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 64
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nReturns a hash code for this instance.\n"
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: NHystrix.HystrixCommandKey.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: NHystrix.HystrixCommandKey.ToString
+  commentId: M:NHystrix.HystrixCommandKey.ToString
+  id: ToString
+  parent: NHystrix.HystrixCommandKey
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: HystrixCommandKey.ToString()
+  fullName: NHystrix.HystrixCommandKey.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandKey.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ToString
+    path: ../src/NHystrix/HystrixCommandKey.cs
+    startLine: 73
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nReturns a <xref href=\"System.String\" data-throw-if-not-resolved=\"false\"></xref> that represents this instance.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A <xref href="System.String" data-throw-if-not-resolved="false"></xref> that represents this instance.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.ValueType.ToString
+  overload: NHystrix.HystrixCommandKey.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.IEquatable{NHystrix.HystrixCommandKey}
+  commentId: T:System.IEquatable{NHystrix.HystrixCommandKey}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<HystrixCommandKey>
+  nameWithType: IEquatable<HystrixCommandKey>
+  fullName: System.IEquatable<NHystrix.HystrixCommandKey>
+  nameWithType.vb: IEquatable(Of HystrixCommandKey)
+  fullName.vb: System.IEquatable(Of NHystrix.HystrixCommandKey)
+  name.vb: IEquatable(Of HystrixCommandKey)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NHystrix.HystrixCommandKey
+    name: HystrixCommandKey
+    nameWithType: HystrixCommandKey
+    fullName: NHystrix.HystrixCommandKey
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NHystrix.HystrixCommandKey
+    name: HystrixCommandKey
+    nameWithType: HystrixCommandKey
+    fullName: NHystrix.HystrixCommandKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+- uid: NHystrix.HystrixCommandGroup
+  commentId: T:NHystrix.HystrixCommandGroup
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandGroup
+  nameWithType: HystrixCommandGroup
+  fullName: NHystrix.HystrixCommandGroup
+- uid: NHystrix.HystrixCommandKey.#ctor*
+  commentId: Overload:NHystrix.HystrixCommandKey.#ctor
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey.HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey.HystrixCommandKey
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NHystrix.HystrixCommandKey.Name*
+  commentId: Overload:NHystrix.HystrixCommandKey.Name
+  isExternal: false
+  name: Name
+  nameWithType: HystrixCommandKey.Name
+  fullName: NHystrix.HystrixCommandKey.Name
+- uid: NHystrix.HystrixCommandKey.Group*
+  commentId: Overload:NHystrix.HystrixCommandKey.Group
+  isExternal: false
+  name: Group
+  nameWithType: HystrixCommandKey.Group
+  fullName: NHystrix.HystrixCommandKey.Group
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: ValueType.Equals(Object)
+  fullName: System.ValueType.Equals(System.Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCommandKey.Equals*
+  commentId: Overload:NHystrix.HystrixCommandKey.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: HystrixCommandKey.Equals
+  fullName: NHystrix.HystrixCommandKey.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.IEquatable{NHystrix.HystrixCommandKey}.Equals(NHystrix.HystrixCommandKey)
+  commentId: M:System.IEquatable{NHystrix.HystrixCommandKey}.Equals(NHystrix.HystrixCommandKey)
+  parent: System.IEquatable{NHystrix.HystrixCommandKey}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(HystrixCommandKey)
+  nameWithType: IEquatable<HystrixCommandKey>.Equals(HystrixCommandKey)
+  fullName: System.IEquatable<NHystrix.HystrixCommandKey>.Equals(NHystrix.HystrixCommandKey)
+  nameWithType.vb: IEquatable(Of HystrixCommandKey).Equals(HystrixCommandKey)
+  fullName.vb: System.IEquatable(Of NHystrix.HystrixCommandKey).Equals(NHystrix.HystrixCommandKey)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<HystrixCommandKey>.Equals
+    fullName: System.IEquatable<NHystrix.HystrixCommandKey>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixCommandKey
+    name: HystrixCommandKey
+    nameWithType: HystrixCommandKey
+    fullName: NHystrix.HystrixCommandKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of HystrixCommandKey).Equals
+    fullName: System.IEquatable(Of NHystrix.HystrixCommandKey).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixCommandKey
+    name: HystrixCommandKey
+    nameWithType: HystrixCommandKey
+    fullName: NHystrix.HystrixCommandKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCommandKey.GetHashCode*
+  commentId: Overload:NHystrix.HystrixCommandKey.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: HystrixCommandKey.GetHashCode
+  fullName: NHystrix.HystrixCommandKey.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCommandKey.ToString*
+  commentId: Overload:NHystrix.HystrixCommandKey.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: HystrixCommandKey.ToString
+  fullName: NHystrix.HystrixCommandKey.ToString

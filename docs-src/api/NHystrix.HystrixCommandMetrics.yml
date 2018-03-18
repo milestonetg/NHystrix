@@ -1,0 +1,808 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixCommandMetrics
+  commentId: T:NHystrix.HystrixCommandMetrics
+  id: HystrixCommandMetrics
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixCommandMetrics.CommandGroup
+  - NHystrix.HystrixCommandMetrics.CommandKey
+  - NHystrix.HystrixCommandMetrics.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  - NHystrix.HystrixCommandMetrics.HealthStream
+  langs:
+  - csharp
+  - vb
+  name: HystrixCommandMetrics
+  nameWithType: HystrixCommandMetrics
+  fullName: NHystrix.HystrixCommandMetrics
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixCommandMetrics
+    path: ../src/NHystrix/HystrixCommandMetrics.cs
+    startLine: 14
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nTracks metrics for a <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> for a <xref href=\"NHystrix.HystrixCommandKey\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public class HystrixCommandMetrics : HystrixMetrics'
+    content.vb: >-
+      Public Class HystrixCommandMetrics
+          Inherits HystrixMetrics
+  seealso:
+  - linkId: NHystrix.HystrixMetrics
+    commentId: T:NHystrix.HystrixMetrics
+  inheritance:
+  - System.Object
+  - NHystrix.HystrixMetrics
+  inheritedMembers:
+  - NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  - NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  - NHystrix.HystrixMetrics.Reset
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.HystrixCommandMetrics.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  commentId: M:NHystrix.HystrixCommandMetrics.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  id: GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  parent: NHystrix.HystrixCommandMetrics
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(HystrixCommandKey, HystrixCommandProperties)
+  nameWithType: HystrixCommandMetrics.GetInstance(HystrixCommandKey, HystrixCommandProperties)
+  fullName: NHystrix.HystrixCommandMetrics.GetInstance(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetInstance
+    path: ../src/NHystrix/HystrixCommandMetrics.cs
+    startLine: 52
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets a singleton instance.\n"
+  example: []
+  syntax:
+    content: public static HystrixCommandMetrics GetInstance(HystrixCommandKey commandKey, HystrixCommandProperties properties)
+    parameters:
+    - id: commandKey
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    - id: properties
+      type: NHystrix.HystrixCommandProperties
+      description: The properties.
+    return:
+      type: NHystrix.HystrixCommandMetrics
+      description: HystrixCommandMetrics.
+    content.vb: Public Shared Function GetInstance(commandKey As HystrixCommandKey, properties As HystrixCommandProperties) As HystrixCommandMetrics
+  overload: NHystrix.HystrixCommandMetrics.GetInstance*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NHystrix.HystrixCommandMetrics.CommandKey
+  commentId: P:NHystrix.HystrixCommandMetrics.CommandKey
+  id: CommandKey
+  parent: NHystrix.HystrixCommandMetrics
+  langs:
+  - csharp
+  - vb
+  name: CommandKey
+  nameWithType: HystrixCommandMetrics.CommandKey
+  fullName: NHystrix.HystrixCommandMetrics.CommandKey
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CommandKey
+    path: ../src/NHystrix/HystrixCommandMetrics.cs
+    startLine: 87
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the command key.\n"
+  example: []
+  syntax:
+    content: public HystrixCommandKey CommandKey { get; }
+    parameters: []
+    return:
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    content.vb: Public ReadOnly Property CommandKey As HystrixCommandKey
+  overload: NHystrix.HystrixCommandMetrics.CommandKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixCommandMetrics.CommandGroup
+  commentId: P:NHystrix.HystrixCommandMetrics.CommandGroup
+  id: CommandGroup
+  parent: NHystrix.HystrixCommandMetrics
+  langs:
+  - csharp
+  - vb
+  name: CommandGroup
+  nameWithType: HystrixCommandMetrics.CommandGroup
+  fullName: NHystrix.HystrixCommandMetrics.CommandGroup
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CommandGroup
+    path: ../src/NHystrix/HystrixCommandMetrics.cs
+    startLine: 93
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the command group.\n"
+  example: []
+  syntax:
+    content: public HystrixCommandGroup CommandGroup { get; }
+    parameters: []
+    return:
+      type: NHystrix.HystrixCommandGroup
+      description: The command group.
+    content.vb: Public ReadOnly Property CommandGroup As HystrixCommandGroup
+  overload: NHystrix.HystrixCommandMetrics.CommandGroup*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixCommandMetrics.HealthStream
+  commentId: P:NHystrix.HystrixCommandMetrics.HealthStream
+  id: HealthStream
+  parent: NHystrix.HystrixCommandMetrics
+  langs:
+  - csharp
+  - vb
+  name: HealthStream
+  nameWithType: HystrixCommandMetrics.HealthStream
+  fullName: NHystrix.HystrixCommandMetrics.HealthStream
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCommandMetrics.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HealthStream
+    path: ../src/NHystrix/HystrixCommandMetrics.cs
+    startLine: 99
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGets the health stream.\n"
+  example: []
+  syntax:
+    content: public IObservable<HealthCounts> HealthStream { get; }
+    parameters: []
+    return:
+      type: System.IObservable{NHystrix.HealthCounts}
+      description: The health stream.
+    content.vb: Public ReadOnly Property HealthStream As IObservable(Of HealthCounts)
+  overload: NHystrix.HystrixCommandMetrics.HealthStream*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+- uid: NHystrix.HystrixMetrics
+  commentId: T:NHystrix.HystrixMetrics
+  parent: NHystrix
+  isExternal: false
+  name: HystrixMetrics
+  nameWithType: HystrixMetrics
+  fullName: NHystrix.HystrixMetrics
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  parent: NHystrix.HystrixMetrics
+  isExternal: false
+  name: GetCumulativeCount(HystrixEventType)
+  nameWithType: HystrixMetrics.GetCumulativeCount(HystrixEventType)
+  fullName: NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+  spec.csharp:
+  - uid: NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+    name: GetCumulativeCount
+    nameWithType: HystrixMetrics.GetCumulativeCount
+    fullName: NHystrix.HystrixMetrics.GetCumulativeCount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
+    name: GetCumulativeCount
+    nameWithType: HystrixMetrics.GetCumulativeCount
+    fullName: NHystrix.HystrixMetrics.GetCumulativeCount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  parent: NHystrix.HystrixMetrics
+  isExternal: false
+  name: GetRollingCount(HystrixEventType)
+  nameWithType: HystrixMetrics.GetRollingCount(HystrixEventType)
+  fullName: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  spec.csharp:
+  - uid: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+    name: GetRollingCount
+    nameWithType: HystrixMetrics.GetRollingCount
+    fullName: NHystrix.HystrixMetrics.GetRollingCount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+    name: GetRollingCount
+    nameWithType: HystrixMetrics.GetRollingCount
+    fullName: NHystrix.HystrixMetrics.GetRollingCount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+    nameWithType: HystrixEventType
+    fullName: NHystrix.HystrixEventType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixMetrics.Reset
+  commentId: M:NHystrix.HystrixMetrics.Reset
+  parent: NHystrix.HystrixMetrics
+  isExternal: false
+  name: Reset()
+  nameWithType: HystrixMetrics.Reset()
+  fullName: NHystrix.HystrixMetrics.Reset()
+  spec.csharp:
+  - uid: NHystrix.HystrixMetrics.Reset
+    name: Reset
+    nameWithType: HystrixMetrics.Reset
+    fullName: NHystrix.HystrixMetrics.Reset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.HystrixMetrics.Reset
+    name: Reset
+    nameWithType: HystrixMetrics.Reset
+    fullName: NHystrix.HystrixMetrics.Reset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.HystrixCommandMetrics.GetInstance*
+  commentId: Overload:NHystrix.HystrixCommandMetrics.GetInstance
+  isExternal: false
+  name: GetInstance
+  nameWithType: HystrixCommandMetrics.GetInstance
+  fullName: NHystrix.HystrixCommandMetrics.GetInstance
+- uid: NHystrix.HystrixCommandProperties
+  commentId: T:NHystrix.HystrixCommandProperties
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandProperties
+  nameWithType: HystrixCommandProperties
+  fullName: NHystrix.HystrixCommandProperties
+- uid: NHystrix.HystrixCommandMetrics
+  commentId: T:NHystrix.HystrixCommandMetrics
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandMetrics
+  nameWithType: HystrixCommandMetrics
+  fullName: NHystrix.HystrixCommandMetrics
+- uid: NHystrix.HystrixCommandMetrics.CommandKey*
+  commentId: Overload:NHystrix.HystrixCommandMetrics.CommandKey
+  isExternal: false
+  name: CommandKey
+  nameWithType: HystrixCommandMetrics.CommandKey
+  fullName: NHystrix.HystrixCommandMetrics.CommandKey
+- uid: NHystrix.HystrixCommandMetrics.CommandGroup*
+  commentId: Overload:NHystrix.HystrixCommandMetrics.CommandGroup
+  isExternal: false
+  name: CommandGroup
+  nameWithType: HystrixCommandMetrics.CommandGroup
+  fullName: NHystrix.HystrixCommandMetrics.CommandGroup
+- uid: NHystrix.HystrixCommandGroup
+  commentId: T:NHystrix.HystrixCommandGroup
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandGroup
+  nameWithType: HystrixCommandGroup
+  fullName: NHystrix.HystrixCommandGroup
+- uid: NHystrix.HystrixCommandMetrics.HealthStream*
+  commentId: Overload:NHystrix.HystrixCommandMetrics.HealthStream
+  isExternal: false
+  name: HealthStream
+  nameWithType: HystrixCommandMetrics.HealthStream
+  fullName: NHystrix.HystrixCommandMetrics.HealthStream
+- uid: System.IObservable{NHystrix.HealthCounts}
+  commentId: T:System.IObservable{NHystrix.HealthCounts}
+  parent: System
+  definition: System.IObservable`1
+  name: IObservable<HealthCounts>
+  nameWithType: IObservable<HealthCounts>
+  fullName: System.IObservable<NHystrix.HealthCounts>
+  nameWithType.vb: IObservable(Of HealthCounts)
+  fullName.vb: System.IObservable(Of NHystrix.HealthCounts)
+  name.vb: IObservable(Of HealthCounts)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NHystrix.HealthCounts
+    name: HealthCounts
+    nameWithType: HealthCounts
+    fullName: NHystrix.HealthCounts
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NHystrix.HealthCounts
+    name: HealthCounts
+    nameWithType: HealthCounts
+    fullName: NHystrix.HealthCounts
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IObservable`1
+  commentId: T:System.IObservable`1
+  isExternal: true
+  name: IObservable<T>
+  nameWithType: IObservable<T>
+  fullName: System.IObservable<T>
+  nameWithType.vb: IObservable(Of T)
+  fullName.vb: System.IObservable(Of T)
+  name.vb: IObservable(Of T)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

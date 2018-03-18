@@ -1,0 +1,65 @@
+### YamlMime:TableOfContent
+- uid: NHystrix
+  name: NHystrix
+  items:
+  - uid: NHystrix.CircuitBreakerOptions
+    name: CircuitBreakerOptions
+  - uid: NHystrix.HealthCounts
+    name: HealthCounts
+  - uid: NHystrix.HystrixBulkhead
+    name: HystrixBulkhead
+  - uid: NHystrix.HystrixCircuitBreaker
+    name: HystrixCircuitBreaker
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand<TRequest, TResult>
+    name.vb: HystrixCommand(Of TRequest, TResult)
+  - uid: NHystrix.HystrixCommandGroup
+    name: HystrixCommandGroup
+  - uid: NHystrix.HystrixCommandKey
+    name: HystrixCommandKey
+  - uid: NHystrix.HystrixCommandMetrics
+    name: HystrixCommandMetrics
+  - uid: NHystrix.HystrixCommandProperties
+    name: HystrixCommandProperties
+  - uid: NHystrix.HystrixDelegatingHandler
+    name: HystrixDelegatingHandler
+  - uid: NHystrix.HystrixEventType
+    name: HystrixEventType
+  - uid: NHystrix.HystrixMetrics
+    name: HystrixMetrics
+  - uid: NHystrix.IHystrixCircuitBreaker
+    name: IHystrixCircuitBreaker
+  - uid: NHystrix.IHystrixCommand`2
+    name: IHystrixCommand<TRequest, TResult>
+    name.vb: IHystrixCommand(Of TRequest, TResult)
+  - uid: NHystrix.TaskExtensions
+    name: TaskExtensions
+- uid: NHystrix.Exceptions
+  name: NHystrix.Exceptions
+  items:
+  - uid: NHystrix.Exceptions.FailureType
+    name: FailureType
+  - uid: NHystrix.Exceptions.HystrixBadRequestException
+    name: HystrixBadRequestException
+  - uid: NHystrix.Exceptions.HystrixFailureException
+    name: HystrixFailureException
+  - uid: NHystrix.Exceptions.HystrixFallbackException
+    name: HystrixFallbackException
+  - uid: NHystrix.Exceptions.HystrixRuntimeException
+    name: HystrixRuntimeException
+  - uid: NHystrix.Exceptions.HystrixTimeoutException
+    name: HystrixTimeoutException
+- uid: NHystrix.Metric
+  name: NHystrix.Metric
+  items:
+  - uid: NHystrix.Metric.HystrixCommandEvent
+    name: HystrixCommandEvent
+  - uid: NHystrix.Metric.HystrixCommandEventStream
+    name: HystrixCommandEventStream
+  - uid: NHystrix.Metric.HystrixRollingNumber
+    name: HystrixRollingNumber
+  - uid: NHystrix.Metric.IHystrixEvent
+    name: IHystrixEvent
+  - uid: NHystrix.Metric.IHystrixEventStream`1
+    name: IHystrixEventStream<E>
+    name.vb: IHystrixEventStream(Of E)

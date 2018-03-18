@@ -1,0 +1,869 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.HystrixCircuitBreaker
+  commentId: T:NHystrix.HystrixCircuitBreaker
+  id: HystrixCircuitBreaker
+  parent: NHystrix
+  children:
+  - NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.CircuitBreakerOptions,NHystrix.HystrixCommandMetrics)
+  - NHystrix.HystrixCircuitBreaker.IsOpen
+  - NHystrix.HystrixCircuitBreaker.MarkNonSuccess
+  - NHystrix.HystrixCircuitBreaker.MarkSuccess
+  - NHystrix.HystrixCircuitBreaker.ShouldAllowRequest
+  - NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
+  - NHystrix.HystrixCircuitBreaker.Trip
+  langs:
+  - csharp
+  - vb
+  name: HystrixCircuitBreaker
+  nameWithType: HystrixCircuitBreaker
+  fullName: NHystrix.HystrixCircuitBreaker
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixCircuitBreaker
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 10
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nThe default production implementation of <xref href=\"NHystrix.IHystrixCircuitBreaker\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public class HystrixCircuitBreaker : IHystrixCircuitBreaker'
+    content.vb: >-
+      Public Class HystrixCircuitBreaker
+          Implements IHystrixCircuitBreaker
+  seealso:
+  - linkId: NHystrix.IHystrixCircuitBreaker
+    commentId: T:NHystrix.IHystrixCircuitBreaker
+  inheritance:
+  - System.Object
+  implements:
+  - NHystrix.IHystrixCircuitBreaker
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.CircuitBreakerOptions,NHystrix.HystrixCommandMetrics)
+  commentId: M:NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.CircuitBreakerOptions,NHystrix.HystrixCommandMetrics)
+  id: GetInstance(NHystrix.HystrixCommandKey,NHystrix.CircuitBreakerOptions,NHystrix.HystrixCommandMetrics)
+  parent: NHystrix.HystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(HystrixCommandKey, CircuitBreakerOptions, HystrixCommandMetrics)
+  nameWithType: HystrixCircuitBreaker.GetInstance(HystrixCommandKey, CircuitBreakerOptions, HystrixCommandMetrics)
+  fullName: NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey, NHystrix.CircuitBreakerOptions, NHystrix.HystrixCommandMetrics)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetInstance
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 56
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nGet the <xref href=\"NHystrix.IHystrixCircuitBreaker\" data-throw-if-not-resolved=\"false\"></xref> instance for a given key.\n"
+  example: []
+  syntax:
+    content: public static IHystrixCircuitBreaker GetInstance(HystrixCommandKey commandKey, CircuitBreakerOptions properties, HystrixCommandMetrics metrics)
+    parameters:
+    - id: commandKey
+      type: NHystrix.HystrixCommandKey
+      description: The <xref href="NHystrix.HystrixCommandKey" data-throw-if-not-resolved="false"></xref> for the command using this circuit breaker.
+    - id: properties
+      type: NHystrix.CircuitBreakerOptions
+      description: The <xref href="NHystrix.HystrixCommandProperties" data-throw-if-not-resolved="false"></xref> for the command using this circuit breaker.
+    - id: metrics
+      type: NHystrix.HystrixCommandMetrics
+      description: The <xref href="NHystrix.HystrixCommandMetrics" data-throw-if-not-resolved="false"></xref> for the command using this circuit breaker.
+    return:
+      type: NHystrix.IHystrixCircuitBreaker
+      description: A singleton instance of IHystrixCircuitBreaker for the given <xref href="NHystrix.HystrixCommandKey" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function GetInstance(commandKey As HystrixCommandKey, properties As CircuitBreakerOptions, metrics As HystrixCommandMetrics) As IHystrixCircuitBreaker
+  overload: NHystrix.HystrixCircuitBreaker.GetInstance*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NHystrix.HystrixCircuitBreaker.ShouldAllowRequest
+  commentId: P:NHystrix.HystrixCircuitBreaker.ShouldAllowRequest
+  id: ShouldAllowRequest
+  parent: NHystrix.HystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: ShouldAllowRequest
+  nameWithType: HystrixCircuitBreaker.ShouldAllowRequest
+  fullName: NHystrix.HystrixCircuitBreaker.ShouldAllowRequest
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ShouldAllowRequest
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 89
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nEvery <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> requests asks this if it is allowed to proceed or not.  It is idempotent and does\nnot modify any internal state, and takes into account the half-open logic which allows some requests through\nafter the circuit has been opened.\n"
+  example: []
+  syntax:
+    content: public bool ShouldAllowRequest { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the request should be allowed, <code>false</code> otherwise.
+    content.vb: Public ReadOnly Property ShouldAllowRequest As Boolean
+  overload: NHystrix.HystrixCircuitBreaker.ShouldAllowRequest*
+  implements:
+  - NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
+  commentId: P:NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
+  id: ShouldAttemptExecution
+  parent: NHystrix.HystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: ShouldAttemptExecution
+  nameWithType: HystrixCircuitBreaker.ShouldAttemptExecution
+  fullName: NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ShouldAttemptExecution
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 124
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInvoked at start of command execution to attempt an execution.  This is non-idempotent - it may modify internal\nstate.\n"
+  example: []
+  syntax:
+    content: public bool ShouldAttemptExecution { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if execution can be attempted, <code>false</code> otherwise.
+    content.vb: Public ReadOnly Property ShouldAttemptExecution As Boolean
+  overload: NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution*
+  implements:
+  - NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixCircuitBreaker.IsOpen
+  commentId: P:NHystrix.HystrixCircuitBreaker.IsOpen
+  id: IsOpen
+  parent: NHystrix.HystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: IsOpen
+  nameWithType: HystrixCircuitBreaker.IsOpen
+  fullName: NHystrix.HystrixCircuitBreaker.IsOpen
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: IsOpen
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 166
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nWhether the circuit is currently open (tripped).\n"
+  example: []
+  syntax:
+    content: public bool IsOpen { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the circuit breaker is open, <code>false</code> otherwise.
+    content.vb: Public ReadOnly Property IsOpen As Boolean
+  overload: NHystrix.HystrixCircuitBreaker.IsOpen*
+  implements:
+  - NHystrix.IHystrixCircuitBreaker.IsOpen
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.HystrixCircuitBreaker.Trip
+  commentId: M:NHystrix.HystrixCircuitBreaker.Trip
+  id: Trip
+  parent: NHystrix.HystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: Trip()
+  nameWithType: HystrixCircuitBreaker.Trip()
+  fullName: NHystrix.HystrixCircuitBreaker.Trip()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Trip
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 185
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nTrips the circuit breaker.\n"
+  example: []
+  syntax:
+    content: public void Trip()
+    content.vb: Public Sub Trip
+  overload: NHystrix.HystrixCircuitBreaker.Trip*
+  implements:
+  - NHystrix.IHystrixCircuitBreaker.Trip
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCircuitBreaker.MarkSuccess
+  commentId: M:NHystrix.HystrixCircuitBreaker.MarkSuccess
+  id: MarkSuccess
+  parent: NHystrix.HystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: MarkSuccess()
+  nameWithType: HystrixCircuitBreaker.MarkSuccess()
+  fullName: NHystrix.HystrixCircuitBreaker.MarkSuccess()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: MarkSuccess
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 200
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInvoked on successful executions from <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> as part of feedback mechanism when in a half-open state.\n"
+  example: []
+  syntax:
+    content: public void MarkSuccess()
+    content.vb: Public Sub MarkSuccess
+  overload: NHystrix.HystrixCircuitBreaker.MarkSuccess*
+  implements:
+  - NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.HystrixCircuitBreaker.MarkNonSuccess
+  commentId: M:NHystrix.HystrixCircuitBreaker.MarkNonSuccess
+  id: MarkNonSuccess
+  parent: NHystrix.HystrixCircuitBreaker
+  langs:
+  - csharp
+  - vb
+  name: MarkNonSuccess()
+  nameWithType: HystrixCircuitBreaker.MarkNonSuccess()
+  fullName: NHystrix.HystrixCircuitBreaker.MarkNonSuccess()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/HystrixCircuitBreaker.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: MarkNonSuccess
+    path: ../src/NHystrix/HystrixCircuitBreaker.cs
+    startLine: 213
+  assemblies:
+  - NHystrix
+  namespace: NHystrix
+  summary: "\nInvoked on unsuccessful executions from <xref href=\"NHystrix.HystrixCommand%602\" data-throw-if-not-resolved=\"false\"></xref> as part of feedback mechanism when in a half-open state.\n"
+  example: []
+  syntax:
+    content: public void MarkNonSuccess()
+    content.vb: Public Sub MarkNonSuccess
+  overload: NHystrix.HystrixCircuitBreaker.MarkNonSuccess*
+  implements:
+  - NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NHystrix.IHystrixCircuitBreaker
+  commentId: T:NHystrix.IHystrixCircuitBreaker
+  parent: NHystrix
+  isExternal: false
+  name: IHystrixCircuitBreaker
+  nameWithType: IHystrixCircuitBreaker
+  fullName: NHystrix.IHystrixCircuitBreaker
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+- uid: NHystrix.HystrixCommandProperties
+  commentId: T:NHystrix.HystrixCommandProperties
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandProperties
+  nameWithType: HystrixCommandProperties
+  fullName: NHystrix.HystrixCommandProperties
+- uid: NHystrix.HystrixCommandMetrics
+  commentId: T:NHystrix.HystrixCommandMetrics
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandMetrics
+  nameWithType: HystrixCommandMetrics
+  fullName: NHystrix.HystrixCommandMetrics
+- uid: NHystrix.HystrixCircuitBreaker.GetInstance*
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.GetInstance
+  isExternal: false
+  name: GetInstance
+  nameWithType: HystrixCircuitBreaker.GetInstance
+  fullName: NHystrix.HystrixCircuitBreaker.GetInstance
+- uid: NHystrix.CircuitBreakerOptions
+  commentId: T:NHystrix.CircuitBreakerOptions
+  parent: NHystrix
+  isExternal: false
+  name: CircuitBreakerOptions
+  nameWithType: CircuitBreakerOptions
+  fullName: NHystrix.CircuitBreakerOptions
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCircuitBreaker.ShouldAllowRequest*
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.ShouldAllowRequest
+  isExternal: false
+  name: ShouldAllowRequest
+  nameWithType: HystrixCircuitBreaker.ShouldAllowRequest
+  fullName: NHystrix.HystrixCircuitBreaker.ShouldAllowRequest
+- uid: NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  commentId: P:NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+  parent: NHystrix.IHystrixCircuitBreaker
+  isExternal: false
+  name: ShouldAllowRequest
+  nameWithType: IHystrixCircuitBreaker.ShouldAllowRequest
+  fullName: NHystrix.IHystrixCircuitBreaker.ShouldAllowRequest
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution*
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
+  isExternal: false
+  name: ShouldAttemptExecution
+  nameWithType: HystrixCircuitBreaker.ShouldAttemptExecution
+  fullName: NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
+- uid: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  commentId: P:NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+  parent: NHystrix.IHystrixCircuitBreaker
+  isExternal: false
+  name: ShouldAttemptExecution
+  nameWithType: IHystrixCircuitBreaker.ShouldAttemptExecution
+  fullName: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
+- uid: NHystrix.HystrixCircuitBreaker.IsOpen*
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.IsOpen
+  isExternal: false
+  name: IsOpen
+  nameWithType: HystrixCircuitBreaker.IsOpen
+  fullName: NHystrix.HystrixCircuitBreaker.IsOpen
+- uid: NHystrix.IHystrixCircuitBreaker.IsOpen
+  commentId: P:NHystrix.IHystrixCircuitBreaker.IsOpen
+  parent: NHystrix.IHystrixCircuitBreaker
+  isExternal: false
+  name: IsOpen
+  nameWithType: IHystrixCircuitBreaker.IsOpen
+  fullName: NHystrix.IHystrixCircuitBreaker.IsOpen
+- uid: NHystrix.HystrixCircuitBreaker.Trip*
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.Trip
+  isExternal: false
+  name: Trip
+  nameWithType: HystrixCircuitBreaker.Trip
+  fullName: NHystrix.HystrixCircuitBreaker.Trip
+- uid: NHystrix.IHystrixCircuitBreaker.Trip
+  commentId: M:NHystrix.IHystrixCircuitBreaker.Trip
+  parent: NHystrix.IHystrixCircuitBreaker
+  isExternal: false
+  name: Trip()
+  nameWithType: IHystrixCircuitBreaker.Trip()
+  fullName: NHystrix.IHystrixCircuitBreaker.Trip()
+  spec.csharp:
+  - uid: NHystrix.IHystrixCircuitBreaker.Trip
+    name: Trip
+    nameWithType: IHystrixCircuitBreaker.Trip
+    fullName: NHystrix.IHystrixCircuitBreaker.Trip
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.IHystrixCircuitBreaker.Trip
+    name: Trip
+    nameWithType: IHystrixCircuitBreaker.Trip
+    fullName: NHystrix.IHystrixCircuitBreaker.Trip
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCircuitBreaker.MarkSuccess*
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.MarkSuccess
+  isExternal: false
+  name: MarkSuccess
+  nameWithType: HystrixCircuitBreaker.MarkSuccess
+  fullName: NHystrix.HystrixCircuitBreaker.MarkSuccess
+- uid: NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  commentId: M:NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  parent: NHystrix.IHystrixCircuitBreaker
+  isExternal: false
+  name: MarkSuccess()
+  nameWithType: IHystrixCircuitBreaker.MarkSuccess()
+  fullName: NHystrix.IHystrixCircuitBreaker.MarkSuccess()
+  spec.csharp:
+  - uid: NHystrix.IHystrixCircuitBreaker.MarkSuccess
+    name: MarkSuccess
+    nameWithType: IHystrixCircuitBreaker.MarkSuccess
+    fullName: NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.IHystrixCircuitBreaker.MarkSuccess
+    name: MarkSuccess
+    nameWithType: IHystrixCircuitBreaker.MarkSuccess
+    fullName: NHystrix.IHystrixCircuitBreaker.MarkSuccess
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCircuitBreaker.MarkNonSuccess*
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.MarkNonSuccess
+  isExternal: false
+  name: MarkNonSuccess
+  nameWithType: HystrixCircuitBreaker.MarkNonSuccess
+  fullName: NHystrix.HystrixCircuitBreaker.MarkNonSuccess
+- uid: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  commentId: M:NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  parent: NHystrix.IHystrixCircuitBreaker
+  isExternal: false
+  name: MarkNonSuccess()
+  nameWithType: IHystrixCircuitBreaker.MarkNonSuccess()
+  fullName: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess()
+  spec.csharp:
+  - uid: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+    name: MarkNonSuccess
+    nameWithType: IHystrixCircuitBreaker.MarkNonSuccess
+    fullName: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+    name: MarkNonSuccess
+    nameWithType: IHystrixCircuitBreaker.MarkNonSuccess
+    fullName: NHystrix.IHystrixCircuitBreaker.MarkNonSuccess
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

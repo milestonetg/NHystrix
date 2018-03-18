@@ -1,0 +1,222 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix
+  commentId: N:NHystrix
+  id: NHystrix
+  children:
+  - NHystrix.CircuitBreakerOptions
+  - NHystrix.HealthCounts
+  - NHystrix.HystrixBulkhead
+  - NHystrix.HystrixCircuitBreaker
+  - NHystrix.HystrixCommand`2
+  - NHystrix.HystrixCommandGroup
+  - NHystrix.HystrixCommandKey
+  - NHystrix.HystrixCommandMetrics
+  - NHystrix.HystrixCommandProperties
+  - NHystrix.HystrixDelegatingHandler
+  - NHystrix.HystrixEventType
+  - NHystrix.HystrixMetrics
+  - NHystrix.IHystrixCircuitBreaker
+  - NHystrix.IHystrixCommand`2
+  - NHystrix.TaskExtensions
+  langs:
+  - csharp
+  - vb
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+  type: Namespace
+  assemblies:
+  - NHystrix
+references:
+- uid: NHystrix.CircuitBreakerOptions
+  commentId: T:NHystrix.CircuitBreakerOptions
+  parent: NHystrix
+  isExternal: false
+  name: CircuitBreakerOptions
+  nameWithType: CircuitBreakerOptions
+  fullName: NHystrix.CircuitBreakerOptions
+- uid: NHystrix.HealthCounts
+  commentId: T:NHystrix.HealthCounts
+  isExternal: false
+  name: HealthCounts
+  nameWithType: HealthCounts
+  fullName: NHystrix.HealthCounts
+- uid: NHystrix.HystrixBulkhead
+  commentId: T:NHystrix.HystrixBulkhead
+  parent: NHystrix
+  isExternal: false
+  name: HystrixBulkhead
+  nameWithType: HystrixBulkhead
+  fullName: NHystrix.HystrixBulkhead
+- uid: NHystrix.HystrixCircuitBreaker
+  commentId: T:NHystrix.HystrixCircuitBreaker
+  isExternal: false
+  name: HystrixCircuitBreaker
+  nameWithType: HystrixCircuitBreaker
+  fullName: NHystrix.HystrixCircuitBreaker
+- uid: NHystrix.HystrixCommand`2
+  commentId: T:NHystrix.HystrixCommand`2
+  isExternal: false
+  name: HystrixCommand<TRequest, TResult>
+  nameWithType: HystrixCommand<TRequest, TResult>
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.HystrixCommand`2
+    name: HystrixCommand
+    nameWithType: HystrixCommand
+    fullName: NHystrix.HystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.HystrixCommandGroup
+  commentId: T:NHystrix.HystrixCommandGroup
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandGroup
+  nameWithType: HystrixCommandGroup
+  fullName: NHystrix.HystrixCommandGroup
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+- uid: NHystrix.HystrixCommandMetrics
+  commentId: T:NHystrix.HystrixCommandMetrics
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandMetrics
+  nameWithType: HystrixCommandMetrics
+  fullName: NHystrix.HystrixCommandMetrics
+- uid: NHystrix.HystrixCommandProperties
+  commentId: T:NHystrix.HystrixCommandProperties
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandProperties
+  nameWithType: HystrixCommandProperties
+  fullName: NHystrix.HystrixCommandProperties
+- uid: NHystrix.HystrixDelegatingHandler
+  commentId: T:NHystrix.HystrixDelegatingHandler
+  isExternal: false
+  name: HystrixDelegatingHandler
+  nameWithType: HystrixDelegatingHandler
+  fullName: NHystrix.HystrixDelegatingHandler
+- uid: NHystrix.HystrixEventType
+  commentId: T:NHystrix.HystrixEventType
+  parent: NHystrix
+  isExternal: false
+  name: HystrixEventType
+  nameWithType: HystrixEventType
+  fullName: NHystrix.HystrixEventType
+- uid: NHystrix.HystrixMetrics
+  commentId: T:NHystrix.HystrixMetrics
+  parent: NHystrix
+  isExternal: false
+  name: HystrixMetrics
+  nameWithType: HystrixMetrics
+  fullName: NHystrix.HystrixMetrics
+- uid: NHystrix.IHystrixCircuitBreaker
+  commentId: T:NHystrix.IHystrixCircuitBreaker
+  parent: NHystrix
+  isExternal: false
+  name: IHystrixCircuitBreaker
+  nameWithType: IHystrixCircuitBreaker
+  fullName: NHystrix.IHystrixCircuitBreaker
+- uid: NHystrix.IHystrixCommand`2
+  commentId: T:NHystrix.IHystrixCommand`2
+  isExternal: false
+  name: IHystrixCommand<TRequest, TResult>
+  nameWithType: IHystrixCommand<TRequest, TResult>
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult)
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult)
+  name.vb: IHystrixCommand(Of TRequest, TResult)
+  spec.csharp:
+  - uid: NHystrix.IHystrixCommand`2
+    name: IHystrixCommand
+    nameWithType: IHystrixCommand
+    fullName: NHystrix.IHystrixCommand
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.IHystrixCommand`2
+    name: IHystrixCommand
+    nameWithType: IHystrixCommand
+    fullName: NHystrix.IHystrixCommand
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.TaskExtensions
+  commentId: T:NHystrix.TaskExtensions
+  isExternal: false
+  name: TaskExtensions
+  nameWithType: TaskExtensions
+  fullName: NHystrix.TaskExtensions
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix

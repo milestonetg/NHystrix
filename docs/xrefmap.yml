@@ -7,18 +7,468 @@ references:
   commentId: N:NHystrix
   fullName: NHystrix
   nameWithType: NHystrix
+- uid: NHystrix.CircuitBreakerOptions
+  name: CircuitBreakerOptions
+  href: api/NHystrix.CircuitBreakerOptions.html
+  commentId: T:NHystrix.CircuitBreakerOptions
+  fullName: NHystrix.CircuitBreakerOptions
+  nameWithType: CircuitBreakerOptions
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage
+  name: CircuitBreakerErrorThresholdPercentage
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerErrorThresholdPercentage
+  commentId: P:NHystrix.CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage
+  nameWithType: CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage*
+  name: CircuitBreakerErrorThresholdPercentage
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerErrorThresholdPercentage_
+  commentId: Overload:NHystrix.CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage
+  nameWithType: CircuitBreakerOptions.CircuitBreakerErrorThresholdPercentage
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerForceClosed
+  name: CircuitBreakerForceClosed
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerForceClosed
+  commentId: P:NHystrix.CircuitBreakerOptions.CircuitBreakerForceClosed
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerForceClosed
+  nameWithType: CircuitBreakerOptions.CircuitBreakerForceClosed
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerForceClosed*
+  name: CircuitBreakerForceClosed
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerForceClosed_
+  commentId: Overload:NHystrix.CircuitBreakerOptions.CircuitBreakerForceClosed
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerForceClosed
+  nameWithType: CircuitBreakerOptions.CircuitBreakerForceClosed
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerForceOpen
+  name: CircuitBreakerForceOpen
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerForceOpen
+  commentId: P:NHystrix.CircuitBreakerOptions.CircuitBreakerForceOpen
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerForceOpen
+  nameWithType: CircuitBreakerOptions.CircuitBreakerForceOpen
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerForceOpen*
+  name: CircuitBreakerForceOpen
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerForceOpen_
+  commentId: Overload:NHystrix.CircuitBreakerOptions.CircuitBreakerForceOpen
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerForceOpen
+  nameWithType: CircuitBreakerOptions.CircuitBreakerForceOpen
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold
+  name: CircuitBreakerRequestVolumeThreshold
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerRequestVolumeThreshold
+  commentId: P:NHystrix.CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold
+  nameWithType: CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold*
+  name: CircuitBreakerRequestVolumeThreshold
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerRequestVolumeThreshold_
+  commentId: Overload:NHystrix.CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold
+  nameWithType: CircuitBreakerOptions.CircuitBreakerRequestVolumeThreshold
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds
+  name: CircuitBreakerSleepWindowInMilliseconds
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerSleepWindowInMilliseconds
+  commentId: P:NHystrix.CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds
+  nameWithType: CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds
+- uid: NHystrix.CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds*
+  name: CircuitBreakerSleepWindowInMilliseconds
+  href: api/NHystrix.CircuitBreakerOptions.html#NHystrix_CircuitBreakerOptions_CircuitBreakerSleepWindowInMilliseconds_
+  commentId: Overload:NHystrix.CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds
+  fullName: NHystrix.CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds
+  nameWithType: CircuitBreakerOptions.CircuitBreakerSleepWindowInMilliseconds
+- uid: NHystrix.Exceptions
+  name: NHystrix.Exceptions
+  href: api/NHystrix.Exceptions.html
+  commentId: N:NHystrix.Exceptions
+  fullName: NHystrix.Exceptions
+  nameWithType: NHystrix.Exceptions
+- uid: NHystrix.Exceptions.FailureType
+  name: FailureType
+  href: api/NHystrix.Exceptions.FailureType.html
+  commentId: T:NHystrix.Exceptions.FailureType
+  fullName: NHystrix.Exceptions.FailureType
+  nameWithType: FailureType
+- uid: NHystrix.Exceptions.FailureType.BAD_REQUEST_EXCEPTION
+  name: BAD_REQUEST_EXCEPTION
+  href: api/NHystrix.Exceptions.FailureType.html#NHystrix_Exceptions_FailureType_BAD_REQUEST_EXCEPTION
+  commentId: F:NHystrix.Exceptions.FailureType.BAD_REQUEST_EXCEPTION
+  fullName: NHystrix.Exceptions.FailureType.BAD_REQUEST_EXCEPTION
+  nameWithType: FailureType.BAD_REQUEST_EXCEPTION
+- uid: NHystrix.Exceptions.FailureType.COMMAND_EXCEPTION
+  name: COMMAND_EXCEPTION
+  href: api/NHystrix.Exceptions.FailureType.html#NHystrix_Exceptions_FailureType_COMMAND_EXCEPTION
+  commentId: F:NHystrix.Exceptions.FailureType.COMMAND_EXCEPTION
+  fullName: NHystrix.Exceptions.FailureType.COMMAND_EXCEPTION
+  nameWithType: FailureType.COMMAND_EXCEPTION
+- uid: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_EXECUTION
+  name: REJECTED_SEMAPHORE_EXECUTION
+  href: api/NHystrix.Exceptions.FailureType.html#NHystrix_Exceptions_FailureType_REJECTED_SEMAPHORE_EXECUTION
+  commentId: F:NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_EXECUTION
+  fullName: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_EXECUTION
+  nameWithType: FailureType.REJECTED_SEMAPHORE_EXECUTION
+- uid: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_FALLBACK
+  name: REJECTED_SEMAPHORE_FALLBACK
+  href: api/NHystrix.Exceptions.FailureType.html#NHystrix_Exceptions_FailureType_REJECTED_SEMAPHORE_FALLBACK
+  commentId: F:NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_FALLBACK
+  fullName: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_FALLBACK
+  nameWithType: FailureType.REJECTED_SEMAPHORE_FALLBACK
+- uid: NHystrix.Exceptions.FailureType.REJECTED_THREAD_EXECUTION
+  name: REJECTED_THREAD_EXECUTION
+  href: api/NHystrix.Exceptions.FailureType.html#NHystrix_Exceptions_FailureType_REJECTED_THREAD_EXECUTION
+  commentId: F:NHystrix.Exceptions.FailureType.REJECTED_THREAD_EXECUTION
+  fullName: NHystrix.Exceptions.FailureType.REJECTED_THREAD_EXECUTION
+  nameWithType: FailureType.REJECTED_THREAD_EXECUTION
+- uid: NHystrix.Exceptions.FailureType.SHORTCIRCUIT
+  name: SHORTCIRCUIT
+  href: api/NHystrix.Exceptions.FailureType.html#NHystrix_Exceptions_FailureType_SHORTCIRCUIT
+  commentId: F:NHystrix.Exceptions.FailureType.SHORTCIRCUIT
+  fullName: NHystrix.Exceptions.FailureType.SHORTCIRCUIT
+  nameWithType: FailureType.SHORTCIRCUIT
+- uid: NHystrix.Exceptions.FailureType.TIMEOUT
+  name: TIMEOUT
+  href: api/NHystrix.Exceptions.FailureType.html#NHystrix_Exceptions_FailureType_TIMEOUT
+  commentId: F:NHystrix.Exceptions.FailureType.TIMEOUT
+  fullName: NHystrix.Exceptions.FailureType.TIMEOUT
+  nameWithType: FailureType.TIMEOUT
+- uid: NHystrix.Exceptions.HystrixBadRequestException
+  name: HystrixBadRequestException
+  href: api/NHystrix.Exceptions.HystrixBadRequestException.html
+  commentId: T:NHystrix.Exceptions.HystrixBadRequestException
+  fullName: NHystrix.Exceptions.HystrixBadRequestException
+  nameWithType: HystrixBadRequestException
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor
+  name: HystrixBadRequestException()
+  href: api/NHystrix.Exceptions.HystrixBadRequestException.html#NHystrix_Exceptions_HystrixBadRequestException__ctor
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException()
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException()
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: HystrixBadRequestException(SerializationInfo, StreamingContext)
+  href: api/NHystrix.Exceptions.HystrixBadRequestException.html#NHystrix_Exceptions_HystrixBadRequestException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException(SerializationInfo, StreamingContext)
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String)
+  name: HystrixBadRequestException(String)
+  href: api/NHystrix.Exceptions.HystrixBadRequestException.html#NHystrix_Exceptions_HystrixBadRequestException__ctor_System_String_
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String)
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException(System.String)
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException(String)
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String,System.Exception)
+  name: HystrixBadRequestException(String, Exception)
+  href: api/NHystrix.Exceptions.HystrixBadRequestException.html#NHystrix_Exceptions_HystrixBadRequestException__ctor_System_String_System_Exception_
+  commentId: M:NHystrix.Exceptions.HystrixBadRequestException.#ctor(System.String,System.Exception)
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException(System.String, System.Exception)
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException(String, Exception)
+- uid: NHystrix.Exceptions.HystrixBadRequestException.#ctor*
+  name: HystrixBadRequestException
+  href: api/NHystrix.Exceptions.HystrixBadRequestException.html#NHystrix_Exceptions_HystrixBadRequestException__ctor_
+  commentId: Overload:NHystrix.Exceptions.HystrixBadRequestException.#ctor
+  fullName: NHystrix.Exceptions.HystrixBadRequestException.HystrixBadRequestException
+  nameWithType: HystrixBadRequestException.HystrixBadRequestException
+- uid: NHystrix.Exceptions.HystrixFailureException
+  name: HystrixFailureException
+  href: api/NHystrix.Exceptions.HystrixFailureException.html
+  commentId: T:NHystrix.Exceptions.HystrixFailureException
+  fullName: NHystrix.Exceptions.HystrixFailureException
+  nameWithType: HystrixFailureException
+- uid: NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType)
+  name: HystrixFailureException(FailureType)
+  href: api/NHystrix.Exceptions.HystrixFailureException.html#NHystrix_Exceptions_HystrixFailureException__ctor_NHystrix_Exceptions_FailureType_
+  commentId: M:NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType)
+  fullName: NHystrix.Exceptions.HystrixFailureException.HystrixFailureException(NHystrix.Exceptions.FailureType)
+  nameWithType: HystrixFailureException.HystrixFailureException(FailureType)
+- uid: NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: HystrixFailureException(FailureType, SerializationInfo, StreamingContext)
+  href: api/NHystrix.Exceptions.HystrixFailureException.html#NHystrix_Exceptions_HystrixFailureException__ctor_NHystrix_Exceptions_FailureType_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: NHystrix.Exceptions.HystrixFailureException.HystrixFailureException(NHystrix.Exceptions.FailureType, System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: HystrixFailureException.HystrixFailureException(FailureType, SerializationInfo, StreamingContext)
+- uid: NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType,System.String)
+  name: HystrixFailureException(FailureType, String)
+  href: api/NHystrix.Exceptions.HystrixFailureException.html#NHystrix_Exceptions_HystrixFailureException__ctor_NHystrix_Exceptions_FailureType_System_String_
+  commentId: M:NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType,System.String)
+  fullName: NHystrix.Exceptions.HystrixFailureException.HystrixFailureException(NHystrix.Exceptions.FailureType, System.String)
+  nameWithType: HystrixFailureException.HystrixFailureException(FailureType, String)
+- uid: NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType,System.String,System.Exception)
+  name: HystrixFailureException(FailureType, String, Exception)
+  href: api/NHystrix.Exceptions.HystrixFailureException.html#NHystrix_Exceptions_HystrixFailureException__ctor_NHystrix_Exceptions_FailureType_System_String_System_Exception_
+  commentId: M:NHystrix.Exceptions.HystrixFailureException.#ctor(NHystrix.Exceptions.FailureType,System.String,System.Exception)
+  fullName: NHystrix.Exceptions.HystrixFailureException.HystrixFailureException(NHystrix.Exceptions.FailureType, System.String, System.Exception)
+  nameWithType: HystrixFailureException.HystrixFailureException(FailureType, String, Exception)
+- uid: NHystrix.Exceptions.HystrixFailureException.#ctor*
+  name: HystrixFailureException
+  href: api/NHystrix.Exceptions.HystrixFailureException.html#NHystrix_Exceptions_HystrixFailureException__ctor_
+  commentId: Overload:NHystrix.Exceptions.HystrixFailureException.#ctor
+  fullName: NHystrix.Exceptions.HystrixFailureException.HystrixFailureException
+  nameWithType: HystrixFailureException.HystrixFailureException
+- uid: NHystrix.Exceptions.HystrixFailureException.FailureType
+  name: FailureType
+  href: api/NHystrix.Exceptions.HystrixFailureException.html#NHystrix_Exceptions_HystrixFailureException_FailureType
+  commentId: P:NHystrix.Exceptions.HystrixFailureException.FailureType
+  fullName: NHystrix.Exceptions.HystrixFailureException.FailureType
+  nameWithType: HystrixFailureException.FailureType
+- uid: NHystrix.Exceptions.HystrixFailureException.FailureType*
+  name: FailureType
+  href: api/NHystrix.Exceptions.HystrixFailureException.html#NHystrix_Exceptions_HystrixFailureException_FailureType_
+  commentId: Overload:NHystrix.Exceptions.HystrixFailureException.FailureType
+  fullName: NHystrix.Exceptions.HystrixFailureException.FailureType
+  nameWithType: HystrixFailureException.FailureType
+- uid: NHystrix.Exceptions.HystrixFallbackException
+  name: HystrixFallbackException
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html
+  commentId: T:NHystrix.Exceptions.HystrixFallbackException
+  fullName: NHystrix.Exceptions.HystrixFallbackException
+  nameWithType: HystrixFallbackException
+- uid: NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.Exception)
+  name: HystrixFallbackException(FailureType, Exception)
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html#NHystrix_Exceptions_HystrixFallbackException__ctor_NHystrix_Exceptions_FailureType_System_Exception_
+  commentId: M:NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.Exception)
+  fullName: NHystrix.Exceptions.HystrixFallbackException.HystrixFallbackException(NHystrix.Exceptions.FailureType, System.Exception)
+  nameWithType: HystrixFallbackException.HystrixFallbackException(FailureType, Exception)
+- uid: NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.Exception,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: HystrixFallbackException(FailureType, Exception, SerializationInfo, StreamingContext)
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html#NHystrix_Exceptions_HystrixFallbackException__ctor_NHystrix_Exceptions_FailureType_System_Exception_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.Exception,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: NHystrix.Exceptions.HystrixFallbackException.HystrixFallbackException(NHystrix.Exceptions.FailureType, System.Exception, System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: HystrixFallbackException.HystrixFallbackException(FailureType, Exception, SerializationInfo, StreamingContext)
+- uid: NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.String,System.Exception)
+  name: HystrixFallbackException(FailureType, String, Exception)
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html#NHystrix_Exceptions_HystrixFallbackException__ctor_NHystrix_Exceptions_FailureType_System_String_System_Exception_
+  commentId: M:NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.String,System.Exception)
+  fullName: NHystrix.Exceptions.HystrixFallbackException.HystrixFallbackException(NHystrix.Exceptions.FailureType, System.String, System.Exception)
+  nameWithType: HystrixFallbackException.HystrixFallbackException(FailureType, String, Exception)
+- uid: NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.String,System.Exception,System.Exception)
+  name: HystrixFallbackException(FailureType, String, Exception, Exception)
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html#NHystrix_Exceptions_HystrixFallbackException__ctor_NHystrix_Exceptions_FailureType_System_String_System_Exception_System_Exception_
+  commentId: M:NHystrix.Exceptions.HystrixFallbackException.#ctor(NHystrix.Exceptions.FailureType,System.String,System.Exception,System.Exception)
+  fullName: NHystrix.Exceptions.HystrixFallbackException.HystrixFallbackException(NHystrix.Exceptions.FailureType, System.String, System.Exception, System.Exception)
+  nameWithType: HystrixFallbackException.HystrixFallbackException(FailureType, String, Exception, Exception)
+- uid: NHystrix.Exceptions.HystrixFallbackException.#ctor*
+  name: HystrixFallbackException
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html#NHystrix_Exceptions_HystrixFallbackException__ctor_
+  commentId: Overload:NHystrix.Exceptions.HystrixFallbackException.#ctor
+  fullName: NHystrix.Exceptions.HystrixFallbackException.HystrixFallbackException
+  nameWithType: HystrixFallbackException.HystrixFallbackException
+- uid: NHystrix.Exceptions.HystrixFallbackException.OriginalException
+  name: OriginalException
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html#NHystrix_Exceptions_HystrixFallbackException_OriginalException
+  commentId: P:NHystrix.Exceptions.HystrixFallbackException.OriginalException
+  fullName: NHystrix.Exceptions.HystrixFallbackException.OriginalException
+  nameWithType: HystrixFallbackException.OriginalException
+- uid: NHystrix.Exceptions.HystrixFallbackException.OriginalException*
+  name: OriginalException
+  href: api/NHystrix.Exceptions.HystrixFallbackException.html#NHystrix_Exceptions_HystrixFallbackException_OriginalException_
+  commentId: Overload:NHystrix.Exceptions.HystrixFallbackException.OriginalException
+  fullName: NHystrix.Exceptions.HystrixFallbackException.OriginalException
+  nameWithType: HystrixFallbackException.OriginalException
+- uid: NHystrix.Exceptions.HystrixRuntimeException
+  name: HystrixRuntimeException
+  href: api/NHystrix.Exceptions.HystrixRuntimeException.html
+  commentId: T:NHystrix.Exceptions.HystrixRuntimeException
+  fullName: NHystrix.Exceptions.HystrixRuntimeException
+  nameWithType: HystrixRuntimeException
+- uid: NHystrix.Exceptions.HystrixRuntimeException.#ctor
+  name: HystrixRuntimeException()
+  href: api/NHystrix.Exceptions.HystrixRuntimeException.html#NHystrix_Exceptions_HystrixRuntimeException__ctor
+  commentId: M:NHystrix.Exceptions.HystrixRuntimeException.#ctor
+  fullName: NHystrix.Exceptions.HystrixRuntimeException.HystrixRuntimeException()
+  nameWithType: HystrixRuntimeException.HystrixRuntimeException()
+- uid: NHystrix.Exceptions.HystrixRuntimeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: HystrixRuntimeException(SerializationInfo, StreamingContext)
+  href: api/NHystrix.Exceptions.HystrixRuntimeException.html#NHystrix_Exceptions_HystrixRuntimeException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:NHystrix.Exceptions.HystrixRuntimeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: NHystrix.Exceptions.HystrixRuntimeException.HystrixRuntimeException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: HystrixRuntimeException.HystrixRuntimeException(SerializationInfo, StreamingContext)
+- uid: NHystrix.Exceptions.HystrixRuntimeException.#ctor(System.String)
+  name: HystrixRuntimeException(String)
+  href: api/NHystrix.Exceptions.HystrixRuntimeException.html#NHystrix_Exceptions_HystrixRuntimeException__ctor_System_String_
+  commentId: M:NHystrix.Exceptions.HystrixRuntimeException.#ctor(System.String)
+  fullName: NHystrix.Exceptions.HystrixRuntimeException.HystrixRuntimeException(System.String)
+  nameWithType: HystrixRuntimeException.HystrixRuntimeException(String)
+- uid: NHystrix.Exceptions.HystrixRuntimeException.#ctor(System.String,System.Exception)
+  name: HystrixRuntimeException(String, Exception)
+  href: api/NHystrix.Exceptions.HystrixRuntimeException.html#NHystrix_Exceptions_HystrixRuntimeException__ctor_System_String_System_Exception_
+  commentId: M:NHystrix.Exceptions.HystrixRuntimeException.#ctor(System.String,System.Exception)
+  fullName: NHystrix.Exceptions.HystrixRuntimeException.HystrixRuntimeException(System.String, System.Exception)
+  nameWithType: HystrixRuntimeException.HystrixRuntimeException(String, Exception)
+- uid: NHystrix.Exceptions.HystrixRuntimeException.#ctor*
+  name: HystrixRuntimeException
+  href: api/NHystrix.Exceptions.HystrixRuntimeException.html#NHystrix_Exceptions_HystrixRuntimeException__ctor_
+  commentId: Overload:NHystrix.Exceptions.HystrixRuntimeException.#ctor
+  fullName: NHystrix.Exceptions.HystrixRuntimeException.HystrixRuntimeException
+  nameWithType: HystrixRuntimeException.HystrixRuntimeException
+- uid: NHystrix.Exceptions.HystrixTimeoutException
+  name: HystrixTimeoutException
+  href: api/NHystrix.Exceptions.HystrixTimeoutException.html
+  commentId: T:NHystrix.Exceptions.HystrixTimeoutException
+  fullName: NHystrix.Exceptions.HystrixTimeoutException
+  nameWithType: HystrixTimeoutException
+- uid: NHystrix.Exceptions.HystrixTimeoutException.#ctor
+  name: HystrixTimeoutException()
+  href: api/NHystrix.Exceptions.HystrixTimeoutException.html#NHystrix_Exceptions_HystrixTimeoutException__ctor
+  commentId: M:NHystrix.Exceptions.HystrixTimeoutException.#ctor
+  fullName: NHystrix.Exceptions.HystrixTimeoutException.HystrixTimeoutException()
+  nameWithType: HystrixTimeoutException.HystrixTimeoutException()
+- uid: NHystrix.Exceptions.HystrixTimeoutException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: HystrixTimeoutException(SerializationInfo, StreamingContext)
+  href: api/NHystrix.Exceptions.HystrixTimeoutException.html#NHystrix_Exceptions_HystrixTimeoutException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:NHystrix.Exceptions.HystrixTimeoutException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: NHystrix.Exceptions.HystrixTimeoutException.HystrixTimeoutException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: HystrixTimeoutException.HystrixTimeoutException(SerializationInfo, StreamingContext)
+- uid: NHystrix.Exceptions.HystrixTimeoutException.#ctor(System.String)
+  name: HystrixTimeoutException(String)
+  href: api/NHystrix.Exceptions.HystrixTimeoutException.html#NHystrix_Exceptions_HystrixTimeoutException__ctor_System_String_
+  commentId: M:NHystrix.Exceptions.HystrixTimeoutException.#ctor(System.String)
+  fullName: NHystrix.Exceptions.HystrixTimeoutException.HystrixTimeoutException(System.String)
+  nameWithType: HystrixTimeoutException.HystrixTimeoutException(String)
+- uid: NHystrix.Exceptions.HystrixTimeoutException.#ctor(System.String,System.Exception)
+  name: HystrixTimeoutException(String, Exception)
+  href: api/NHystrix.Exceptions.HystrixTimeoutException.html#NHystrix_Exceptions_HystrixTimeoutException__ctor_System_String_System_Exception_
+  commentId: M:NHystrix.Exceptions.HystrixTimeoutException.#ctor(System.String,System.Exception)
+  fullName: NHystrix.Exceptions.HystrixTimeoutException.HystrixTimeoutException(System.String, System.Exception)
+  nameWithType: HystrixTimeoutException.HystrixTimeoutException(String, Exception)
+- uid: NHystrix.Exceptions.HystrixTimeoutException.#ctor*
+  name: HystrixTimeoutException
+  href: api/NHystrix.Exceptions.HystrixTimeoutException.html#NHystrix_Exceptions_HystrixTimeoutException__ctor_
+  commentId: Overload:NHystrix.Exceptions.HystrixTimeoutException.#ctor
+  fullName: NHystrix.Exceptions.HystrixTimeoutException.HystrixTimeoutException
+  nameWithType: HystrixTimeoutException.HystrixTimeoutException
+- uid: NHystrix.HealthCounts
+  name: HealthCounts
+  href: api/NHystrix.HealthCounts.html
+  commentId: T:NHystrix.HealthCounts
+  fullName: NHystrix.HealthCounts
+  nameWithType: HealthCounts
+- uid: NHystrix.HealthCounts.FailedRequestCount
+  name: FailedRequestCount
+  href: api/NHystrix.HealthCounts.html#NHystrix_HealthCounts_FailedRequestCount
+  commentId: P:NHystrix.HealthCounts.FailedRequestCount
+  fullName: NHystrix.HealthCounts.FailedRequestCount
+  nameWithType: HealthCounts.FailedRequestCount
+- uid: NHystrix.HealthCounts.FailedRequestCount*
+  name: FailedRequestCount
+  href: api/NHystrix.HealthCounts.html#NHystrix_HealthCounts_FailedRequestCount_
+  commentId: Overload:NHystrix.HealthCounts.FailedRequestCount
+  fullName: NHystrix.HealthCounts.FailedRequestCount
+  nameWithType: HealthCounts.FailedRequestCount
+- uid: NHystrix.HealthCounts.FailurePercentage
+  name: FailurePercentage
+  href: api/NHystrix.HealthCounts.html#NHystrix_HealthCounts_FailurePercentage
+  commentId: P:NHystrix.HealthCounts.FailurePercentage
+  fullName: NHystrix.HealthCounts.FailurePercentage
+  nameWithType: HealthCounts.FailurePercentage
+- uid: NHystrix.HealthCounts.FailurePercentage*
+  name: FailurePercentage
+  href: api/NHystrix.HealthCounts.html#NHystrix_HealthCounts_FailurePercentage_
+  commentId: Overload:NHystrix.HealthCounts.FailurePercentage
+  fullName: NHystrix.HealthCounts.FailurePercentage
+  nameWithType: HealthCounts.FailurePercentage
+- uid: NHystrix.HealthCounts.RequestCount
+  name: RequestCount
+  href: api/NHystrix.HealthCounts.html#NHystrix_HealthCounts_RequestCount
+  commentId: P:NHystrix.HealthCounts.RequestCount
+  fullName: NHystrix.HealthCounts.RequestCount
+  nameWithType: HealthCounts.RequestCount
+- uid: NHystrix.HealthCounts.RequestCount*
+  name: RequestCount
+  href: api/NHystrix.HealthCounts.html#NHystrix_HealthCounts_RequestCount_
+  commentId: Overload:NHystrix.HealthCounts.RequestCount
+  fullName: NHystrix.HealthCounts.RequestCount
+  nameWithType: HealthCounts.RequestCount
+- uid: NHystrix.HystrixBulkhead
+  name: HystrixBulkhead
+  href: api/NHystrix.HystrixBulkhead.html
+  commentId: T:NHystrix.HystrixBulkhead
+  fullName: NHystrix.HystrixBulkhead
+  nameWithType: HystrixBulkhead
+- uid: NHystrix.HystrixBulkhead.CommandKey
+  name: CommandKey
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_CommandKey
+  commentId: P:NHystrix.HystrixBulkhead.CommandKey
+  fullName: NHystrix.HystrixBulkhead.CommandKey
+  nameWithType: HystrixBulkhead.CommandKey
+- uid: NHystrix.HystrixBulkhead.CommandKey*
+  name: CommandKey
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_CommandKey_
+  commentId: Overload:NHystrix.HystrixBulkhead.CommandKey
+  fullName: NHystrix.HystrixBulkhead.CommandKey
+  nameWithType: HystrixBulkhead.CommandKey
+- uid: NHystrix.HystrixBulkhead.Dispose
+  name: Dispose()
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Dispose
+  commentId: M:NHystrix.HystrixBulkhead.Dispose
+  fullName: NHystrix.HystrixBulkhead.Dispose()
+  nameWithType: HystrixBulkhead.Dispose()
+- uid: NHystrix.HystrixBulkhead.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Dispose_System_Boolean_
+  commentId: M:NHystrix.HystrixBulkhead.Dispose(System.Boolean)
+  fullName: NHystrix.HystrixBulkhead.Dispose(System.Boolean)
+  nameWithType: HystrixBulkhead.Dispose(Boolean)
+- uid: NHystrix.HystrixBulkhead.Dispose*
+  name: Dispose
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Dispose_
+  commentId: Overload:NHystrix.HystrixBulkhead.Dispose
+  fullName: NHystrix.HystrixBulkhead.Dispose
+  nameWithType: HystrixBulkhead.Dispose
+- uid: NHystrix.HystrixBulkhead.Finalize
+  name: Finalize()
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Finalize
+  commentId: M:NHystrix.HystrixBulkhead.Finalize
+  fullName: NHystrix.HystrixBulkhead.Finalize()
+  nameWithType: HystrixBulkhead.Finalize()
+- uid: NHystrix.HystrixBulkhead.Finalize*
+  name: Finalize
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Finalize_
+  commentId: Overload:NHystrix.HystrixBulkhead.Finalize
+  fullName: NHystrix.HystrixBulkhead.Finalize
+  nameWithType: HystrixBulkhead.Finalize
+- uid: NHystrix.HystrixBulkhead.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  name: GetInstance(HystrixCommandKey, HystrixCommandProperties)
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_GetInstance_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_
+  commentId: M:NHystrix.HystrixBulkhead.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  fullName: NHystrix.HystrixBulkhead.GetInstance(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties)
+  nameWithType: HystrixBulkhead.GetInstance(HystrixCommandKey, HystrixCommandProperties)
+- uid: NHystrix.HystrixBulkhead.GetInstance*
+  name: GetInstance
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_GetInstance_
+  commentId: Overload:NHystrix.HystrixBulkhead.GetInstance
+  fullName: NHystrix.HystrixBulkhead.GetInstance
+  nameWithType: HystrixBulkhead.GetInstance
+- uid: NHystrix.HystrixBulkhead.Release
+  name: Release()
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Release
+  commentId: M:NHystrix.HystrixBulkhead.Release
+  fullName: NHystrix.HystrixBulkhead.Release()
+  nameWithType: HystrixBulkhead.Release()
+- uid: NHystrix.HystrixBulkhead.Release*
+  name: Release
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Release_
+  commentId: Overload:NHystrix.HystrixBulkhead.Release
+  fullName: NHystrix.HystrixBulkhead.Release
+  nameWithType: HystrixBulkhead.Release
+- uid: NHystrix.HystrixBulkhead.Try
+  name: Try()
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Try
+  commentId: M:NHystrix.HystrixBulkhead.Try
+  fullName: NHystrix.HystrixBulkhead.Try()
+  nameWithType: HystrixBulkhead.Try()
+- uid: NHystrix.HystrixBulkhead.Try*
+  name: Try
+  href: api/NHystrix.HystrixBulkhead.html#NHystrix_HystrixBulkhead_Try_
+  commentId: Overload:NHystrix.HystrixBulkhead.Try
+  fullName: NHystrix.HystrixBulkhead.Try
+  nameWithType: HystrixBulkhead.Try
 - uid: NHystrix.HystrixCircuitBreaker
   name: HystrixCircuitBreaker
   href: api/NHystrix.HystrixCircuitBreaker.html
   commentId: T:NHystrix.HystrixCircuitBreaker
   fullName: NHystrix.HystrixCircuitBreaker
   nameWithType: HystrixCircuitBreaker
-- uid: NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,NHystrix.HystrixCommandMetrics)
-  name: GetInstance(HystrixCommandKey, HystrixCommandProperties, HystrixCommandMetrics)
-  href: api/NHystrix.HystrixCircuitBreaker.html#NHystrix_HystrixCircuitBreaker_GetInstance_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_NHystrix_HystrixCommandMetrics_
-  commentId: M:NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,NHystrix.HystrixCommandMetrics)
-  fullName: NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties, NHystrix.HystrixCommandMetrics)
-  nameWithType: HystrixCircuitBreaker.GetInstance(HystrixCommandKey, HystrixCommandProperties, HystrixCommandMetrics)
+- uid: NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.CircuitBreakerOptions,NHystrix.HystrixCommandMetrics)
+  name: GetInstance(HystrixCommandKey, CircuitBreakerOptions, HystrixCommandMetrics)
+  href: api/NHystrix.HystrixCircuitBreaker.html#NHystrix_HystrixCircuitBreaker_GetInstance_NHystrix_HystrixCommandKey_NHystrix_CircuitBreakerOptions_NHystrix_HystrixCommandMetrics_
+  commentId: M:NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.CircuitBreakerOptions,NHystrix.HystrixCommandMetrics)
+  fullName: NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey, NHystrix.CircuitBreakerOptions, NHystrix.HystrixCommandMetrics)
+  nameWithType: HystrixCircuitBreaker.GetInstance(HystrixCommandKey, CircuitBreakerOptions, HystrixCommandMetrics)
 - uid: NHystrix.HystrixCircuitBreaker.GetInstance*
   name: GetInstance
   href: api/NHystrix.HystrixCircuitBreaker.html#NHystrix_HystrixCircuitBreaker_GetInstance_
@@ -85,95 +535,163 @@ references:
   commentId: Overload:NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
   fullName: NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution
   nameWithType: HystrixCircuitBreaker.ShouldAttemptExecution
-- uid: NHystrix.HystrixCommand`1
-  name: HystrixCommand<TResult>
-  href: api/NHystrix.HystrixCommand-1.html
-  commentId: T:NHystrix.HystrixCommand`1
-  name.vb: HystrixCommand(Of TResult)
-  fullName: NHystrix.HystrixCommand<TResult>
-  fullName.vb: NHystrix.HystrixCommand(Of TResult)
-  nameWithType: HystrixCommand<TResult>
-  nameWithType.vb: HystrixCommand(Of TResult)
-- uid: NHystrix.HystrixCommand`1.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+- uid: NHystrix.HystrixCircuitBreaker.Trip
+  name: Trip()
+  href: api/NHystrix.HystrixCircuitBreaker.html#NHystrix_HystrixCircuitBreaker_Trip
+  commentId: M:NHystrix.HystrixCircuitBreaker.Trip
+  fullName: NHystrix.HystrixCircuitBreaker.Trip()
+  nameWithType: HystrixCircuitBreaker.Trip()
+- uid: NHystrix.HystrixCircuitBreaker.Trip*
+  name: Trip
+  href: api/NHystrix.HystrixCircuitBreaker.html#NHystrix_HystrixCircuitBreaker_Trip_
+  commentId: Overload:NHystrix.HystrixCircuitBreaker.Trip
+  fullName: NHystrix.HystrixCircuitBreaker.Trip
+  nameWithType: HystrixCircuitBreaker.Trip
+- uid: NHystrix.HystrixCommand`2
+  name: HystrixCommand<TRequest, TResult>
+  href: api/NHystrix.HystrixCommand-2.html
+  commentId: T:NHystrix.HystrixCommand`2
+  name.vb: HystrixCommand(Of TRequest, TResult)
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult)
+  nameWithType: HystrixCommand<TRequest, TResult>
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult)
+- uid: NHystrix.HystrixCommand`2.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
   name: HystrixCommand(HystrixCommandKey, HystrixCommandProperties)
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1__ctor_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_
-  commentId: M:NHystrix.HystrixCommand`1.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
-  fullName: NHystrix.HystrixCommand<TResult>.HystrixCommand(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties)
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).HystrixCommand(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties)
-  nameWithType: HystrixCommand<TResult>.HystrixCommand(HystrixCommandKey, HystrixCommandProperties)
-  nameWithType.vb: HystrixCommand(Of TResult).HystrixCommand(HystrixCommandKey, HystrixCommandProperties)
-- uid: NHystrix.HystrixCommand`1.#ctor*
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2__ctor_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_
+  commentId: M:NHystrix.HystrixCommand`2.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.HystrixCommand(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).HystrixCommand(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties)
+  nameWithType: HystrixCommand<TRequest, TResult>.HystrixCommand(HystrixCommandKey, HystrixCommandProperties)
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).HystrixCommand(HystrixCommandKey, HystrixCommandProperties)
+- uid: NHystrix.HystrixCommand`2.#ctor*
   name: HystrixCommand
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1__ctor_
-  commentId: Overload:NHystrix.HystrixCommand`1.#ctor
-  fullName: NHystrix.HystrixCommand<TResult>.HystrixCommand
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).HystrixCommand
-  nameWithType: HystrixCommand<TResult>.HystrixCommand
-  nameWithType.vb: HystrixCommand(Of TResult).HystrixCommand
-- uid: NHystrix.HystrixCommand`1.CommandKey
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2__ctor_
+  commentId: Overload:NHystrix.HystrixCommand`2.#ctor
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.HystrixCommand
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).HystrixCommand
+  nameWithType: HystrixCommand<TRequest, TResult>.HystrixCommand
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).HystrixCommand
+- uid: NHystrix.HystrixCommand`2.CommandKey
   name: CommandKey
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_CommandKey
-  commentId: P:NHystrix.HystrixCommand`1.CommandKey
-  fullName: NHystrix.HystrixCommand<TResult>.CommandKey
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).CommandKey
-  nameWithType: HystrixCommand<TResult>.CommandKey
-  nameWithType.vb: HystrixCommand(Of TResult).CommandKey
-- uid: NHystrix.HystrixCommand`1.CommandKey*
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_CommandKey
+  commentId: P:NHystrix.HystrixCommand`2.CommandKey
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.CommandKey
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).CommandKey
+  nameWithType: HystrixCommand<TRequest, TResult>.CommandKey
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).CommandKey
+- uid: NHystrix.HystrixCommand`2.CommandKey*
   name: CommandKey
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_CommandKey_
-  commentId: Overload:NHystrix.HystrixCommand`1.CommandKey
-  fullName: NHystrix.HystrixCommand<TResult>.CommandKey
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).CommandKey
-  nameWithType: HystrixCommand<TResult>.CommandKey
-  nameWithType.vb: HystrixCommand(Of TResult).CommandKey
-- uid: NHystrix.HystrixCommand`1.ExecuteAsync
-  name: ExecuteAsync()
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_ExecuteAsync
-  commentId: M:NHystrix.HystrixCommand`1.ExecuteAsync
-  fullName: NHystrix.HystrixCommand<TResult>.ExecuteAsync()
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).ExecuteAsync()
-  nameWithType: HystrixCommand<TResult>.ExecuteAsync()
-  nameWithType.vb: HystrixCommand(Of TResult).ExecuteAsync()
-- uid: NHystrix.HystrixCommand`1.ExecuteAsync*
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_CommandKey_
+  commentId: Overload:NHystrix.HystrixCommand`2.CommandKey
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.CommandKey
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).CommandKey
+  nameWithType: HystrixCommand<TRequest, TResult>.CommandKey
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).CommandKey
+- uid: NHystrix.HystrixCommand`2.Dispose
+  name: Dispose()
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_Dispose
+  commentId: M:NHystrix.HystrixCommand`2.Dispose
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.Dispose()
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).Dispose()
+  nameWithType: HystrixCommand<TRequest, TResult>.Dispose()
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).Dispose()
+- uid: NHystrix.HystrixCommand`2.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_Dispose_System_Boolean_
+  commentId: M:NHystrix.HystrixCommand`2.Dispose(System.Boolean)
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.Dispose(System.Boolean)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).Dispose(System.Boolean)
+  nameWithType: HystrixCommand<TRequest, TResult>.Dispose(Boolean)
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).Dispose(Boolean)
+- uid: NHystrix.HystrixCommand`2.Dispose*
+  name: Dispose
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_Dispose_
+  commentId: Overload:NHystrix.HystrixCommand`2.Dispose
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.Dispose
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).Dispose
+  nameWithType: HystrixCommand<TRequest, TResult>.Dispose
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).Dispose
+- uid: NHystrix.HystrixCommand`2.Execute(`0)
+  name: Execute(TRequest)
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_Execute__0_
+  commentId: M:NHystrix.HystrixCommand`2.Execute(`0)
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.Execute(TRequest)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).Execute(TRequest)
+  nameWithType: HystrixCommand<TRequest, TResult>.Execute(TRequest)
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).Execute(TRequest)
+- uid: NHystrix.HystrixCommand`2.Execute*
+  name: Execute
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_Execute_
+  commentId: Overload:NHystrix.HystrixCommand`2.Execute
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.Execute
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).Execute
+  nameWithType: HystrixCommand<TRequest, TResult>.Execute
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).Execute
+- uid: NHystrix.HystrixCommand`2.ExecuteAsync(`0)
+  name: ExecuteAsync(TRequest)
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_ExecuteAsync__0_
+  commentId: M:NHystrix.HystrixCommand`2.ExecuteAsync(`0)
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.ExecuteAsync(TRequest)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).ExecuteAsync(TRequest)
+  nameWithType: HystrixCommand<TRequest, TResult>.ExecuteAsync(TRequest)
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).ExecuteAsync(TRequest)
+- uid: NHystrix.HystrixCommand`2.ExecuteAsync*
   name: ExecuteAsync
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_ExecuteAsync_
-  commentId: Overload:NHystrix.HystrixCommand`1.ExecuteAsync
-  fullName: NHystrix.HystrixCommand<TResult>.ExecuteAsync
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).ExecuteAsync
-  nameWithType: HystrixCommand<TResult>.ExecuteAsync
-  nameWithType.vb: HystrixCommand(Of TResult).ExecuteAsync
-- uid: NHystrix.HystrixCommand`1.OnHandleFallback
-  name: OnHandleFallback()
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_OnHandleFallback
-  commentId: M:NHystrix.HystrixCommand`1.OnHandleFallback
-  fullName: NHystrix.HystrixCommand<TResult>.OnHandleFallback()
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).OnHandleFallback()
-  nameWithType: HystrixCommand<TResult>.OnHandleFallback()
-  nameWithType.vb: HystrixCommand(Of TResult).OnHandleFallback()
-- uid: NHystrix.HystrixCommand`1.OnHandleFallback*
-  name: OnHandleFallback
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_OnHandleFallback_
-  commentId: Overload:NHystrix.HystrixCommand`1.OnHandleFallback
-  fullName: NHystrix.HystrixCommand<TResult>.OnHandleFallback
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).OnHandleFallback
-  nameWithType: HystrixCommand<TResult>.OnHandleFallback
-  nameWithType.vb: HystrixCommand(Of TResult).OnHandleFallback
-- uid: NHystrix.HystrixCommand`1.RunAsync
-  name: RunAsync()
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_RunAsync
-  commentId: M:NHystrix.HystrixCommand`1.RunAsync
-  fullName: NHystrix.HystrixCommand<TResult>.RunAsync()
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).RunAsync()
-  nameWithType: HystrixCommand<TResult>.RunAsync()
-  nameWithType.vb: HystrixCommand(Of TResult).RunAsync()
-- uid: NHystrix.HystrixCommand`1.RunAsync*
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_ExecuteAsync_
+  commentId: Overload:NHystrix.HystrixCommand`2.ExecuteAsync
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.ExecuteAsync
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).ExecuteAsync
+  nameWithType: HystrixCommand<TRequest, TResult>.ExecuteAsync
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).ExecuteAsync
+- uid: NHystrix.HystrixCommand`2.Finalize
+  name: Finalize()
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_Finalize
+  commentId: M:NHystrix.HystrixCommand`2.Finalize
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.Finalize()
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).Finalize()
+  nameWithType: HystrixCommand<TRequest, TResult>.Finalize()
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).Finalize()
+- uid: NHystrix.HystrixCommand`2.Finalize*
+  name: Finalize
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_Finalize_
+  commentId: Overload:NHystrix.HystrixCommand`2.Finalize
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.Finalize
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).Finalize
+  nameWithType: HystrixCommand<TRequest, TResult>.Finalize
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).Finalize
+- uid: NHystrix.HystrixCommand`2.GetFallback
+  name: GetFallback()
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_GetFallback
+  commentId: M:NHystrix.HystrixCommand`2.GetFallback
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.GetFallback()
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).GetFallback()
+  nameWithType: HystrixCommand<TRequest, TResult>.GetFallback()
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).GetFallback()
+- uid: NHystrix.HystrixCommand`2.GetFallback*
+  name: GetFallback
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_GetFallback_
+  commentId: Overload:NHystrix.HystrixCommand`2.GetFallback
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.GetFallback
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).GetFallback
+  nameWithType: HystrixCommand<TRequest, TResult>.GetFallback
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).GetFallback
+- uid: NHystrix.HystrixCommand`2.RunAsync(`0)
+  name: RunAsync(TRequest)
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_RunAsync__0_
+  commentId: M:NHystrix.HystrixCommand`2.RunAsync(`0)
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.RunAsync(TRequest)
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).RunAsync(TRequest)
+  nameWithType: HystrixCommand<TRequest, TResult>.RunAsync(TRequest)
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).RunAsync(TRequest)
+- uid: NHystrix.HystrixCommand`2.RunAsync*
   name: RunAsync
-  href: api/NHystrix.HystrixCommand-1.html#NHystrix_HystrixCommand_1_RunAsync_
-  commentId: Overload:NHystrix.HystrixCommand`1.RunAsync
-  fullName: NHystrix.HystrixCommand<TResult>.RunAsync
-  fullName.vb: NHystrix.HystrixCommand(Of TResult).RunAsync
-  nameWithType: HystrixCommand<TResult>.RunAsync
-  nameWithType.vb: HystrixCommand(Of TResult).RunAsync
+  href: api/NHystrix.HystrixCommand-2.html#NHystrix_HystrixCommand_2_RunAsync_
+  commentId: Overload:NHystrix.HystrixCommand`2.RunAsync
+  fullName: NHystrix.HystrixCommand<TRequest, TResult>.RunAsync
+  fullName.vb: NHystrix.HystrixCommand(Of TRequest, TResult).RunAsync
+  nameWithType: HystrixCommand<TRequest, TResult>.RunAsync
+  nameWithType.vb: HystrixCommand(Of TRequest, TResult).RunAsync
 - uid: NHystrix.HystrixCommandGroup
   name: HystrixCommandGroup
   href: api/NHystrix.HystrixCommandGroup.html
@@ -216,6 +734,36 @@ references:
   commentId: Overload:NHystrix.HystrixCommandGroup.CommandKeys
   fullName: NHystrix.HystrixCommandGroup.CommandKeys
   nameWithType: HystrixCommandGroup.CommandKeys
+- uid: NHystrix.HystrixCommandGroup.Equals(NHystrix.HystrixCommandGroup)
+  name: Equals(HystrixCommandGroup)
+  href: api/NHystrix.HystrixCommandGroup.html#NHystrix_HystrixCommandGroup_Equals_NHystrix_HystrixCommandGroup_
+  commentId: M:NHystrix.HystrixCommandGroup.Equals(NHystrix.HystrixCommandGroup)
+  fullName: NHystrix.HystrixCommandGroup.Equals(NHystrix.HystrixCommandGroup)
+  nameWithType: HystrixCommandGroup.Equals(HystrixCommandGroup)
+- uid: NHystrix.HystrixCommandGroup.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NHystrix.HystrixCommandGroup.html#NHystrix_HystrixCommandGroup_Equals_System_Object_
+  commentId: M:NHystrix.HystrixCommandGroup.Equals(System.Object)
+  fullName: NHystrix.HystrixCommandGroup.Equals(System.Object)
+  nameWithType: HystrixCommandGroup.Equals(Object)
+- uid: NHystrix.HystrixCommandGroup.Equals*
+  name: Equals
+  href: api/NHystrix.HystrixCommandGroup.html#NHystrix_HystrixCommandGroup_Equals_
+  commentId: Overload:NHystrix.HystrixCommandGroup.Equals
+  fullName: NHystrix.HystrixCommandGroup.Equals
+  nameWithType: HystrixCommandGroup.Equals
+- uid: NHystrix.HystrixCommandGroup.GetHashCode
+  name: GetHashCode()
+  href: api/NHystrix.HystrixCommandGroup.html#NHystrix_HystrixCommandGroup_GetHashCode
+  commentId: M:NHystrix.HystrixCommandGroup.GetHashCode
+  fullName: NHystrix.HystrixCommandGroup.GetHashCode()
+  nameWithType: HystrixCommandGroup.GetHashCode()
+- uid: NHystrix.HystrixCommandGroup.GetHashCode*
+  name: GetHashCode
+  href: api/NHystrix.HystrixCommandGroup.html#NHystrix_HystrixCommandGroup_GetHashCode_
+  commentId: Overload:NHystrix.HystrixCommandGroup.GetHashCode
+  fullName: NHystrix.HystrixCommandGroup.GetHashCode
+  nameWithType: HystrixCommandGroup.GetHashCode
 - uid: NHystrix.HystrixCommandGroup.Name
   name: Name
   href: api/NHystrix.HystrixCommandGroup.html#NHystrix_HystrixCommandGroup_Name
@@ -258,6 +806,36 @@ references:
   commentId: Overload:NHystrix.HystrixCommandKey.#ctor
   fullName: NHystrix.HystrixCommandKey.HystrixCommandKey
   nameWithType: HystrixCommandKey.HystrixCommandKey
+- uid: NHystrix.HystrixCommandKey.Equals(NHystrix.HystrixCommandKey)
+  name: Equals(HystrixCommandKey)
+  href: api/NHystrix.HystrixCommandKey.html#NHystrix_HystrixCommandKey_Equals_NHystrix_HystrixCommandKey_
+  commentId: M:NHystrix.HystrixCommandKey.Equals(NHystrix.HystrixCommandKey)
+  fullName: NHystrix.HystrixCommandKey.Equals(NHystrix.HystrixCommandKey)
+  nameWithType: HystrixCommandKey.Equals(HystrixCommandKey)
+- uid: NHystrix.HystrixCommandKey.Equals(System.Object)
+  name: Equals(Object)
+  href: api/NHystrix.HystrixCommandKey.html#NHystrix_HystrixCommandKey_Equals_System_Object_
+  commentId: M:NHystrix.HystrixCommandKey.Equals(System.Object)
+  fullName: NHystrix.HystrixCommandKey.Equals(System.Object)
+  nameWithType: HystrixCommandKey.Equals(Object)
+- uid: NHystrix.HystrixCommandKey.Equals*
+  name: Equals
+  href: api/NHystrix.HystrixCommandKey.html#NHystrix_HystrixCommandKey_Equals_
+  commentId: Overload:NHystrix.HystrixCommandKey.Equals
+  fullName: NHystrix.HystrixCommandKey.Equals
+  nameWithType: HystrixCommandKey.Equals
+- uid: NHystrix.HystrixCommandKey.GetHashCode
+  name: GetHashCode()
+  href: api/NHystrix.HystrixCommandKey.html#NHystrix_HystrixCommandKey_GetHashCode
+  commentId: M:NHystrix.HystrixCommandKey.GetHashCode
+  fullName: NHystrix.HystrixCommandKey.GetHashCode()
+  nameWithType: HystrixCommandKey.GetHashCode()
+- uid: NHystrix.HystrixCommandKey.GetHashCode*
+  name: GetHashCode
+  href: api/NHystrix.HystrixCommandKey.html#NHystrix_HystrixCommandKey_GetHashCode_
+  commentId: Overload:NHystrix.HystrixCommandKey.GetHashCode
+  fullName: NHystrix.HystrixCommandKey.GetHashCode
+  nameWithType: HystrixCommandKey.GetHashCode
 - uid: NHystrix.HystrixCommandKey.Group
   name: Group
   href: api/NHystrix.HystrixCommandKey.html#NHystrix_HystrixCommandKey_Group
@@ -336,6 +914,18 @@ references:
   commentId: Overload:NHystrix.HystrixCommandMetrics.GetInstance
   fullName: NHystrix.HystrixCommandMetrics.GetInstance
   nameWithType: HystrixCommandMetrics.GetInstance
+- uid: NHystrix.HystrixCommandMetrics.HealthStream
+  name: HealthStream
+  href: api/NHystrix.HystrixCommandMetrics.html#NHystrix_HystrixCommandMetrics_HealthStream
+  commentId: P:NHystrix.HystrixCommandMetrics.HealthStream
+  fullName: NHystrix.HystrixCommandMetrics.HealthStream
+  nameWithType: HystrixCommandMetrics.HealthStream
+- uid: NHystrix.HystrixCommandMetrics.HealthStream*
+  name: HealthStream
+  href: api/NHystrix.HystrixCommandMetrics.html#NHystrix_HystrixCommandMetrics_HealthStream_
+  commentId: Overload:NHystrix.HystrixCommandMetrics.HealthStream
+  fullName: NHystrix.HystrixCommandMetrics.HealthStream
+  nameWithType: HystrixCommandMetrics.HealthStream
 - uid: NHystrix.HystrixCommandProperties
   name: HystrixCommandProperties
   href: api/NHystrix.HystrixCommandProperties.html
@@ -378,66 +968,18 @@ references:
   commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
   fullName: NHystrix.HystrixCommandProperties.CircuitBreakerEnabled
   nameWithType: HystrixCommandProperties.CircuitBreakerEnabled
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage
-  name: CircuitBreakerErrorThresholdPercentage
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerErrorThresholdPercentage
-  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage
-  nameWithType: HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage*
-  name: CircuitBreakerErrorThresholdPercentage
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerErrorThresholdPercentage_
-  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage
-  nameWithType: HystrixCommandProperties.CircuitBreakerErrorThresholdPercentage
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerForceClosed
-  name: CircuitBreakerForceClosed
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerForceClosed
-  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerForceClosed
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerForceClosed
-  nameWithType: HystrixCommandProperties.CircuitBreakerForceClosed
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerForceClosed*
-  name: CircuitBreakerForceClosed
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerForceClosed_
-  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerForceClosed
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerForceClosed
-  nameWithType: HystrixCommandProperties.CircuitBreakerForceClosed
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerForceOpen
-  name: CircuitBreakerForceOpen
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerForceOpen
-  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerForceOpen
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerForceOpen
-  nameWithType: HystrixCommandProperties.CircuitBreakerForceOpen
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerForceOpen*
-  name: CircuitBreakerForceOpen
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerForceOpen_
-  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerForceOpen
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerForceOpen
-  nameWithType: HystrixCommandProperties.CircuitBreakerForceOpen
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold
-  name: CircuitBreakerRequestVolumeThreshold
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerRequestVolumeThreshold
-  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold
-  nameWithType: HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold*
-  name: CircuitBreakerRequestVolumeThreshold
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerRequestVolumeThreshold_
-  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold
-  nameWithType: HystrixCommandProperties.CircuitBreakerRequestVolumeThreshold
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds
-  name: CircuitBreakerSleepWindowInMilliseconds
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerSleepWindowInMilliseconds
-  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds
-  nameWithType: HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds
-- uid: NHystrix.HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds*
-  name: CircuitBreakerSleepWindowInMilliseconds
-  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerSleepWindowInMilliseconds_
-  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds
-  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds
-  nameWithType: HystrixCommandProperties.CircuitBreakerSleepWindowInMilliseconds
+- uid: NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  name: CircuitBreakerOptions
+  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerOptions
+  commentId: P:NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  nameWithType: HystrixCommandProperties.CircuitBreakerOptions
+- uid: NHystrix.HystrixCommandProperties.CircuitBreakerOptions*
+  name: CircuitBreakerOptions
+  href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_CircuitBreakerOptions_
+  commentId: Overload:NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  fullName: NHystrix.HystrixCommandProperties.CircuitBreakerOptions
+  nameWithType: HystrixCommandProperties.CircuitBreakerOptions
 - uid: NHystrix.HystrixCommandProperties.ExecutionTimeoutInMilliseconds
   name: ExecutionTimeoutInMilliseconds
   href: api/NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_ExecutionTimeoutInMilliseconds
@@ -516,18 +1058,69 @@ references:
   commentId: T:NHystrix.HystrixDelegatingHandler
   fullName: NHystrix.HystrixDelegatingHandler
   nameWithType: HystrixDelegatingHandler
-- uid: NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler)
-  name: HystrixDelegatingHandler(HystrixCommandProperties, HttpMessageHandler)
-  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler__ctor_NHystrix_HystrixCommandProperties_System_Net_Http_HttpMessageHandler_
-  commentId: M:NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler)
-  fullName: NHystrix.HystrixDelegatingHandler.HystrixDelegatingHandler(NHystrix.HystrixCommandProperties, System.Net.Http.HttpMessageHandler)
-  nameWithType: HystrixDelegatingHandler.HystrixDelegatingHandler(HystrixCommandProperties, HttpMessageHandler)
+- uid: NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler,System.Func{System.Net.Http.HttpResponseMessage})
+  name: HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func<HttpResponseMessage>)
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler__ctor_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_System_Net_Http_HttpMessageHandler_System_Func_System_Net_Http_HttpResponseMessage__
+  commentId: M:NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler,System.Func{System.Net.Http.HttpResponseMessage})
+  name.vb: HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func(Of HttpResponseMessage))
+  fullName: NHystrix.HystrixDelegatingHandler.HystrixDelegatingHandler(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties, System.Net.Http.HttpMessageHandler, System.Func<System.Net.Http.HttpResponseMessage>)
+  fullName.vb: NHystrix.HystrixDelegatingHandler.HystrixDelegatingHandler(NHystrix.HystrixCommandKey, NHystrix.HystrixCommandProperties, System.Net.Http.HttpMessageHandler, System.Func(Of System.Net.Http.HttpResponseMessage))
+  nameWithType: HystrixDelegatingHandler.HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func<HttpResponseMessage>)
+  nameWithType.vb: HystrixDelegatingHandler.HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func(Of HttpResponseMessage))
 - uid: NHystrix.HystrixDelegatingHandler.#ctor*
   name: HystrixDelegatingHandler
   href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler__ctor_
   commentId: Overload:NHystrix.HystrixDelegatingHandler.#ctor
   fullName: NHystrix.HystrixDelegatingHandler.HystrixDelegatingHandler
   nameWithType: HystrixDelegatingHandler.HystrixDelegatingHandler
+- uid: NHystrix.HystrixDelegatingHandler.CommandKey
+  name: CommandKey
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_CommandKey
+  commentId: P:NHystrix.HystrixDelegatingHandler.CommandKey
+  fullName: NHystrix.HystrixDelegatingHandler.CommandKey
+  nameWithType: HystrixDelegatingHandler.CommandKey
+- uid: NHystrix.HystrixDelegatingHandler.CommandKey*
+  name: CommandKey
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_CommandKey_
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.CommandKey
+  fullName: NHystrix.HystrixDelegatingHandler.CommandKey
+  nameWithType: HystrixDelegatingHandler.CommandKey
+- uid: NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_Dispose_System_Boolean_
+  commentId: M:NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)
+  fullName: NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)
+  nameWithType: HystrixDelegatingHandler.Dispose(Boolean)
+- uid: NHystrix.HystrixDelegatingHandler.Dispose*
+  name: Dispose
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_Dispose_
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.Dispose
+  fullName: NHystrix.HystrixDelegatingHandler.Dispose
+  nameWithType: HystrixDelegatingHandler.Dispose
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  name: IsCircuitBreakerEnabled
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_IsCircuitBreakerEnabled
+  commentId: P:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerEnabled
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled*
+  name: IsCircuitBreakerEnabled
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_IsCircuitBreakerEnabled_
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerEnabled
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  name: IsCircuitBreakerOpen
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_IsCircuitBreakerOpen
+  commentId: P:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerOpen
+- uid: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen*
+  name: IsCircuitBreakerOpen
+  href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_IsCircuitBreakerOpen_
+  commentId: Overload:NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  fullName: NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen
+  nameWithType: HystrixDelegatingHandler.IsCircuitBreakerOpen
 - uid: NHystrix.HystrixDelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   name: SendAsync(HttpRequestMessage, CancellationToken)
   href: api/NHystrix.HystrixDelegatingHandler.html#NHystrix_HystrixDelegatingHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
@@ -732,12 +1325,6 @@ references:
   commentId: Overload:NHystrix.HystrixMetrics.#ctor
   fullName: NHystrix.HystrixMetrics.HystrixMetrics
   nameWithType: HystrixMetrics.HystrixMetrics
-- uid: NHystrix.HystrixMetrics.counter
-  name: counter
-  href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_counter
-  commentId: F:NHystrix.HystrixMetrics.counter
-  fullName: NHystrix.HystrixMetrics.counter
-  nameWithType: HystrixMetrics.counter
 - uid: NHystrix.HystrixMetrics.GetCumulativeCount(NHystrix.HystrixEventType)
   name: GetCumulativeCount(HystrixEventType)
   href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_GetCumulativeCount_NHystrix_HystrixEventType_
@@ -750,18 +1337,30 @@ references:
   commentId: Overload:NHystrix.HystrixMetrics.GetCumulativeCount
   fullName: NHystrix.HystrixMetrics.GetCumulativeCount
   nameWithType: HystrixMetrics.GetCumulativeCount
-- uid: NHystrix.HystrixMetrics.getRollingCount(NHystrix.HystrixEventType)
-  name: getRollingCount(HystrixEventType)
-  href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_getRollingCount_NHystrix_HystrixEventType_
-  commentId: M:NHystrix.HystrixMetrics.getRollingCount(NHystrix.HystrixEventType)
-  fullName: NHystrix.HystrixMetrics.getRollingCount(NHystrix.HystrixEventType)
-  nameWithType: HystrixMetrics.getRollingCount(HystrixEventType)
-- uid: NHystrix.HystrixMetrics.getRollingCount*
-  name: getRollingCount
-  href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_getRollingCount_
-  commentId: Overload:NHystrix.HystrixMetrics.getRollingCount
-  fullName: NHystrix.HystrixMetrics.getRollingCount
-  nameWithType: HystrixMetrics.getRollingCount
+- uid: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  name: GetRollingCount(HystrixEventType)
+  href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_GetRollingCount_NHystrix_HystrixEventType_
+  commentId: M:NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  fullName: NHystrix.HystrixMetrics.GetRollingCount(NHystrix.HystrixEventType)
+  nameWithType: HystrixMetrics.GetRollingCount(HystrixEventType)
+- uid: NHystrix.HystrixMetrics.GetRollingCount*
+  name: GetRollingCount
+  href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_GetRollingCount_
+  commentId: Overload:NHystrix.HystrixMetrics.GetRollingCount
+  fullName: NHystrix.HystrixMetrics.GetRollingCount
+  nameWithType: HystrixMetrics.GetRollingCount
+- uid: NHystrix.HystrixMetrics.Reset
+  name: Reset()
+  href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_Reset
+  commentId: M:NHystrix.HystrixMetrics.Reset
+  fullName: NHystrix.HystrixMetrics.Reset()
+  nameWithType: HystrixMetrics.Reset()
+- uid: NHystrix.HystrixMetrics.Reset*
+  name: Reset
+  href: api/NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_Reset_
+  commentId: Overload:NHystrix.HystrixMetrics.Reset
+  fullName: NHystrix.HystrixMetrics.Reset
+  nameWithType: HystrixMetrics.Reset
 - uid: NHystrix.IHystrixCircuitBreaker
   name: IHystrixCircuitBreaker
   href: api/NHystrix.IHystrixCircuitBreaker.html
@@ -828,31 +1427,59 @@ references:
   commentId: Overload:NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
   fullName: NHystrix.IHystrixCircuitBreaker.ShouldAttemptExecution
   nameWithType: IHystrixCircuitBreaker.ShouldAttemptExecution
-- uid: NHystrix.IHystrixCommand`1
-  name: IHystrixCommand<TResult>
-  href: api/NHystrix.IHystrixCommand-1.html
-  commentId: T:NHystrix.IHystrixCommand`1
-  name.vb: IHystrixCommand(Of TResult)
-  fullName: NHystrix.IHystrixCommand<TResult>
-  fullName.vb: NHystrix.IHystrixCommand(Of TResult)
-  nameWithType: IHystrixCommand<TResult>
-  nameWithType.vb: IHystrixCommand(Of TResult)
-- uid: NHystrix.IHystrixCommand`1.ExecuteAsync
-  name: ExecuteAsync()
-  href: api/NHystrix.IHystrixCommand-1.html#NHystrix_IHystrixCommand_1_ExecuteAsync
-  commentId: M:NHystrix.IHystrixCommand`1.ExecuteAsync
-  fullName: NHystrix.IHystrixCommand<TResult>.ExecuteAsync()
-  fullName.vb: NHystrix.IHystrixCommand(Of TResult).ExecuteAsync()
-  nameWithType: IHystrixCommand<TResult>.ExecuteAsync()
-  nameWithType.vb: IHystrixCommand(Of TResult).ExecuteAsync()
-- uid: NHystrix.IHystrixCommand`1.ExecuteAsync*
+- uid: NHystrix.IHystrixCircuitBreaker.Trip
+  name: Trip()
+  href: api/NHystrix.IHystrixCircuitBreaker.html#NHystrix_IHystrixCircuitBreaker_Trip
+  commentId: M:NHystrix.IHystrixCircuitBreaker.Trip
+  fullName: NHystrix.IHystrixCircuitBreaker.Trip()
+  nameWithType: IHystrixCircuitBreaker.Trip()
+- uid: NHystrix.IHystrixCircuitBreaker.Trip*
+  name: Trip
+  href: api/NHystrix.IHystrixCircuitBreaker.html#NHystrix_IHystrixCircuitBreaker_Trip_
+  commentId: Overload:NHystrix.IHystrixCircuitBreaker.Trip
+  fullName: NHystrix.IHystrixCircuitBreaker.Trip
+  nameWithType: IHystrixCircuitBreaker.Trip
+- uid: NHystrix.IHystrixCommand`2
+  name: IHystrixCommand<TRequest, TResult>
+  href: api/NHystrix.IHystrixCommand-2.html
+  commentId: T:NHystrix.IHystrixCommand`2
+  name.vb: IHystrixCommand(Of TRequest, TResult)
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult)
+  nameWithType: IHystrixCommand<TRequest, TResult>
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult)
+- uid: NHystrix.IHystrixCommand`2.Execute(`0)
+  name: Execute(TRequest)
+  href: api/NHystrix.IHystrixCommand-2.html#NHystrix_IHystrixCommand_2_Execute__0_
+  commentId: M:NHystrix.IHystrixCommand`2.Execute(`0)
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.Execute(TRequest)
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).Execute(TRequest)
+  nameWithType: IHystrixCommand<TRequest, TResult>.Execute(TRequest)
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).Execute(TRequest)
+- uid: NHystrix.IHystrixCommand`2.Execute*
+  name: Execute
+  href: api/NHystrix.IHystrixCommand-2.html#NHystrix_IHystrixCommand_2_Execute_
+  commentId: Overload:NHystrix.IHystrixCommand`2.Execute
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.Execute
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).Execute
+  nameWithType: IHystrixCommand<TRequest, TResult>.Execute
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).Execute
+- uid: NHystrix.IHystrixCommand`2.ExecuteAsync(`0)
+  name: ExecuteAsync(TRequest)
+  href: api/NHystrix.IHystrixCommand-2.html#NHystrix_IHystrixCommand_2_ExecuteAsync__0_
+  commentId: M:NHystrix.IHystrixCommand`2.ExecuteAsync(`0)
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.ExecuteAsync(TRequest)
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).ExecuteAsync(TRequest)
+  nameWithType: IHystrixCommand<TRequest, TResult>.ExecuteAsync(TRequest)
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).ExecuteAsync(TRequest)
+- uid: NHystrix.IHystrixCommand`2.ExecuteAsync*
   name: ExecuteAsync
-  href: api/NHystrix.IHystrixCommand-1.html#NHystrix_IHystrixCommand_1_ExecuteAsync_
-  commentId: Overload:NHystrix.IHystrixCommand`1.ExecuteAsync
-  fullName: NHystrix.IHystrixCommand<TResult>.ExecuteAsync
-  fullName.vb: NHystrix.IHystrixCommand(Of TResult).ExecuteAsync
-  nameWithType: IHystrixCommand<TResult>.ExecuteAsync
-  nameWithType.vb: IHystrixCommand(Of TResult).ExecuteAsync
+  href: api/NHystrix.IHystrixCommand-2.html#NHystrix_IHystrixCommand_2_ExecuteAsync_
+  commentId: Overload:NHystrix.IHystrixCommand`2.ExecuteAsync
+  fullName: NHystrix.IHystrixCommand<TRequest, TResult>.ExecuteAsync
+  fullName.vb: NHystrix.IHystrixCommand(Of TRequest, TResult).ExecuteAsync
+  nameWithType: IHystrixCommand<TRequest, TResult>.ExecuteAsync
+  nameWithType.vb: IHystrixCommand(Of TRequest, TResult).ExecuteAsync
 - uid: NHystrix.Metric
   name: NHystrix.Metric
   href: api/NHystrix.Metric.html
@@ -955,18 +1582,6 @@ references:
   commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.Observe
   fullName: NHystrix.Metric.HystrixCommandEventStream.Observe
   nameWithType: HystrixCommandEventStream.Observe
-- uid: NHystrix.Metric.HystrixCommandEventStream.Reset
-  name: Reset()
-  href: api/NHystrix.Metric.HystrixCommandEventStream.html#NHystrix_Metric_HystrixCommandEventStream_Reset
-  commentId: M:NHystrix.Metric.HystrixCommandEventStream.Reset
-  fullName: NHystrix.Metric.HystrixCommandEventStream.Reset()
-  nameWithType: HystrixCommandEventStream.Reset()
-- uid: NHystrix.Metric.HystrixCommandEventStream.Reset*
-  name: Reset
-  href: api/NHystrix.Metric.HystrixCommandEventStream.html#NHystrix_Metric_HystrixCommandEventStream_Reset_
-  commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.Reset
-  fullName: NHystrix.Metric.HystrixCommandEventStream.Reset
-  nameWithType: HystrixCommandEventStream.Reset
 - uid: NHystrix.Metric.HystrixCommandEventStream.ToString
   name: ToString()
   href: api/NHystrix.Metric.HystrixCommandEventStream.html#NHystrix_Metric_HystrixCommandEventStream_ToString
@@ -979,18 +1594,6 @@ references:
   commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.ToString
   fullName: NHystrix.Metric.HystrixCommandEventStream.ToString
   nameWithType: HystrixCommandEventStream.ToString
-- uid: NHystrix.Metric.HystrixCommandEventStream.Write(NHystrix.Metric.HystrixCommandEvent)
-  name: Write(HystrixCommandEvent)
-  href: api/NHystrix.Metric.HystrixCommandEventStream.html#NHystrix_Metric_HystrixCommandEventStream_Write_NHystrix_Metric_HystrixCommandEvent_
-  commentId: M:NHystrix.Metric.HystrixCommandEventStream.Write(NHystrix.Metric.HystrixCommandEvent)
-  fullName: NHystrix.Metric.HystrixCommandEventStream.Write(NHystrix.Metric.HystrixCommandEvent)
-  nameWithType: HystrixCommandEventStream.Write(HystrixCommandEvent)
-- uid: NHystrix.Metric.HystrixCommandEventStream.Write*
-  name: Write
-  href: api/NHystrix.Metric.HystrixCommandEventStream.html#NHystrix_Metric_HystrixCommandEventStream_Write_
-  commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.Write
-  fullName: NHystrix.Metric.HystrixCommandEventStream.Write
-  nameWithType: HystrixCommandEventStream.Write
 - uid: NHystrix.Metric.HystrixRollingNumber
   name: HystrixRollingNumber
   href: api/NHystrix.Metric.HystrixRollingNumber.html

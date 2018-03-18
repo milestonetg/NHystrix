@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class HystrixDelegatingHandler
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -81,7 +81,9 @@
   
   <h1 id="NHystrix_HystrixDelegatingHandler" data-uid="NHystrix.HystrixDelegatingHandler" class="text-break">Class HystrixDelegatingHandler
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A <span class="xref">System.Net.Http.DelegatingHandler</span> that wraps the request in the Circuit Breaker Pattern and Bulkhead Pattern.
+Similar functionality to the <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a>, but timeouts are handled by <span class="xref">System.Net.Http.HttpClient</span> directly.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -96,9 +98,6 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Net.Http.DelegatingHandler.Dispose(System.Boolean)</span>
-    </div>
     <div>
       <span class="xref">System.Net.Http.DelegatingHandler.InnerHandler</span>
     </div>
@@ -133,22 +132,95 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class HystrixDelegatingHandler : DelegatingHandler, IDisposable</code></pre>
   </div>
+  <h5 id="NHystrix_HystrixDelegatingHandler_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Should be used before the RetryDelegatingHandler in the pipeline.</p>
+<pre><code class="lang-cs">var hystrix = new HystrixDelegatingHandler(commandKey, properties, new RetryDelegatingHandler());
+</code></pre><h4 id="http-status-codes">HTTP Status Codes</h4>
+<p>Failures are counted and emitted for:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Reason</th>
+<th>HystrixEvent</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>408</td>
+<td>Request Timeout</td>
+<td>HystrixEventType.TIMEOUT</td>
+<td></td>
+</tr>
+<tr>
+<td>504</td>
+<td>Gateway Timeout</td>
+<td>HystrixEventType.TIMEOUT</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>HystrixEventType.FAILURE</td>
+<td>Some APIs, such as GitHub, return a 403 when a rate limit is reached</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+<td>HystrixEventType.FAILURE</td>
+<td>Proposed rate-limit status code. <a href="https://tools.ietf.org/html/rfc6585">See RFC 6585</a></td>
+</tr>
+<tr>
+<td>&gt;=500</td>
+<td>Server Errors</td>
+<td>HystrixEventType.FAILURE</td>
+<td>All server side errors</td>
+</tr>
+</tbody>
+</table>
+<p>Http 400 Bad Requests are not counted against failures but do emit a <code>HystrixEventType.BAD_REQUEST</code>.</p>
+<p>All other Http Status codes are ignored by NHystrix.</p>
+<h4 id="exceptions-and-fallback">Exceptions and Fallback</h4>
+<p>Like the <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a>, the <a class="xref" href="NHystrix.HystrixDelegatingHandler.html">HystrixDelegatingHandler</a> does not
+throw an exception on error nor does is allow exceptions to propagate up the stack. Rather, it relies
+on the fallback implementation to handle error situations.</p>
+<p>By default, when fallback is enabled, an HttpResponseMessage with a status code of [204 No Content] 
+will be returned and <a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_FALLBACK_MISSING">FALLBACK_MISSING</a> emitted if no fallback function is provided.</p>
+<h4 id="metrics">Metrics</h4>
+<p>The handler emits:</p>
+<ul>
+<li>Request Counts (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_EMIT">EMIT</a>) for all requests, short-circuited or not.</li>
+<li>Bad Request (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_BAD_REQUEST">BAD_REQUEST</a>) for HTTP 400.</li>
+<li>Timeout (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_TIMEOUT">TIMEOUT</a>)</li>
+<li>Failure (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_FAILURE">FAILURE</a>)</li>
+<li>Exception Thrown (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_EXCEPTION_THROWN">EXCEPTION_THROWN</a>)</li>
+<li>Fallback Called (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_FALLBACK_EMIT">FALLBACK_EMIT</a>)</li>
+<li>Fallback Success (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_FALLBACK_SUCCESS">FALLBACK_SUCCESS</a>)</li>
+<li>Fallback Failure (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_FALLBACK_FAILURE">FALLBACK_FAILURE</a>)</li>
+<li>Fallback Disabled (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_FALLBACK_DISABLED">FALLBACK_DISABLED</a>)</li>
+<li>Fallback Missing (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_FALLBACK_MISSING">FALLBACK_MISSING</a>)</li>
+<li>Short Circuited because the circuit breaker is open (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_SHORT_CIRCUITED">SHORT_CIRCUITED</a>)</li>
+<li>Semaphore rejected if a bulkhead semaphore could not be obtained before the <a class="xref" href="NHystrix.HystrixCommandProperties.html#NHystrix_HystrixCommandProperties_BulkheadSemaphoreAcquireTimeoutInMilliseconds">BulkheadSemaphoreAcquireTimeoutInMilliseconds</a> expires. (<a class="xref" href="NHystrix.HystrixEventType.html#NHystrix_HystrixEventType_SHORT_CIRCUITED">SHORT_CIRCUITED</a>)</li>
+</ul>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler__ctor_NHystrix_HystrixCommandProperties_System_Net_Http_HttpMessageHandler_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler.%23ctor(NHystrix.HystrixCommandProperties%2CSystem.Net.Http.HttpMessageHandler)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler__ctor_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_System_Net_Http_HttpMessageHandler_System_Func_System_Net_Http_HttpResponseMessage__.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler.%23ctor(NHystrix.HystrixCommandKey%2CNHystrix.HystrixCommandProperties%2CSystem.Net.Http.HttpMessageHandler%2CSystem.Func%7BSystem.Net.Http.HttpResponseMessage%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L14">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L84">View Source</a>
   </span>
   <a id="NHystrix_HystrixDelegatingHandler__ctor_" data-uid="NHystrix.HystrixDelegatingHandler.#ctor*"></a>
-  <h4 id="NHystrix_HystrixDelegatingHandler__ctor_NHystrix_HystrixCommandProperties_System_Net_Http_HttpMessageHandler_" data-uid="NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler)">HystrixDelegatingHandler(HystrixCommandProperties, HttpMessageHandler)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="NHystrix_HystrixDelegatingHandler__ctor_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_System_Net_Http_HttpMessageHandler_System_Func_System_Net_Http_HttpResponseMessage__" data-uid="NHystrix.HystrixDelegatingHandler.#ctor(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,System.Net.Http.HttpMessageHandler,System.Func{System.Net.Http.HttpResponseMessage})">HystrixDelegatingHandler(HystrixCommandKey, HystrixCommandProperties, HttpMessageHandler, Func&lt;HttpResponseMessage&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NHystrix.HystrixDelegatingHandler.html">HystrixDelegatingHandler</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public HystrixDelegatingHandler(HystrixCommandProperties properties, HttpMessageHandler innerHandler)</code></pre>
+    <pre><code class="lang-csharp hljs">public HystrixDelegatingHandler(HystrixCommandKey commandKey, HystrixCommandProperties properties, HttpMessageHandler innerHandler, Func&lt;HttpResponseMessage&gt; fallback = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -161,14 +233,144 @@
     </thead>
     <tbody>
       <tr>
+        <td><a class="xref" href="NHystrix.HystrixCommandKey.html">HystrixCommandKey</a></td>
+        <td><span class="parametername">commandKey</span></td>
+        <td><p>The command key.</p>
+</td>
+      </tr>
+      <tr>
         <td><a class="xref" href="NHystrix.HystrixCommandProperties.html">HystrixCommandProperties</a></td>
         <td><span class="parametername">properties</span></td>
-        <td></td>
+        <td><p>The properties.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Net.Http.HttpMessageHandler</span></td>
         <td><span class="parametername">innerHandler</span></td>
-        <td></td>
+        <td><p>The inner handler.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Net.Http.HttpResponseMessage</span>&gt;</td>
+        <td><span class="parametername">fallback</span></td>
+        <td><p>Optional. The function to execute as the fallback if the circuit-breaker is open.
+If no fallback function is provided, an HttpResponseMessage with a status code 
+of [204 No Content] will be returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>properties</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler_CommandKey.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler.CommandKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L108">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixDelegatingHandler_CommandKey_" data-uid="NHystrix.HystrixDelegatingHandler.CommandKey*"></a>
+  <h4 id="NHystrix_HystrixDelegatingHandler_CommandKey" data-uid="NHystrix.HystrixDelegatingHandler.CommandKey">CommandKey</h4>
+  <div class="markdown level1 summary"><p>Gets the command key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HystrixCommandKey CommandKey { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixCommandKey.html">HystrixCommandKey</a></td>
+        <td><p>The command key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler_IsCircuitBreakerEnabled.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L114">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixDelegatingHandler_IsCircuitBreakerEnabled_" data-uid="NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled*"></a>
+  <h4 id="NHystrix_HystrixDelegatingHandler_IsCircuitBreakerEnabled" data-uid="NHystrix.HystrixDelegatingHandler.IsCircuitBreakerEnabled">IsCircuitBreakerEnabled</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this instance is circuit breaker enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCircuitBreakerEnabled { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this instance is circuit breaker enabled; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler_IsCircuitBreakerOpen.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L120">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixDelegatingHandler_IsCircuitBreakerOpen_" data-uid="NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen*"></a>
+  <h4 id="NHystrix_HystrixDelegatingHandler_IsCircuitBreakerOpen" data-uid="NHystrix.HystrixDelegatingHandler.IsCircuitBreakerOpen">IsCircuitBreakerOpen</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this instance is circuit breaker open.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCircuitBreakerOpen { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this instance is circuit breaker open; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -176,14 +378,51 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L247">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixDelegatingHandler_Dispose_" data-uid="NHystrix.HystrixDelegatingHandler.Dispose*"></a>
+  <h4 id="NHystrix_HystrixDelegatingHandler_Dispose_System_Boolean_" data-uid="NHystrix.HystrixDelegatingHandler.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Releases the unmanaged resources used by the <span class="xref">System.Net.Http.DelegatingHandler</span>, and optionally disposes of the managed resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p>true to release both managed and unmanaged resources; false to releases only unmanaged resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Net.Http.DelegatingHandler.Dispose(System.Boolean)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L20">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L128">View Source</a>
   </span>
   <a id="NHystrix_HystrixDelegatingHandler_SendAsync_" data-uid="NHystrix.HystrixDelegatingHandler.SendAsync*"></a>
   <h4 id="NHystrix_HystrixDelegatingHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_" data-uid="NHystrix.HystrixDelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">SendAsync(HttpRequestMessage, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Send an HTTP request message.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -202,12 +441,14 @@
       <tr>
         <td><span class="xref">System.Net.Http.HttpRequestMessage</span></td>
         <td><span class="parametername">request</span></td>
-        <td></td>
+        <td><p>The HTTP request message to send to the server.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
+        <td><p>A cancellation token to cancel operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -222,7 +463,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Net.Http.HttpResponseMessage</span>&gt;</td>
-        <td></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -231,6 +473,10 @@
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><span class="xref">System.Net.Http.DelegatingHandler</span></div>
   </div>
 </article>
           </div>
@@ -243,7 +489,7 @@
                     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixDelegatingHandler.md&amp;value=---%0Auid%3A%20NHystrix.HystrixDelegatingHandler%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixDelegatingHandler.cs/#L64" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

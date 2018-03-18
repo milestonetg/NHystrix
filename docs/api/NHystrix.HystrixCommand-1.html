@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class HystrixCommand&lt;TResult&gt;
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -100,6 +100,7 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="NHystrix.IHystrixCommand-1.html">IHystrixCommand</a>&lt;TResult&gt;</div>
+    <div><span class="xref">System.IDisposable</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -129,7 +130,7 @@
   <h6><strong>Assembly</strong>: NHystrix.dll</h6>
   <h5 id="NHystrix_HystrixCommand_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class HystrixCommand&lt;TResult&gt; : IHystrixCommand&lt;TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class HystrixCommand&lt;TResult&gt; : IHystrixCommand&lt;TResult&gt;, IDisposable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -227,10 +228,92 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_ExecuteAsync.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.ExecuteAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_Dispose.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L213">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommand_1_Dispose_" data-uid="NHystrix.HystrixCommand`1.Dispose*"></a>
+  <h4 id="NHystrix_HystrixCommand_1_Dispose" data-uid="NHystrix.HystrixCommand`1.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L182">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommand_1_Dispose_" data-uid="NHystrix.HystrixCommand`1.Dispose*"></a>
+  <h4 id="NHystrix_HystrixCommand_1_Dispose_System_Boolean_" data-uid="NHystrix.HystrixCommand`1.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Releases unmanaged and - optionally - managed resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p><code>true</code> to release both managed and unmanaged resources; <code>false</code> to release only unmanaged resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_Execute.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.Execute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L56">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommand_1_Execute_" data-uid="NHystrix.HystrixCommand`1.Execute*"></a>
+  <h4 id="NHystrix_HystrixCommand_1_Execute" data-uid="NHystrix.HystrixCommand`1.Execute">Execute()</h4>
+  <div class="markdown level1 summary"><p>Executes this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TResult Execute()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>TResult.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_ExecuteAsync.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.ExecuteAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L68">View Source</a>
   </span>
   <a id="NHystrix_HystrixCommand_1_ExecuteAsync_" data-uid="NHystrix.HystrixCommand`1.ExecuteAsync*"></a>
   <h4 id="NHystrix_HystrixCommand_1_ExecuteAsync" data-uid="NHystrix.HystrixCommand`1.ExecuteAsync">ExecuteAsync()</h4>
@@ -259,10 +342,26 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_Finalize.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L203">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommand_1_Finalize_" data-uid="NHystrix.HystrixCommand`1.Finalize*"></a>
+  <h4 id="NHystrix_HystrixCommand_1_Finalize" data-uid="NHystrix.HystrixCommand`1.Finalize">Finalize()</h4>
+  <div class="markdown level1 summary"><p>Finalizes an instance of the <a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_OnHandleFallback.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.OnHandleFallback%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L132">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L144">View Source</a>
   </span>
   <a id="NHystrix_HystrixCommand_1_OnHandleFallback_" data-uid="NHystrix.HystrixCommand`1.OnHandleFallback*"></a>
   <h4 id="NHystrix_HystrixCommand_1_OnHandleFallback" data-uid="NHystrix.HystrixCommand`1.OnHandleFallback">OnHandleFallback()</h4>
@@ -309,7 +408,7 @@
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommand_1_RunAsync.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommand%601.RunAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L125">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommand.cs/#L137">View Source</a>
   </span>
   <a id="NHystrix_HystrixCommand_1_RunAsync_" data-uid="NHystrix.HystrixCommand`1.RunAsync*"></a>
   <h4 id="NHystrix_HystrixCommand_1_RunAsync" data-uid="NHystrix.HystrixCommand`1.RunAsync">RunAsync()</h4>
@@ -339,6 +438,9 @@
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="NHystrix.IHystrixCommand-1.html">IHystrixCommand&lt;TResult&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
   </div>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">

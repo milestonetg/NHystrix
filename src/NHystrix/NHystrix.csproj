@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.2.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Company>Milestone Technology Group, LLC</Company>
     <Authors>Milestone Technology Group, LLC</Authors>
@@ -14,11 +14,9 @@
     <PackageTags>CircuitBreaker;Bulkhead;Timeout</PackageTags>
     <RepositoryType>github</RepositoryType>
     <DebugType>Full</DebugType>
-    <PackageReleaseNotes>Implements:
-
-- CircuitBreaker
-- Bulkheading
-- Timeout</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      See https://github.com/milestonetg/NHystrix/CHANGELOG.md
+    </PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

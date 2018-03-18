@@ -1,0 +1,863 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Metric.HystrixRollingNumber
+  commentId: T:NHystrix.Metric.HystrixRollingNumber
+  id: HystrixRollingNumber
+  parent: NHystrix.Metric
+  children:
+  - NHystrix.Metric.HystrixRollingNumber.#ctor(System.Int32,System.Int32)
+  - NHystrix.Metric.HystrixRollingNumber.Add(NHystrix.HystrixEventType,System.Int64)
+  - NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum(NHystrix.HystrixEventType)
+  - NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue(NHystrix.HystrixEventType)
+  - NHystrix.Metric.HystrixRollingNumber.GetRollingSum(NHystrix.HystrixEventType)
+  - NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket(NHystrix.HystrixEventType)
+  - NHystrix.Metric.HystrixRollingNumber.GetValues(NHystrix.HystrixEventType)
+  - NHystrix.Metric.HystrixRollingNumber.Increment(NHystrix.HystrixEventType)
+  - NHystrix.Metric.HystrixRollingNumber.Reset
+  - NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax(NHystrix.HystrixEventType,System.Int64)
+  langs:
+  - csharp
+  - vb
+  name: HystrixRollingNumber
+  nameWithType: HystrixRollingNumber
+  fullName: NHystrix.Metric.HystrixRollingNumber
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixRollingNumber
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 33
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nA number which can be used to track counters (increment) or set values over time.\n<p>\nIt is &quot;rolling&quot; in the sense that a &apos;timeInMilliseconds&apos; is given that you want to track (such as 10 seconds) and then that is broken into buckets (defaults to 10) so that the 10 second window\ndoesn&apos;t empty out and restart every 10 seconds, but instead every 1 second you have a new bucket added and one dropped so that 9 of the buckets remain and only the newest starts from scratch.\n</p>\n<p>\nThis is done so that the statistics are gathered over a rolling 10 second window with data being added/dropped in 1 second intervals(or whatever granularity is defined by the arguments) rather\nthan each 10 second window starting at 0 again.\n</p>\n<p>\nPerformance-wise this class is optimized for writes, not reads. This is done because it expects far higher write volume (thousands/second) than reads (a few per second).\n</p>\n<p>\nFor example, on each read to getSum/getCount it will iterate buckets to sum the data so that on writes we don&apos;t need to maintain the overall sum and pay the synchronization cost at each write to\nensure the sum is up-to-date when the read can easily iterate each bucket to get the sum when it needs it.\n</p>\n<p>\nSee UnitTest for usage and expected behavior examples.\n</p>\n"
+  remarks: "\n# Thread Safety\n\nThis class is thread-safe.\n"
+  example: []
+  syntax:
+    content: public class HystrixRollingNumber
+    content.vb: Public Class HystrixRollingNumber
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.Metric.HystrixRollingNumber.#ctor(System.Int32,System.Int32)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.#ctor(System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32)'
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: HystrixRollingNumber(Int32, Int32)
+  nameWithType: HystrixRollingNumber.HystrixRollingNumber(Int32, Int32)
+  fullName: NHystrix.Metric.HystrixRollingNumber.HystrixRollingNumber(System.Int32, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: .ctor
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 47
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nInitializes a new instance of the <xref href=\"NHystrix.Metric.HystrixRollingNumber\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public HystrixRollingNumber(int timeInMilliseconds, int numberOfBuckets)
+    parameters:
+    - id: timeInMilliseconds
+      type: System.Int32
+      description: Length of time in milliseconds to report metrics over.
+    - id: numberOfBuckets
+      type: System.Int32
+      description: The number of buckets.
+    content.vb: Public Sub New(timeInMilliseconds As Integer, numberOfBuckets As Integer)
+  overload: NHystrix.Metric.HystrixRollingNumber.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.Increment(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.Increment(NHystrix.HystrixEventType)
+  id: Increment(NHystrix.HystrixEventType)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: Increment(HystrixEventType)
+  nameWithType: HystrixRollingNumber.Increment(HystrixEventType)
+  fullName: NHystrix.Metric.HystrixRollingNumber.Increment(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Increment
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 65
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nIncrements the counter for the specified <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Increment(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    content.vb: Public Sub Increment(eventType As HystrixEventType)
+  overload: NHystrix.Metric.HystrixRollingNumber.Increment*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.Add(NHystrix.HystrixEventType,System.Int64)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.Add(NHystrix.HystrixEventType,System.Int64)
+  id: Add(NHystrix.HystrixEventType,System.Int64)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: Add(HystrixEventType, Int64)
+  nameWithType: HystrixRollingNumber.Add(HystrixEventType, Int64)
+  fullName: NHystrix.Metric.HystrixRollingNumber.Add(NHystrix.HystrixEventType, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Add
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 75
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nAdds to the counter for the specified <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Add(HystrixEventType eventType, long value)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    - id: value
+      type: System.Int64
+      description: The value.
+    content.vb: Public Sub Add(eventType As HystrixEventType, value As Long)
+  overload: NHystrix.Metric.HystrixRollingNumber.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax(NHystrix.HystrixEventType,System.Int64)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax(NHystrix.HystrixEventType,System.Int64)
+  id: UpdateRollingMax(NHystrix.HystrixEventType,System.Int64)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: UpdateRollingMax(HystrixEventType, Int64)
+  nameWithType: HystrixRollingNumber.UpdateRollingMax(HystrixEventType, Int64)
+  fullName: NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax(NHystrix.HystrixEventType, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: UpdateRollingMax
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 86
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nUpdate a value and retain the max value for the specified <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void UpdateRollingMax(HystrixEventType eventType, long value)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    - id: value
+      type: System.Int64
+      description: The value.
+    content.vb: Public Sub UpdateRollingMax(eventType As HystrixEventType, value As Long)
+  overload: NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax*
+  exceptions:
+  - type: System.NotImplementedException
+    commentId: T:System.NotImplementedException
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.Reset
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.Reset
+  id: Reset
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: HystrixRollingNumber.Reset()
+  fullName: NHystrix.Metric.HystrixRollingNumber.Reset()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Reset
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 98
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nForce a reset of all rolling counters (clear all buckets) so that statistics start being gathered from scratch.\n<p>\nThis does NOT reset the CumulativeSum values.\n</p>\n"
+  example: []
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset
+  overload: NHystrix.Metric.HystrixRollingNumber.Reset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum(NHystrix.HystrixEventType)
+  id: GetCumulativeSum(NHystrix.HystrixEventType)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: GetCumulativeSum(HystrixEventType)
+  nameWithType: HystrixRollingNumber.GetCumulativeSum(HystrixEventType)
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetCumulativeSum
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 116
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nGet the cumulative sum of all buckets ever since the JVM started without rolling for the given <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public long GetCumulativeSum(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    return:
+      type: System.Int64
+      description: System.Int64.
+    content.vb: Public Function GetCumulativeSum(eventType As HystrixEventType) As Long
+  overload: NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.GetRollingSum(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.GetRollingSum(NHystrix.HystrixEventType)
+  id: GetRollingSum(NHystrix.HystrixEventType)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: GetRollingSum(HystrixEventType)
+  nameWithType: HystrixRollingNumber.GetRollingSum(HystrixEventType)
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetRollingSum(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetRollingSum
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 129
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nGet the sum of all buckets in the rolling counter for the given <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public long GetRollingSum(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    return:
+      type: System.Int64
+      description: System.Int64.
+    content.vb: Public Function GetRollingSum(eventType As HystrixEventType) As Long
+  overload: NHystrix.Metric.HystrixRollingNumber.GetRollingSum*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket(NHystrix.HystrixEventType)
+  id: GetValueOfLatestBucket(NHystrix.HystrixEventType)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: GetValueOfLatestBucket(HystrixEventType)
+  nameWithType: HystrixRollingNumber.GetValueOfLatestBucket(HystrixEventType)
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetValueOfLatestBucket
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 148
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nGet the value of the latest (current) bucket in the rolling counter for the given <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public long GetValueOfLatestBucket(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    return:
+      type: System.Int64
+      description: System.Int64.
+    content.vb: Public Function GetValueOfLatestBucket(eventType As HystrixEventType) As Long
+  overload: NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.GetValues(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.GetValues(NHystrix.HystrixEventType)
+  id: GetValues(NHystrix.HystrixEventType)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: GetValues(HystrixEventType)
+  nameWithType: HystrixRollingNumber.GetValues(HystrixEventType)
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetValues(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetValues
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 162
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nGet an array of values for all buckets in the rolling counter for the given <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public long[] GetValues(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    return:
+      type: System.Int64[]
+      description: System.Int64[].
+    content.vb: Public Function GetValues(eventType As HystrixEventType) As Long()
+  overload: NHystrix.Metric.HystrixRollingNumber.GetValues*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue(NHystrix.HystrixEventType)
+  commentId: M:NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue(NHystrix.HystrixEventType)
+  id: GetRollingMaxValue(NHystrix.HystrixEventType)
+  parent: NHystrix.Metric.HystrixRollingNumber
+  langs:
+  - csharp
+  - vb
+  name: GetRollingMaxValue(HystrixEventType)
+  nameWithType: HystrixRollingNumber.GetRollingMaxValue(HystrixEventType)
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue(NHystrix.HystrixEventType)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixRollingNumber.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetRollingMaxValue
+    path: ../src/NHystrix/Metric/HystrixRollingNumber.cs
+    startLine: 194
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nGet the max value of values in all buckets for the given <xref href=\"NHystrix.HystrixEventType\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public long GetRollingMaxValue(HystrixEventType eventType)
+    parameters:
+    - id: eventType
+      type: NHystrix.HystrixEventType
+      description: Type of the event.
+    return:
+      type: System.Int64
+      description: System.Int64.
+    content.vb: Public Function GetRollingMaxValue(eventType As HystrixEventType) As Long
+  overload: NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue*
+  exceptions:
+  - type: System.NotImplementedException
+    commentId: T:System.NotImplementedException
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NHystrix.Metric
+  commentId: N:NHystrix.Metric
+  isExternal: false
+  name: NHystrix.Metric
+  nameWithType: NHystrix.Metric
+  fullName: NHystrix.Metric
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.Metric.HystrixRollingNumber
+  commentId: T:NHystrix.Metric.HystrixRollingNumber
+  parent: NHystrix.Metric
+  isExternal: false
+  name: HystrixRollingNumber
+  nameWithType: HystrixRollingNumber
+  fullName: NHystrix.Metric.HystrixRollingNumber
+- uid: NHystrix.Metric.HystrixRollingNumber.#ctor*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.#ctor
+  isExternal: false
+  name: HystrixRollingNumber
+  nameWithType: HystrixRollingNumber.HystrixRollingNumber
+  fullName: NHystrix.Metric.HystrixRollingNumber.HystrixRollingNumber
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: NHystrix.HystrixEventType
+  commentId: T:NHystrix.HystrixEventType
+  parent: NHystrix
+  isExternal: false
+  name: HystrixEventType
+  nameWithType: HystrixEventType
+  fullName: NHystrix.HystrixEventType
+- uid: NHystrix.Metric.HystrixRollingNumber.Increment*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.Increment
+  isExternal: false
+  name: Increment
+  nameWithType: HystrixRollingNumber.Increment
+  fullName: NHystrix.Metric.HystrixRollingNumber.Increment
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: NHystrix.Metric.HystrixRollingNumber.Add*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.Add
+  isExternal: false
+  name: Add
+  nameWithType: HystrixRollingNumber.Add
+  fullName: NHystrix.Metric.HystrixRollingNumber.Add
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax
+  isExternal: false
+  name: UpdateRollingMax
+  nameWithType: HystrixRollingNumber.UpdateRollingMax
+  fullName: NHystrix.Metric.HystrixRollingNumber.UpdateRollingMax
+- uid: System.NotImplementedException
+  commentId: T:System.NotImplementedException
+- uid: NHystrix.Metric.HystrixRollingNumber.Reset*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.Reset
+  isExternal: false
+  name: Reset
+  nameWithType: HystrixRollingNumber.Reset
+  fullName: NHystrix.Metric.HystrixRollingNumber.Reset
+- uid: NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum
+  isExternal: false
+  name: GetCumulativeSum
+  nameWithType: HystrixRollingNumber.GetCumulativeSum
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetCumulativeSum
+- uid: NHystrix.Metric.HystrixRollingNumber.GetRollingSum*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.GetRollingSum
+  isExternal: false
+  name: GetRollingSum
+  nameWithType: HystrixRollingNumber.GetRollingSum
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetRollingSum
+- uid: NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket
+  isExternal: false
+  name: GetValueOfLatestBucket
+  nameWithType: HystrixRollingNumber.GetValueOfLatestBucket
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetValueOfLatestBucket
+- uid: NHystrix.Metric.HystrixRollingNumber.GetValues*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.GetValues
+  isExternal: false
+  name: GetValues
+  nameWithType: HystrixRollingNumber.GetValues
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetValues
+- uid: System.Int64[]
+  name: Int64[]
+  nameWithType: Int64[]
+  fullName: System.Int64[]
+  nameWithType.vb: Int64()
+  fullName.vb: System.Int64()
+  name.vb: Int64()
+  spec.csharp:
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue*
+  commentId: Overload:NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue
+  isExternal: false
+  name: GetRollingMaxValue
+  nameWithType: HystrixRollingNumber.GetRollingMaxValue
+  fullName: NHystrix.Metric.HystrixRollingNumber.GetRollingMaxValue

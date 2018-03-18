@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class HystrixCircuitBreaker
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -130,7 +130,7 @@
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_IsOpen.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.IsOpen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L157">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L167">View Source</a>
   </span>
   <a id="NHystrix_HystrixCircuitBreaker_IsOpen_" data-uid="NHystrix.HystrixCircuitBreaker.IsOpen*"></a>
   <h4 id="NHystrix_HystrixCircuitBreaker_IsOpen" data-uid="NHystrix.HystrixCircuitBreaker.IsOpen">IsOpen</h4>
@@ -162,11 +162,11 @@
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_ShouldAllowRequest.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.ShouldAllowRequest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L80">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L90">View Source</a>
   </span>
   <a id="NHystrix_HystrixCircuitBreaker_ShouldAllowRequest_" data-uid="NHystrix.HystrixCircuitBreaker.ShouldAllowRequest*"></a>
   <h4 id="NHystrix_HystrixCircuitBreaker_ShouldAllowRequest" data-uid="NHystrix.HystrixCircuitBreaker.ShouldAllowRequest">ShouldAllowRequest</h4>
-  <div class="markdown level1 summary"><p>Every <a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a> requests asks this if it is allowed to proceed or not.  It is idempotent and does
+  <div class="markdown level1 summary"><p>Every <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> requests asks this if it is allowed to proceed or not.  It is idempotent and does
 not modify any internal state, and takes into account the half-open logic which allows some requests through
 after the circuit has been opened.</p>
 </div>
@@ -196,7 +196,7 @@ after the circuit has been opened.</p>
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_ShouldAttemptExecution.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L115">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L125">View Source</a>
   </span>
   <a id="NHystrix_HystrixCircuitBreaker_ShouldAttemptExecution_" data-uid="NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution*"></a>
   <h4 id="NHystrix_HystrixCircuitBreaker_ShouldAttemptExecution" data-uid="NHystrix.HystrixCircuitBreaker.ShouldAttemptExecution">ShouldAttemptExecution</h4>
@@ -228,19 +228,19 @@ state.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_GetInstance_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_NHystrix_HystrixCommandMetrics_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey%2CNHystrix.HystrixCommandProperties%2CNHystrix.HystrixCommandMetrics)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_GetInstance_NHystrix_HystrixCommandKey_NHystrix_CircuitBreakerOptions_NHystrix_HystrixCommandMetrics_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey%2CNHystrix.CircuitBreakerOptions%2CNHystrix.HystrixCommandMetrics)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L47">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L57">View Source</a>
   </span>
   <a id="NHystrix_HystrixCircuitBreaker_GetInstance_" data-uid="NHystrix.HystrixCircuitBreaker.GetInstance*"></a>
-  <h4 id="NHystrix_HystrixCircuitBreaker_GetInstance_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_NHystrix_HystrixCommandMetrics_" data-uid="NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties,NHystrix.HystrixCommandMetrics)">GetInstance(HystrixCommandKey, HystrixCommandProperties, HystrixCommandMetrics)</h4>
+  <h4 id="NHystrix_HystrixCircuitBreaker_GetInstance_NHystrix_HystrixCommandKey_NHystrix_CircuitBreakerOptions_NHystrix_HystrixCommandMetrics_" data-uid="NHystrix.HystrixCircuitBreaker.GetInstance(NHystrix.HystrixCommandKey,NHystrix.CircuitBreakerOptions,NHystrix.HystrixCommandMetrics)">GetInstance(HystrixCommandKey, CircuitBreakerOptions, HystrixCommandMetrics)</h4>
   <div class="markdown level1 summary"><p>Get the <a class="xref" href="NHystrix.IHystrixCircuitBreaker.html">IHystrixCircuitBreaker</a> instance for a given key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IHystrixCircuitBreaker GetInstance(HystrixCommandKey commandKey, HystrixCommandProperties properties, HystrixCommandMetrics metrics)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IHystrixCircuitBreaker GetInstance(HystrixCommandKey commandKey, CircuitBreakerOptions properties, HystrixCommandMetrics metrics)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -259,7 +259,7 @@ state.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="NHystrix.HystrixCommandProperties.html">HystrixCommandProperties</a></td>
+        <td><a class="xref" href="NHystrix.CircuitBreakerOptions.html">CircuitBreakerOptions</a></td>
         <td><span class="parametername">properties</span></td>
         <td><p>The <a class="xref" href="NHystrix.HystrixCommandProperties.html">HystrixCommandProperties</a> for the command using this circuit breaker.</p>
 </td>
@@ -293,11 +293,11 @@ state.</p>
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_MarkNonSuccess.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.MarkNonSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L190">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L214">View Source</a>
   </span>
   <a id="NHystrix_HystrixCircuitBreaker_MarkNonSuccess_" data-uid="NHystrix.HystrixCircuitBreaker.MarkNonSuccess*"></a>
   <h4 id="NHystrix_HystrixCircuitBreaker_MarkNonSuccess" data-uid="NHystrix.HystrixCircuitBreaker.MarkNonSuccess">MarkNonSuccess()</h4>
-  <div class="markdown level1 summary"><p>Invoked on unsuccessful executions from <a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a> as part of feedback mechanism when in a half-open state.</p>
+  <div class="markdown level1 summary"><p>Invoked on unsuccessful executions from <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> as part of feedback mechanism when in a half-open state.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -309,16 +309,32 @@ state.</p>
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_MarkSuccess.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.MarkSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L176">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L201">View Source</a>
   </span>
   <a id="NHystrix_HystrixCircuitBreaker_MarkSuccess_" data-uid="NHystrix.HystrixCircuitBreaker.MarkSuccess*"></a>
   <h4 id="NHystrix_HystrixCircuitBreaker_MarkSuccess" data-uid="NHystrix.HystrixCircuitBreaker.MarkSuccess">MarkSuccess()</h4>
-  <div class="markdown level1 summary"><p>Invoked on successful executions from <a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a> as part of feedback mechanism when in a half-open state.</p>
+  <div class="markdown level1 summary"><p>Invoked on successful executions from <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> as part of feedback mechanism when in a half-open state.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void MarkSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker_Trip.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker.Trip%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L186">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCircuitBreaker_Trip_" data-uid="NHystrix.HystrixCircuitBreaker.Trip*"></a>
+  <h4 id="NHystrix_HystrixCircuitBreaker_Trip" data-uid="NHystrix.HystrixCircuitBreaker.Trip">Trip()</h4>
+  <div class="markdown level1 summary"><p>Trips the circuit breaker.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Trip()</code></pre>
   </div>
   <h3 id="implements">Implements</h3>
   <div>
@@ -339,7 +355,7 @@ state.</p>
                     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCircuitBreaker.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCircuitBreaker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCircuitBreaker.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

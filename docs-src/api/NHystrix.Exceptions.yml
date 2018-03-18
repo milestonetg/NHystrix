@@ -1,0 +1,67 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Exceptions
+  commentId: N:NHystrix.Exceptions
+  id: NHystrix.Exceptions
+  children:
+  - NHystrix.Exceptions.FailureType
+  - NHystrix.Exceptions.HystrixBadRequestException
+  - NHystrix.Exceptions.HystrixFailureException
+  - NHystrix.Exceptions.HystrixFallbackException
+  - NHystrix.Exceptions.HystrixRuntimeException
+  - NHystrix.Exceptions.HystrixTimeoutException
+  langs:
+  - csharp
+  - vb
+  name: NHystrix.Exceptions
+  nameWithType: NHystrix.Exceptions
+  fullName: NHystrix.Exceptions
+  type: Namespace
+  assemblies:
+  - NHystrix
+references:
+- uid: NHystrix.Exceptions.FailureType
+  commentId: T:NHystrix.Exceptions.FailureType
+  parent: NHystrix.Exceptions
+  isExternal: false
+  name: FailureType
+  nameWithType: FailureType
+  fullName: NHystrix.Exceptions.FailureType
+- uid: NHystrix.Exceptions.HystrixBadRequestException
+  commentId: T:NHystrix.Exceptions.HystrixBadRequestException
+  isExternal: false
+  name: HystrixBadRequestException
+  nameWithType: HystrixBadRequestException
+  fullName: NHystrix.Exceptions.HystrixBadRequestException
+- uid: NHystrix.Exceptions.HystrixFailureException
+  commentId: T:NHystrix.Exceptions.HystrixFailureException
+  parent: NHystrix.Exceptions
+  isExternal: false
+  name: HystrixFailureException
+  nameWithType: HystrixFailureException
+  fullName: NHystrix.Exceptions.HystrixFailureException
+- uid: NHystrix.Exceptions.HystrixFallbackException
+  commentId: T:NHystrix.Exceptions.HystrixFallbackException
+  isExternal: false
+  name: HystrixFallbackException
+  nameWithType: HystrixFallbackException
+  fullName: NHystrix.Exceptions.HystrixFallbackException
+- uid: NHystrix.Exceptions.HystrixRuntimeException
+  commentId: T:NHystrix.Exceptions.HystrixRuntimeException
+  parent: NHystrix.Exceptions
+  isExternal: false
+  name: HystrixRuntimeException
+  nameWithType: HystrixRuntimeException
+  fullName: NHystrix.Exceptions.HystrixRuntimeException
+- uid: NHystrix.Exceptions.HystrixTimeoutException
+  commentId: T:NHystrix.Exceptions.HystrixTimeoutException
+  isExternal: false
+  name: HystrixTimeoutException
+  nameWithType: HystrixTimeoutException
+  fullName: NHystrix.Exceptions.HystrixTimeoutException
+- uid: NHystrix.Exceptions
+  commentId: N:NHystrix.Exceptions
+  isExternal: false
+  name: NHystrix.Exceptions
+  nameWithType: NHystrix.Exceptions
+  fullName: NHystrix.Exceptions

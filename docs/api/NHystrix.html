@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace NHystrix
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -85,34 +85,47 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
+      <h4><a class="xref" href="NHystrix.CircuitBreakerOptions.html">CircuitBreakerOptions</a></h4>
+      <section><p>Configuration options for a <a class="xref" href="NHystrix.HystrixCircuitBreaker.html">HystrixCircuitBreaker</a>.</p>
+</section>
+      <h4><a class="xref" href="NHystrix.HealthCounts.html">HealthCounts</a></h4>
+      <section><p>Encapsulates health related statistics sent to the HealthStream of a HystrixCommandMetric.</p>
+</section>
+      <h4><a class="xref" href="NHystrix.HystrixBulkhead.html">HystrixBulkhead</a></h4>
+      <section><p>Encapsulates the bulkhead semaphore for a HystrixCommand with the given HystrixCommandKey.</p>
+</section>
       <h4><a class="xref" href="NHystrix.HystrixCircuitBreaker.html">HystrixCircuitBreaker</a></h4>
       <section><p>The default production implementation of <a class="xref" href="NHystrix.IHystrixCircuitBreaker.html">IHystrixCircuitBreaker</a>.</p>
 </section>
-      <h4><a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a></h4>
+      <h4><a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a></h4>
       <section><p>Base class for all HystrixCommands. Providing functionality for:</p>
 <ul>
-<li>Bulkheading</li>
+<li>Bulkhead Pattern</li>
 <li>Timeout</li>
-<li>Circuit Breaker</li>
-<li>Request Caching</li>
-<li>Request Logging</li>
+<li>Circuit Breaker Pattern</li>
 <li>Fallback responses</li>
 </ul>
 </section>
       <h4><a class="xref" href="NHystrix.HystrixCommandMetrics.html">HystrixCommandMetrics</a></h4>
-      <section></section>
+      <section><p>Tracks metrics for a <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> for a <a class="xref" href="NHystrix.HystrixCommandKey.html">HystrixCommandKey</a>.</p>
+</section>
       <h4><a class="xref" href="NHystrix.HystrixCommandProperties.html">HystrixCommandProperties</a></h4>
-      <section><p>Configuration properties for <a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a> and related components.</p>
+      <section><p>Configuration properties for <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> and related components.</p>
 </section>
       <h4><a class="xref" href="NHystrix.HystrixDelegatingHandler.html">HystrixDelegatingHandler</a></h4>
-      <section></section>
+      <section><p>A <span class="xref">System.Net.Http.DelegatingHandler</span> that wraps the request in the Circuit Breaker Pattern and Bulkhead Pattern.
+Similar functionality to the <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a>, but timeouts are handled by <span class="xref">System.Net.Http.HttpClient</span> directly.</p>
+</section>
       <h4><a class="xref" href="NHystrix.HystrixEventType.html">HystrixEventType</a></h4>
-      <section><p>Class HystrixEventType. This class cannot be inherited.</p>
+      <section><p>The type of an event emitted by a <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> to <a class="xref" href="NHystrix.HystrixMetrics.html">HystrixMetrics</a>. 
+This class cannot be inherited.</p>
 </section>
       <h4><a class="xref" href="NHystrix.HystrixMetrics.html">HystrixMetrics</a></h4>
-      <section></section>
+      <section><p>Base class for implementing a metric within NHystrix.</p>
+</section>
       <h4><a class="xref" href="NHystrix.TaskExtensions.html">TaskExtensions</a></h4>
-      <section></section>
+      <section><p>Extension methods for <span class="xref">System.Threading.Tasks.Task</span></p>
+</section>
     <h3 id="structs">Structs
   </h3>
       <h4><a class="xref" href="NHystrix.HystrixCommandGroup.html">HystrixCommandGroup</a></h4>
@@ -125,14 +138,14 @@ This key is used as the caching key for metrics, etc.</p>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="NHystrix.IHystrixCircuitBreaker.html">IHystrixCircuitBreaker</a></h4>
-      <section><p>Circuit-breaker logic that is hooked into <a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a> execution and will stop allowing executions if failures have gone past the defined threshold.
+      <section><p>Circuit breaker logic that is hooked into <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> execution and will stop allowing executions if failures have gone past the defined threshold.
 <p>
 The default (and only) implementation  will then allow a single retry after a defined sleepWindow until the execution
 succeeds at which point it will again close the circuit and allow executions again.
 </p></p>
 </section>
-      <h4><a class="xref" href="NHystrix.IHystrixCommand-1.html">IHystrixCommand&lt;TResult&gt;</a></h4>
-      <section><p>Interface implemented by <a class="xref" href="NHystrix.HystrixCommand-1.html">HystrixCommand&lt;TResult&gt;</a>s.</p>
+      <h4><a class="xref" href="NHystrix.IHystrixCommand-2.html">IHystrixCommand&lt;TRequest, TResult&gt;</a></h4>
+      <section><p>Interface implemented by <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a>s.</p>
 </section>
 </article>
           </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct HystrixCommandGroup
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -84,14 +84,12 @@
   <div class="markdown level0 summary"><p>A HystrixCommandGroup is used to group commands together.  For example, by service or resource.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="NHystrix.HystrixCommandGroup.html">HystrixCommandGroup</a>&gt;</div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.ValueType.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.ValueType.GetHashCode()</span>
-    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
     </div>
@@ -106,7 +104,7 @@
   <h6><strong>Assembly</strong>: NHystrix.dll</h6>
   <h5 id="NHystrix_HystrixCommandGroup_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct HystrixCommandGroup</code></pre>
+    <pre><code class="lang-csharp hljs">public struct HystrixCommandGroup : IEquatable&lt;HystrixCommandGroup&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -265,14 +263,151 @@ adds it to this group.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandGroup_Equals_NHystrix_HystrixCommandGroup_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandGroup.Equals(NHystrix.HystrixCommandGroup)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandGroup.cs/#L85">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommandGroup_Equals_" data-uid="NHystrix.HystrixCommandGroup.Equals*"></a>
+  <h4 id="NHystrix_HystrixCommandGroup_Equals_NHystrix_HystrixCommandGroup_" data-uid="NHystrix.HystrixCommandGroup.Equals(NHystrix.HystrixCommandGroup)">Equals(HystrixCommandGroup)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(HystrixCommandGroup other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NHystrix.HystrixCommandGroup.html">HystrixCommandGroup</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandGroup_Equals_System_Object_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandGroup.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandGroup.cs/#L75">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommandGroup_Equals_" data-uid="NHystrix.HystrixCommandGroup.Equals*"></a>
+  <h4 id="NHystrix_HystrixCommandGroup_Equals_System_Object_" data-uid="NHystrix.HystrixCommandGroup.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <span class="xref">System.Object</span> is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The object to compare with the current instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified <span class="xref">System.Object</span> is equal to this instance; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ValueType.Equals(System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandGroup_GetHashCode.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandGroup.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandGroup.cs/#L94">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommandGroup_GetHashCode_" data-uid="NHystrix.HystrixCommandGroup.GetHashCode*"></a>
+  <h4 id="NHystrix_HystrixCommandGroup_GetHashCode" data-uid="NHystrix.HystrixCommandGroup.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ValueType.GetHashCode()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandGroup_ToString.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandGroup.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandGroup.cs/#L61">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandGroup.cs/#L65">View Source</a>
   </span>
   <a id="NHystrix_HystrixCommandGroup_ToString_" data-uid="NHystrix.HystrixCommandGroup.ToString*"></a>
   <h4 id="NHystrix_HystrixCommandGroup_ToString" data-uid="NHystrix.HystrixCommandGroup.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a <span class="xref">System.String</span> that represents this instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -289,12 +424,17 @@ adds it to this group.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>A <span class="xref">System.String</span> that represents this instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">System.ValueType.ToString()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
 </article>
           </div>
           

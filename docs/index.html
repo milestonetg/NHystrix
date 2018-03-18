@@ -8,7 +8,7 @@
     <title>NHystrix | NHystrix </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="NHystrix | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -76,15 +76,16 @@ functionality and resilience to C#/.Net based services and clients. The <a href=
 is worth a read to understand what challenges N/Hystrix aims to solve.</p>
 <p>The current release provides...</p>
 <ul>
-<li>CircuitBreaker</li>
-<li>Bulkheading</li>
-<li>Timeout</li>
+<li>Circuit Breaker Pattern (<a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker">https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker</a>)</li>
+<li>Bulkhead Pattern (<a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/bulkhead">https://docs.microsoft.com/en-us/azure/architecture/patterns/bulkhead</a>)</li>
+<li>Timeouts</li>
 </ul>
 <p>...functionality.</p>
 <h2 id="what-it-is-not">What it is NOT</h2>
 <p>Due to language and feature differences between Java and C#/.Net, this is NOT a direct port. If you are
 familiar with Hystrix, you&#39;ll recognize similarities in API and structure, but also see that NHystrix arrives at the
-end goal a bit differently.</p>
+end goal a bit differently. For example, rather than the interfaces working with Reactive Extensions futures and promises, 
+they support C# async/await.</p>
 <h2 id="quick-start">Quick Start</h2>
 <h3 id="install-the-nuget-package-to-your-project">Install the NuGet package to your project</h3>
 <p>Packages can be found at:</p>
@@ -92,16 +93,16 @@ end goal a bit differently.</p>
 <div class="tabGroup" id="tabgroup_D+Ap1HJHja">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_D+Ap1HJHja_tabid-1" role="tab" aria-controls="tabpanel_D+Ap1HJHja_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">Powershell</a>
+<a href="#tabpanel_D+Ap1HJHja_powershell" role="tab" aria-controls="tabpanel_D+Ap1HJHja_powershell" data-tab="powershell" tabindex="0" aria-selected="true">Powershell</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_D+Ap1HJHja_tabid-2" role="tab" aria-controls="tabpanel_D+Ap1HJHja_tabid-2" data-tab="tabid-2" tabindex="-1">CLI</a>
+<a href="#tabpanel_D+Ap1HJHja_dotnet-cli" role="tab" aria-controls="tabpanel_D+Ap1HJHja_dotnet-cli" data-tab="dotnet-cli" tabindex="-1">CLI</a>
 </li>
 </ul>
-<section id="tabpanel_D+Ap1HJHja_tabid-1" role="tabpanel" data-tab="tabid-1">
+<section id="tabpanel_D+Ap1HJHja_powershell" role="tabpanel" data-tab="powershell">
 <pre><code>Install-Package NHystrix
 </code></pre></section>
-<section id="tabpanel_D+Ap1HJHja_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_D+Ap1HJHja_dotnet-cli" role="tabpanel" data-tab="dotnet-cli" aria-hidden="true" hidden="hidden">
 <pre><code>dotnet add package NHystrix
 </code></pre></section>
 </div>

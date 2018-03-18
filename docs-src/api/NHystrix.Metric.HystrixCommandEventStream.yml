@@ -1,0 +1,794 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Metric.HystrixCommandEventStream
+  commentId: T:NHystrix.Metric.HystrixCommandEventStream
+  id: HystrixCommandEventStream
+  parent: NHystrix.Metric
+  children:
+  - NHystrix.Metric.HystrixCommandEventStream.CommandKey
+  - NHystrix.Metric.HystrixCommandEventStream.GetInstance(NHystrix.HystrixCommandKey)
+  - NHystrix.Metric.HystrixCommandEventStream.Observe
+  - NHystrix.Metric.HystrixCommandEventStream.ToString
+  langs:
+  - csharp
+  - vb
+  name: HystrixCommandEventStream
+  nameWithType: HystrixCommandEventStream
+  fullName: NHystrix.Metric.HystrixCommandEventStream
+  type: Class
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixCommandEventStream.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: HystrixCommandEventStream
+    path: ../src/NHystrix/Metric/HystrixCommandEventStream.cs
+    startLine: 11
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nPer-Command stream of <xref href=\"NHystrix.Metric.HystrixCommandEvent\" data-throw-if-not-resolved=\"false\"></xref>s.\n"
+  example: []
+  syntax:
+    content: 'public class HystrixCommandEventStream : IHystrixEventStream<HystrixCommandEvent>'
+    content.vb: >-
+      Public Class HystrixCommandEventStream
+          Implements IHystrixEventStream(Of HystrixCommandEvent)
+  seealso:
+  - linkId: NHystrix.Metric.IHystrixEventStream`1
+    commentId: T:NHystrix.Metric.IHystrixEventStream`1
+  inheritance:
+  - System.Object
+  implements:
+  - NHystrix.Metric.IHystrixEventStream{NHystrix.Metric.HystrixCommandEvent}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NHystrix.Metric.HystrixCommandEventStream.GetInstance(NHystrix.HystrixCommandKey)
+  commentId: M:NHystrix.Metric.HystrixCommandEventStream.GetInstance(NHystrix.HystrixCommandKey)
+  id: GetInstance(NHystrix.HystrixCommandKey)
+  parent: NHystrix.Metric.HystrixCommandEventStream
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(HystrixCommandKey)
+  nameWithType: HystrixCommandEventStream.GetInstance(HystrixCommandKey)
+  fullName: NHystrix.Metric.HystrixCommandEventStream.GetInstance(NHystrix.HystrixCommandKey)
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixCommandEventStream.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: GetInstance
+    path: ../src/NHystrix/Metric/HystrixCommandEventStream.cs
+    startLine: 29
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nGets a Singleton instance for the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">commandKey</code>.\n"
+  remarks: "\nThis is thread-safe and ensures only 1 <xref href=\"NHystrix.Metric.HystrixCommandEventStream\" data-throw-if-not-resolved=\"false\"></xref> per <code data-dev-comment-type=\"paramref\" class=\"paramref\">commandKey</code>.\n"
+  example: []
+  syntax:
+    content: public static HystrixCommandEventStream GetInstance(HystrixCommandKey commandKey)
+    parameters:
+    - id: commandKey
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    return:
+      type: NHystrix.Metric.HystrixCommandEventStream
+      description: HystrixCommandStartStream.
+    content.vb: Public Shared Function GetInstance(commandKey As HystrixCommandKey) As HystrixCommandEventStream
+  overload: NHystrix.Metric.HystrixCommandEventStream.GetInstance*
+  exceptions:
+  - type: System.Collections.Generic.KeyNotFoundException
+    commentId: T:System.Collections.Generic.KeyNotFoundException
+    description: "\nIf an instance for <code data-dev-comment-type=\"paramref\" class=\"paramref\">commandKey</code> could not be found and one could not be created.\nIn theory, this should never get thrown.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NHystrix.Metric.HystrixCommandEventStream.CommandKey
+  commentId: P:NHystrix.Metric.HystrixCommandEventStream.CommandKey
+  id: CommandKey
+  parent: NHystrix.Metric.HystrixCommandEventStream
+  langs:
+  - csharp
+  - vb
+  name: CommandKey
+  nameWithType: HystrixCommandEventStream.CommandKey
+  fullName: NHystrix.Metric.HystrixCommandEventStream.CommandKey
+  type: Property
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixCommandEventStream.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: CommandKey
+    path: ../src/NHystrix/Metric/HystrixCommandEventStream.cs
+    startLine: 66
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nGets the command key.\n"
+  example: []
+  syntax:
+    content: public HystrixCommandKey CommandKey { get; }
+    parameters: []
+    return:
+      type: NHystrix.HystrixCommandKey
+      description: The command key.
+    content.vb: Public ReadOnly Property CommandKey As HystrixCommandKey
+  overload: NHystrix.Metric.HystrixCommandEventStream.CommandKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NHystrix.Metric.HystrixCommandEventStream.Observe
+  commentId: M:NHystrix.Metric.HystrixCommandEventStream.Observe
+  id: Observe
+  parent: NHystrix.Metric.HystrixCommandEventStream
+  langs:
+  - csharp
+  - vb
+  name: Observe()
+  nameWithType: HystrixCommandEventStream.Observe()
+  fullName: NHystrix.Metric.HystrixCommandEventStream.Observe()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixCommandEventStream.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: Observe
+    path: ../src/NHystrix/Metric/HystrixCommandEventStream.cs
+    startLine: 92
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nReturns an <xref href=\"System.IObservable%601\" data-throw-if-not-resolved=\"false\"></xref> for subscribing to the event stream.\n"
+  example: []
+  syntax:
+    content: public IObservable<HystrixCommandEvent> Observe()
+    return:
+      type: System.IObservable{NHystrix.Metric.HystrixCommandEvent}
+      description: IObservable&lt;HystrixCommandExecutionStarted>.
+    content.vb: Public Function Observe As IObservable(Of HystrixCommandEvent)
+  overload: NHystrix.Metric.HystrixCommandEventStream.Observe*
+  implements:
+  - NHystrix.Metric.IHystrixEventStream{NHystrix.Metric.HystrixCommandEvent}.Observe
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NHystrix.Metric.HystrixCommandEventStream.ToString
+  commentId: M:NHystrix.Metric.HystrixCommandEventStream.ToString
+  id: ToString
+  parent: NHystrix.Metric.HystrixCommandEventStream
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: HystrixCommandEventStream.ToString()
+  fullName: NHystrix.Metric.HystrixCommandEventStream.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/NHystrix/Metric/HystrixCommandEventStream.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: ToString
+    path: ../src/NHystrix/Metric/HystrixCommandEventStream.cs
+    startLine: 101
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Metric
+  summary: "\nReturns a <xref href=\"System.String\" data-throw-if-not-resolved=\"false\"></xref> that represents this instance.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The name of the scream and <xref href="NHystrix.Metric.HystrixCommandEventStream.CommandKey" data-throw-if-not-resolved="false"></xref> it&apos;s for in the form of &quot;HystrixCommandStartStream({CommandKey})&quot;.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: NHystrix.Metric.HystrixCommandEventStream.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: NHystrix.Metric.HystrixCommandEvent
+  commentId: T:NHystrix.Metric.HystrixCommandEvent
+  isExternal: false
+  name: HystrixCommandEvent
+  nameWithType: HystrixCommandEvent
+  fullName: NHystrix.Metric.HystrixCommandEvent
+- uid: NHystrix.Metric.IHystrixEventStream`1
+  commentId: T:NHystrix.Metric.IHystrixEventStream`1
+  isExternal: false
+  name: IHystrixEventStream<E>
+  nameWithType: IHystrixEventStream<E>
+  fullName: NHystrix.Metric.IHystrixEventStream<E>
+  nameWithType.vb: IHystrixEventStream(Of E)
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of E)
+  name.vb: IHystrixEventStream(Of E)
+  spec.csharp:
+  - uid: NHystrix.Metric.IHystrixEventStream`1
+    name: IHystrixEventStream
+    nameWithType: IHystrixEventStream
+    fullName: NHystrix.Metric.IHystrixEventStream
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: E
+    nameWithType: E
+    fullName: E
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.Metric.IHystrixEventStream`1
+    name: IHystrixEventStream
+    nameWithType: IHystrixEventStream
+    fullName: NHystrix.Metric.IHystrixEventStream
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: E
+    nameWithType: E
+    fullName: E
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.Metric
+  commentId: N:NHystrix.Metric
+  isExternal: false
+  name: NHystrix.Metric
+  nameWithType: NHystrix.Metric
+  fullName: NHystrix.Metric
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: NHystrix.Metric.IHystrixEventStream{NHystrix.Metric.HystrixCommandEvent}
+  commentId: T:NHystrix.Metric.IHystrixEventStream{NHystrix.Metric.HystrixCommandEvent}
+  parent: NHystrix.Metric
+  definition: NHystrix.Metric.IHystrixEventStream`1
+  name: IHystrixEventStream<HystrixCommandEvent>
+  nameWithType: IHystrixEventStream<HystrixCommandEvent>
+  fullName: NHystrix.Metric.IHystrixEventStream<NHystrix.Metric.HystrixCommandEvent>
+  nameWithType.vb: IHystrixEventStream(Of HystrixCommandEvent)
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of NHystrix.Metric.HystrixCommandEvent)
+  name.vb: IHystrixEventStream(Of HystrixCommandEvent)
+  spec.csharp:
+  - uid: NHystrix.Metric.IHystrixEventStream`1
+    name: IHystrixEventStream
+    nameWithType: IHystrixEventStream
+    fullName: NHystrix.Metric.IHystrixEventStream
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NHystrix.Metric.HystrixCommandEvent
+    name: HystrixCommandEvent
+    nameWithType: HystrixCommandEvent
+    fullName: NHystrix.Metric.HystrixCommandEvent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NHystrix.Metric.IHystrixEventStream`1
+    name: IHystrixEventStream
+    nameWithType: IHystrixEventStream
+    fullName: NHystrix.Metric.IHystrixEventStream
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NHystrix.Metric.HystrixCommandEvent
+    name: HystrixCommandEvent
+    nameWithType: HystrixCommandEvent
+    fullName: NHystrix.Metric.HystrixCommandEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NHystrix.Metric.HystrixCommandEventStream
+  commentId: T:NHystrix.Metric.HystrixCommandEventStream
+  parent: NHystrix.Metric
+  isExternal: false
+  name: HystrixCommandEventStream
+  nameWithType: HystrixCommandEventStream
+  fullName: NHystrix.Metric.HystrixCommandEventStream
+- uid: NHystrix.Metric.HystrixCommandEventStream.GetInstance*
+  commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.GetInstance
+  isExternal: false
+  name: GetInstance
+  nameWithType: HystrixCommandEventStream.GetInstance
+  fullName: NHystrix.Metric.HystrixCommandEventStream.GetInstance
+- uid: System.Collections.Generic.KeyNotFoundException
+  commentId: T:System.Collections.Generic.KeyNotFoundException
+- uid: NHystrix.HystrixCommandKey
+  commentId: T:NHystrix.HystrixCommandKey
+  parent: NHystrix
+  isExternal: false
+  name: HystrixCommandKey
+  nameWithType: HystrixCommandKey
+  fullName: NHystrix.HystrixCommandKey
+- uid: NHystrix
+  commentId: N:NHystrix
+  isExternal: false
+  name: NHystrix
+  nameWithType: NHystrix
+  fullName: NHystrix
+- uid: NHystrix.Metric.HystrixCommandEventStream.CommandKey*
+  commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.CommandKey
+  isExternal: false
+  name: CommandKey
+  nameWithType: HystrixCommandEventStream.CommandKey
+  fullName: NHystrix.Metric.HystrixCommandEventStream.CommandKey
+- uid: System.IObservable`1
+  commentId: T:System.IObservable`1
+  isExternal: true
+  name: IObservable<T>
+  nameWithType: IObservable<T>
+  fullName: System.IObservable<T>
+  nameWithType.vb: IObservable(Of T)
+  fullName.vb: System.IObservable(Of T)
+  name.vb: IObservable(Of T)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.Metric.HystrixCommandEventStream.Observe*
+  commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.Observe
+  isExternal: false
+  name: Observe
+  nameWithType: HystrixCommandEventStream.Observe
+  fullName: NHystrix.Metric.HystrixCommandEventStream.Observe
+- uid: NHystrix.Metric.IHystrixEventStream{NHystrix.Metric.HystrixCommandEvent}.Observe
+  commentId: M:NHystrix.Metric.IHystrixEventStream{NHystrix.Metric.HystrixCommandEvent}.Observe
+  parent: NHystrix.Metric.IHystrixEventStream{NHystrix.Metric.HystrixCommandEvent}
+  definition: NHystrix.Metric.IHystrixEventStream`1.Observe
+  name: Observe()
+  nameWithType: IHystrixEventStream<HystrixCommandEvent>.Observe()
+  fullName: NHystrix.Metric.IHystrixEventStream<NHystrix.Metric.HystrixCommandEvent>.Observe()
+  nameWithType.vb: IHystrixEventStream(Of HystrixCommandEvent).Observe()
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of NHystrix.Metric.HystrixCommandEvent).Observe()
+  spec.csharp:
+  - uid: NHystrix.Metric.IHystrixEventStream`1.Observe
+    name: Observe
+    nameWithType: IHystrixEventStream<HystrixCommandEvent>.Observe
+    fullName: NHystrix.Metric.IHystrixEventStream<NHystrix.Metric.HystrixCommandEvent>.Observe
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.Metric.IHystrixEventStream`1.Observe
+    name: Observe
+    nameWithType: IHystrixEventStream(Of HystrixCommandEvent).Observe
+    fullName: NHystrix.Metric.IHystrixEventStream(Of NHystrix.Metric.HystrixCommandEvent).Observe
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IObservable{NHystrix.Metric.HystrixCommandEvent}
+  commentId: T:System.IObservable{NHystrix.Metric.HystrixCommandEvent}
+  parent: System
+  definition: System.IObservable`1
+  name: IObservable<HystrixCommandEvent>
+  nameWithType: IObservable<HystrixCommandEvent>
+  fullName: System.IObservable<NHystrix.Metric.HystrixCommandEvent>
+  nameWithType.vb: IObservable(Of HystrixCommandEvent)
+  fullName.vb: System.IObservable(Of NHystrix.Metric.HystrixCommandEvent)
+  name.vb: IObservable(Of HystrixCommandEvent)
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NHystrix.Metric.HystrixCommandEvent
+    name: HystrixCommandEvent
+    nameWithType: HystrixCommandEvent
+    fullName: NHystrix.Metric.HystrixCommandEvent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NHystrix.Metric.HystrixCommandEvent
+    name: HystrixCommandEvent
+    nameWithType: HystrixCommandEvent
+    fullName: NHystrix.Metric.HystrixCommandEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.Metric.IHystrixEventStream`1.Observe
+  commentId: M:NHystrix.Metric.IHystrixEventStream`1.Observe
+  isExternal: false
+  name: Observe()
+  nameWithType: IHystrixEventStream<E>.Observe()
+  fullName: NHystrix.Metric.IHystrixEventStream<E>.Observe()
+  nameWithType.vb: IHystrixEventStream(Of E).Observe()
+  fullName.vb: NHystrix.Metric.IHystrixEventStream(Of E).Observe()
+  spec.csharp:
+  - uid: NHystrix.Metric.IHystrixEventStream`1.Observe
+    name: Observe
+    nameWithType: IHystrixEventStream<E>.Observe
+    fullName: NHystrix.Metric.IHystrixEventStream<E>.Observe
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NHystrix.Metric.IHystrixEventStream`1.Observe
+    name: Observe
+    nameWithType: IHystrixEventStream(Of E).Observe
+    fullName: NHystrix.Metric.IHystrixEventStream(Of E).Observe
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NHystrix.Metric.HystrixCommandEventStream.CommandKey
+  commentId: P:NHystrix.Metric.HystrixCommandEventStream.CommandKey
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NHystrix.Metric.HystrixCommandEventStream.ToString*
+  commentId: Overload:NHystrix.Metric.HystrixCommandEventStream.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: HystrixCommandEventStream.ToString
+  fullName: NHystrix.Metric.HystrixCommandEventStream.ToString

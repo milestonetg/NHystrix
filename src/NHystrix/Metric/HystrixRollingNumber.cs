@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace NHystrix.Metric
 {
     /// <summary>
     /// A number which can be used to track counters (increment) or set values over time.
+    /// </summary>
+    /// <remarks>
     /// <para>
     /// It is "rolling" in the sense that a 'timeInMilliseconds' is given that you want to track (such as 10 seconds) and then that is broken into buckets (defaults to 10) so that the 10 second window
     /// doesn't empty out and restart every 10 seconds, but instead every 1 second you have a new bucket added and one dropped so that 9 of the buckets remain and only the newest starts from scratch.
@@ -25,8 +25,7 @@ namespace NHystrix.Metric
     /// <para>
     /// See UnitTest for usage and expected behavior examples.
     /// </para>
-    /// </summary>
-    /// <remarks>
+    /// 
     /// # Thread Safety
     /// 
     /// This class is thread-safe.
@@ -174,14 +173,7 @@ namespace NHystrix.Metric
             int i = 0;
             foreach (Bucket bucket in bucketArray)
             {
-                //if (type.isCounter())
-                {
-                    values[i++] = bucket.Get(eventType);
-                }
-                //else if (type.isMaxUpdater())
-                //{
-                //    values[i++] = bucket.getMaxUpdater(type).max();
-                //}
+                values[i++] = bucket.Get(eventType);
             }
             return values;
         }
@@ -191,21 +183,17 @@ namespace NHystrix.Metric
         /// </summary>
         /// <param name="eventType">Type of the event.</param>
         /// <returns>System.Int64.</returns>
-        /// <exception cref="NotImplementedException"></exception>
         public long GetRollingMaxValue(HystrixEventType eventType)
         {
-            //long values[] = getValues(type);
-            //if (values.length == 0)
-            //{
-            //    return 0;
-            //}
-            //else
-            //{
-            //    Arrays.sort(values);
-            //    return values[values.length - 1];
-            //}
-
-            throw new NotImplementedException();
+            long[] values = GetValues(eventType);
+            if (values.Length == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return values.Max();
+            }
         }
 
         Bucket GetCurrentBucket()

@@ -1,0 +1,297 @@
+### YamlMime:ManagedReference
+items:
+- uid: NHystrix.Exceptions.FailureType
+  commentId: T:NHystrix.Exceptions.FailureType
+  id: FailureType
+  parent: NHystrix.Exceptions
+  children:
+  - NHystrix.Exceptions.FailureType.BAD_REQUEST_EXCEPTION
+  - NHystrix.Exceptions.FailureType.COMMAND_EXCEPTION
+  - NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_EXECUTION
+  - NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_FALLBACK
+  - NHystrix.Exceptions.FailureType.REJECTED_THREAD_EXECUTION
+  - NHystrix.Exceptions.FailureType.SHORTCIRCUIT
+  - NHystrix.Exceptions.FailureType.TIMEOUT
+  langs:
+  - csharp
+  - vb
+  name: FailureType
+  nameWithType: FailureType
+  fullName: NHystrix.Exceptions.FailureType
+  type: Enum
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: FailureType
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 9
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nEnum FailureType\n"
+  example: []
+  syntax:
+    content: public enum FailureType
+    content.vb: Public Enum FailureType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: NHystrix.Exceptions.FailureType.BAD_REQUEST_EXCEPTION
+  commentId: F:NHystrix.Exceptions.FailureType.BAD_REQUEST_EXCEPTION
+  id: BAD_REQUEST_EXCEPTION
+  parent: NHystrix.Exceptions.FailureType
+  langs:
+  - csharp
+  - vb
+  name: BAD_REQUEST_EXCEPTION
+  nameWithType: FailureType.BAD_REQUEST_EXCEPTION
+  fullName: NHystrix.Exceptions.FailureType.BAD_REQUEST_EXCEPTION
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: BAD_REQUEST_EXCEPTION
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 14
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nThe bad request exception\n"
+  example: []
+  syntax:
+    content: BAD_REQUEST_EXCEPTION = 0
+    return:
+      type: NHystrix.Exceptions.FailureType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NHystrix.Exceptions.FailureType.COMMAND_EXCEPTION
+  commentId: F:NHystrix.Exceptions.FailureType.COMMAND_EXCEPTION
+  id: COMMAND_EXCEPTION
+  parent: NHystrix.Exceptions.FailureType
+  langs:
+  - csharp
+  - vb
+  name: COMMAND_EXCEPTION
+  nameWithType: FailureType.COMMAND_EXCEPTION
+  fullName: NHystrix.Exceptions.FailureType.COMMAND_EXCEPTION
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: COMMAND_EXCEPTION
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 18
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nThe command exception\n"
+  example: []
+  syntax:
+    content: COMMAND_EXCEPTION = 1
+    return:
+      type: NHystrix.Exceptions.FailureType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NHystrix.Exceptions.FailureType.TIMEOUT
+  commentId: F:NHystrix.Exceptions.FailureType.TIMEOUT
+  id: TIMEOUT
+  parent: NHystrix.Exceptions.FailureType
+  langs:
+  - csharp
+  - vb
+  name: TIMEOUT
+  nameWithType: FailureType.TIMEOUT
+  fullName: NHystrix.Exceptions.FailureType.TIMEOUT
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: TIMEOUT
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 22
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nThe timeout\n"
+  example: []
+  syntax:
+    content: TIMEOUT = 2
+    return:
+      type: NHystrix.Exceptions.FailureType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NHystrix.Exceptions.FailureType.SHORTCIRCUIT
+  commentId: F:NHystrix.Exceptions.FailureType.SHORTCIRCUIT
+  id: SHORTCIRCUIT
+  parent: NHystrix.Exceptions.FailureType
+  langs:
+  - csharp
+  - vb
+  name: SHORTCIRCUIT
+  nameWithType: FailureType.SHORTCIRCUIT
+  fullName: NHystrix.Exceptions.FailureType.SHORTCIRCUIT
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: SHORTCIRCUIT
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 26
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nThe failure was the result of the circuit breaker being open. \n"
+  example: []
+  syntax:
+    content: SHORTCIRCUIT = 3
+    return:
+      type: NHystrix.Exceptions.FailureType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NHystrix.Exceptions.FailureType.REJECTED_THREAD_EXECUTION
+  commentId: F:NHystrix.Exceptions.FailureType.REJECTED_THREAD_EXECUTION
+  id: REJECTED_THREAD_EXECUTION
+  parent: NHystrix.Exceptions.FailureType
+  langs:
+  - csharp
+  - vb
+  name: REJECTED_THREAD_EXECUTION
+  nameWithType: FailureType.REJECTED_THREAD_EXECUTION
+  fullName: NHystrix.Exceptions.FailureType.REJECTED_THREAD_EXECUTION
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: REJECTED_THREAD_EXECUTION
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 30
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nThe rejected thread execution\n"
+  example: []
+  syntax:
+    content: REJECTED_THREAD_EXECUTION = 4
+    return:
+      type: NHystrix.Exceptions.FailureType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_EXECUTION
+  commentId: F:NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_EXECUTION
+  id: REJECTED_SEMAPHORE_EXECUTION
+  parent: NHystrix.Exceptions.FailureType
+  langs:
+  - csharp
+  - vb
+  name: REJECTED_SEMAPHORE_EXECUTION
+  nameWithType: FailureType.REJECTED_SEMAPHORE_EXECUTION
+  fullName: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_EXECUTION
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: REJECTED_SEMAPHORE_EXECUTION
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 34
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nThe failure was the result of a bulkhead semaphore not being obtained before the <xref href=\"NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: REJECTED_SEMAPHORE_EXECUTION = 5
+    return:
+      type: NHystrix.Exceptions.FailureType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_FALLBACK
+  commentId: F:NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_FALLBACK
+  id: REJECTED_SEMAPHORE_FALLBACK
+  parent: NHystrix.Exceptions.FailureType
+  langs:
+  - csharp
+  - vb
+  name: REJECTED_SEMAPHORE_FALLBACK
+  nameWithType: FailureType.REJECTED_SEMAPHORE_FALLBACK
+  fullName: NHystrix.Exceptions.FailureType.REJECTED_SEMAPHORE_FALLBACK
+  type: Field
+  source:
+    remote:
+      path: src/NHystrix/Exceptions/FailureType.cs
+      branch: master
+      repo: https://github.com/milestonetg/NHystrix.git
+    id: REJECTED_SEMAPHORE_FALLBACK
+    path: ../src/NHystrix/Exceptions/FailureType.cs
+    startLine: 38
+  assemblies:
+  - NHystrix
+  namespace: NHystrix.Exceptions
+  summary: "\nThe rejected semaphore fallback\n"
+  example: []
+  syntax:
+    content: REJECTED_SEMAPHORE_FALLBACK = 6
+    return:
+      type: NHystrix.Exceptions.FailureType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: NHystrix.Exceptions
+  commentId: N:NHystrix.Exceptions
+  isExternal: false
+  name: NHystrix.Exceptions
+  nameWithType: NHystrix.Exceptions
+  fullName: NHystrix.Exceptions
+- uid: NHystrix.Exceptions.FailureType
+  commentId: T:NHystrix.Exceptions.FailureType
+  parent: NHystrix.Exceptions
+  isExternal: false
+  name: FailureType
+  nameWithType: FailureType
+  fullName: NHystrix.Exceptions.FailureType
+- uid: NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds
+  commentId: P:NHystrix.HystrixCommandProperties.BulkheadSemaphoreAcquireTimeoutInMilliseconds

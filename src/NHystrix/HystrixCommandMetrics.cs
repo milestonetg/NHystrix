@@ -9,7 +9,7 @@ using System.Reactive.Subjects;
 namespace NHystrix
 {
     /// <summary>
-    /// Tracks metrics for a <see cref="HystrixCommand{TResult}"/> for a <see cref="HystrixCommandKey"/>.
+    /// Tracks metrics for a <see cref="HystrixCommand{TRequest, TResult}"/> for a <see cref="HystrixCommandKey"/>.
     /// </summary>
     /// <seealso cref="NHystrix.HystrixMetrics" />
     public class HystrixCommandMetrics : HystrixMetrics

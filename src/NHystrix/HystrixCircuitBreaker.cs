@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace NHystrix
@@ -15,7 +13,7 @@ namespace NHystrix
         readonly static ConcurrentDictionary<HystrixCommandKey, IHystrixCircuitBreaker> intern = 
             new ConcurrentDictionary<HystrixCommandKey, IHystrixCircuitBreaker>();
 
-        readonly HystrixCommandProperties properties;
+        readonly CircuitBreakerOptions properties;
         readonly HystrixCommandMetrics metrics;
 
         class Status
@@ -31,7 +29,7 @@ namespace NHystrix
         // The time the circuit was opened in Ticks.
         long circuitOpened = -1L;
 
-        private HystrixCircuitBreaker(HystrixCommandProperties properties, HystrixCommandMetrics metrics)
+        private HystrixCircuitBreaker(CircuitBreakerOptions properties, HystrixCommandMetrics metrics)
         {
             this.properties = properties;
             this.metrics = metrics;
@@ -44,14 +42,7 @@ namespace NHystrix
                         onNext.RequestCount >= properties.CircuitBreakerRequestVolumeThreshold &&
                         onNext.FailurePercentage >= properties.CircuitBreakerErrorThresholdPercentage)
                     {
-                        // The circuit is closed and we've reached the error rate threshold, so trip the circuit breaker...
-                        Interlocked.CompareExchange(ref status, Status.OPEN, Status.CLOSED);
-
-                        if (status == Status.OPEN)
-                        {
-                            //This thread wins the race to re-open the circuit - it resets the start time for the sleep window
-                            Interlocked.Exchange(ref circuitOpened, DateTime.UtcNow.Ticks);
-                        }
+                        Trip();
                     }
                 });
         }
@@ -63,7 +54,7 @@ namespace NHystrix
         /// <param name="properties">The <see cref="HystrixCommandProperties"/> for the command using this circuit breaker.</param>
         /// <param name="metrics">The <see cref="HystrixCommandMetrics"/> for the command using this circuit breaker.</param>
         /// <returns>A singleton instance of IHystrixCircuitBreaker for the given <see cref="HystrixCommandKey"/></returns>
-        public static IHystrixCircuitBreaker GetInstance(HystrixCommandKey commandKey, HystrixCommandProperties properties, HystrixCommandMetrics metrics)
+        public static IHystrixCircuitBreaker GetInstance(HystrixCommandKey commandKey, CircuitBreakerOptions properties, HystrixCommandMetrics metrics)
         {
             IHystrixCircuitBreaker cb = null;
             if (intern.TryGetValue(commandKey, out cb))
@@ -91,7 +82,7 @@ namespace NHystrix
         }
 
         /// <summary>
-        /// Every <see cref="HystrixCommand{TResult}" /> requests asks this if it is allowed to proceed or not.  It is idempotent and does
+        /// Every <see cref="HystrixCommand{TRequest, TResult}" /> requests asks this if it is allowed to proceed or not.  It is idempotent and does
         /// not modify any internal state, and takes into account the half-open logic which allows some requests through
         /// after the circuit has been opened.
         /// </summary>
@@ -190,7 +181,22 @@ namespace NHystrix
         }
 
         /// <summary>
-        /// Invoked on successful executions from <see cref="HystrixCommand{TResult}" /> as part of feedback mechanism when in a half-open state.
+        /// Trips the circuit breaker.
+        /// </summary>
+        public void Trip()
+        {
+            // The circuit is closed and we've reached the error rate threshold, so trip the circuit breaker...
+            Interlocked.Exchange(ref status, Status.OPEN);
+
+            if (status == Status.OPEN)
+            {
+                //This thread wins the race to re-open the circuit - it resets the start time for the sleep window
+                Interlocked.Exchange(ref circuitOpened, DateTime.UtcNow.Ticks);
+            }
+        }
+
+        /// <summary>
+        /// Invoked on successful executions from <see cref="HystrixCommand{TRequest, TResult}" /> as part of feedback mechanism when in a half-open state.
         /// </summary>
         public void MarkSuccess()
         {
@@ -203,11 +209,11 @@ namespace NHystrix
         }
 
         /// <summary>
-        /// Invoked on unsuccessful executions from <see cref="HystrixCommand{TResult}" /> as part of feedback mechanism when in a half-open state.
+        /// Invoked on unsuccessful executions from <see cref="HystrixCommand{TRequest, TResult}" /> as part of feedback mechanism when in a half-open state.
         /// </summary>
         public void MarkNonSuccess()
         {
-            Interlocked.Exchange(ref status, Status.OPEN);
+            Interlocked.CompareExchange(ref status, Status.OPEN, Status.HALF_OPEN);
 
             if (status == Status.OPEN)
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NHystrix.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -17,7 +18,8 @@ namespace NHystrix.Tests
             {
                 FallbackEnabled = true,
                 TimeoutEnabled = true,
-                ExecutionTimeoutInMilliseconds = 5000
+                ExecutionTimeoutInMilliseconds = 5000,
+                
             };
 
             var cmd = new TestCommand(properties);
@@ -26,7 +28,7 @@ namespace NHystrix.Tests
 
             string s = await cmd.ExecuteAsync().ConfigureAwait(false);
 
-            long count = metrics.getRollingCount(HystrixEventType.SUCCESS);
+            long count = metrics.GetCumulativeCount(HystrixEventType.SUCCESS);
 
             Assert.AreEqual(TestCommand.RETURN_VALUE, s);
             Assert.AreEqual(1, count);
@@ -48,10 +50,82 @@ namespace NHystrix.Tests
 
             string s = await cmd.ExecuteAsync().ConfigureAwait(false);
             
-            long count = metrics.getRollingCount(HystrixEventType.TIMEOUT);
+            long count = metrics.GetCumulativeCount(HystrixEventType.TIMEOUT);
 
             Assert.AreEqual(TestCommand.FALLBACK_VALUE, s);
             Assert.AreEqual(1, count);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(HystrixTimeoutException), AllowDerivedTypes = true)]
+        public async Task Timeout_with_no_fallback_should_throw_TimeoutException()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = false,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 5000
+            };
+
+            var cmd = new LongRunningTestCommand(properties);
+
+            HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
+
+            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(HystrixFailureException), AllowDerivedTypes = true)]
+        public async Task Failure_with_no_fallback_should_throw_FailureException()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = false,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 5000
+            };
+
+            var cmd = new FailureCommand(1, properties);
+
+            HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
+
+            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(HystrixBadRequestException), AllowDerivedTypes = true)]
+        public async Task BadRequest_with_no_fallback_should_throw_BadRequestException()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = false,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 5000
+            };
+
+            var cmd = new BadRequestCommand(1, properties);
+
+            HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
+
+            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(HystrixBadRequestException), AllowDerivedTypes = true)]
+        public async Task BadRequest_with_fallback_should_throw_BadRequestException()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = true,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 5000
+            };
+
+            var cmd = new BadRequestCommand(1, properties);
+
+            HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
+
+            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
         }
 
         [TestMethod]
@@ -62,19 +136,26 @@ namespace NHystrix.Tests
                 FallbackEnabled = true,
                 TimeoutEnabled = true,
                 ExecutionTimeoutInMilliseconds = 20000,
-                CircuitBreakerSleepWindowInMilliseconds = 60000,
-                CircuitBreakerRequestVolumeThreshold = 100,
-                CircuitBreakerErrorThresholdPercentage = 50,
+                CircuitBreakerOptions = new CircuitBreakerOptions
+                {
+                    CircuitBreakerSleepWindowInMilliseconds = 60000,
+                    CircuitBreakerRequestVolumeThreshold = 100,
+                    CircuitBreakerErrorThresholdPercentage = 50,
+                }
             };
 
-            int trippedAttempt = 0;
+            long trippedAttempt = 0;
             bool tripped = false;
 
+            var cmd = new FailureCommand(1, properties);
+            HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
+            //metrics.Reset();
+
             //execute failures to trigger trip
-            for(int i=0; i < 1000; i++)
+            for (int i=0; i < 1000; i++)
             {
                 // test command fails every other request.
-                var cmd = new FailureCommand(i, properties);
+                cmd = new FailureCommand(i, properties);
                 string s = await cmd.ExecuteAsync().ConfigureAwait(false);
 
                 //Check the circuit breaker
@@ -82,18 +163,41 @@ namespace NHystrix.Tests
                 HystrixCircuitBreaker circuitBreaker = info.GetValue(cmd) as HystrixCircuitBreaker;
                 if (circuitBreaker.IsOpen)
                 {
-                    trippedAttempt = i;
                     tripped = true;
                     break;
                 }
             }
 
+            trippedAttempt = metrics.GetCumulativeCount(HystrixEventType.EMIT);
+
             Assert.IsTrue(tripped, "Circuit breaker never tripped.");
-            Assert.IsTrue(trippedAttempt >= 50 && trippedAttempt <= 100, $"Circuit breaker tripped, but not when expected. Tripped at requrest {trippedAttempt}");
+            //Assert.IsTrue(trippedAttempt >= 100, $"Circuit breaker tripped, but not when expected. Tripped at request {trippedAttempt}");
+        }
+
+        [TestMethod]
+        public async Task Failure_should_return_fallback_when_enabled()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = true,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 20000,
+                CircuitBreakerOptions = new CircuitBreakerOptions
+                {
+                    CircuitBreakerSleepWindowInMilliseconds = 60000,
+                    CircuitBreakerRequestVolumeThreshold = 100,
+                    CircuitBreakerErrorThresholdPercentage = 50,
+                }
+            };
+
+            var cmd = new FailureCommand(1, properties);
+            string s = await cmd.ExecuteAsync(null).ConfigureAwait(false);
+
+            Assert.AreEqual(FailureCommand.FALLBACK_VALUE, s);
         }
     }
 
-    class TestCommand : HystrixCommand<string>
+    class TestCommand : HystrixCommand<string,string>
     {
         public const string RETURN_VALUE = "Hello World";
         public const string FALLBACK_VALUE = "Fallback";
@@ -104,14 +208,14 @@ namespace NHystrix.Tests
 
         }
 
-        protected override Task<string> RunAsync()
+        protected override Task<string> RunAsync(string s)
         {
             return Task.FromResult(RETURN_VALUE);
         }
 
-        protected override string OnHandleFallback()
+        protected override Task<string> GetFallback()
         {
-            return FALLBACK_VALUE;
+            return Task.FromResult(FALLBACK_VALUE);
         }
     }
 
@@ -121,14 +225,14 @@ namespace NHystrix.Tests
         {
         }
 
-        protected override async Task<string> RunAsync()
+        protected override async Task<string> RunAsync(string s)
         {
             await Task.Delay(30000);
-            return await base.RunAsync();
+            return await base.RunAsync(s);
         }
     }
 
-    class FailureCommand : HystrixCommand<string>
+    class FailureCommand : HystrixCommand<string, string>
     {
         public const string RETURN_VALUE = "Success attempt";
         public const string FALLBACK_VALUE = "Fallback";
@@ -141,17 +245,44 @@ namespace NHystrix.Tests
             this.attempt = attempt;
         }
 
-        protected override Task<string> RunAsync()
+        protected override Task<string> RunAsync(string s)
         {
-            if (attempt % 2 == 0)
+            //if (attempt % 2 == 0)
                 throw new Exception("Failed attempt");
-            else
-                return Task.FromResult(RETURN_VALUE);
+            //else
+                //return Task.FromResult(RETURN_VALUE);
         }
 
-        protected override string OnHandleFallback()
+        protected override Task<string> GetFallback()
         {
-            return FALLBACK_VALUE;
+            return Task.FromResult(FALLBACK_VALUE);
+        }
+    }
+
+    class BadRequestCommand : HystrixCommand<string, string>
+    {
+        public const string RETURN_VALUE = "Success attempt";
+        public const string FALLBACK_VALUE = "Fallback";
+
+        int attempt;
+
+        public BadRequestCommand(int attempt, HystrixCommandProperties properties)
+            : base(new HystrixCommandKey("FailureTest", new HystrixCommandGroup("CircuitBreakerTests")), properties)
+        {
+            this.attempt = attempt;
+        }
+
+        protected override Task<string> RunAsync(string s)
+        {
+            //if (attempt % 2 == 0)
+            throw new ArgumentException("Bad Request Test");
+            //else
+            //return Task.FromResult(RETURN_VALUE);
+        }
+
+        protected override Task<string> GetFallback()
+        {
+            return Task.FromResult(FALLBACK_VALUE);
         }
     }
 }

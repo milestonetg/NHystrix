@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class HystrixCommandEventStream
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -81,7 +81,7 @@
   
   <h1 id="NHystrix_Metric_HystrixCommandEventStream" data-uid="NHystrix.Metric.HystrixCommandEventStream" class="text-break">Class HystrixCommandEventStream
   </h1>
-  <div class="markdown level0 summary"><p>Per-Command stream of <see cref="!:HystrixCommandExecutionStarted"></see>s.</p>
+  <div class="markdown level0 summary"><p>Per-Command stream of <a class="xref" href="NHystrix.Metric.HystrixCommandEvent.html">HystrixCommandEvent</a>s.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -260,22 +260,6 @@ In theory, this should never get thrown.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixCommandEventStream_Reset.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixCommandEventStream.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixCommandEventStream.cs/#L72">View Source</a>
-  </span>
-  <a id="NHystrix_Metric_HystrixCommandEventStream_Reset_" data-uid="NHystrix.Metric.HystrixCommandEventStream.Reset*"></a>
-  <h4 id="NHystrix_Metric_HystrixCommandEventStream_Reset" data-uid="NHystrix.Metric.HystrixCommandEventStream.Reset">Reset()</h4>
-  <div class="markdown level1 summary"><p>Completes each interned stream and, clears the interned streams dictionary. </p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Reset()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixCommandEventStream_ToString.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixCommandEventStream.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -308,40 +292,6 @@ In theory, this should never get thrown.</p>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">System.Object.ToString()</span></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_Metric_HystrixCommandEventStream_Write_NHystrix_Metric_HystrixCommandEvent_.md&amp;value=---%0Auid%3A%20NHystrix.Metric.HystrixCommandEventStream.Write(NHystrix.Metric.HystrixCommandEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/Metric/HystrixCommandEventStream.cs/#L84">View Source</a>
-  </span>
-  <a id="NHystrix_Metric_HystrixCommandEventStream_Write_" data-uid="NHystrix.Metric.HystrixCommandEventStream.Write*"></a>
-  <h4 id="NHystrix_Metric_HystrixCommandEventStream_Write_NHystrix_Metric_HystrixCommandEvent_" data-uid="NHystrix.Metric.HystrixCommandEventStream.Write(NHystrix.Metric.HystrixCommandEvent)">Write(HystrixCommandEvent)</h4>
-  <div class="markdown level1 summary"><p>Writes the specified hystrix event.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(HystrixCommandEvent hystrixEvent)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NHystrix.Metric.HystrixCommandEvent.html">HystrixCommandEvent</a></td>
-        <td><span class="parametername">hystrixEvent</span></td>
-        <td><p>The hystrix event.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="NHystrix.Metric.IHystrixEventStream-1.html">IHystrixEventStream&lt;E&gt;</a>

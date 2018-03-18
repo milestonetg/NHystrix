@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class HystrixCommandMetrics
    | NHystrix ">
-    <meta name="generator" content="docfx 2.27.0.0">
+    <meta name="generator" content="docfx 2.32.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -81,7 +81,8 @@
   
   <h1 id="NHystrix_HystrixCommandMetrics" data-uid="NHystrix.HystrixCommandMetrics" class="text-break">Class HystrixCommandMetrics
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Tracks metrics for a <a class="xref" href="NHystrix.HystrixCommand-2.html">HystrixCommand&lt;TRequest, TResult&gt;</a> for a <a class="xref" href="NHystrix.HystrixCommandKey.html">HystrixCommandKey</a>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -92,13 +93,13 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_counter">HystrixMetrics.counter</a>
-    </div>
-    <div>
       <a class="xref" href="NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_GetCumulativeCount_NHystrix_HystrixEventType_">HystrixMetrics.GetCumulativeCount(HystrixEventType)</a>
     </div>
     <div>
-      <a class="xref" href="NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_getRollingCount_NHystrix_HystrixEventType_">HystrixMetrics.getRollingCount(HystrixEventType)</a>
+      <a class="xref" href="NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_GetRollingCount_NHystrix_HystrixEventType_">HystrixMetrics.GetRollingCount(HystrixEventType)</a>
+    </div>
+    <div>
+      <a class="xref" href="NHystrix.HystrixMetrics.html#NHystrix_HystrixMetrics_Reset">HystrixMetrics.Reset()</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -135,11 +136,12 @@
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandMetrics_CommandGroup.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandMetrics.CommandGroup%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L62">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L94">View Source</a>
   </span>
   <a id="NHystrix_HystrixCommandMetrics_CommandGroup_" data-uid="NHystrix.HystrixCommandMetrics.CommandGroup*"></a>
   <h4 id="NHystrix_HystrixCommandMetrics_CommandGroup" data-uid="NHystrix.HystrixCommandMetrics.CommandGroup">CommandGroup</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the command group.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -156,7 +158,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="NHystrix.HystrixCommandGroup.html">HystrixCommandGroup</a></td>
-        <td></td>
+        <td><p>The command group.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -165,11 +168,12 @@
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandMetrics_CommandKey.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandMetrics.CommandKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L60">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L88">View Source</a>
   </span>
   <a id="NHystrix_HystrixCommandMetrics_CommandKey_" data-uid="NHystrix.HystrixCommandMetrics.CommandKey*"></a>
   <h4 id="NHystrix_HystrixCommandMetrics_CommandKey" data-uid="NHystrix.HystrixCommandMetrics.CommandKey">CommandKey</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the command key.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -186,7 +190,40 @@
     <tbody>
       <tr>
         <td><a class="xref" href="NHystrix.HystrixCommandKey.html">HystrixCommandKey</a></td>
-        <td></td>
+        <td><p>The command key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandMetrics_HealthStream.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandMetrics.HealthStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L100">View Source</a>
+  </span>
+  <a id="NHystrix_HystrixCommandMetrics_HealthStream_" data-uid="NHystrix.HystrixCommandMetrics.HealthStream*"></a>
+  <h4 id="NHystrix_HystrixCommandMetrics_HealthStream" data-uid="NHystrix.HystrixCommandMetrics.HealthStream">HealthStream</h4>
+  <div class="markdown level1 summary"><p>Gets the health stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IObservable&lt;HealthCounts&gt; HealthStream { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IObservable</span>&lt;<a class="xref" href="NHystrix.HealthCounts.html">HealthCounts</a>&gt;</td>
+        <td><p>The health stream.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -197,11 +234,12 @@
     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandMetrics_GetInstance_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandMetrics.GetInstance(NHystrix.HystrixCommandKey%2CNHystrix.HystrixCommandProperties)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L29">View Source</a>
+    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L53">View Source</a>
   </span>
   <a id="NHystrix_HystrixCommandMetrics_GetInstance_" data-uid="NHystrix.HystrixCommandMetrics.GetInstance*"></a>
   <h4 id="NHystrix_HystrixCommandMetrics_GetInstance_NHystrix_HystrixCommandKey_NHystrix_HystrixCommandProperties_" data-uid="NHystrix.HystrixCommandMetrics.GetInstance(NHystrix.HystrixCommandKey,NHystrix.HystrixCommandProperties)">GetInstance(HystrixCommandKey, HystrixCommandProperties)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a singleton instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -220,12 +258,14 @@
       <tr>
         <td><a class="xref" href="NHystrix.HystrixCommandKey.html">HystrixCommandKey</a></td>
         <td><span class="parametername">commandKey</span></td>
-        <td></td>
+        <td><p>The command key.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="NHystrix.HystrixCommandProperties.html">HystrixCommandProperties</a></td>
         <td><span class="parametername">properties</span></td>
-        <td></td>
+        <td><p>The properties.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -240,10 +280,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="NHystrix.HystrixCommandMetrics.html">HystrixCommandMetrics</a></td>
-        <td></td>
+        <td><p>HystrixCommandMetrics.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="NHystrix.HystrixMetrics.html">HystrixMetrics</a></div>
+  </div>
 </article>
           </div>
           
@@ -255,7 +300,7 @@
                     <a href="https://github.com/milestonetg/NHystrix/new/master/apiSpec/new?filename=NHystrix_HystrixCommandMetrics.md&amp;value=---%0Auid%3A%20NHystrix.HystrixCommandMetrics%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/milestonetg/NHystrix/blob/master/src/NHystrix/HystrixCommandMetrics.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
