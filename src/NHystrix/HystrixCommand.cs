@@ -25,7 +25,7 @@ namespace NHystrix
     /// 1. a command that performs a write operation
     ///    * If your Hystrix command is designed to do a write operation rather than to return a value, 
     ///    there isn't much point in implementing a fallback. If the write fails, you probably want the failure to propagate back to the caller.
-    /// 1. batch systems/offline compute
+    /// 2. batch systems/offline compute
     ///    * If your Hystrix command is filling up a cache, or generating a report, or doing any sort of offline computation, 
     ///    it's usually more appropriate to propagate the error back to the caller who can then retry the command later, 
     ///    rather than to send the caller a silently-degraded response.
@@ -241,6 +241,26 @@ namespace NHystrix
                         throw new HystrixFailureException(FailureType.COMMAND_EXCEPTION, ex.Message, ex);
                 }
             }
+        }
+
+        /// <summary>
+        /// Queues the command for async.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <param name="callback">Optional callback action.</param>
+        /// <example>
+        /// <code>
+        /// var cmd = new HelloCommand(properties);
+        /// cmd.Queue(string.Empty, t => {
+        ///     //Callback logic.
+        /// });
+        /// </code>
+        /// </example>
+        public void Queue(TRequest request = default(TRequest), Action<Task<TResult>> callback = null)
+        {
+            HystrixWorker<TRequest, TResult> worker = HystrixWorker<TRequest, TResult>.GetInstance(CommandKey, properties);
+
+            worker?.Enqueue(this, callback);
         }
 
         /// <summary>

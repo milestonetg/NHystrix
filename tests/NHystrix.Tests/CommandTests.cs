@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace NHystrix.Tests
@@ -194,6 +195,89 @@ namespace NHystrix.Tests
             string s = await cmd.ExecuteAsync(null).ConfigureAwait(false);
 
             Assert.AreEqual(FailureCommand.FALLBACK_VALUE, s);
+        }
+
+        [TestMethod]
+        public void Queue_should_execute_in_background_and_invoke_callback()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = true,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 20000,
+                CircuitBreakerOptions = new CircuitBreakerOptions
+                {
+                    CircuitBreakerSleepWindowInMilliseconds = 60000,
+                    CircuitBreakerRequestVolumeThreshold = 100,
+                    CircuitBreakerErrorThresholdPercentage = 50,
+                }
+            };
+
+            var cmd = new TestCommand(properties);
+
+            bool continued = false;
+            string s = null;
+            cmd.Queue(string.Empty, t => {
+                continued = true;
+                s = t.Result;
+            });
+                       
+            Thread.Sleep(1000);
+            Assert.IsTrue(continued);
+            Assert.AreEqual(TestCommand.RETURN_VALUE, s);
+        }
+
+        [TestMethod]
+        public void Queue_should_execute_in_background_and_invoke_callback_on_failure()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = true,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 20000,
+                CircuitBreakerOptions = new CircuitBreakerOptions
+                {
+                    CircuitBreakerSleepWindowInMilliseconds = 60000,
+                    CircuitBreakerRequestVolumeThreshold = 100,
+                    CircuitBreakerErrorThresholdPercentage = 50,
+                }
+            };
+
+            var cmd = new FailureCommand(1, properties);
+
+            bool continued = false;
+            string s = null;
+            cmd.Queue(string.Empty, t => {
+                continued = true;
+                s = t.Result;
+            });
+
+            Thread.Sleep(1000);
+            Assert.IsTrue(continued);
+            Assert.AreEqual(TestCommand.FALLBACK_VALUE, s);
+        }
+
+        [TestMethod]
+        public void Queue_should_not_require_callback()
+        {
+            var properties = new HystrixCommandProperties()
+            {
+                FallbackEnabled = true,
+                TimeoutEnabled = true,
+                ExecutionTimeoutInMilliseconds = 20000,
+                CircuitBreakerOptions = new CircuitBreakerOptions
+                {
+                    CircuitBreakerSleepWindowInMilliseconds = 60000,
+                    CircuitBreakerRequestVolumeThreshold = 100,
+                    CircuitBreakerErrorThresholdPercentage = 50,
+                }
+            };
+
+            var cmd = new TestCommand(properties);
+
+            cmd.Queue(string.Empty, null);
+
+            Thread.Sleep(1000);
         }
     }
 

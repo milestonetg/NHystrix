@@ -5,7 +5,7 @@
     <VersionPrefix>0.2.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Company>Milestone Technology Group, LLC</Company>
-    <Authors>Milestone Technology Group, LLC</Authors>
+    <Authors>milestonetg</Authors>
     <Description>A latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.</Description>
     <PackageLicenseUrl>https://github.com/milestonetg/NHystrix/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/milestonetg/NHystrix</PackageProjectUrl>
@@ -15,8 +15,9 @@
     <RepositoryType>github</RepositoryType>
     <DebugType>Full</DebugType>
     <PackageReleaseNotes>
-      See https://github.com/milestonetg/NHystrix/CHANGELOG.md
+      See https://github.com/milestonetg/NHystrix/blob/master/CHANGELOG.md
     </PackageReleaseNotes>
+    <Version>0.3.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

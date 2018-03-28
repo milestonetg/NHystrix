@@ -2,13 +2,20 @@
 - Request Caching
 - Dashboard
 
+## [0.3.0]
+
+### Added
+
+Asychronous execution support using the `IHystrixCommand.Queue()` method. This method is non-blocking uses a producer/consumer pattern
+under the hood. A callback action can invoked when the command completes.
+
 ## [0.2.0]
 There are some pretty major breaking changes in this release as we bring more of the Hystrix functionality and design
 into the APIs. We've also deviated from the original Hystrix implementation a bit more and use typed exceptions rather
 than a single HystrixRuntimeException and an enum.
 
 We'll try to keep breaking changes to a minimum going forward unless it's to fix a major design flaw or to greatly improve
-reliability, performance, and usability. Not promises :)  If breaking it makes it better, we'll do it. At least until 
+reliability, performance, and usability. No promises :)  If breaking it makes it better, we'll do it. At least until 
 we reach a 1.0 release.
 
 ### Added
@@ -19,7 +26,7 @@ we reach a 1.0 release.
 - Expanded the `IHystrixCircuitBreaker` beyond the original Netflix version
 - Typed Exceptions
 
-## Changes (non-breaking)
+### Changes (non-breaking)
 - `Execute()` and `ExecuteAsync()` methods now accept an optional request parameter. This allows a `HystrixCommand` to
 be a Singleton and the request passed into Execute() rather than the constructor.
 
