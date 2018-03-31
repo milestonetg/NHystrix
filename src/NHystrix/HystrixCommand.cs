@@ -23,26 +23,30 @@ namespace NHystrix
     /// for most Hystrix commands that might conceivably fail, with a couple of exceptions:
     ///
     /// 1. a command that performs a write operation
-    ///    * If your Hystrix command is designed to do a write operation rather than to return a value, 
-    ///    there isn't much point in implementing a fallback. If the write fails, you probably want the failure to propagate back to the caller.
+    ///    * If your Hystrix command is designed to do a write operation rather than to return a value, there isn't 
+    ///    much point in implementing a fallback. If the write fails, you probably want the failure to propagate back 
+    ///    to the caller.
     /// 2. batch systems/offline compute
-    ///    * If your Hystrix command is filling up a cache, or generating a report, or doing any sort of offline computation, 
-    ///    it's usually more appropriate to propagate the error back to the caller who can then retry the command later, 
-    ///    rather than to send the caller a silently-degraded response.
+    ///    * If your Hystrix command is filling up a cache, or generating a report, or doing any sort of offline 
+    ///    computation, it's usually more appropriate to propagate the error back to the caller who can then retry the 
+    ///    command later, rather than to send the caller a silently-degraded response.
     ///
-    /// Whether or not your command has a fallback, all of the usual Hystrix state and circuit-breaker state/metrics are updated to indicate the command failure.
+    /// Whether or not your command has a fallback, all of the usual Hystrix state and circuit-breaker state/metrics are 
+    /// updated to indicate the command failure.
     ///
-    /// In an ordinary `HystrixCommand` you implement a fallback by means of a <see cref="HystrixCommand{TRequest, TResult}.GetFallback"/>() implementation. 
-    /// Hystrix will execute this fallback for all types of failure such as `RunAsync()` failure, timeout, thread pool or semaphore rejection, and circuit-breaker short-circuiting.
+    /// In an ordinary `HystrixCommand` you implement a fallback by means of a 
+    /// <see cref="HystrixCommand{TRequest, TResult}.GetFallback"/>() implementation. Hystrix will execute this fallback 
+    /// for all types of failure such as `RunAsync()` failure, timeout, thread pool or semaphore rejection, and circuit
+    /// breaker short-circuiting.
     /// 
     /// #### Error Propagation
     ///
-    /// All exceptions thrown from the `RunAsync()` method except for <see cref="HystrixBadRequestException"/> and <see cref="ArgumentException"/> 
-    /// count as failures and trigger `GetFallback()` and circuit-breaker logic.
+    /// All exceptions thrown from the `RunAsync()` method except for <see cref="HystrixBadRequestException"/> and 
+    /// <see cref="ArgumentException"/> count as failures and trigger `GetFallback()` and circuit-breaker logic.
     ///
-    /// You can wrap the exception that you would like to throw in `HystrixBadRequestException`. The `HystrixBadRequestException` is intended 
-    /// for use cases such as reporting illegal arguments or non-system failures that should not count against the failure metrics 
-    /// and should not trigger fallback logic.
+    /// You can wrap the exception that you would like to throw in `HystrixBadRequestException`. The 
+    /// `HystrixBadRequestException` is intended for use cases such as reporting illegal arguments or non-system 
+    /// failures that should not count against the failure metrics and should not trigger fallback logic.
     /// </remarks>
     /// <seealso cref="NHystrix.IHystrixCommand{TRequest, TResult}" />
     public abstract class HystrixCommand<TRequest, TResult> : IHystrixCommand<TRequest, TResult>, IDisposable
@@ -65,7 +69,8 @@ namespace NHystrix
             this.properties = properties ?? throw new ArgumentNullException(nameof(properties));
 
             if (properties.CircuitBreakerEnabled)
-                circuitBreaker = HystrixCircuitBreaker.GetInstance(commandKey, properties.CircuitBreakerOptions, HystrixCommandMetrics.GetInstance(commandKey, properties));
+                circuitBreaker = HystrixCircuitBreaker.GetInstance(
+                    commandKey, properties.CircuitBreakerOptions, HystrixCommandMetrics.GetInstance(commandKey, properties));
 
             if (properties.BulkheadingEnabled)
                 bulkhead = HystrixBulkhead.GetInstance(commandKey, properties);
@@ -200,7 +205,9 @@ namespace NHystrix
             {
                 // If a RuntimeException has already been thrown, then it has already been emitted.
                 // Just bubble it up.
-                releaseBulkHeadSemaphore(); // try and release just in case the user explicitly threw a HystrixRuntimeException from RunAsync()
+
+                // try and release just in case the user explicitly threw a HystrixRuntimeException from RunAsync()
+                releaseBulkHeadSemaphore(); 
                 throw;
             }
             catch(HystrixBadRequestException ex)
@@ -296,7 +303,8 @@ namespace NHystrix
                 catch (Exception ex)
                 {
                     commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FALLBACK_FAILURE, ex));
-                    throw new HystrixFallbackException(FailureType.COMMAND_EXCEPTION, exception?.Message ?? "Fallback failure", ex, exception);
+                    throw new HystrixFallbackException(
+                        FailureType.COMMAND_EXCEPTION, exception?.Message ?? "Fallback failure", ex, exception);
                 }
             }
             else
@@ -326,7 +334,9 @@ namespace NHystrix
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
         /// </summary>
-        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        /// <param name="disposing">
+        /// <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.
+        /// </param>
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
