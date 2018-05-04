@@ -291,3 +291,5 @@ __pycache__/
 !src/NHystrix/obj/project.assets.json
 
 
+
+*.cache
