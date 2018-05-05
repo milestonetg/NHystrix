@@ -2,7 +2,6 @@
 
 [![Build](https://milestonetg.visualstudio.com/_apis/public/build/definitions/8468d2c8-8497-4e19-9420-4dfcb015c134/26/badge)](https://milestonetg.visualstudio.com/Milestone/_build/index?definitionId=26)
 [![NuGet](https://img.shields.io/nuget/vpre/NHystrix.svg?semVer=2.0.0)](https://www.nuget.org/packages/NHystrix/)
-[![Known Vulnerabilities](https://snyk.io/test/github/milestonetg/nhystrix/badge.svg)](https://snyk.io/test/github/milestonetg/nhystrix)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/milestonetg/nhystrix/master/LICENSE)
 
 NHystrix is inspired by [Netflix/Hystrix](https://github.com/Netflix/Hystrix): "a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable."
