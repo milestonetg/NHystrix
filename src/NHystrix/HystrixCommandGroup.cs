@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace NHystrix
 {
@@ -31,7 +32,7 @@ namespace NHystrix
         /// Gets the command keys.
         /// </summary>
         /// <value>The command keys.</value>
-        public IReadOnlyCollection<HystrixCommandKey> CommandKeys { get => keys; }
+        public IReadOnlyCollection<HystrixCommandKey> CommandKeys { get => keys.ToArray(); }
 
         /// <summary>
         /// Creates a new <see cref="HystrixCommandKey" /> with the specified name and

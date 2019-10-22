@@ -2,6 +2,17 @@
 - Request Caching
 - Dashboard
 
+## [0.4.0]
+
+Support for .Net Core 3.0.
+
+Multi-Targeted for older supported frameworks and tooling:
+
+* net452
+* net461
+* netStandard2.0
+* netCoreApp3.0
+
 ## [0.3.0]
 
 ### Added

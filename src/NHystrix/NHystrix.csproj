@@ -1,9 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <VersionPrefix>0.2.0</VersionPrefix>
-    <VersionSuffix></VersionSuffix>
+    <TargetFrameworks>netstandard2.0;net452;net461;netcoreapp3.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Company>Milestone Technology Group, LLC</Company>
     <Authors>milestonetg</Authors>
     <Description>A latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.</Description>
@@ -13,23 +12,29 @@
     <PackageIconUrl>https://milestonetg.github.io/NHystrix/images/nhystrix_nuget_icon.png</PackageIconUrl>
     <PackageTags>CircuitBreaker;Bulkhead;Timeout</PackageTags>
     <RepositoryType>github</RepositoryType>
-    <DebugType>Full</DebugType>
     <PackageReleaseNotes>
       See https://github.com/milestonetg/NHystrix/blob/master/CHANGELOG.md
     </PackageReleaseNotes>
-    <Version>0.3.0</Version>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\NHystrix.xml</DocumentationFile>
-  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
+    <PackageReference Include="System.Reactive" Version="3.1.1" />
+    <Reference Include="System.Net.Http"  />
+  </ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\NHystrix.xml</DocumentationFile>
-  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="System.Reactive" Version="4.0.0" />
+    <Reference Include="System.Net.Http"  />
+  </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Reactive" Version="4.0.0-preview00001" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Reactive" Version="4.0.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+    <PackageReference Include="System.Reactive" Version="4.2.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
 </Project>
