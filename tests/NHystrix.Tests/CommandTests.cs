@@ -222,7 +222,7 @@ namespace NHystrix.Tests
                 s = t.Result;
             });
                        
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
             Assert.IsTrue(continued);
             Assert.AreEqual(TestCommand.RETURN_VALUE, s);
         }
@@ -252,7 +252,7 @@ namespace NHystrix.Tests
                 s = t.Result;
             });
 
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
             Assert.IsTrue(continued);
             Assert.AreEqual(TestCommand.FALLBACK_VALUE, s);
         }
