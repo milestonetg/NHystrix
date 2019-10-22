@@ -286,10 +286,4 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-
-# Needed for Snyk.io scans
-!src/NHystrix/obj/project.assets.json
-
-
-
 *.cache
