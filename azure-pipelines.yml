@@ -67,7 +67,7 @@ jobs:
       displayName: 'dotnet pack for CICD'
       inputs:
         command: pack
-        packagesToPack: src/**.csproj
+        packagesToPack: src/**/*.csproj
         packDirectory: '$(Build.ArtifactStagingDirectory)/cicd'
         nobuild: true
         versioningScheme: byEnvVar
@@ -78,7 +78,7 @@ jobs:
       displayName: 'dotnet pack for final release to NuGet'
       inputs:
         command: pack
-        packagesToPack: src/**.csproj
+        packagesToPack: src/**/*.csproj
         packDirectory: '$(Build.ArtifactStagingDirectory)/dist'
         nobuild: true
         versioningScheme: byEnvVar
