@@ -57,7 +57,7 @@ jobs:
           **\NHystrix.*test*.dll
           !**\*TestAdapter.dll
           !**\obj\**
-        #runTestsInIsolation: true
+        runTestsInIsolation: true
         #codeCoverageEnabled: true
         # otherConsoleOptions: '/Framework:FrameworkCore10 /logger:console;verbosity="normal"'
         platform: 'any cpu'
