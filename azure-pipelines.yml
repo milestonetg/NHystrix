@@ -72,6 +72,7 @@ jobs:
         nobuild: true
         versioningScheme: byEnvVar
         versionEnvVar: CicdVersionNumber
+        configuration: release
 
     - task: DotNetCoreCLI@2
       displayName: 'dotnet pack for final release to NuGet'
@@ -82,6 +83,7 @@ jobs:
         nobuild: true
         versioningScheme: byEnvVar
         versionEnvVar: version
+        configuration: release
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: drop'
