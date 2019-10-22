@@ -3,8 +3,10 @@ variables:
   version: 0.5.0
   CicdVersionNumber: $(version)-beta$(build.buildId)
 jobs:
-  - job: 
+  - job:
     displayName: 'Build, Test, Package'
+    pool:
+      vmImage: windows-latest
     steps:
     - task: NuGetToolInstaller@0
       displayName: 'Use NuGet >=5.0'
