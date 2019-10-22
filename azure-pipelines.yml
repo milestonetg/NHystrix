@@ -2,6 +2,11 @@ name: $(version).$(build.buildId)
 variables:
   version: 0.5.0
   CicdVersionNumber: $(version)-beta$(build.buildId)
+trigger:
+  paths:
+    include:
+      - src
+      - tests
 jobs:
   - job:
     displayName: 'Build, Test, Package'
@@ -62,7 +67,7 @@ jobs:
       displayName: 'dotnet pack for CICD'
       inputs:
         command: pack
-        packagesToPack: src/NHystrix/NHystrix.csproj
+        packagesToPack: src/**.csproj
         packDirectory: '$(Build.ArtifactStagingDirectory)/cicd'
         nobuild: true
         versioningScheme: byEnvVar
@@ -72,7 +77,7 @@ jobs:
       displayName: 'dotnet pack for final release to NuGet'
       inputs:
         command: pack
-        packagesToPack: src/NHystrix/NHystrix.csproj
+        packagesToPack: src/**.csproj
         packDirectory: '$(Build.ArtifactStagingDirectory)/dist'
         nobuild: true
         versioningScheme: byEnvVar

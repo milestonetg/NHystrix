@@ -1,17 +1,28 @@
+# Change Log
+
 ## Unreleased
+
 - Request Caching
 - Dashboard
 
+## [0.5.0]
+
+### Beaking changes
+
+Extracted HttpClient support into its own library.
+
 ## [0.4.0]
+
+## Changes
 
 Support for .Net Core 3.0.
 
 Multi-Targeted for older supported frameworks and tooling:
 
-* net452
-* net461
-* netStandard2.0
-* netCoreApp3.0
+- net452
+- net461
+- netStandard2.0
+- netCoreApp3.0
 
 ## [0.3.0]
 
@@ -21,6 +32,7 @@ Asychronous execution support using the `IHystrixCommand.Queue()` method. This m
 under the hood. A callback action can invoked when the command completes.
 
 ## [0.2.0]
+
 There are some pretty major breaking changes in this release as we bring more of the Hystrix functionality and design
 into the APIs. We've also deviated from the original Hystrix implementation a bit more and use typed exceptions rather
 than a single HystrixRuntimeException and an enum.
@@ -30,6 +42,7 @@ reliability, performance, and usability. No promises :)  If breaking it makes it
 we reach a 1.0 release.
 
 ### Added
+
 - A delegating message handler for HttpClient (`HystrixDelegatingHandler`) that implements
   - Circuit Breaker Pattern
   - Bulkhead Pattern
@@ -38,10 +51,12 @@ we reach a 1.0 release.
 - Typed Exceptions
 
 ### Changes (non-breaking)
+
 - `Execute()` and `ExecuteAsync()` methods now accept an optional request parameter. This allows a `HystrixCommand` to
 be a Singleton and the request passed into Execute() rather than the constructor.
 
 ### Breaking Changes
+
 - The circuit breaker properties have been refactored in to their own class `CircuitBreakerOptions`. The 
 `HystrixCommandProperties` now has a property of type `CircuitBreakerOptions`. This eliminates confusion as to 
 exactly which configuration properties directly affect the circuit breaker and only those options are passed to 
