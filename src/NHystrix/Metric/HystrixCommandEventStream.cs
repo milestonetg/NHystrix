@@ -81,7 +81,7 @@ namespace NHystrix.Metric
         /// Writes the specified hystrix event.
         /// </summary>
         /// <param name="hystrixEvent">The hystrix event.</param>
-        internal void Write(HystrixCommandEvent hystrixEvent)
+        public void Write(HystrixCommandEvent hystrixEvent)
         {
             stream.OnNext(hystrixEvent);
         }

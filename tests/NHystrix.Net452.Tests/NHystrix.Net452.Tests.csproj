@@ -88,6 +88,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\NHystrix.Http\NHystrix.Http.csproj">
+      <Project>{1b1ea4e5-95ed-4888-9831-ee8c0ffae539}</Project>
+      <Name>NHystrix.Http</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\NHystrix\NHystrix.csproj">
       <Project>{fdabfb7d-6a2c-44bc-9d0e-6a6214357471}</Project>
       <Name>NHystrix</Name>

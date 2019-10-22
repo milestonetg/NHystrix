@@ -16,16 +16,15 @@ namespace NHystrix.Tests
             var group = new HystrixCommandGroup("TestGroup");
             var commandKey = new HystrixCommandKey("Test", group);
 
-            HystrixCommandEventStream foo = HystrixCommandEventStream.GetInstance(commandKey);
+            HystrixCommandEventStream commandEventStream = HystrixCommandEventStream.GetInstance(commandKey);
 
             HystrixCommandEvent commandEvent = new HystrixCommandEvent(commandKey, HystrixEventType.EMIT);
 
-            foo.Observe().Subscribe(onNext => {
+            commandEventStream.Observe().Subscribe(onNext => {
                 Assert.AreEqual(commandEvent, onNext);
             });
 
-            MethodInfo method = foo.GetType().GetMethod("Write", BindingFlags.Instance | BindingFlags.NonPublic);
-            method.Invoke(foo, new[] { commandEvent });
+            commandEventStream.Write(commandEvent);
         }
     }
 }

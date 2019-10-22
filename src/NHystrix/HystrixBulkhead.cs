@@ -8,7 +8,7 @@ namespace NHystrix
     /// Encapsulates the bulkhead semaphore for a HystrixCommand with the given HystrixCommandKey.
     /// </summary>
     /// <seealso cref="System.IDisposable" />
-    internal class HystrixBulkhead : IDisposable
+    public class HystrixBulkhead : IDisposable
     {
 
         readonly static ConcurrentDictionary<HystrixCommandKey, HystrixBulkhead> intern =

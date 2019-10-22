@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/milestonetg/NHystrix</PackageProjectUrl>
     <RepositoryUrl>https://github.com/milestonetg/NHystrix</RepositoryUrl>
     <PackageIconUrl>https://milestonetg.github.io/NHystrix/images/nhystrix_nuget_icon.png</PackageIconUrl>
-    <PackageTags>CircuitBreaker;Bulkhead;Timeout</PackageTags>
+    <PackageTags>CircuitBreaker;Bulkhead;Timeout;HttpClient</PackageTags>
     <RepositoryType>github</RepositoryType>
     <PackageReleaseNotes>
       See https://github.com/milestonetg/NHystrix/blob/master/CHANGELOG.md
@@ -18,19 +18,23 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
-    <PackageReference Include="System.Reactive" Version="3.1.1" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <PackageReference Include="System.Reactive" Version="4.0.0" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="System.Reactive" Version="4.0.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
-    <PackageReference Include="System.Reactive" Version="4.2.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NHystrix\NHystrix.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NHystrix.Http;
 using System;
 using System.Collections.Generic;
 using System.Net;

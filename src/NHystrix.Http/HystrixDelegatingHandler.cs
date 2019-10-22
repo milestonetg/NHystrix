@@ -1,12 +1,13 @@
 ﻿using NHystrix.Exceptions;
 using NHystrix.Metric;
+using NHystrix;
 using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NHystrix
+namespace NHystrix.Http
 {
     /// <summary>
     /// A <see cref="DelegatingHandler"/> that wraps the request in the Circuit Breaker Pattern and Bulkhead Pattern.

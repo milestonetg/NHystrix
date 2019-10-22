@@ -32,15 +32,13 @@ namespace NHystrix.Tests
             
             IHystrixCircuitBreaker cb = HystrixCircuitBreaker.GetInstance(command, properties, metrics);
 
-            var write = commandEventStream.GetType().GetMethod("Write", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-
             int iteration = 0;
 
             //We need to emit more than 20 requests, but should never reach more than 20
             for (int i = 0; i < 40; i++)
             {
-                write.Invoke(commandEventStream, new[] { new HystrixCommandEvent(command, HystrixEventType.EMIT) });
-                write.Invoke(commandEventStream, new[] { new HystrixCommandEvent(command, HystrixEventType.FAILURE) });
+                commandEventStream.Write(new HystrixCommandEvent(command, HystrixEventType.EMIT));
+                commandEventStream.Write(new HystrixCommandEvent(command, HystrixEventType.FAILURE));
 
                 //Let the observer threads do stuff
                 Thread.Sleep(0);

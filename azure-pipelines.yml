@@ -1,0 +1,81 @@
+name: $(version).$(build.buildId)
+variables:
+  version: 0.5.0
+  CicdVersionNumber: $(version)-beta$(build.buildId)
+jobs:
+  - job: 
+    displayName: 'Build, Test, Package'
+    steps:
+    - task: NuGetToolInstaller@0
+      displayName: 'Use NuGet >=5.0'
+      inputs:
+        versionSpec: '>=5.0'
+    
+    - task: NuGetCommand@2
+      displayName: 'NuGet restore'
+      inputs:
+        command: restore
+
+    - task: Npm@1
+      displayName: 'Install Snyk.io'
+      inputs:
+        command: custom
+        verbose: false
+        customCommand: 'install -g snyk'
+      continueOnError: true    
+
+    - script: |
+        snyk auth $(SNYK_TOKEN)
+      workingDirectory: src/NHystrix
+      displayName: 'Run snyk auth'
+      continueOnError: true
+
+    - script: |
+        snyk test
+      workingDirectory: src/NHystrix
+      displayName: 'Run snyk test'
+      continueOnError: true
+
+    - task: VSBuild@1
+      displayName: 'Build solution **\*.sln'
+      inputs:
+        msbuildArgs: '/p:AssemblyVersion=$(Build.BuildNumber)'
+        platform: 'any cpu'
+        configuration: release
+
+    - task: VSTest@2
+      displayName: 'Run unit tests copy'
+      inputs:
+        testAssemblyVer2: |
+          **\NHystrix.*test*.dll
+          !**\*TestAdapter.dll
+          !**\obj\**
+        #runTestsInIsolation: true
+        #codeCoverageEnabled: true
+        # otherConsoleOptions: '/Framework:FrameworkCore10 /logger:console;verbosity="normal"'
+        platform: 'any cpu'
+        configuration: release
+
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet pack for CICD'
+      inputs:
+        command: pack
+        packagesToPack: src/NHystrix/NHystrix.csproj
+        packDirectory: '$(Build.ArtifactStagingDirectory)/cicd'
+        nobuild: true
+        versioningScheme: byEnvVar
+        versionEnvVar: CicdVersionNumber
+
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet pack for final release to NuGet'
+      inputs:
+        command: pack
+        packagesToPack: src/NHystrix/NHystrix.csproj
+        packDirectory: '$(Build.ArtifactStagingDirectory)/dist'
+        nobuild: true
+        versioningScheme: byEnvVar
+        versionEnvVar: version
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'
+        
