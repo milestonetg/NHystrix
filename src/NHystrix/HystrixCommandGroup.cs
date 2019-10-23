@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NHystrix
 {
@@ -42,7 +41,7 @@ namespace NHystrix
         /// <returns>The new <see cref="HystrixCommandKey"/>.</returns>
         public HystrixCommandKey AddCommandKey(string commandKeyName)
         {
-            return new HystrixCommandKey(commandKeyName, this);
+            return AddCommandKey(new HystrixCommandKey(commandKeyName, this));
         }
 
         /// <summary>
@@ -50,13 +49,21 @@ namespace NHystrix
         /// </summary>
         /// <param name="commandKey">The command key.</param>
         /// <exception cref="System.InvalidOperationException">Key already belongs to a different group.</exception>
-        internal void AddCommandKey(HystrixCommandKey commandKey)
+        internal HystrixCommandKey AddCommandKey(HystrixCommandKey commandKey)
         {
             if (!commandKey.Group.Equals(this))
                 throw new InvalidOperationException("Key already belongs to a different group.");
 
             if (!keys.TryPeek(out HystrixCommandKey existingKey))
+            {
                 keys.Add(commandKey);
+                return commandKey;
+            }
+            else
+            {
+                return existingKey;
+            }
+
         }
 
         /// <summary>
