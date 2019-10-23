@@ -5,6 +5,12 @@
 - Request Caching
 - Dashboard
 
+## [0.5.1]
+
+### Bug Fixes
+
+Fixed a bug in `HystrixCommandGroup.AddCommandKey` where multiple keys didn't get added.
+
 ## [0.5.0]
 
 ### Beaking changes
