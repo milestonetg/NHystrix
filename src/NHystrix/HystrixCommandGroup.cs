@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace NHystrix
 {
@@ -9,7 +11,7 @@ namespace NHystrix
     /// </summary>
     public struct HystrixCommandGroup : IEquatable<HystrixCommandGroup>
     {
-        ConcurrentBag<HystrixCommandKey> keys;
+        ConcurrentDictionary<string, HystrixCommandKey> keys;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HystrixCommandGroup"/> struct.
@@ -18,7 +20,7 @@ namespace NHystrix
         public HystrixCommandGroup(string name)
         {
             Name = name;
-            keys = new ConcurrentBag<HystrixCommandKey>();
+            keys = new ConcurrentDictionary<string, HystrixCommandKey>();
         }
 
         /// <summary>
@@ -31,7 +33,7 @@ namespace NHystrix
         /// Gets the command keys.
         /// </summary>
         /// <value>The command keys.</value>
-        public IReadOnlyCollection<HystrixCommandKey> CommandKeys { get => keys.ToArray(); }
+        public IReadOnlyCollection<HystrixCommandKey> CommandKeys { get => new ReadOnlyCollection<HystrixCommandKey>(keys.Values.ToList()); }
 
         /// <summary>
         /// Creates a new <see cref="HystrixCommandKey" /> with the specified name and
@@ -54,16 +56,7 @@ namespace NHystrix
             if (!commandKey.Group.Equals(this))
                 throw new InvalidOperationException("Key already belongs to a different group.");
 
-            if (!keys.TryPeek(out HystrixCommandKey existingKey))
-            {
-                keys.Add(commandKey);
-                return commandKey;
-            }
-            else
-            {
-                return existingKey;
-            }
-
+            return keys.GetOrAdd(commandKey.Name, commandKey);
         }
 
         /// <summary>
