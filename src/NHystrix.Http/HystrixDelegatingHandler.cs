@@ -1,6 +1,5 @@
 ﻿using NHystrix.Exceptions;
 using NHystrix.Metric;
-using NHystrix;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -11,7 +10,8 @@ namespace NHystrix.Http
 {
     /// <summary>
     /// A <see cref="DelegatingHandler"/> that wraps the request in the Circuit Breaker Pattern and Bulkhead Pattern.
-    /// Similar functionality to the <see cref="HystrixCommand{TRequest, TResult}"/>, but timeouts are handled by <see cref="System.Net.Http.HttpClient"/> directly.
+    /// Timeouts are handled by <see cref="System.Net.Http.HttpClient"/> directly, rather than the underlying
+    /// <see cref="HystrixCommand{TRequest, TResult}"/>.
     /// </summary>
     /// <remarks>
     /// Should be used before the RetryDelegatingHandler in the pipeline.
@@ -65,9 +65,6 @@ namespace NHystrix.Http
     public class HystrixDelegatingHandler : DelegatingHandler
     {
         HystrixCommandProperties properties;
-        IHystrixCircuitBreaker circuitBreaker;
-        HystrixBulkhead bulkhead;
-        HystrixCommandEventStream commandEventStream;
         Func<HttpResponseMessage> fallback;
 
         /// <summary>
@@ -90,15 +87,10 @@ namespace NHystrix.Http
             this.properties = properties ?? throw new ArgumentNullException(nameof(properties));
             InnerHandler = innerHandler ?? throw new ArgumentNullException(nameof(innerHandler));
             this.fallback = fallback;
+            if (this.fallback == null)
+                this.fallback = ()=>{ return new HttpResponseMessage(HttpStatusCode.NoContent); };
 
             CommandKey = commandKey;
-            commandEventStream = HystrixCommandEventStream.GetInstance(CommandKey);
-
-            if (properties.CircuitBreakerEnabled)
-                circuitBreaker = HystrixCircuitBreaker.GetInstance(commandKey, properties.CircuitBreakerOptions, HystrixCommandMetrics.GetInstance(commandKey, properties));
-
-            if (properties.BulkheadingEnabled)
-                bulkhead = HystrixBulkhead.GetInstance(commandKey, properties);
         }
 
 
@@ -115,12 +107,6 @@ namespace NHystrix.Http
         public bool IsCircuitBreakerEnabled => properties.CircuitBreakerEnabled;
 
         /// <summary>
-        /// Gets a value indicating whether this instance is circuit breaker open.
-        /// </summary>
-        /// <value><c>true</c> if this instance is circuit breaker open; otherwise, <c>false</c>.</value>
-        public bool IsCircuitBreakerOpen => circuitBreaker?.IsOpen ?? false;
-
-        /// <summary>
         /// Send an HTTP request message.
         /// </summary>
         /// <param name="request">The HTTP request message to send to the server.</param>
@@ -128,137 +114,52 @@ namespace NHystrix.Http
         /// <returns>The task object representing the asynchronous operation.</returns>
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.EMIT));
-
-            if (properties.CircuitBreakerEnabled 
-                && !circuitBreaker.ShouldAllowRequest
-                && !circuitBreaker.ShouldAttemptExecution)
-            {
-                commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.SHORT_CIRCUITED));
-                return HandleFallback(HystrixEventType.SHORT_CIRCUITED);
-            }
-
-            if (properties.BulkheadingEnabled && !bulkhead.Try())
-            {
-                commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.SEMAPHORE_REJECTED));
-                return HandleFallback(HystrixEventType.SEMAPHORE_REJECTED);
-            }
-
-            try
-            {
-                HttpResponseMessage responseMessage = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
-
-                if (!responseMessage.IsSuccessStatusCode)
+            using (var command = new HttpHystrixCommand(CommandKey, properties,
+                async (r) =>
                 {
-                    switch(responseMessage.StatusCode)
-                    {
-                        case HttpStatusCode.BadRequest:
-                            commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.BAD_REQUEST));
-                            break;
-
-                        case HttpStatusCode.RequestTimeout:
-                        case HttpStatusCode.GatewayTimeout:
-                            commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.TIMEOUT));
-                            circuitBreaker?.MarkNonSuccess();
-                            break;
-
-                        case HttpStatusCode.Forbidden: // some apis return 403 when a rate limit is reached.
-                        case (HttpStatusCode)429: // rate-limited/throttled. see https://tools.ietf.org/html/rfc6585
-                            commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FAILURE));
-                            circuitBreaker?.MarkNonSuccess();
-                            break;
-
-                        default:
-                            if (responseMessage.StatusCode >= HttpStatusCode.InternalServerError)
-                            {
-                                commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FAILURE));
-                                circuitBreaker?.MarkNonSuccess();
-                            }
-                            break;
-                    }
-                }
-
-                return responseMessage;
-            }
-            catch (HystrixRuntimeException)
-            {
-                throw;
-            }
-            catch (TaskCanceledException ex)
-            {
-                // HttpClient cancels the underlying task to handle timeouts.
-                // We'll assume that, under default circumstances, that this exception is the result of a timeout
-                // and not a user cancellation. https://github.com/dotnet/corefx/issues/20296
-
-                commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.TIMEOUT, ex));
-                circuitBreaker?.MarkNonSuccess();
-                return HandleFallback(HystrixEventType.TIMEOUT, ex);
-            }
-            catch (Exception ex)
-            {
-                commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FAILURE, ex));
-                commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.EXCEPTION_THROWN, ex));
-                circuitBreaker?.MarkNonSuccess();
-                return HandleFallback(HystrixEventType.FAILURE, ex);
-            }
-            finally
-            {
-                if (properties.BulkheadingEnabled)
-                    bulkhead.Release();
-            }
-        }
-
-        private HttpResponseMessage HandleFallback(HystrixEventType eventType, Exception originalException = null)
-        {
-            if (properties.FallbackEnabled)
-            {
-                if (fallback != null)
-                {
-                    commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FALLBACK_EMIT));
+                    HystrixCommandEventStream commandEventStream = HystrixCommandEventStream.GetInstance(CommandKey);
 
                     try
                     {
-                        HttpResponseMessage fallbackResponse = fallback();
-                        commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FALLBACK_SUCCESS));
-                        return fallbackResponse;
+                        HttpResponseMessage responseMessage = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
+
+                        
+                        if (!responseMessage.IsSuccessStatusCode)
+                        {
+                            switch (responseMessage.StatusCode)
+                            {
+                                case HttpStatusCode.BadRequest:
+                                    commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.BAD_REQUEST));
+                                    break;
+                                case HttpStatusCode.RequestTimeout:
+                                case HttpStatusCode.GatewayTimeout:
+                                    commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.TIMEOUT));
+                                    break;
+                                case HttpStatusCode.Forbidden: // some apis return 403 when a rate limit is reached.
+                                case (HttpStatusCode)429: // rate-limited/throttled. see https://tools.ietf.org/html/rfc6585
+                                    commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FAILURE));
+                                    break;
+                                default:
+                                    if (responseMessage.StatusCode >= HttpStatusCode.InternalServerError)
+                                    {
+                                        commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FAILURE));
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+
+                        return responseMessage;
                     }
-                    catch (Exception ex)
+                    catch (TaskCanceledException ex)
                     {
-                        commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FALLBACK_FAILURE, ex));
-                        throw new HystrixFallbackException(FailureType.COMMAND_EXCEPTION, ex.Message, ex, originalException);
+                        commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.TIMEOUT));
+                        throw new HystrixTimeoutException($"CancelationToken cancelled calling {request.RequestUri}", ex);
                     }
-                }
-                else
-                {
-                    commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FALLBACK_MISSING));
-                }
-            }
-            else
+                }, fallback))
             {
-                commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.FALLBACK_DISABLED));
+                return await command.ExecuteAsync(request).ConfigureAwait(false);
             }
-
-            return new HttpResponseMessage(HttpStatusCode.NoContent);
-        }
-
-        /// <summary>
-        /// Releases the unmanaged resources used by the <see cref="T:System.Net.Http.DelegatingHandler"></see>, and optionally disposes of the managed resources.
-        /// </summary>
-        /// <param name="disposing">true to release both managed and unmanaged resources; false to releases only unmanaged resources.</param>
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                bulkhead?.Dispose();
-            }
-
-            circuitBreaker = null;
-            commandEventStream = null;
-            properties = null;
-            bulkhead = null;
-            fallback = null;
         }
     }
 }

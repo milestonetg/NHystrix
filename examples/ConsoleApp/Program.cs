@@ -13,7 +13,7 @@ namespace ConsoleApp
 
             HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
 
-            string s = cmd.ExecuteAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+            string s = cmd.ExecuteAsync("test").ConfigureAwait(false).GetAwaiter().GetResult();
 
 
             long count = metrics.GetRollingCount(HystrixEventType.TIMEOUT);

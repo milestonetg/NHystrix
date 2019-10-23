@@ -27,7 +27,7 @@ namespace NHystrix.Tests
 
             HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
 
-            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+            string s = await cmd.ExecuteAsync("test").ConfigureAwait(false);
 
             long count = metrics.GetCumulativeCount(HystrixEventType.SUCCESS);
 
@@ -49,7 +49,7 @@ namespace NHystrix.Tests
 
             HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
 
-            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+            string s = await cmd.ExecuteAsync("test").ConfigureAwait(false);
             
             long count = metrics.GetCumulativeCount(HystrixEventType.TIMEOUT);
 
@@ -72,7 +72,7 @@ namespace NHystrix.Tests
 
             HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
 
-            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+            string s = await cmd.ExecuteAsync("test").ConfigureAwait(false);
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@ namespace NHystrix.Tests
 
             HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
 
-            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+            string s = await cmd.ExecuteAsync("test").ConfigureAwait(false);
         }
 
         [TestMethod]
@@ -108,7 +108,7 @@ namespace NHystrix.Tests
 
             HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
 
-            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+            string s = await cmd.ExecuteAsync("test").ConfigureAwait(false);
         }
 
         [TestMethod]
@@ -126,7 +126,7 @@ namespace NHystrix.Tests
 
             HystrixCommandMetrics metrics = HystrixCommandMetrics.GetInstance(cmd.CommandKey, properties);
 
-            string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+            string s = await cmd.ExecuteAsync("test").ConfigureAwait(false);
         }
 
         [TestMethod]
@@ -157,7 +157,7 @@ namespace NHystrix.Tests
             {
                 // test command fails every other request.
                 cmd = new FailureCommand(i, properties);
-                string s = await cmd.ExecuteAsync().ConfigureAwait(false);
+                string s = await cmd.ExecuteAsync("test").ConfigureAwait(false);
 
                 //Check the circuit breaker
                 FieldInfo info = cmd.GetType().BaseType.GetField("circuitBreaker", BindingFlags.NonPublic | BindingFlags.Instance);

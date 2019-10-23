@@ -5,6 +5,14 @@
 - Request Caching
 - Dashboard
 
+## [0.6.0]
+
+### Beaking changes
+
+Redesigned `HystrixDelegatingHandler` to use an instance of `HttpHystrixCommand` which subclasses `HystrixCommand`. 
+This also required breaking changes to how HystrixCommands are created and executed. Most existing commands shouldn't
+break, but be aware their could be issues and test accordingly.
+
 ## [0.5.1]
 
 ### Bug Fixes

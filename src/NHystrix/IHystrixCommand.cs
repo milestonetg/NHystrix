@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace NHystrix
 {
@@ -13,12 +14,12 @@ namespace NHystrix
         /// Executes the command.
         /// </summary>
         /// <returns>TResult.</returns>
-        TResult Execute(TRequest request = default(TRequest));
+        TResult Execute(TRequest request);
 
         /// <summary>
         /// Executes the command.
         /// </summary>
         /// <returns>Task&lt;TResult&gt;.</returns>
-        Task<TResult> ExecuteAsync(TRequest request = default(TRequest));
+        Task<TResult> ExecuteAsync(TRequest request);
     }
 }

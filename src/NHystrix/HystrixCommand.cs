@@ -55,6 +55,23 @@ namespace NHystrix
         HystrixBulkhead bulkhead;
         HystrixCommandProperties properties;
         HystrixCommandEventStream commandEventStream;
+        Func<TRequest, Task<TResult>> runDelegate;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HystrixCommand{TRequest, TResult}"/> class.
+        /// </summary>
+        /// <param name="commandKey">The command key.</param>
+        /// <param name="properties">The properties.</param>
+        /// <param name="runDelegate">
+        /// A delegate to execute when Execute() is called. This delegate is called by the protected virtual method
+        /// RunAsync(). You can optionally over ride that method and use the HystrixCommand(HystrixCommandKey, HystrixCommandProperties)
+        /// constructor instead.
+        /// </param>
+        protected HystrixCommand(HystrixCommandKey commandKey, HystrixCommandProperties properties, Func<TRequest, Task<TResult>> runDelegate)
+            : this(commandKey, properties)
+        {
+            this.runDelegate = runDelegate;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HystrixCommand{TRequest, TResult}"/> class.
@@ -89,7 +106,7 @@ namespace NHystrix
         /// <exception cref="HystrixBadRequestException"></exception>
         /// <exception cref="HystrixFailureException"></exception>
         /// <exception cref="HystrixTimeoutException"></exception>
-        public TResult Execute(TRequest request = default(TRequest))
+        public TResult Execute(TRequest request)
         {
             return Task.Run(() => ExecuteAsync(request))
                 .ConfigureAwait(false)
@@ -104,26 +121,26 @@ namespace NHystrix
         /// <exception cref="HystrixBadRequestException"></exception>
         /// <exception cref="HystrixFailureException"></exception>
         /// <exception cref="HystrixTimeoutException"></exception>
-        public Task<TResult> ExecuteAsync(TRequest request = default(TRequest))
+        public async Task<TResult> ExecuteAsync(TRequest request)
         {
             commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.EMIT));
 
             if (properties.CircuitBreakerEnabled && !circuitBreaker.ShouldAllowRequest)
             {
                 commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.SHORT_CIRCUITED));
-                return HandleFallback(HystrixEventType.SHORT_CIRCUITED);
+                return await HandleFallback(HystrixEventType.SHORT_CIRCUITED);
             }
 
             if (properties.CircuitBreakerEnabled && !circuitBreaker.ShouldAttemptExecution)
             {
                 commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.SHORT_CIRCUITED));
-                return HandleFallback(HystrixEventType.SHORT_CIRCUITED);
+                return await HandleFallback(HystrixEventType.SHORT_CIRCUITED);
             }
 
             if (properties.BulkheadingEnabled && !bulkhead.Try())
             {
                 commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.SEMAPHORE_REJECTED));
-                return HandleFallback(HystrixEventType.SEMAPHORE_REJECTED);
+                return await HandleFallback(HystrixEventType.SEMAPHORE_REJECTED);
             }
 
             bool isBulkheadSemaphoreReleased = false;
@@ -155,7 +172,7 @@ namespace NHystrix
                     ? properties.ExecutionTimeoutInMilliseconds 
                     : int.MaxValue;
                                
-                return RunAsync(request)
+                return await RunAsync(request)
                     .WithTimeout(timeout)
                     .ContinueWith((t) => 
                     {
@@ -164,12 +181,12 @@ namespace NHystrix
                         HystrixEventType eventType = null;
                         TResult result = default(TResult);
 
+                        Exception ex = t.Exception?.GetBaseException();
+
                         //Timeouts generally result as a faulted task.
-                        if (t.IsFaulted)
+                        if (t.IsFaulted && !(ex is HystrixBadRequestException))
                         {
                             circuitBreaker.MarkNonSuccess();
-
-                            Exception ex = t.Exception?.GetBaseException();
 
                             if (ex is TimeoutException)
                                 eventType = HystrixEventType.TIMEOUT;
@@ -181,22 +198,24 @@ namespace NHystrix
                             if (properties.FallbackEnabled)
                                 result = HandleFallback(eventType, ex).ConfigureAwait(false).GetAwaiter().GetResult();
                         }
-                        else
+                        else if (!t.IsFaulted)
                         {
                             result = t.Result;
                             commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.SUCCESS));
                             circuitBreaker.MarkSuccess();
+
+                            return result;
                         }
 
                         if (properties.FallbackEnabled || !t.IsFaulted)
                             return result;
                         else
                         {
-                            string msg = t.Exception?.Message ?? "Command faulted, but no Exception was provided by the runtime.";
+                            string msg = ex?.Message ?? "Command faulted, but no Exception was provided by the runtime.";
                             if (eventType == HystrixEventType.TIMEOUT)
                                 throw new HystrixTimeoutException(msg, t.Exception);
                             else
-                                throw new HystrixFailureException(FailureType.COMMAND_EXCEPTION, msg, t.Exception);
+                                throw new HystrixFailureException(FailureType.COMMAND_EXCEPTION, msg, ex);
                         }
                     });
             }
@@ -239,7 +258,7 @@ namespace NHystrix
                 commandEventStream.Write(new HystrixCommandEvent(CommandKey, eventType, ex));
 
                 if (properties.FallbackEnabled)
-                    return HandleFallback(eventType, ex);
+                    return await HandleFallback(eventType, ex);
                 else
                 {
                     if (eventType == HystrixEventType.TIMEOUT)
@@ -263,18 +282,21 @@ namespace NHystrix
         /// });
         /// </code>
         /// </example>
-        public void Queue(TRequest request = default(TRequest), Action<Task<TResult>> callback = null)
+        public void Queue(TRequest request, Action<Task<TResult>> callback = null)
         {
             HystrixWorker<TRequest, TResult> worker = HystrixWorker<TRequest, TResult>.GetInstance(CommandKey, properties);
 
-            worker?.Enqueue(this, callback);
+            worker?.Enqueue(this, request, callback);
         }
 
         /// <summary>
         /// Implements the logic to perform when <see cref="ExecuteAsync"/> is called.
         /// </summary>
         /// <returns>Task&lt;TResult&gt;.</returns>
-        protected abstract Task<TResult> RunAsync(TRequest request);
+        protected virtual Task<TResult> RunAsync(TRequest request)
+        {
+            return runDelegate(request);
+        }
 
         /// <summary>
         /// When overridden in a derived class, returns the fallback response when fallback is enabled.

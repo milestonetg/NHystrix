@@ -20,6 +20,8 @@ namespace NHystrix
         {
             public HystrixCommand<TRequest, TResult> Command { get; set; }
 
+            public TRequest Request { get; set; }
+
             public Action<Task<TResult>> Callback { get; set; }
 
         }
@@ -89,12 +91,12 @@ namespace NHystrix
         /// </summary>
         /// <param name="command">The command.</param>
         /// <param name="callback">The callback action</param>
-        public void Enqueue(HystrixCommand<TRequest, TResult> command, Action<Task<TResult>> callback = null)
+        public void Enqueue(HystrixCommand<TRequest, TResult> command, TRequest request, Action<Task<TResult>> callback = null)
         {
             if (command == null)
                 throw new ArgumentNullException(nameof(command));
 
-            queue.Enqueue(new WorkItem { Command = command, Callback = callback });
+            queue.Enqueue(new WorkItem { Command = command, Callback = callback, Request = request });
 
             lock(processLock)
             {
@@ -110,7 +112,7 @@ namespace NHystrix
                 {
                     bulkhead.Wait();
 
-                    workItem.Command.ExecuteAsync()
+                    workItem.Command.ExecuteAsync(workItem.Request)
                         .ContinueWith(t => {
                             try
                             {

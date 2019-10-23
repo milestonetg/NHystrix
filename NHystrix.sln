@@ -15,13 +15,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHystrix.Net452.Tests", "te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHystrix.Net461.Tests", "tests\NHyistrix.Net461.Tests\NHystrix.Net461.Tests.csproj", "{B12AEC64-F8D1-4DF4-8E45-AB338C170AEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHystrix.NetCore3.Tests", "tests\NHystrix.NetCore3.Tests\NHystrix.NetCore3.Tests.csproj", "{A9A74D72-4ED8-4713-BD0C-BCD1D24A65D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHystrix.NetCore3.Tests", "tests\NHystrix.NetCore3.Tests\NHystrix.NetCore3.Tests.csproj", "{A9A74D72-4ED8-4713-BD0C-BCD1D24A65D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{92884E19-451E-4FA9-8C08-ACCBB3E9F2B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{D1223E8D-41DA-47BB-816A-0FAE403CFCB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHystrix.Http", "src\NHystrix.Http\NHystrix.Http.csproj", "{1B1EA4E5-95ED-4888-9831-EE8C0FFAE539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHystrix.Http", "src\NHystrix.Http\NHystrix.Http.csproj", "{1B1EA4E5-95ED-4888-9831-EE8C0FFAE539}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{7C9D80B0-A7DA-4377-B3DB-E57DB0C3EDC9}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+		CHANGELOG.md = CHANGELOG.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
