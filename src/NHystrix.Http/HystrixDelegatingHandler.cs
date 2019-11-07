@@ -65,7 +65,32 @@ namespace NHystrix.Http
     public class HystrixDelegatingHandler : DelegatingHandler
     {
         HystrixCommandProperties properties;
-        Func<HttpResponseMessage> fallback;
+        Func<Task<HttpResponseMessage>> fallbackDelegate;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HystrixDelegatingHandler"/> class.
+        /// </summary>
+        /// <param name="commandKey">The command key.</param>
+        /// <param name="properties">The properties.</param>
+        /// <param name="fallbackDelegate">
+        /// Optional. The function to execute as the fallback if the circuit-breaker is open.
+        /// If no fallback function is provided, an HttpResponseMessage with a status code 
+        /// of [204 No Content] will be returned.
+        /// </param>
+        /// <exception cref="ArgumentNullException">properties</exception>
+        public HystrixDelegatingHandler(HystrixCommandKey commandKey, 
+                                        HystrixCommandProperties properties, 
+                                        Func<Task<HttpResponseMessage>> fallbackDelegate = null)
+        {
+            if (commandKey.Equals(default(HystrixCommandKey)))
+                throw new ArgumentException("A HystrixCommandKey is required.", nameof(commandKey));
+
+            this.properties = properties ?? throw new ArgumentNullException(nameof(properties));
+            
+            this.fallbackDelegate = fallbackDelegate;
+
+            CommandKey = commandKey;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HystrixDelegatingHandler"/> class.
@@ -73,26 +98,20 @@ namespace NHystrix.Http
         /// <param name="commandKey">The command key.</param>
         /// <param name="properties">The properties.</param>
         /// <param name="innerHandler">The inner handler.</param>
-        /// <param name="fallback">
+        /// <param name="fallbackDelegate">
         /// Optional. The function to execute as the fallback if the circuit-breaker is open.
         /// If no fallback function is provided, an HttpResponseMessage with a status code 
         /// of [204 No Content] will be returned.
         /// </param>
         /// <exception cref="ArgumentNullException">properties</exception>
-        public HystrixDelegatingHandler(HystrixCommandKey commandKey, HystrixCommandProperties properties, HttpMessageHandler innerHandler, Func<HttpResponseMessage> fallback = null)
+        public HystrixDelegatingHandler(HystrixCommandKey commandKey, 
+                                        HystrixCommandProperties properties, 
+                                        HttpMessageHandler innerHandler, 
+                                        Func<Task<HttpResponseMessage>> fallbackDelegate = null)
+            : this(commandKey, properties, fallbackDelegate)
         {
-            if (commandKey.Equals(default(HystrixCommandKey)))
-                throw new ArgumentException("A HystrixCommandKey is required.", nameof(commandKey));
-
-            this.properties = properties ?? throw new ArgumentNullException(nameof(properties));
             InnerHandler = innerHandler ?? throw new ArgumentNullException(nameof(innerHandler));
-            this.fallback = fallback;
-            if (this.fallback == null)
-                this.fallback = ()=>{ return new HttpResponseMessage(HttpStatusCode.NoContent); };
-
-            CommandKey = commandKey;
         }
-
 
         /// <summary>
         /// Gets the command key.
@@ -118,7 +137,7 @@ namespace NHystrix.Http
                 async (r) =>
                 {
                     HystrixCommandEventStream commandEventStream = HystrixCommandEventStream.GetInstance(CommandKey);
-
+                    
                     try
                     {
                         HttpResponseMessage responseMessage = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
@@ -156,7 +175,7 @@ namespace NHystrix.Http
                         commandEventStream.Write(new HystrixCommandEvent(CommandKey, HystrixEventType.TIMEOUT));
                         throw new HystrixTimeoutException($"CancelationToken cancelled calling {request.RequestUri}", ex);
                     }
-                }, fallback))
+                }, fallbackDelegate))
             {
                 return await command.ExecuteAsync(request).ConfigureAwait(false);
             }

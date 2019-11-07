@@ -35,8 +35,14 @@ namespace NHystrix.Tests
             {
                 client.Timeout = TimeSpan.FromMilliseconds(1);
 
-                HttpResponseMessage response = await client.GetAsync("http://test");
-
+                HttpResponseMessage response = null;
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
                 var metrics = HystrixCommandMetrics.GetInstance(commandKey, properties);
                 Assert.AreEqual(1, metrics.GetCumulativeCount(HystrixEventType.TIMEOUT));
             }
@@ -57,7 +63,9 @@ namespace NHystrix.Tests
             };
 
             TestingDelegatingHandler mock = new TestingDelegatingHandler(200);
-            HystrixDelegatingHandler hystrix = new HystrixDelegatingHandler(commandKey, properties, mock);
+            HystrixDelegatingHandler hystrix = new HystrixDelegatingHandler(commandKey, properties);
+            hystrix.InnerHandler = mock;
+
             var cb = HystrixCircuitBreaker.GetInstance(commandKey, properties.CircuitBreakerOptions, HystrixCommandMetrics.GetInstance(commandKey, properties));
             using (HttpClient client = new HttpClient(hystrix))
             {
@@ -93,7 +101,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i=0;i<30;i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }
@@ -122,7 +136,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }
@@ -151,8 +171,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
-
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }
         }
@@ -180,7 +205,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }
@@ -209,7 +240,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }
@@ -238,7 +275,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }
@@ -267,7 +310,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }
@@ -296,7 +345,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsFalse(cb.IsOpen, "CircuitBreaker was open at end of test but should have been closed.");
             }
@@ -320,8 +375,8 @@ namespace NHystrix.Tests
 
             TestingDelegatingHandler mock = new TestingDelegatingHandler(new Exception("foobar"));
             HystrixDelegatingHandler hystrix = new HystrixDelegatingHandler(commandKey, properties, mock,
-                fallback: () => {
-                    return new HttpResponseMessage(HttpStatusCode.NoContent);
+                fallbackDelegate: () => {
+                    return Task.FromResult(new HttpResponseMessage(HttpStatusCode.NoContent));
                 });
             var cb = HystrixCircuitBreaker.GetInstance(commandKey, properties.CircuitBreakerOptions, HystrixCommandMetrics.GetInstance(commandKey, properties));
 
@@ -329,7 +384,13 @@ namespace NHystrix.Tests
             {
                 HttpResponseMessage response = null;
                 for (int i = 0; i < 30; i++)
-                    response = await client.GetAsync("http://test");
+                {
+                    try
+                    {
+                        response = await client.GetAsync("http://test");
+                    }
+                    catch { }
+                }
 
                 Assert.IsTrue(cb.IsOpen, "CircuitBreaker was closed at end of test but should have been open.");
             }

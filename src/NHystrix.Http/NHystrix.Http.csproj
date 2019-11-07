@@ -15,6 +15,7 @@
     <PackageReleaseNotes>
       See https://github.com/milestonetg/NHystrix/blob/master/CHANGELOG.md
     </PackageReleaseNotes>
+    
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
