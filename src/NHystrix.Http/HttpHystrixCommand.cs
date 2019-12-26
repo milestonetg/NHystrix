@@ -6,21 +6,28 @@ namespace NHystrix.Http
 {
     internal class HttpHystrixCommand : HystrixCommand<HttpRequestMessage, HttpResponseMessage>
     {
-        Func<Task<HttpResponseMessage>> fallback;
-        
+        readonly Func<Task<HttpResponseMessage>> fallback;
+        readonly Func<HttpRequestMessage, Task<HttpResponseMessage>> runDelegate;
+
         public HttpHystrixCommand(HystrixCommandKey commandKey, HystrixCommandProperties properties, 
                                   Func<HttpRequestMessage, Task<HttpResponseMessage>> runDelegate, 
                                   Func<Task<HttpResponseMessage>> fallback = null) 
-            : base(commandKey, properties, runDelegate)
+            : base(commandKey, properties)
         {
+            this.runDelegate = runDelegate ?? throw new ArgumentNullException(nameof(runDelegate));
             this.fallback = fallback;
 
             IsTimeoutEnabled = properties.TimeoutEnabled;
             properties.TimeoutEnabled = false;
-            //properties.FallbackEnabled = true;
         }
 
         public bool IsTimeoutEnabled { get; }
+
+        protected override Task<HttpResponseMessage> RunAsync(HttpRequestMessage request)
+        {
+            return runDelegate(request);
+        }
+
 
         protected override Task<HttpResponseMessage> GetFallback()
         {

@@ -55,23 +55,6 @@ namespace NHystrix
         HystrixBulkhead bulkhead;
         HystrixCommandProperties properties;
         HystrixCommandEventStream commandEventStream;
-        Func<TRequest, Task<TResult>> runDelegate;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HystrixCommand{TRequest, TResult}"/> class.
-        /// </summary>
-        /// <param name="commandKey">The command key.</param>
-        /// <param name="properties">The properties.</param>
-        /// <param name="runDelegate">
-        /// A delegate to execute when Execute() is called. This delegate is called by the protected virtual method
-        /// RunAsync(). You can optionally over ride that method and use the HystrixCommand(HystrixCommandKey, HystrixCommandProperties)
-        /// constructor instead.
-        /// </param>
-        protected HystrixCommand(HystrixCommandKey commandKey, HystrixCommandProperties properties, Func<TRequest, Task<TResult>> runDelegate)
-            : this(commandKey, properties)
-        {
-            this.runDelegate = runDelegate;
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HystrixCommand{TRequest, TResult}"/> class.
@@ -293,10 +276,7 @@ namespace NHystrix
         /// Implements the logic to perform when <see cref="ExecuteAsync"/> is called.
         /// </summary>
         /// <returns>Task&lt;TResult&gt;.</returns>
-        protected virtual Task<TResult> RunAsync(TRequest request)
-        {
-            return runDelegate(request);
-        }
+        protected abstract Task<TResult> RunAsync(TRequest request);
 
         /// <summary>
         /// When overridden in a derived class, returns the fallback response when fallback is enabled.
