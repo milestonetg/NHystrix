@@ -10,6 +10,12 @@ NHystrix is inspired by [Netflix/Hystrix](https://github.com/Netflix/Hystrix): "
 
 The goal of this project is to provide the same functionality to C#/.Net applications.
 
+## Hystrix Dashboard Support (or lack there of)
+
+Since Netflix has put Hystrix into maintenance mode, NHystrix will not attempt to support Hystrix Dashboard. Instead, 
+the project will support the ability to publish circuit breaker state to an APM of your choice. For example, publish
+a circuit breaker tripping as an Azure Application Insights Event.
+
 ## NuGet
 
 The package currently targets NetStandard2.0, NetCoreApp3.0, Net452, and Net461.
