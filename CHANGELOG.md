@@ -2,8 +2,17 @@
 
 ## Unreleased
 
-- Request Caching
-- Dashboard
+- Request Caching -- Will likely be implemented using [xPike caching](https://github.com/xpike/caching) interfaces 
+and rely on any existing caching you may have in place, since xPike already supports client-side caching with proper 
+invalidation.
+- Dashboard -- Will likely never be included in NHystrix. Instead, the ability to report circuit breaker state to an
+APM of your choice will be included.
+
+## [0.7.0]
+
+### Added
+
+Support for HttpClientFactory in Asp.Net Core.
 
 ## [0.6.0]
 

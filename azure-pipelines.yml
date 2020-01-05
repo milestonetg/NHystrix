@@ -1,6 +1,6 @@
 name: $(version).$(build.buildId)
 variables:
-  version: 0.6.0
+  version: 0.7.0
   CicdVersionNumber: $(version)-beta$(build.buildId)
 trigger:
   paths:
